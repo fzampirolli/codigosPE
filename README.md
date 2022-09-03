@@ -2,7 +2,7 @@
 
 Livro: [Processando a Informação: um livro prático de programação independente de linguagem](https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao)
 
-Na pasta 1.c estão os colabs até o capítulo 6, em vários formatos.
+Na pasta 1.c estão os colabs até o capítulo 6, em vários formatos. Para mais detalhes do como esses formatos foram gerados, consultar o GDrive do link anterior.
 
 ## Capítulos do livro com Colabs:
 
