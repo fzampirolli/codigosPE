@@ -12,6 +12,7 @@ float leia() {
   return valor;
 }
 
+// PROGRAMA PRINCIPAL
 int main(void) {
   // ENTRADAS
   int n;
