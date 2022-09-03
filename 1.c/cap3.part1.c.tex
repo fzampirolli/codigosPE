@@ -477,10 +477,12 @@ Código)}\label{revisuxe3o-do-capuxedtulo-anterior-organizauxe7uxe3o-de-cuxf3dig
   locais e globais, métodos (funções ou procedimentos) e o conceito de
   sistema de informação em partes:
 
-  \begin{quote}
-  ENTRADA DE DADOS \(\Rightarrow\) PROCESSAMENTO DA INFORMAÇÃO
-  \(\Rightarrow\) SAÍDA
-  \end{quote}
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{ENTRADA DE DADOS \(\Rightarrow\) PROCESSAMENTO DA INFORMAÇÃO
+    \(\Rightarrow\) SAÍDA}
+  \end{itemize}
 \item
   Neste capítulo serão apresentados códigos com desvios condicionais, da
   forma:
@@ -551,7 +553,7 @@ Condional?}\label{o-que-uxe9-um-desvio-condional}}
 \end{figure}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{2}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{!}apt\PYZhy{}get install graphviz libgraphviz\PYZhy{}dev pkg\PYZhy{}config
 \PY{o}{!}pip install txtoflow
@@ -559,7 +561,7 @@ Condional?}\label{o-que-uxe9-um-desvio-condional}}
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{3}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{from} \PY{n+nn}{txtoflow} \PY{k+kn}{import} \PY{n}{txtoflow}
 
@@ -652,7 +654,8 @@ se (nota<5)
     \begin{itemize}
 \item
   Observe que foram substituídas as chaves \texttt{\{} e \texttt{\}},
-  que definem os \textbf{escopos} das condicionais, pela tabulação.
+  que definem os \textbf{escopos} das condicionais, pela tabulação. Isso
+  é possível quando o bloco tem apenas uma instrução.
 \item
   Relembrando o Cap. 1 - Fundamentos, podemos usar nas
   \textbf{condicionais}, variáveis \emph{booleanas} e operadores:
@@ -865,7 +868,7 @@ Simples}\label{exemplo-01---uso-de-condicionais-simples}}
 \item
   Se \(\Delta>0\), \(x\) possui duas raízes reais e distintas;
 \item
-  Calcule \(x\) (raízes se existirem) usando a equação:
+  Calcule as raízes, se existirem, usando as equações:
 \end{enumerate}
 \end{quote}
 
@@ -1125,6 +1128,86 @@ Conceito A
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
 gcc cap03exem02.c \PYZhy{}o output2
 ./output2
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{comando-switch}{%
+\subsection{\texorpdfstring{Comando
+\texttt{switch}}{Comando switch}}\label{comando-switch}}
+
+    O \texttt{switch} verifica se uma variável (do tipo \texttt{int} ou
+\texttt{char}) é ou não igual a certo valor constante (valor1, valor2,
+\ldots, valorN na sintaxe a seguir):
+
+\begin{verbatim}
+switch (variável) {
+  case valor1:
+    Comandos;
+    break;
+  case valor2:
+    Comandos;
+    break;
+  case valorN:
+    Comandos;
+    break;
+  default: // opcional, caso não ocorram os casos anteriores
+    Comandos;
+}
+\end{verbatim}
+
+Esse comanto \texttt{switch} é útil quando se tem um menu de opções a
+ser executado.
+
+    \hypertarget{exemplo-03---exemplo-de-switch-com-menu-de-opuxe7uxf5es}{%
+\paragraph{\texorpdfstring{Exemplo 03 - Exemplo de \texttt{switch} com
+menu de
+opções}{Exemplo 03 - Exemplo de switch com menu de opções}}\label{exemplo-03---exemplo-de-switch-com-menu-de-opuxe7uxf5es}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{38}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap03exem03.c
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+	\PY{n+nb}{float} \PY{n}{area}\PY{p}{;}
+	\PY{n+nb}{int} \PY{n}{escolha}\PY{p}{,} \PY{n}{num}\PY{p}{;}
+	\PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{1. Circulo}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+	\PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{2. Quadrado}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+	\PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Escolha:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+
+	\PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{escolha}\PY{p}{)}\PY{p}{;}
+	
+	\PY{n}{switch} \PY{p}{(}\PY{n}{escolha}\PY{p}{)} \PY{p}{\PYZob{}}
+	\PY{k}{case} \PY{l+m+mi}{1}\PY{p}{:} \PY{p}{\PYZob{}}
+		\PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Raio:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+		\PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{num}\PY{p}{)}\PY{p}{;}
+		\PY{n}{area} \PY{o}{=} \PY{l+m+mf}{3.14} \PY{o}{*} \PY{n}{num} \PY{o}{*} \PY{n}{num}\PY{p}{;}
+		\PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Area do circulo: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+		\PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{area}\PY{p}{)}\PY{p}{;}
+		\PY{k}{break}\PY{p}{;}
+	\PY{p}{\PYZcb{}}
+	\PY{k}{case} \PY{l+m+mi}{2}\PY{p}{:} \PY{p}{\PYZob{}}
+		\PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Lado:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+		\PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{num}\PY{p}{)}\PY{p}{;}
+		\PY{n}{area} \PY{o}{=} \PY{n}{num} \PY{o}{*} \PY{n}{num}\PY{p}{;}
+		\PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Area do quadrado: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+		\PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}.2f}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{area}\PY{p}{)}\PY{p}{;}
+		\PY{k}{break}\PY{p}{;}
+	\PY{p}{\PYZcb{}}
+	\PY{n}{default}\PY{p}{:}
+		\PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Escolha Incorreta!}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+	\PY{p}{\PYZcb{}}
+	\PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{39}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
+gcc cap03exem03.c \PYZhy{}o output3
+./output3
 \end{Verbatim}
 \end{tcolorbox}
 

@@ -14653,9 +14653,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
 <li><p>No capítulo anterior foram apresentados formas de organização de códigos, utilizando comentários, tabulações, escopo de variáveis locais e globais, métodos (funções ou procedimentos) e o conceito de sistema de informação em partes:</p>
-<blockquote>
-<p>ENTRADA DE DADOS   $\Rightarrow$   PROCESSAMENTO DA INFORMAÇÃO   $\Rightarrow$   SAÍDA</p>
-</blockquote>
+<ul>
+<li><strong>ENTRADA DE DADOS   $\Rightarrow$   PROCESSAMENTO DA INFORMAÇÃO   $\Rightarrow$   SAÍDA</strong></li>
+</ul>
 </li>
 <li><p>Neste capítulo serão apresentados códigos com desvios condicionais, da forma:</p>
 <ul>
@@ -14731,7 +14731,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>apt-get install graphviz libgraphviz-dev pkg-config
@@ -14748,7 +14748,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">txtoflow</span> <span class="kn">import</span> <span class="n">txtoflow</span>
@@ -14903,7 +14903,7 @@ se (nota&lt;5)
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li><p>Observe que foram substituídas as chaves <code>{</code> e <code>}</code>, que definem os <strong>escopos</strong> das condicionais, pela tabulação.</p>
+<li><p>Observe que foram substituídas as chaves <code>{</code> e <code>}</code>, que definem os <strong>escopos</strong> das condicionais, pela tabulação. Isso é possível quando o bloco tem apenas uma instrução.</p>
 </li>
 <li><p>Relembrando o Cap. 1 - Fundamentos, podemos usar nas <strong>condicionais</strong>, variáveis <em>booleanas</em> e operadores:</p>
 <ul>
@@ -15190,7 +15190,7 @@ Volta para a parte sequencial
 <li>Se $\Delta&lt;0$,  $x$ não possui raízes reais;</li>
 <li>Se  $\Delta=0$, $x$  possui duas raízes reais idênticas;</li>
 <li>Se $\Delta&gt;0$, $x$  possui duas raízes reais e distintas;</li>
-<li>Calcule $x$ (raízes se existirem) usando a equação:</li>
+<li>Calcule as raízes, se existirem, usando as equações:</li>
 </ol>
 </blockquote>
 $$x1 = -b+\frac{\sqrt{\Delta}}{2a}$$$$x2 = -b-\frac{\sqrt{\Delta}}{2a}$$<ul>
@@ -15539,6 +15539,121 @@ Conceito A
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
 gcc cap03exem02.c -o output2
 ./output2
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Comando-switch">Comando <code>switch</code><a class="anchor-link" href="#Comando-switch">&#182;</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>O <code>switch</code> verifica se uma variável (do tipo <code>int</code> ou <code>char</code>) é ou não igual a certo valor constante (valor1, valor2, ..., valorN na sintaxe a seguir):</p>
+<pre><code>switch (variável) {
+  case valor1:
+    Comandos;
+    break;
+  case valor2:
+    Comandos;
+    break;
+  case valorN:
+    Comandos;
+    break;
+  default: // opcional, caso não ocorram os casos anteriores
+    Comandos;
+}
+</code></pre>
+<p>Esse comanto <code>switch</code> é útil quando se tem um menu de opções a ser executado.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Exemplo-03---Exemplo-de-switch-com-menu-de-op%C3%A7%C3%B5es">Exemplo 03 - Exemplo de <code>switch</code> com menu de op&#231;&#245;es<a class="anchor-link" href="#Exemplo-03---Exemplo-de-switch-com-menu-de-op%C3%A7%C3%B5es">&#182;</a></h4>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap03exem03.c
+<span class="c1">#include &lt;stdio.h&gt;</span>
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nb">float</span> <span class="n">area</span><span class="p">;</span>
+	<span class="nb">int</span> <span class="n">escolha</span><span class="p">,</span> <span class="n">num</span><span class="p">;</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s2">"1. Circulo</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s2">"2. Quadrado</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s2">"Escolha:</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+
+	<span class="n">scanf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">escolha</span><span class="p">);</span>
+	
+	<span class="n">switch</span> <span class="p">(</span><span class="n">escolha</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">case</span> <span class="mi">1</span><span class="p">:</span> <span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s2">"Raio:</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+		<span class="n">scanf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">num</span><span class="p">);</span>
+		<span class="n">area</span> <span class="o">=</span> <span class="mf">3.14</span> <span class="o">*</span> <span class="n">num</span> <span class="o">*</span> <span class="n">num</span><span class="p">;</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s2">"Area do circulo: "</span><span class="p">);</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s2">"</span><span class="si">%.2f</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">area</span><span class="p">);</span>
+		<span class="k">break</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">case</span> <span class="mi">2</span><span class="p">:</span> <span class="p">{</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s2">"Lado:</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+		<span class="n">scanf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">num</span><span class="p">);</span>
+		<span class="n">area</span> <span class="o">=</span> <span class="n">num</span> <span class="o">*</span> <span class="n">num</span><span class="p">;</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s2">"Area do quadrado: "</span><span class="p">);</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s2">"</span><span class="si">%.2f</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">area</span><span class="p">);</span>
+		<span class="k">break</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="n">default</span><span class="p">:</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s2">"Escolha Incorreta!</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
+gcc cap03exem03.c -o output3
+./output3
 </pre></div>
 
      </div>
