@@ -5,6 +5,6 @@ float delta(float a, float b, float c) {
 }
 int main(void) {
   float a = 5.0, b = -2.0, c = 4.0;
-  printf("O delta de ax^2 + bx + c é %.1f", delta(a, b, c));
+  printf("O delta de ax^2 + bx + c e %.1f\n", delta(a, b, c));
   return 0;
 }
