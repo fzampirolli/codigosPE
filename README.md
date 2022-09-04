@@ -10,7 +10,7 @@ Na pasta 1.c estão os colabs até o capítulo 6, em vários formatos. Consultar
 * Capítulo 2: Organização de código
 * Capítulo 3: Desvios condicionais
 * Capítulo 4: Estruturas de repetição (laços) 
-* Capítulo 5: Vetores (e Arquivos ?)
+* Capítulo 5: Vetores, Alocações e Arquivos (?)
 * Capítulo 6: Matrizes e vetores multi-dimensionais
 
 ## Capítulos do livro sem Colabs:
