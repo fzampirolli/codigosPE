@@ -14899,6 +14899,8 @@ escreva(&quot;Valor da gorjeta = &quot; + gorjeta);
 </li>
 <li><p>Uma função pode ser copiada de um programa para outro ou incorporado em uma biblioteca escrita pelo usuário, utilizando o comando em Python <code>import myBiblioteca</code>. Ou também, para C/C++/Java, <code>#include &quot;myBiblioteca.h&quot;</code>.</p>
 </li>
+<li><p>Uma função é definida por um nome, retorno (opcional), argumento(s) (opcional) e um conjunto de instruções.</p>
+</li>
 <li><p>A seguir temos um exemplo de função de usuário escrita em pseudocódigo:</p>
 </li>
 </ul>
@@ -14992,7 +14994,30 @@ O delta de ax^2 + bx + c é -76.0
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Observe que o <strong>ESCOPO</strong> da função é definido por <code>{</code> ... <code>}</code>:</p>
+<ul>
+<li><p>Quando uma função não tem <code>return</code> ela deve retornar o tipo <code>void</code> (nada), por exemplo, <code>void escrevaDelta(float d){...}</code>.</p>
+</li>
+<li><p><font color='blue'>Os argumentos de uma função podem ser passados por <strong>valor</strong> ou por <strong>referência</strong></font>.</p>
+<ul>
+<li>Por <strong>valor</strong>: qualquer alteração do argumento dentro da função não será passada para quem chamou a função.</li>
+<li><font color='red'>Por <strong>referência</strong>: oposto ao anterior, qualquer alteração dentro da função será repassada para quem chamou e isso ocorre passando o endereço de memória da variável (com <code>&amp;</code>) ao ser chamado. Por exemplo:</li>
+<li><pre><code>incrementaUm(&amp;x)
+</code></pre>
+</li>
+</ul>
+ </font>
+* Esse endereço de memória é definido como o tipo de dados **ponteiro** e será estudado em detalhes na parte de  alocação estática vs dinâmicas.
+* <font color='red'>Para acessar o conteúdo de uma variável ponteiro, usar o prefixo `*`. Por exemplo: 
+ * ```
+   void incrementaUm(int *x) {
+       *x=*x+1;
+   }
+   ```
+   </font>
+</li>
+<li><p>Observe que o <strong>ESCOPO</strong> da função é definido por <code>{</code> ... <code>}</code>.</p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -15002,10 +15027,10 @@ O delta de ax^2 + bx + c é -76.0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap02exem01.c
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap2ex01.c
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="nb">float</span> <span class="n">delta</span><span class="p">(</span><span class="nb">float</span> <span class="n">a</span><span class="p">,</span> <span class="nb">float</span> <span class="n">b</span><span class="p">,</span> <span class="nb">float</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
   <span class="nb">float</span> <span class="n">d</span> <span class="o">=</span> <span class="n">b</span><span class="o">*</span><span class="n">b</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">;</span>
@@ -15028,11 +15053,11 @@ O delta de ax^2 + bx + c é -76.0
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc cap02exem01.c -o output2
+gcc cap2ex01.c -o output2
 ./output2
 </pre></div>
 
@@ -15196,10 +15221,10 @@ output=
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap02exem02.c
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap2ex02.c
 <span class="c1">#include &lt;stdio.h&gt;</span>
 
 <span class="nb">float</span> <span class="n">delta</span><span class="p">(</span><span class="nb">float</span> <span class="n">a</span><span class="p">,</span> <span class="nb">float</span> <span class="n">b</span><span class="p">,</span> <span class="nb">float</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
@@ -15241,11 +15266,11 @@ output=
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc cap02exem02.c -o output2
+gcc cap2ex02.c -o output2
 ./output2
 </pre></div>
 
@@ -15272,7 +15297,7 @@ gcc cap02exem02.c -o output2
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Ver notebook Colab no arquivo <code>cap02.part2.lab.*.ipynb</code> (<code>*</code> é a extensão da linguagem), utilizando alguma linguagem de programação de sua preferência, organizadas em subpastas contidas de <code>&quot;gen&quot;</code>, na pasta do Google Drive <a href="https://drive.google.com/drive/folders/1YlFwv8XYN7PYYf-HwDMlkxzbmXzJw9cM?usp=sharing">colabs</a>.</p>
+<p>Ver notebook Colab no arquivo <code>cap2.part2.lab.*.ipynb</code> (<code>*</code> é a extensão da linguagem), utilizando alguma linguagem de programação de sua preferência, organizadas em subpastas contidas de <code>&quot;gen&quot;</code>, na pasta do Google Drive <a href="https://drive.google.com/drive/folders/1YlFwv8XYN7PYYf-HwDMlkxzbmXzJw9cM?usp=sharing">colabs</a>.</p>
 
 </div>
 </div>

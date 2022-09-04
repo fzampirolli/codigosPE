@@ -632,6 +632,9 @@ Usuário}\label{funuxe7uxf5es-ou-muxe9todos-de-usuuxe1rio}}
   \texttt{import\ myBiblioteca}. Ou também, para C/C++/Java,
   \texttt{\#include\ "myBiblioteca.h"}.
 \item
+  Uma função é definida por um nome, retorno (opcional), argumento(s)
+  (opcional) e um conjunto de instruções.
+\item
   A seguir temos um exemplo de função de usuário escrita em
   pseudocódigo:
 \end{itemize}
@@ -686,13 +689,47 @@ output=
 O delta de ax^2 + bx + c é -76.0
 \end{verbatim}
 
-    Observe que o \textbf{ESCOPO} da função é definido por \texttt{\{}
-\ldots{} \texttt{\}}:
+    \begin{itemize}
+\item
+  Quando uma função não tem \texttt{return} ela deve retornar o tipo
+  \texttt{void} (nada), por exemplo,
+  \texttt{void\ escrevaDelta(float\ d)\{...\}}.
+\item
+  Os argumentos de uma função podem ser passados por \textbf{valor} ou
+  por \textbf{referência}.
+\item
+  Por \textbf{valor}: qualquer alteração do argumento dentro da função
+  não será passada para quem chamou a função.
+\item
+  Por \textbf{referência}: oposto ao anterior, qualquer alteração dentro
+  da função será repassada para quem chamou e isso ocorre passando o
+  endereço de memória da variável (com \texttt{\&}) ao ser chamado. Por
+  exemplo: * \texttt{incrementaUm(\&x)}
+\item
+  Esse endereço de memória é definido como o tipo de dados
+  \textbf{ponteiro} e será estudado em detalhes na parte de alocação
+  estática vs dinâmicas.
+\item
+  Para acessar o conteúdo de uma variável ponteiro, usar o prefixo
+  \texttt{*}. Por exemplo:
+
+  \begin{itemize}
+  \item
+\begin{verbatim}
+  void incrementaUm(int *x) {
+      *x=*x+1;
+  }
+\end{verbatim}
+  \end{itemize}
+\item
+  Observe que o \textbf{ESCOPO} da função é definido por \texttt{\{}
+  \ldots{} \texttt{\}}.
+\end{itemize}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{1}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap02exem01.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap2ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 \PY{n+nb}{float} \PY{n}{delta}\PY{p}{(}\PY{n+nb}{float} \PY{n}{a}\PY{p}{,} \PY{n+nb}{float} \PY{n}{b}\PY{p}{,} \PY{n+nb}{float} \PY{n}{c}\PY{p}{)} \PY{p}{\PYZob{}}
   \PY{n+nb}{float} \PY{n}{d} \PY{o}{=} \PY{n}{b}\PY{o}{*}\PY{n}{b}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{a}\PY{o}{*}\PY{n}{c}\PY{p}{;}
@@ -707,10 +744,10 @@ O delta de ax^2 + bx + c é -76.0
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{2}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap02exem01.c \PYZhy{}o output2
+gcc cap2ex01.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -832,9 +869,9 @@ output=
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{3}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap02exem02.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap2ex02.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 
 \PY{n+nb}{float} \PY{n}{delta}\PY{p}{(}\PY{n+nb}{float} \PY{n}{a}\PY{p}{,} \PY{n+nb}{float} \PY{n}{b}\PY{p}{,} \PY{n+nb}{float} \PY{n}{c}\PY{p}{)} \PY{p}{\PYZob{}}
@@ -868,10 +905,10 @@ output=
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{4}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap02exem02.c \PYZhy{}o output2
+gcc cap2ex02.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -879,7 +916,7 @@ gcc cap02exem02.c \PYZhy{}o output2
     \hypertarget{exercuxedcios}{%
 \subsection{Exercícios}\label{exercuxedcios}}
 
-    Ver notebook Colab no arquivo \texttt{cap02.part2.lab.*.ipynb}
+    Ver notebook Colab no arquivo \texttt{cap2.part2.lab.*.ipynb}
 (\texttt{*} é a extensão da linguagem), utilizando alguma linguagem de
 programação de sua preferência, organizadas em subpastas contidas de
 \texttt{"gen"}, na pasta do Google Drive

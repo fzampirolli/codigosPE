@@ -476,7 +476,7 @@ Condicionais)}\label{revisuxe3o-do-capuxedtulo-anterior-desvios-condicionais}}
 
     \begin{itemize}
 \item
-  No capítulo anterior foram apresentadas formas de construir códico
+  No capítulo anterior foram apresentadas formas de construir código
   contendo estruturas condicionais simples ou compostas. Ou seja,
   desvios condicionais, da forma:
 
@@ -539,7 +539,8 @@ escreva(t + " x " + n + " = " + t * n);        n = n + 1;
 \tightlist
 \item
   Embora o código não pareça extenso, é fácil imaginar uma situação onde
-  tenhamos que repetir 100, 500, 1000 vezes a mesma operação.
+  tenhamos que repetir 100, 500, 1000 vezes um mesmo bloco de
+  instruções.
 \end{itemize}
 
     \hypertarget{tipos-de-estruturas-de-repetiuxe7uxe3o}{%
@@ -549,12 +550,13 @@ repetição}\label{tipos-de-estruturas-de-repetiuxe7uxe3o}}
     \hypertarget{pseudocuxf3digo}{%
 \subsubsection{Pseudocódigo}\label{pseudocuxf3digo}}
 
-    \#\#\#\#faça-enquanto
+    \hypertarget{fauxe7a-enquanto}{%
+\paragraph{faça-enquanto}\label{fauxe7a-enquanto}}
 
 \begin{verbatim}
 faça { 
   comandos 
-} enquanto (condição)
+} enquanto (condição);
 \end{verbatim}
 
     \hypertarget{enquanto-fauxe7a}{%
@@ -611,15 +613,17 @@ para variável = valor_final até valor_inicial, variável--, faça {
     \hypertarget{ccppjavajavascript}{%
 \subsubsection{C/CPP/Java/JavaScript}\label{ccppjavajavascript}}
 
-    \#\#\#\#do-while
+    \hypertarget{do-while}{%
+\paragraph{do-while}\label{do-while}}
 
     \begin{verbatim}
 do { 
   comandos;
-} while (condição)
+} while (condição);
 \end{verbatim}
 
-    \#\#\#\#while
+    \hypertarget{while}{%
+\paragraph{while}\label{while}}
 
     \begin{verbatim}
 while (condição) { 
@@ -627,13 +631,17 @@ while (condição) {
 }
 \end{verbatim}
 
-    \#\#\#\#for
+    \hypertarget{for}{%
+\paragraph{for}\label{for}}
 
     \begin{verbatim}
 for(v=0; v<10; v++) {
   comandos;
 }
 \end{verbatim}
+
+Em algumas linguagens de programação é possível omitir um ou todos os
+parâmetros, por exemplo: \texttt{for(;;)\ \{...\}}.
 
     \hypertarget{pseudocuxf3digo-exemplo-lauxe7o-fauxe7a-enquanto.}{%
 \subsubsection{Pseudocódigo: Exemplo laço
@@ -648,7 +656,7 @@ faça {
    acumulador = acumulador + nota;
    contador = contador + 1;
    resposta = leia("Deseja continuar? (s/n): ");
-} enquanto (resposta == 's')
+} enquanto (resposta == 's');
 
 média = acumulador / contador;
 imprima ("A média das " + contador + " notas é " + média);
@@ -725,7 +733,7 @@ imprima ("A média das " + contador + " notas é " + média);
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{5}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{from} \PY{n+nn}{txtoflow} \PY{k+kn}{import} \PY{n}{txtoflow}
 
@@ -753,7 +761,7 @@ imprima ("A média das " + contador + " notas é " + média);
 INFINITO.}\label{pseudocuxf3digo-exemplo-lauxe7o-enquanto-fauxe7a-infinito.}}
 
 Considere uma alteração no código anterior para não fazer mais a
-pargunta \texttt{Deseja\ continuar?\ (s/n)}, mas entrando num laço
+pergunta \texttt{Deseja\ continuar?\ (s/n)}, mas entrando num laço
 \texttt{enquanto-faça} para ler e acumular 100 notas:
 
 \begin{verbatim}
@@ -772,8 +780,8 @@ imprima ("A média das " + contador + " notas é " + média);
     \begin{itemize}
 \tightlist
 \item
-  O que vai ocorrer ao escrever e rodar esse código algum alguma
-  linguagem de programação?
+  O que vai ocorrer ao escrever e rodar esse código em alguma linguagem
+  de programação?
 \item
   Onde está o erro?
 \item
@@ -825,7 +833,7 @@ faça {
   acumulador = acumulador + nota;
   contador = contador + 1;
   resposta = leia("Deseja continuar? (s/n): ");
-} enquanto (resposta == 's')
+} enquanto (resposta == 's');
 
 média = acumulador / contador;
 imprima ("A média das " + contador + " notas é " + média);
@@ -843,7 +851,7 @@ imprima ("A média das " + contador + " notas é " + média);
 \item
   Ver Fluxograma abaixo (também experimente nessa ferramenta
   \emph{online}: \href{https://app.code2flow.com/}{code2flow}, copiando
-  e colando o código em vermelho abaixo):
+  e colando o código em vermelho abaixo).
 \item
   Observar que essa biblioteca \texttt{txtoflow} não aceita
   \texttt{faça-enquanto}, assim como o Python.
@@ -924,7 +932,7 @@ faça {
   } enquanto (nota < 0 || nota > 10); 
   acumulador = acumulador + nota;
   contador = contador + 1;
-} enquanto (contador < 10)
+} enquanto (contador < 10);
 
 média = acumulador / contador;
 escreva("A média das " + contador + " notas é " + média);
@@ -946,7 +954,7 @@ escreva("A média das " + contador + " notas é " + média);
 \end{figure}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{2}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{!}apt\PYZhy{}get install graphviz libgraphviz\PYZhy{}dev pkg\PYZhy{}config
 \PY{o}{!}pip install txtoflow
@@ -954,7 +962,7 @@ escreva("A média das " + contador + " notas é " + média);
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{3}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{from} \PY{n+nn}{txtoflow} \PY{k+kn}{import} \PY{n}{txtoflow}
 
@@ -1023,7 +1031,7 @@ A média das 10 notas é 7.3
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap04exem01.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap4ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 
 \PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
@@ -1043,7 +1051,7 @@ A média das 10 notas é 7.3
   \PY{n}{media} \PY{o}{=} \PY{n}{acumulador}\PY{o}{/}\PY{n}{contador}\PY{p}{;}
 
   \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA}
-  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{A média das }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ notas é }\PY{l+s+si}{\PYZpc{}.1f}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{contador}\PY{p}{,} \PY{n}{media}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{A média das }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ notas é }\PY{l+s+si}{\PYZpc{}.1f}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{contador}\PY{p}{,} \PY{n}{media}\PY{p}{)}\PY{p}{;}
 
   \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
 \PY{p}{\PYZcb{}}
@@ -1054,7 +1062,7 @@ A média das 10 notas é 7.3
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap04exem01.c \PYZhy{}o output2
+gcc cap4ex01.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -1062,7 +1070,7 @@ gcc cap04exem01.c \PYZhy{}o output2
     \hypertarget{exercuxedcios}{%
 \subsection{Exercícios}\label{exercuxedcios}}
 
-    Ver notebook Colab no arquivo \texttt{cap04.part2.lab.*.ipynb}
+    Ver notebook Colab no arquivo \texttt{cap4.part2.lab.*.ipynb}
 (\texttt{*} é a extensão da linguagem), utilizando alguma linguagem de
 programação de sua preferência, onganizadas em subpastas contidas de
 \texttt{"gen"}, na pasta do Google Drive
@@ -1141,13 +1149,6 @@ programação de sua preferência, onganizadas em subpastas contidas de
 \item
   Revisão deste capítulo de Estruturas de Repetição (Laços)
 \end{itemize}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-
-\end{Verbatim}
-\end{tcolorbox}
 
 
     % Add a bibliography block to the postdoc

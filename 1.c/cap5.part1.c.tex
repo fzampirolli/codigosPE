@@ -534,7 +534,7 @@ Laços)}\label{revisuxe3o-do-capuxedtulo-anterior-estruturas-de-repetiuxe7uxe3o-
 \tightlist
 \item
   Um \textbf{vetor} em programação é formado por um \textbf{conjunto de
-  \(n\) variáveis de um mesmo tipo} de dado, sendo \(n\)
+  \(n\) variáveis de um mesmo tipo} de dado (em geral), sendo \(n\)
   obrigatoriamente maior que zero.
 \item
   Essas variáveis (ou elementos) são identificadas e acessadas por um
@@ -554,7 +554,7 @@ Laços)}\label{revisuxe3o-do-capuxedtulo-anterior-estruturas-de-repetiuxe7uxe3o-
     \begin{itemize}
 \tightlist
 \item
-  Quando um vetor é criado, é instanciada uma variável do tipo vetor (Em
+  Quando um vetor é criado, é instanciada uma variável do tipo vetor (em
   algumas linguagens de programação, sendo necessário se definir um
   nome, o tipo de dado e o tamanho do vetor).
 \item
@@ -600,29 +600,30 @@ Laços)}\label{revisuxe3o-do-capuxedtulo-anterior-estruturas-de-repetiuxe7uxe3o-
     mesmo tipo.
   \end{enumerate}
 \item
-  No exemplo da Figura abaixo,
+  No exemplo da figura abaixo,
 
   \begin{itemize}
   \tightlist
   \item
-    A criação da variável de referência de um vetor \texttt{v} define
+    a criação da variável de referência de um vetor \texttt{v} define
     apenas a posição de memória em hexadecimal \texttt{0A}, onde será
     armazenado o seu primeiro elemento.
 
     \begin{itemize}
     \tightlist
     \item
-      Neste exemplo, \texttt{V{[}0{]}\ =\ -128}
+      neste exemplo, \texttt{V{[}0{]}\ =\ -128} é o primeiro elemento do
+      vetor.
     \item
-      A quantidade de \texttt{bytes} por elemento vai depender to tipo
+      a quantidade de \texttt{bytes} por elemento vai depender to tipo
       de dado armazenado. Neste exemplo cada elemento ocupa um
       \texttt{byte}.
     \end{itemize}
   \item
-    O segundo passo da criação de um vetor é reservar (ou alocar)
+    o segundo passo da criação de um vetor é reservar (ou alocar)
     memória para todos os seus elementos (dependendo da linguagem).
     \textgreater{} essa alocação de memória pode ocorrer em tempo de
-    execução, com ocorre em Python!
+    execução, como ocorre em Python!
   \end{itemize}
 \end{itemize}
 
@@ -643,7 +644,12 @@ Laços)}\label{revisuxe3o-do-capuxedtulo-anterior-estruturas-de-repetiuxe7uxe3o-
 \item
   Isso pode requerer uso de laços para leitura e impressão dos seus
   elementos, dependendo da linguagem de programação utilizada.
-  \textgreater{} O índice de vetor é sempre um número inteiro.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    O índice de vetor é sempre um número inteiro.
+  \end{itemize}
 \end{itemize}
 
     \hypertarget{exemplo-01---lerescrever-vetor}{%
@@ -695,28 +701,29 @@ Número RA     Nota
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap05exem01.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 
 \PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
 
   \PY{o}{/}\PY{o}{/} \PY{n}{ENTRADA} \PY{n}{DE} \PY{n}{DADOS}
-  \PY{n+nb}{int} \PY{n}{n}\PY{p}{,} \PY{n}{ra}\PY{p}{[}\PY{l+m+mi}{100}\PY{p}{]}\PY{p}{;}     \PY{o}{/}\PY{o}{/} \PY{n}{aloca} \PY{l+m+mi}{100} \PY{n}{ra}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}
-  \PY{n}{char} \PY{n}{nome}\PY{p}{[}\PY{l+m+mi}{100}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{40}\PY{p}{]}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{aloca} \PY{l+m+mi}{100} \PY{n}{nomes} \PY{n}{de} \PY{n}{até} \PY{l+m+mi}{40} \PY{n}{caracteres} \PY{n}{cada}
+  \PY{n+nb}{int} \PY{n+nb}{max} \PY{o}{=} \PY{l+m+mi}{100}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{considerar} \PY{n}{sempre} \PY{n}{um} \PY{n}{número} \PY{n}{grande}
+  \PY{n+nb}{int} \PY{n}{n}\PY{p}{,} \PY{n}{ra}\PY{p}{[}\PY{n+nb}{max}\PY{p}{]}\PY{p}{;}     \PY{o}{/}\PY{o}{/} \PY{n}{aloca} \PY{l+m+mi}{100} \PY{n}{ra}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}
+  \PY{n}{char} \PY{n}{nome}\PY{p}{[}\PY{n+nb}{max}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{40}\PY{p}{]}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{aloca} \PY{l+m+mi}{100} \PY{n}{nomes} \PY{n}{de} \PY{n}{até} \PY{l+m+mi}{40} \PY{n}{caracteres} \PY{n}{cada}
 
   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Digite o numero de alunos: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
   \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{n}\PY{p}{)}\PY{p}{;}
   \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
-      \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{RA: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
-      \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{ra}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-      \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Nome: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
-      \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}s}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{nome}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{ATENÇÃO}\PY{p}{:} \PY{n}{NÃO} \PY{n}{ACEITA} \PY{n}{NOME} \PY{n}{COM} \PY{n}{ESPAÇOS}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{RA: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+    \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{ra}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Nome: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+    \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}s}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{nome}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{ATENÇÃO}\PY{p}{:} \PY{n}{NÃO} \PY{n}{ACEITA} \PY{n}{NOME} \PY{n}{COM} \PY{n}{ESPAÇOS} \PY{n}{e} \PY{n}{NÃO} \PY{n}{USA} \PY{o}{\PYZam{}}
   \PY{p}{\PYZcb{}}
   \PY{o}{/}\PY{o}{/} \PY{n}{PROCESSAMENTO} \PY{err}{?}
   \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA}
   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{LISTA DE ALUNOS}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Número}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ RA}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ Nome}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
   \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
-      \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{ra}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{nome}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{,} \PY{n}{ra}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{nome}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
   \PY{p}{\PYZcb{}}
   \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
 \PY{p}{\PYZcb{}}
@@ -724,11 +731,48 @@ Número RA     Nota
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{29}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap05exem01.c \PYZhy{}o output2
+gcc cap5ex01.c \PYZhy{}o output2
 ./output2
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{itemize}
+\item
+  As \emph{strings} em C têm um último caracter
+  \texttt{\textquotesingle{}\textbackslash{}0\textquotesingle{}}. Assim,
+  \texttt{char\ s{[}{]}\ =\ "oi";} tem três carateres.
+\item
+  Para ler uma \emph{string} com espaços
+  {[}\href{https://www.geeksforgeeks.org/gets-is-risky-to-use}{ref}{]}:
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{54}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex01teste.c
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}string.h\PYZgt{}}
+
+\PY{n}{void} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+   \PY{n}{char} \PY{n}{s}\PY{p}{[}\PY{l+m+mi}{40}\PY{p}{]}\PY{p}{;}
+   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{digite algo:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+   \PY{n}{fgets}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{l+m+mi}{40}\PY{p}{,} \PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{saida: }\PY{l+s+se}{\PYZbs{}\PYZdq{}}\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}\PYZdq{}}\PY{l+s+s2}{ tamanho: }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{s}\PY{p}{,} \PY{n}{strlen}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+   \PY{n}{s}\PY{p}{[}\PY{n}{strlen}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{substituir} \PYZbs{}\PY{n}{n} \PY{n}{por} \PYZbs{}\PY{l+m+mi}{0}
+   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{saida: }\PY{l+s+se}{\PYZbs{}\PYZdq{}}\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}\PYZdq{}}\PY{l+s+s2}{ tamanho: }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{s}\PY{p}{,} \PY{n}{strlen}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{55}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
+gcc cap5ex01teste.c \PYZhy{}o cap5ex01teste
+./cap5ex01teste
 \end{Verbatim}
 \end{tcolorbox}
 
@@ -936,15 +980,16 @@ Vetores}\label{modularizauxe7uxe3o-e-vetores}}
   \item
     \texttt{processaVetor} e
   \item
-    \texttt{escrevaVetor}, \textgreater{} satisfazendo essa definição de
-    sistema de informação.
+    \texttt{escrevaVetor},
   \end{itemize}
+
+  satisfazendo essa definição de sistema de informação.
 \end{itemize}
 
 \begin{quote}
 Para a reutilização de código, os módulos \texttt{leiaVetor} e
-\texttt{escrevaVetor} poderão ser muito reulizados para resolver outros
-problemas de manipulação de vetores.
+\texttt{escrevaVetor} poderão ser muito reutilizados para resolver
+outros problemas de manipulação de vetores.
 \end{quote}
 
     \hypertarget{pseudocuxf3digo-muxe9todo-para-ler-um-vetor-de-inteiro-tamanho-n.}{%
@@ -1054,14 +1099,135 @@ Número   RA Nota
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{7}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex02.c
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{ENTRADA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{n+nb}{int} \PY{n+nb}{max} \PY{o}{=} \PY{l+m+mi}{100}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{número} \PY{n}{máximo} \PY{n}{de} \PY{n}{alunos}
+  \PY{n+nb}{int} \PY{n}{n}\PY{p}{,} \PY{n}{ras}\PY{p}{[}\PY{n+nb}{max}\PY{p}{]}\PY{p}{,} \PY{n}{notas}\PY{p}{[}\PY{n+nb}{max}\PY{p}{]}\PY{p}{;}   \PY{o}{/}\PY{o}{/} \PY{n}{variaveis} \PY{n}{de} \PY{n}{referência} \PY{n}{ras} \PY{n}{e} \PY{n}{notas}
+
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Digite o numero de alunos: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{n}\PY{p}{)}\PY{p}{;}
+
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{RAs: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{RA }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+    \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{ras}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Notas: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Nota }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+    \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{notas}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{PROCESSAMENTO} \PY{err}{?}
+  \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{LISTA DE ALUNOS}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Número}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ RA}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ Nota}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{,} \PY{n}{ras}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{notas}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{8}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
+gcc cap5ex02.c \PYZhy{}o output2
+./output2
+\end{Verbatim}
+\end{tcolorbox}
+
+    Existem várias formas de usar vetor em métodos:
+
+\begin{itemize}
+\tightlist
+\item
+  como argumento:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{void\ metodo\ (int\ *v,\ int\ n)\ \{...\}}
+  \item
+    \texttt{void\ metodo\ (int\ v{[}{]},\ int\ n)\ \{...\}}
+  \item
+    \texttt{void\ metodo\ (int\ v{[}max{]},\ int\ n)\ \{...\}}
+  \end{itemize}
+\item
+  como retorno:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{int\ *\ metodo\ (int\ n)\ \{...\}} - alocar vetor dentro do
+    método, alocação dinâmica de memória.
+  \end{itemize}
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{65}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex02teste1.c
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+
+\PY{c+c1}{\PYZsh{}define MAX\PYZus{}ALUNOS 20 // número máximo de alunos}
+
+\PY{n}{void} \PY{n}{leiaVetor}\PY{p}{(}\PY{n+nb}{int} \PY{o}{*}\PY{n}{v}\PY{p}{,} \PY{n+nb}{int} \PY{n}{n}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} 
+    \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{v}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{ENTRADA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{n+nb}{int} \PY{n}{n}\PY{p}{,} \PY{n}{ras}\PY{p}{[}\PY{n}{MAX\PYZus{}ALUNOS}\PY{p}{]}\PY{p}{,} \PY{n}{notas}\PY{p}{[}\PY{n}{MAX\PYZus{}ALUNOS}\PY{p}{]}\PY{p}{;}   \PY{o}{/}\PY{o}{/} \PY{n}{variaveis} \PY{n}{de} \PY{n}{referência} \PY{n}{ras} \PY{n}{e} \PY{n}{notas}
+
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Digite o numero de alunos: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{n}\PY{p}{)}\PY{p}{;}
+
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{RAs: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{leiaVetor}\PY{p}{(}\PY{n}{ras}\PY{p}{,} \PY{n}{n}\PY{p}{)}\PY{p}{;}
+
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Notas: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{leiaVetor}\PY{p}{(}\PY{n}{notas}\PY{p}{,} \PY{n}{n}\PY{p}{)}\PY{p}{;}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{PROCESSAMENTO} \PY{err}{?}
+  \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{LISTA DE ALUNOS}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Número}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ RA}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ Nota}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} 
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{,} \PY{n}{ras}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{notas}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+  
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap05exem02.c
+\PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
+gcc cap5ex02teste1.c \PYZhy{}o output2
+./output2
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{68}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex02teste2.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
-\PY{c+c1}{\PYZsh{}include\PYZlt{}malloc.h\PYZgt{}  }
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdlib.h\PYZgt{}  // malloc e free}
 
 \PY{n+nb}{int} \PY{o}{*} \PY{n}{leiaVetor}\PY{p}{(}\PY{n+nb}{int} \PY{n}{n}\PY{p}{)} \PY{p}{\PYZob{}}
-  \PY{n+nb}{int} \PY{o}{*}\PY{n}{v}\PY{o}{=} \PY{n}{malloc}\PY{p}{(}\PY{n}{sizeof}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{)}\PY{p}{;}  
+  \PY{n+nb}{int} \PY{o}{*}\PY{n}{v}\PY{o}{=} \PY{n}{malloc}\PY{p}{(}\PY{n}{sizeof}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{)}\PY{p}{;}  \PY{o}{/}\PY{o}{/} \PY{n}{ALOCAÇÃO} \PY{n}{DINÂMICA}
   \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
     \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{v}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;} 
   \PY{p}{\PYZcb{}}
@@ -1088,7 +1254,7 @@ Número   RA Nota
   \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
       \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{ras}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{notas}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
   \PY{p}{\PYZcb{}}
-  \PY{n}{free}\PY{p}{(}\PY{n}{ras}\PY{p}{)}\PY{p}{;}   \PY{o}{/}\PY{o}{/} \PY{n}{liberar} \PY{n}{memória} \PY{n}{alocado} \PY{n}{com} \PY{n}{malloc}
+  \PY{n}{free}\PY{p}{(}\PY{n}{ras}\PY{p}{)}\PY{p}{;}   \PY{o}{/}\PY{o}{/} \PY{n}{LIBERAR} \PY{n}{MEMÓRIA} \PY{n}{ALOCADA} \PY{n}{COM} \PY{n}{malloc}
   \PY{n}{free}\PY{p}{(}\PY{n}{notas}\PY{p}{)}\PY{p}{;}
   \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
 \PY{p}{\PYZcb{}}
@@ -1096,10 +1262,10 @@ Número   RA Nota
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{69}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap05exem02.c \PYZhy{}o output2
+gcc cap5ex02teste2.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -1169,11 +1335,11 @@ RA      Nota
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{52}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap05exem03.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex03.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
-\PY{c+c1}{\PYZsh{}include\PYZlt{}malloc.h\PYZgt{}  }
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdlib.h\PYZgt{}  }
 
 \PY{n+nb}{int} \PY{o}{*} \PY{n}{leiaVetor}\PY{p}{(}\PY{n+nb}{int} \PY{n}{n}\PY{p}{)} \PY{p}{\PYZob{}}
   \PY{n+nb}{int} \PY{o}{*}\PY{n}{v}\PY{o}{=} \PY{n}{malloc}\PY{p}{(}\PY{n}{sizeof}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{)}\PY{p}{;}  
@@ -1227,15 +1393,13 @@ RA      Nota
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{53}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap05exem03.c \PYZhy{}o output2
+gcc cap5ex03.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
-
-    
 
     \hypertarget{exemplo-04---aplicauxe7uxe3o-dilata-vetor}{%
 \subsection{Exemplo 04 - Aplicação ``dilata''
@@ -1358,9 +1522,9 @@ output=v2:
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap05exem04.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex04.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
-\PY{c+c1}{\PYZsh{}include\PYZlt{}malloc.h\PYZgt{}  }
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdlib.h\PYZgt{}  // malloc e free}
 
 \PY{n+nb}{int} \PY{o}{*} \PY{n}{leiaVetor}\PY{p}{(}\PY{n+nb}{int} \PY{n}{n}\PY{p}{)} \PY{p}{\PYZob{}}
   \PY{n+nb}{int} \PY{o}{*}\PY{n}{v} \PY{o}{=} \PY{n}{malloc}\PY{p}{(}\PY{n}{n}\PY{o}{*}\PY{n}{sizeof}\PY{p}{(}\PY{n+nb}{int}\PY{p}{)}\PY{p}{)}\PY{p}{;} 
@@ -1405,7 +1569,7 @@ output=v2:
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap05exem04.c \PYZhy{}o output2
+gcc cap5ex04.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -1413,7 +1577,7 @@ gcc cap05exem04.c \PYZhy{}o output2
     \hypertarget{exercuxedcios}{%
 \subsection{Exercícios}\label{exercuxedcios}}
 
-    Ver notebook Colab nos arquivos \texttt{cap05.partX.lab.*.ipynb}
+    Ver notebook Colab nos arquivos \texttt{cap5.partX.lab.*.ipynb}
 (\texttt{X} \(\in\) \texttt{{[}2,3{]}} e \texttt{*} é a extensão da
 linguagem), utilizando alguma linguagem de programação de sua
 preferência, organizadas em subpastas contidas de \texttt{"gen"}, na
@@ -1441,6 +1605,41 @@ Para não ter que incluir várias entradas inteiras, a melhor solução é
 fazer um método de leitura, passando como argumento um texto
 (\emph{string}) referente a cada linha. Esse método deve retornar o
 vetor.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{123}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} str2int.c
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}string.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdlib.h\PYZgt{}}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+   \PY{n}{char} \PY{n}{string}\PY{p}{[}\PY{p}{]} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{7 3 7 9 7 7 0 9 8 4 8 9 0 1     7 8 4 1 1 0     }\PY{l+s+s2}{\PYZdq{}}\PY{p}{;}
+   \PY{n}{char} \PY{o}{*} \PY{n}{token} \PY{o}{=} \PY{n}{strtok}\PY{p}{(}\PY{n}{string}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+   \PY{n+nb}{int} \PY{n}{v}\PY{p}{[}\PY{l+m+mi}{100}\PY{p}{]}\PY{p}{;}
+   \PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;}
+   \PY{k}{while}\PY{p}{(} \PY{n}{token} \PY{o}{!=} \PY{n}{NULL} \PY{p}{)} \PY{p}{\PYZob{}}
+      \PY{n}{v}\PY{p}{[}\PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{]} \PY{o}{=} \PY{n}{atoi}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{converte} \PY{n}{texto} \PY{n}{para} \PY{n}{inteiro}
+      \PY{n}{token} \PY{o}{=} \PY{n}{strtok}\PY{p}{(}\PY{n}{NULL}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+   \PY{p}{\PYZcb{}}
+   \PY{n+nb}{int} \PY{n}{n}\PY{o}{=}\PY{n}{i}\PY{p}{;}
+   \PY{k}{for} \PY{p}{(}\PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}\PY{n}{i}\PY{o}{\PYZlt{}}\PY{n}{n}\PY{p}{;}\PY{n}{i}\PY{o}{+}\PY{o}{+} \PY{p}{)}\PY{p}{\PYZob{}}
+     \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{v}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+   \PY{p}{\PYZcb{}}
+   \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{124}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
+gcc str2int.c \PYZhy{}o output2
+./output2
+\end{Verbatim}
+\end{tcolorbox}
 
     \hypertarget{entrada-de-dados-a-linha-contem-um-texto-ou-string}{%
 \subsubsection{\texorpdfstring{Entrada de Dados (a linha contem um texto

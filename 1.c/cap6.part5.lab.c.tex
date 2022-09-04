@@ -447,21 +447,6 @@ Este conteúdo pode ser copiado e alterado livremente e foi inspirado
 nesse livro.
 \end{quote}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-\PY{k}{def} \PY{n+nf}{escreverMatriz}\PY{p}{(}\PY{n}{m}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} escreve matriz, linha por linha}
-  \PY{k}{for} \PY{n}{linha} \PY{o+ow}{in} \PY{n}{m}\PY{p}{:}
-    \PY{n+nb}{print}\PY{p}{(}\PY{o}{*}\PY{n}{linha}\PY{p}{)}
-
-\PY{n}{L}\PY{p}{,}\PY{n}{C} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,} \PY{n}{size} \PY{o}{=} \PY{l+m+mi}{2}\PY{p}{)} \PY{c+c1}{\PYZsh{} INTERESSANTE para testar}
-\PY{n+nb}{print}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{C}\PY{p}{)}
-\PY{n}{m} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{C}\PY{p}{)}\PY{p}{)}   \PY{c+c1}{\PYZsh{} INTERESSANTE para testar}
-\PY{n}{escreverMatriz}\PY{p}{(}\PY{n}{m}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
     \hypertarget{exercuxedcios}{%
 \subsubsection{Exercícios}\label{exercuxedcios}}
 
@@ -469,89 +454,13 @@ nesse livro.
 
 EP5\_1 - Média dos alunos
 
-    \hypertarget{ler-uma-matriz-considerando-cada-linha-da-matriz-um-input}{%
-\paragraph{\texorpdfstring{Ler uma matriz considerando cada LINHA da
-matriz um
-\texttt{input()}:}{Ler uma matriz considerando cada LINHA da matriz um input():}}\label{ler-uma-matriz-considerando-cada-linha-da-matriz-um-input}}
+    \hypertarget{ler-uma-matriz-linha-por-linha}{%
+\paragraph{Ler uma matriz LINHA por
+LINHA:}\label{ler-uma-matriz-linha-por-linha}}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{k}{def} \PY{n+nf}{lerMatriz}\PY{p}{(}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} ler matriz de inteiros}
-  \PY{n}{m}\PY{p}{,} \PY{n}{ler\PYZus{}linha} \PY{o}{=} \PY{p}{[}\PY{p}{]}\PY{p}{,} \PY{n+nb}{input}\PY{p}{(}\PY{p}{)}
-  \PY{k}{while} \PY{n}{ler\PYZus{}linha}\PY{p}{:}
-    \PY{n}{m}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n+nb}{int}\PY{p}{(}\PY{n}{i}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{ler\PYZus{}linha}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{k}{if} \PY{n}{i}\PY{p}{]}\PY{p}{)}
-    \PY{n}{ler\PYZus{}linha} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{p}{)}
-  \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{int}\PY{p}{)}
-
-\PY{n}{m1} \PY{o}{=} \PY{n}{lerMatriz}\PY{p}{(}\PY{p}{)}
-\PY{n}{L}\PY{p}{,}\PY{n}{C} \PY{o}{=} \PY{n}{m1}\PY{o}{.}\PY{n}{shape} \PY{c+c1}{\PYZsh{} para ler as dimensões de uma matriz no numpy}
-\PY{n+nb}{print}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{C}\PY{p}{)}
-\PY{n}{escreverMatriz}\PY{p}{(}\PY{n}{m1}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    O PROCESSAMENTO de um problema/questão INDEPENDE da forma como a matriz
-foi criada/lida com o comando \texttt{input()}:
-
-\begin{itemize}
-\tightlist
-\item
-  cada LINHA da matriz um \texttt{input()} ou
-\item
-  cada ELEMENTO da matriz um \texttt{input()}
-\end{itemize}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\PY{k}{def} \PY{n+nf}{calcMedia}\PY{p}{(}\PY{n}{m}\PY{p}{)}\PY{p}{:}
-  \PY{n}{v} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-  \PY{n}{L}\PY{p}{,} \PY{n}{C} \PY{o}{=} \PY{n}{m}\PY{o}{.}\PY{n}{shape}
-  \PY{n}{m1} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{C}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}
-  \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{L}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} para cada linha/aluno}
-    \PY{n}{soma} \PY{o}{=} \PY{l+m+mi}{0}
-    \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{C}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} para cada coluna/nota do aluno}
-      \PY{n}{soma} \PY{o}{+}\PY{o}{=} \PY{n}{m}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}
-      \PY{n}{m1}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{m}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}
-    \PY{n}{m1}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{C}\PY{p}{]} \PY{o}{=} \PY{n+nb}{round}\PY{p}{(}\PY{n}{soma} \PY{o}{/} \PY{n}{C}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
-  \PY{k}{return} \PY{n}{m1}
-
-\PY{n}{escreverMatriz}\PY{p}{(}\PY{n}{m}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
-\PY{n}{escreverMatriz}\PY{p}{(}\PY{n}{calcMedia}\PY{p}{(}\PY{n}{m}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \hypertarget{ler-uma-matriz-considerando-cada-elemento-da-matriz-um-input}{%
-\paragraph{\texorpdfstring{Ler uma matriz considerando cada ELEMENTO da
-matriz um
-\texttt{input()}:}{Ler uma matriz considerando cada ELEMENTO da matriz um input():}}\label{ler-uma-matriz-considerando-cada-elemento-da-matriz-um-input}}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np} \PY{c+c1}{\PYZsh{} muito útil para trabalhar com vetor!}
-  
-\PY{k}{def} \PY{n+nf}{lerMatriz2}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{C}\PY{p}{)}\PY{p}{:}
-  \PY{n}{m} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{C}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{int}\PY{p}{)} \PY{c+c1}{\PYZsh{} matriz de inteiro com Linhas x Colunas}
-  \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{L}\PY{p}{)}\PY{p}{:}
-    \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{C}\PY{p}{)}\PY{p}{:}
-      \PY{n}{m}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{n+nb}{input}\PY{p}{(}\PY{p}{)}\PY{p}{)}
-  \PY{k}{return} \PY{n}{m}
-
-\PY{c+c1}{\PYZsh{} ENTRADA DE DADOS}
-\PY{n}{L} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Digite o numero de alunos:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
-\PY{n}{C} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Digite o numero de avaliações:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
-\PY{n}{m} \PY{o}{=} \PY{n}{lerMatriz2}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{C}\PY{p}{)}
-\PY{c+c1}{\PYZsh{} PROCESSAMENTO ?}
-\PY{n}{m1} \PY{o}{=} \PY{n}{calcMedia}\PY{p}{(}\PY{n}{m}\PY{p}{)}
-
-\PY{c+c1}{\PYZsh{} SAÍDA DE DADOS}
-\PY{n}{escreverMatriz}\PY{p}{(}\PY{n}{m1}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
+    \hypertarget{ler-uma-matriz-considerando-cada-elemento-da-matriz-uma-entrada}{%
+\paragraph{Ler uma matriz considerando cada ELEMENTO da matriz uma
+entrada:}\label{ler-uma-matriz-considerando-cada-elemento-da-matriz-uma-entrada}}
 
 
     % Add a bibliography block to the postdoc

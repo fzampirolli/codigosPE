@@ -14705,7 +14705,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>Um <strong>vetor</strong> em programação é formado por um <strong>conjunto de $n$ variáveis de um mesmo tipo</strong> de dado, sendo $n$ obrigatoriamente maior que zero.</li>
+<li>Um <strong>vetor</strong> em programação é formado por um <strong>conjunto de $n$ variáveis de um mesmo tipo</strong> de dado (em geral), sendo $n$ obrigatoriamente maior que zero.</li>
 <li>Essas variáveis (ou elementos) são identificadas e acessadas por um <strong>nome</strong> e um <strong>índice</strong>.</li>
 <li>Na maioria das linguagens de programação, o <strong>índice</strong> recebe valores de $0$ (<strong>primeiro elemento</strong>) até $n-1$ (<strong>último elemento</strong>).</li>
 <li>As variáveis de um vetor são armazenadas em posições consecutivas de memória.</li>
@@ -14733,7 +14733,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>Quando um vetor é criado, é instanciada uma variável do tipo vetor (Em algumas linguagens de programação, sendo necessário se definir um nome, o tipo de dado e o tamanho do vetor).</li>
+<li>Quando um vetor é criado, é instanciada uma variável do tipo vetor (em algumas linguagens de programação, sendo necessário se definir um nome, o tipo de dado e o tamanho do vetor).</li>
 <li>Na linguagem C, por exemplo, a definição do tamanho de um vetor ocorre antes de compilar o programa.<ul>
 <li>Ou seja, o programador deverá informar no código a quantidade de memória a ser reservada para o vetor, através de um número inteiro positivo ou constante que o contenha, especificando o número de elementos do mesmo tipo que a memória reservada irá comportar.</li>
 <li>Neste caso, uma variável não pode ser usada.</li>
@@ -14762,17 +14762,17 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <li>em seguida se reserva a memória para um dado número de elementos do mesmo tipo.</li>
 </ol>
 </li>
-<li><p>No exemplo da Figura abaixo,</p>
+<li><p>No exemplo da figura abaixo,</p>
 <ul>
-<li>A criação da variável de referência de um vetor <code>v</code> define apenas a posição de memória em hexadecimal <code>0A</code>, onde será armazenado o seu primeiro elemento.<ul>
-<li>Neste exemplo, <code>V[0] = -128</code></li>
-<li>A quantidade de <code>bytes</code> por elemento vai depender to tipo de dado armazenado. Neste exemplo cada elemento ocupa um <code>byte</code>.</li>
+<li>a criação da variável de referência de um vetor <code>v</code> define apenas a posição de memória em hexadecimal <code>0A</code>, onde será armazenado o seu primeiro elemento.<ul>
+<li>neste exemplo, <code>V[0] = -128</code> é o primeiro elemento do vetor.</li>
+<li>a quantidade de <code>bytes</code> por elemento vai depender to tipo de dado armazenado. Neste exemplo cada elemento ocupa um <code>byte</code>.</li>
 </ul>
 </li>
-<li>O segundo passo da criação de um vetor é reservar (ou alocar) memória para todos os seus elementos (dependendo da linguagem).</li>
+<li>o segundo passo da criação de um vetor é reservar (ou alocar) memória para todos os seus elementos (dependendo da linguagem).</li>
 </ul>
 <blockquote>
-<p>essa alocação de memória pode ocorrer em tempo de execução, com ocorre em Python!</p>
+<p>essa alocação de memória pode ocorrer em tempo de execução, como ocorre em Python!</p>
 </blockquote>
 </li>
 </ul>
@@ -14803,8 +14803,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <ul>
 <li>Note que a variável <code>v</code> acima agora se refere a uma posição de memória e não a um elemento de dado.</li>
 <li>Os elementos devem ser acessados através do índice, um por vez.</li>
-<li>Isso pode requerer uso de laços para leitura e impressão dos seus elementos, dependendo da linguagem de programação utilizada.<blockquote>
-O índice de vetor é sempre um número inteiro.</blockquote>
+<li>Isso pode requerer uso de laços para leitura e impressão dos seus elementos, dependendo da linguagem de programação utilizada.<ul>
+<li>O índice de vetor é sempre um número inteiro.</li>
+</ul>
 </li>
 </ul>
 
@@ -14909,28 +14910,29 @@ Número RA     Nota
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap05exem01.c
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex01.c
 <span class="c1">#include &lt;stdio.h&gt;</span>
 
 <span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
 
   <span class="o">//</span> <span class="n">ENTRADA</span> <span class="n">DE</span> <span class="n">DADOS</span>
-  <span class="nb">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">ra</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>     <span class="o">//</span> <span class="n">aloca</span> <span class="mi">100</span> <span class="n">ra</span><span class="s1">'s</span>
-  <span class="n">char</span> <span class="n">nome</span><span class="p">[</span><span class="mi">100</span><span class="p">][</span><span class="mi">40</span><span class="p">];</span> <span class="o">//</span> <span class="n">aloca</span> <span class="mi">100</span> <span class="n">nomes</span> <span class="n">de</span> <span class="n">até</span> <span class="mi">40</span> <span class="n">caracteres</span> <span class="n">cada</span>
+  <span class="nb">int</span> <span class="nb">max</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="o">//</span> <span class="n">considerar</span> <span class="n">sempre</span> <span class="n">um</span> <span class="n">número</span> <span class="n">grande</span>
+  <span class="nb">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">ra</span><span class="p">[</span><span class="nb">max</span><span class="p">];</span>     <span class="o">//</span> <span class="n">aloca</span> <span class="mi">100</span> <span class="n">ra</span><span class="s1">'s</span>
+  <span class="n">char</span> <span class="n">nome</span><span class="p">[</span><span class="nb">max</span><span class="p">][</span><span class="mi">40</span><span class="p">];</span> <span class="o">//</span> <span class="n">aloca</span> <span class="mi">100</span> <span class="n">nomes</span> <span class="n">de</span> <span class="n">até</span> <span class="mi">40</span> <span class="n">caracteres</span> <span class="n">cada</span>
 
   <span class="n">printf</span><span class="p">(</span><span class="s2">"Digite o numero de alunos: "</span><span class="p">);</span>
   <span class="n">scanf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
   <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">printf</span><span class="p">(</span><span class="s2">"RA: "</span><span class="p">);</span>
-      <span class="n">scanf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ra</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-      <span class="n">printf</span><span class="p">(</span><span class="s2">"Nome: "</span><span class="p">);</span>
-      <span class="n">scanf</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span><span class="n">nome</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span> <span class="o">//</span> <span class="n">ATENÇÃO</span><span class="p">:</span> <span class="n">NÃO</span> <span class="n">ACEITA</span> <span class="n">NOME</span> <span class="n">COM</span> <span class="n">ESPAÇOS</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">"RA: "</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ra</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">"Nome: "</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s2">"</span><span class="si">%s</span><span class="s2">"</span><span class="p">,</span> <span class="n">nome</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span> <span class="o">//</span> <span class="n">ATENÇÃO</span><span class="p">:</span> <span class="n">NÃO</span> <span class="n">ACEITA</span> <span class="n">NOME</span> <span class="n">COM</span> <span class="n">ESPAÇOS</span> <span class="n">e</span> <span class="n">NÃO</span> <span class="n">USA</span> <span class="o">&amp;</span>
   <span class="p">}</span>
   <span class="o">//</span> <span class="n">PROCESSAMENTO</span> <span class="err">?</span>
   <span class="o">//</span> <span class="n">SAÍDA</span>
   <span class="n">printf</span><span class="p">(</span><span class="s2">"LISTA DE ALUNOS</span><span class="se">\n</span><span class="s2">Número</span><span class="se">\t</span><span class="s2"> RA</span><span class="se">\t</span><span class="s2"> Nome</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
   <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">printf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="se">\t</span><span class="s2"> </span><span class="si">%d</span><span class="se">\t</span><span class="s2"> </span><span class="si">%s</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">ra</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">nome</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="se">\t</span><span class="s2"> </span><span class="si">%d</span><span class="se">\t</span><span class="s2"> </span><span class="si">%s</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ra</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">nome</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
@@ -14946,12 +14948,74 @@ Número RA     Nota
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc cap05exem01.c -o output2
+gcc cap5ex01.c -o output2
 ./output2
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><p>As <em>strings</em> em C têm um último caracter <code>'\0'</code>. Assim, <code>char s[] = &quot;oi&quot;;</code> tem três carateres.</p>
+</li>
+<li><p>Para ler uma <em>string</em> com espaços [<a href="https://www.geeksforgeeks.org/gets-is-risky-to-use">ref</a>]:</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex01teste.c
+<span class="c1">#include &lt;stdio.h&gt;</span>
+<span class="c1">#include &lt;string.h&gt;</span>
+
+<span class="n">void</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+   <span class="n">char</span> <span class="n">s</span><span class="p">[</span><span class="mi">40</span><span class="p">];</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s2">"digite algo:</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+   <span class="n">fgets</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s2">"saida: </span><span class="se">\"</span><span class="si">%s</span><span class="se">\"</span><span class="s2"> tamanho: </span><span class="si">%ld</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">));</span>
+   <span class="n">s</span><span class="p">[</span><span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\0</span><span class="s1">'</span><span class="p">;</span> <span class="o">//</span> <span class="n">substituir</span> \<span class="n">n</span> <span class="n">por</span> \<span class="mi">0</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s2">"saida: </span><span class="se">\"</span><span class="si">%s</span><span class="se">\"</span><span class="s2"> tamanho: </span><span class="si">%ld</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
+gcc cap5ex01teste.c -o cap5ex01teste
+./cap5ex01teste
 </pre></div>
 
      </div>
@@ -15258,13 +15322,11 @@ para cada indice i, de i=0; até i&lt;n-1; passo i=i+2 faça {
 <li><code>processaVetor</code> e</li>
 <li><code>escrevaVetor</code>,</li>
 </ul>
+<p>satisfazendo essa definição de sistema de informação.</p>
 </li>
 </ul>
 <blockquote>
-<p>satisfazendo essa definição de sistema de informação.</p>
-</blockquote>
-<blockquote>
-<p>Para a reutilização de código, os módulos <code>leiaVetor</code> e <code>escrevaVetor</code> poderão ser muito reulizados para resolver outros problemas de manipulação de vetores.</p>
+<p>Para a reutilização de código, os módulos <code>leiaVetor</code> e <code>escrevaVetor</code> poderão ser muito reutilizados para resolver outros problemas de manipulação de vetores.</p>
 </blockquote>
 
 </div>
@@ -15436,15 +15498,171 @@ Número	 RA	Nota
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex02.c
+<span class="c1">#include &lt;stdio.h&gt;</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="o">//</span> <span class="n">ENTRADA</span> <span class="n">DE</span> <span class="n">DADOS</span>
+  <span class="nb">int</span> <span class="nb">max</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="o">//</span> <span class="n">número</span> <span class="n">máximo</span> <span class="n">de</span> <span class="n">alunos</span>
+  <span class="nb">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">ras</span><span class="p">[</span><span class="nb">max</span><span class="p">],</span> <span class="n">notas</span><span class="p">[</span><span class="nb">max</span><span class="p">];</span>   <span class="o">//</span> <span class="n">variaveis</span> <span class="n">de</span> <span class="n">referência</span> <span class="n">ras</span> <span class="n">e</span> <span class="n">notas</span>
+
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"Digite o numero de alunos: </span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+  <span class="n">scanf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"RAs: </span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">"RA </span><span class="si">%d</span><span class="s2">: </span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ras</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+  <span class="p">}</span>
+
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"Notas: </span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">"Nota </span><span class="si">%d</span><span class="s2">: </span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">notas</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+  <span class="p">}</span>
+
+  <span class="o">//</span> <span class="n">PROCESSAMENTO</span> <span class="err">?</span>
+  <span class="o">//</span> <span class="n">SAÍDA</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"LISTA DE ALUNOS</span><span class="se">\n</span><span class="s2">Número</span><span class="se">\t</span><span class="s2"> RA</span><span class="se">\t</span><span class="s2"> Nota</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="se">\t</span><span class="s2"> </span><span class="si">%d</span><span class="se">\t</span><span class="s2"> </span><span class="si">%d</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ras</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">notas</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
+gcc cap5ex02.c -o output2
+./output2
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Existem várias formas de usar vetor em métodos:</p>
+<ul>
+<li><p>como argumento:</p>
+<ul>
+<li><code>void metodo (int *v, int n) {...}</code></li>
+<li><code>void metodo (int v[], int n) {...}</code></li>
+<li><code>void metodo (int v[max], int n) {...}</code></li>
+</ul>
+</li>
+<li><p>como retorno:</p>
+<ul>
+<li><code>int * metodo (int n) {...}</code> - alocar vetor dentro do método, alocação dinâmica de memória.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[65]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex02teste1.c
+<span class="c1">#include &lt;stdio.h&gt;</span>
+
+<span class="c1">#define MAX_ALUNOS 20 // número máximo de alunos</span>
+
+<span class="n">void</span> <span class="n">leiaVetor</span><span class="p">(</span><span class="nb">int</span> <span class="o">*</span><span class="n">v</span><span class="p">,</span> <span class="nb">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> 
+    <span class="n">scanf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="o">//</span> <span class="n">ENTRADA</span> <span class="n">DE</span> <span class="n">DADOS</span>
+  <span class="nb">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">ras</span><span class="p">[</span><span class="n">MAX_ALUNOS</span><span class="p">],</span> <span class="n">notas</span><span class="p">[</span><span class="n">MAX_ALUNOS</span><span class="p">];</span>   <span class="o">//</span> <span class="n">variaveis</span> <span class="n">de</span> <span class="n">referência</span> <span class="n">ras</span> <span class="n">e</span> <span class="n">notas</span>
+
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"Digite o numero de alunos: </span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+  <span class="n">scanf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"RAs: </span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+  <span class="n">leiaVetor</span><span class="p">(</span><span class="n">ras</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"Notas: </span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+  <span class="n">leiaVetor</span><span class="p">(</span><span class="n">notas</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+
+  <span class="o">//</span> <span class="n">PROCESSAMENTO</span> <span class="err">?</span>
+  <span class="o">//</span> <span class="n">SAÍDA</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"LISTA DE ALUNOS</span><span class="se">\n</span><span class="s2">Número</span><span class="se">\t</span><span class="s2"> RA</span><span class="se">\t</span><span class="s2"> Nota</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> 
+    <span class="n">printf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="se">\t</span><span class="s2"> </span><span class="si">%d</span><span class="se">\t</span><span class="s2"> </span><span class="si">%d</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ras</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">notas</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+  
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap05exem02.c
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
+gcc cap5ex02teste1.c -o output2
+./output2
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[68]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex02teste2.c
 <span class="c1">#include &lt;stdio.h&gt;</span>
-<span class="c1">#include&lt;malloc.h&gt;  </span>
+<span class="c1">#include &lt;stdlib.h&gt;  // malloc e free</span>
 
 <span class="nb">int</span> <span class="o">*</span> <span class="n">leiaVetor</span><span class="p">(</span><span class="nb">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nb">int</span> <span class="o">*</span><span class="n">v</span><span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">sizeof</span><span class="p">(</span><span class="n">n</span><span class="p">));</span>  
+  <span class="nb">int</span> <span class="o">*</span><span class="n">v</span><span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">sizeof</span><span class="p">(</span><span class="n">n</span><span class="p">));</span>  <span class="o">//</span> <span class="n">ALOCAÇÃO</span> <span class="n">DINÂMICA</span>
   <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">scanf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span> 
   <span class="p">}</span>
@@ -15471,7 +15689,7 @@ Número	 RA	Nota
   <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
       <span class="n">printf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="se">\t</span><span class="s2"> </span><span class="si">%d</span><span class="se">\t</span><span class="s2"> </span><span class="si">%d</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">ras</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">notas</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
   <span class="p">}</span>
-  <span class="n">free</span><span class="p">(</span><span class="n">ras</span><span class="p">);</span>   <span class="o">//</span> <span class="n">liberar</span> <span class="n">memória</span> <span class="n">alocado</span> <span class="n">com</span> <span class="n">malloc</span>
+  <span class="n">free</span><span class="p">(</span><span class="n">ras</span><span class="p">);</span>   <span class="o">//</span> <span class="n">LIBERAR</span> <span class="n">MEMÓRIA</span> <span class="n">ALOCADA</span> <span class="n">COM</span> <span class="n">malloc</span>
   <span class="n">free</span><span class="p">(</span><span class="n">notas</span><span class="p">);</span>
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
@@ -15487,11 +15705,11 @@ Número	 RA	Nota
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[69]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc cap05exem02.c -o output2
+gcc cap5ex02teste2.c -o output2
 ./output2
 </pre></div>
 
@@ -15581,12 +15799,12 @@ RA      Nota
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap05exem03.c
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex03.c
 <span class="c1">#include &lt;stdio.h&gt;</span>
-<span class="c1">#include&lt;malloc.h&gt;  </span>
+<span class="c1">#include &lt;stdlib.h&gt;  </span>
 
 <span class="nb">int</span> <span class="o">*</span> <span class="n">leiaVetor</span><span class="p">(</span><span class="nb">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
   <span class="nb">int</span> <span class="o">*</span><span class="n">v</span><span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">sizeof</span><span class="p">(</span><span class="n">n</span><span class="p">));</span>  
@@ -15648,11 +15866,11 @@ RA      Nota
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc cap05exem03.c -o output2
+gcc cap5ex03.c -o output2
 ./output2
 </pre></div>
 
@@ -15661,17 +15879,6 @@ gcc cap05exem03.c -o output2
 </div>
 </div>
 
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
-</div>
-</div>
-</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -15795,9 +16002,9 @@ output=v2:
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap05exem04.c
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex04.c
 <span class="c1">#include &lt;stdio.h&gt;</span>
-<span class="c1">#include&lt;malloc.h&gt;  </span>
+<span class="c1">#include &lt;stdlib.h&gt;  // malloc e free</span>
 
 <span class="nb">int</span> <span class="o">*</span> <span class="n">leiaVetor</span><span class="p">(</span><span class="nb">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
   <span class="nb">int</span> <span class="o">*</span><span class="n">v</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">sizeof</span><span class="p">(</span><span class="nb">int</span><span class="p">));</span> 
@@ -15851,7 +16058,7 @@ output=v2:
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc cap05exem04.c -o output2
+gcc cap5ex04.c -o output2
 ./output2
 </pre></div>
 
@@ -15878,7 +16085,7 @@ gcc cap05exem04.c -o output2
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Ver notebook Colab nos arquivos <code>cap05.partX.lab.*.ipynb</code> (<code>X</code> $\in$ <code>[2,3]</code> e <code>*</code> é a extensão da linguagem), utilizando alguma linguagem de programação de sua preferência, organizadas em subpastas contidas de <code>&quot;gen&quot;</code>, na pasta do Google Drive <a href="https://drive.google.com/drive/folders/1YlFwv8XYN7PYYf-HwDMlkxzbmXzJw9cM?usp=sharing">colabs</a>.</p>
+<p>Ver notebook Colab nos arquivos <code>cap5.partX.lab.*.ipynb</code> (<code>X</code> $\in$ <code>[2,3]</code> e <code>*</code> é a extensão da linguagem), utilizando alguma linguagem de programação de sua preferência, organizadas em subpastas contidas de <code>&quot;gen&quot;</code>, na pasta do Google Drive <a href="https://drive.google.com/drive/folders/1YlFwv8XYN7PYYf-HwDMlkxzbmXzJw9cM?usp=sharing">colabs</a>.</p>
 
 </div>
 </div>
@@ -15899,6 +16106,59 @@ gcc cap05exem04.c -o output2
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[123]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> str2int.c
+<span class="c1">#include &lt;stdio.h&gt;</span>
+<span class="c1">#include &lt;string.h&gt;</span>
+<span class="c1">#include &lt;stdlib.h&gt;</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+   <span class="n">char</span> <span class="n">string</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">"7 3 7 9 7 7 0 9 8 4 8 9 0 1     7 8 4 1 1 0     "</span><span class="p">;</span>
+   <span class="n">char</span> <span class="o">*</span> <span class="n">token</span> <span class="o">=</span> <span class="n">strtok</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="s2">" "</span><span class="p">);</span>
+   <span class="nb">int</span> <span class="n">v</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+   <span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="k">while</span><span class="p">(</span> <span class="n">token</span> <span class="o">!=</span> <span class="n">NULL</span> <span class="p">)</span> <span class="p">{</span>
+      <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">token</span><span class="p">);</span> <span class="o">//</span> <span class="n">converte</span> <span class="n">texto</span> <span class="n">para</span> <span class="n">inteiro</span>
+      <span class="n">token</span> <span class="o">=</span> <span class="n">strtok</span><span class="p">(</span><span class="n">NULL</span><span class="p">,</span> <span class="s2">" "</span><span class="p">);</span>
+   <span class="p">}</span>
+   <span class="nb">int</span> <span class="n">n</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
+   <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span> <span class="p">){</span>
+     <span class="n">printf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2"> "</span><span class="p">,</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+   <span class="p">}</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[124]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
+gcc str2int.c -o output2
+./output2
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">

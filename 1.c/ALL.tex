@@ -1660,7 +1660,7 @@ output=Alô, Mundo!
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap01exem01.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap1ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 \PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Alô, Mundo!}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
@@ -1672,7 +1672,7 @@ output=Alô, Mundo!
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{!}gcc cap01exem01.c \PYZhy{}o output2
+\PY{o}{!}gcc cap1ex01.c \PYZhy{}o output2
 \PY{o}{!}./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -1740,7 +1740,7 @@ output=
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap01exem02.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap1ex02.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 \PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
   \PY{n+nb}{int} \PY{n}{C}\PY{p}{;}
@@ -1756,7 +1756,7 @@ output=
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap01exem02.c \PYZhy{}o output2
+gcc cap1ex02.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -1806,7 +1806,7 @@ programação, são apresentadas nos próximos três capítulos.
     \hypertarget{exercuxedcios}{%
 \subsection{Exercícios}\label{exercuxedcios}}
 
-    Ver notebook Colab no arquivo \texttt{cap01.part2.lab.*.ipynb}
+    Ver notebook Colab no arquivo \texttt{cap1.part2.lab.*.ipynb}
 (\texttt{*} é a extensão da linguagem), utilizando alguma linguagem de
 programação de sua preferência, onganizadas em subpastas contidas de
 \texttt{"gen"}, na pasta do Google Drive
@@ -2471,6 +2471,9 @@ Usuário}\label{funuxe7uxf5es-ou-muxe9todos-de-usuuxe1rio}}
   \texttt{import\ myBiblioteca}. Ou também, para C/C++/Java,
   \texttt{\#include\ "myBiblioteca.h"}.
 \item
+  Uma função é definida por um nome, retorno (opcional), argumento(s)
+  (opcional) e um conjunto de instruções.
+\item
   A seguir temos um exemplo de função de usuário escrita em
   pseudocódigo:
 \end{itemize}
@@ -2525,13 +2528,47 @@ output=
 O delta de ax^2 + bx + c é -76.0
 \end{verbatim}
 
-    Observe que o \textbf{ESCOPO} da função é definido por \texttt{\{}
-\ldots{} \texttt{\}}:
+    \begin{itemize}
+\item
+  Quando uma função não tem \texttt{return} ela deve retornar o tipo
+  \texttt{void} (nada), por exemplo,
+  \texttt{void\ escrevaDelta(float\ d)\{...\}}.
+\item
+  Os argumentos de uma função podem ser passados por \textbf{valor} ou
+  por \textbf{referência}.
+\item
+  Por \textbf{valor}: qualquer alteração do argumento dentro da função
+  não será passada para quem chamou a função.
+\item
+  Por \textbf{referência}: oposto ao anterior, qualquer alteração dentro
+  da função será repassada para quem chamou e isso ocorre passando o
+  endereço de memória da variável (com \texttt{\&}) ao ser chamado. Por
+  exemplo: * \texttt{incrementaUm(\&x)}
+\item
+  Esse endereço de memória é definido como o tipo de dados
+  \textbf{ponteiro} e será estudado em detalhes na parte de alocação
+  estática vs dinâmicas.
+\item
+  Para acessar o conteúdo de uma variável ponteiro, usar o prefixo
+  \texttt{*}. Por exemplo:
+
+  \begin{itemize}
+  \item
+\begin{verbatim}
+  void incrementaUm(int *x) {
+      *x=*x+1;
+  }
+\end{verbatim}
+  \end{itemize}
+\item
+  Observe que o \textbf{ESCOPO} da função é definido por \texttt{\{}
+  \ldots{} \texttt{\}}.
+\end{itemize}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{1}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap02exem01.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap2ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 \PY{n+nb}{float} \PY{n}{delta}\PY{p}{(}\PY{n+nb}{float} \PY{n}{a}\PY{p}{,} \PY{n+nb}{float} \PY{n}{b}\PY{p}{,} \PY{n+nb}{float} \PY{n}{c}\PY{p}{)} \PY{p}{\PYZob{}}
   \PY{n+nb}{float} \PY{n}{d} \PY{o}{=} \PY{n}{b}\PY{o}{*}\PY{n}{b}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{a}\PY{o}{*}\PY{n}{c}\PY{p}{;}
@@ -2546,10 +2583,10 @@ O delta de ax^2 + bx + c é -76.0
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{2}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap02exem01.c \PYZhy{}o output2
+gcc cap2ex01.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -2671,9 +2708,9 @@ output=
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{3}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap02exem02.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap2ex02.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 
 \PY{n+nb}{float} \PY{n}{delta}\PY{p}{(}\PY{n+nb}{float} \PY{n}{a}\PY{p}{,} \PY{n+nb}{float} \PY{n}{b}\PY{p}{,} \PY{n+nb}{float} \PY{n}{c}\PY{p}{)} \PY{p}{\PYZob{}}
@@ -2707,10 +2744,10 @@ output=
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{4}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap02exem02.c \PYZhy{}o output2
+gcc cap2ex02.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -2718,7 +2755,7 @@ gcc cap02exem02.c \PYZhy{}o output2
     \hypertarget{exercuxedcios}{%
 \subsection{Exercícios}\label{exercuxedcios}}
 
-    Ver notebook Colab no arquivo \texttt{cap02.part2.lab.*.ipynb}
+    Ver notebook Colab no arquivo \texttt{cap2.part2.lab.*.ipynb}
 (\texttt{*} é a extensão da linguagem), utilizando alguma linguagem de
 programação de sua preferência, organizadas em subpastas contidas de
 \texttt{"gen"}, na pasta do Google Drive
@@ -3531,7 +3568,7 @@ Raízes: -10.0 e -2.0.
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap03exem01.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap3ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 \PY{c+c1}{\PYZsh{}include \PYZlt{}math.h\PYZgt{}}
 \PY{n+nb}{float} \PY{n}{delta}\PY{p}{(}\PY{n+nb}{float} \PY{n}{a}\PY{p}{,} \PY{n+nb}{float} \PY{n}{b}\PY{p}{,} \PY{n+nb}{float} \PY{n}{c}\PY{p}{)} \PY{p}{\PYZob{}}
@@ -3575,7 +3612,7 @@ Raízes: -10.0 e -2.0.
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap03exem01.c \PYZhy{}o output2 \PYZhy{}lm
+gcc cap3ex01.c \PYZhy{}o output2 \PYZhy{}lm
 ./output2
 \PYZsh{} A biblioteca matemática deve ser vinculada ao construir o executável. 
 \PYZsh{} Como fazer isso varia de acordo com o ambiente, 
@@ -3690,7 +3727,7 @@ Conceito A
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap03exem02.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap3ex02.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 \PY{n+nb}{float} \PY{n}{leia}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
   \PY{n+nb}{float} \PY{n}{valor}\PY{p}{;}
@@ -3726,7 +3763,7 @@ Conceito A
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap03exem02.c \PYZhy{}o output2
+gcc cap3ex02.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -3764,9 +3801,9 @@ menu de
 opções}{Exemplo 03 - Exemplo de switch com menu de opções}}\label{exemplo-03---exemplo-de-switch-com-menu-de-opuxe7uxf5es}}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{38}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap03exem03.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap3ex03.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 \PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
 	\PY{n+nb}{float} \PY{n}{area}\PY{p}{;}
@@ -3803,10 +3840,10 @@ opções}{Exemplo 03 - Exemplo de switch com menu de opções}}\label{exemplo-03
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{39}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap03exem03.c \PYZhy{}o output3
+gcc cap3ex03.c \PYZhy{}o output3
 ./output3
 \end{Verbatim}
 \end{tcolorbox}
@@ -3814,7 +3851,7 @@ gcc cap03exem03.c \PYZhy{}o output3
     \hypertarget{exercuxedcios}{%
 \subsection{Exercícios}\label{exercuxedcios}}
 
-    Ver notebook Colab no arquivo \texttt{cap03.part2.lab.*.ipynb}
+    Ver notebook Colab no arquivo \texttt{cap3.part2.lab.*.ipynb}
 (\texttt{*} é a extensão da linguagem), utilizando aluma linguagem de
 programação de sua preferência, onganizadas em subpastas contidas de
 \texttt{"gen"}, na pasta do Google Drive
@@ -4309,7 +4346,7 @@ Condicionais)}\label{revisuxe3o-do-capuxedtulo-anterior-desvios-condicionais}}
 
     \begin{itemize}
 \item
-  No capítulo anterior foram apresentadas formas de construir códico
+  No capítulo anterior foram apresentadas formas de construir código
   contendo estruturas condicionais simples ou compostas. Ou seja,
   desvios condicionais, da forma:
 
@@ -4372,7 +4409,8 @@ escreva(t + " x " + n + " = " + t * n);        n = n + 1;
 \tightlist
 \item
   Embora o código não pareça extenso, é fácil imaginar uma situação onde
-  tenhamos que repetir 100, 500, 1000 vezes a mesma operação.
+  tenhamos que repetir 100, 500, 1000 vezes um mesmo bloco de
+  instruções.
 \end{itemize}
 
     \hypertarget{tipos-de-estruturas-de-repetiuxe7uxe3o}{%
@@ -4382,12 +4420,13 @@ repetição}\label{tipos-de-estruturas-de-repetiuxe7uxe3o}}
     \hypertarget{pseudocuxf3digo}{%
 \subsubsection{Pseudocódigo}\label{pseudocuxf3digo}}
 
-    \#\#\#\#faça-enquanto
+    \hypertarget{fauxe7a-enquanto}{%
+\paragraph{faça-enquanto}\label{fauxe7a-enquanto}}
 
 \begin{verbatim}
 faça { 
   comandos 
-} enquanto (condição)
+} enquanto (condição);
 \end{verbatim}
 
     \hypertarget{enquanto-fauxe7a}{%
@@ -4444,15 +4483,17 @@ para variável = valor_final até valor_inicial, variável--, faça {
     \hypertarget{ccppjavajavascript}{%
 \subsubsection{C/CPP/Java/JavaScript}\label{ccppjavajavascript}}
 
-    \#\#\#\#do-while
+    \hypertarget{do-while}{%
+\paragraph{do-while}\label{do-while}}
 
     \begin{verbatim}
 do { 
   comandos;
-} while (condição)
+} while (condição);
 \end{verbatim}
 
-    \#\#\#\#while
+    \hypertarget{while}{%
+\paragraph{while}\label{while}}
 
     \begin{verbatim}
 while (condição) { 
@@ -4460,13 +4501,17 @@ while (condição) {
 }
 \end{verbatim}
 
-    \#\#\#\#for
+    \hypertarget{for}{%
+\paragraph{for}\label{for}}
 
     \begin{verbatim}
 for(v=0; v<10; v++) {
   comandos;
 }
 \end{verbatim}
+
+Em algumas linguagens de programação é possível omitir um ou todos os
+parâmetros, por exemplo: \texttt{for(;;)\ \{...\}}.
 
     \hypertarget{pseudocuxf3digo-exemplo-lauxe7o-fauxe7a-enquanto.}{%
 \subsubsection{Pseudocódigo: Exemplo laço
@@ -4481,7 +4526,7 @@ faça {
    acumulador = acumulador + nota;
    contador = contador + 1;
    resposta = leia("Deseja continuar? (s/n): ");
-} enquanto (resposta == 's')
+} enquanto (resposta == 's');
 
 média = acumulador / contador;
 imprima ("A média das " + contador + " notas é " + média);
@@ -4558,7 +4603,7 @@ imprima ("A média das " + contador + " notas é " + média);
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{5}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{from} \PY{n+nn}{txtoflow} \PY{k+kn}{import} \PY{n}{txtoflow}
 
@@ -4586,7 +4631,7 @@ imprima ("A média das " + contador + " notas é " + média);
 INFINITO.}\label{pseudocuxf3digo-exemplo-lauxe7o-enquanto-fauxe7a-infinito.}}
 
 Considere uma alteração no código anterior para não fazer mais a
-pargunta \texttt{Deseja\ continuar?\ (s/n)}, mas entrando num laço
+pergunta \texttt{Deseja\ continuar?\ (s/n)}, mas entrando num laço
 \texttt{enquanto-faça} para ler e acumular 100 notas:
 
 \begin{verbatim}
@@ -4605,8 +4650,8 @@ imprima ("A média das " + contador + " notas é " + média);
     \begin{itemize}
 \tightlist
 \item
-  O que vai ocorrer ao escrever e rodar esse código algum alguma
-  linguagem de programação?
+  O que vai ocorrer ao escrever e rodar esse código em alguma linguagem
+  de programação?
 \item
   Onde está o erro?
 \item
@@ -4658,7 +4703,7 @@ faça {
   acumulador = acumulador + nota;
   contador = contador + 1;
   resposta = leia("Deseja continuar? (s/n): ");
-} enquanto (resposta == 's')
+} enquanto (resposta == 's');
 
 média = acumulador / contador;
 imprima ("A média das " + contador + " notas é " + média);
@@ -4676,7 +4721,7 @@ imprima ("A média das " + contador + " notas é " + média);
 \item
   Ver Fluxograma abaixo (também experimente nessa ferramenta
   \emph{online}: \href{https://app.code2flow.com/}{code2flow}, copiando
-  e colando o código em vermelho abaixo):
+  e colando o código em vermelho abaixo).
 \item
   Observar que essa biblioteca \texttt{txtoflow} não aceita
   \texttt{faça-enquanto}, assim como o Python.
@@ -4757,7 +4802,7 @@ faça {
   } enquanto (nota < 0 || nota > 10); 
   acumulador = acumulador + nota;
   contador = contador + 1;
-} enquanto (contador < 10)
+} enquanto (contador < 10);
 
 média = acumulador / contador;
 escreva("A média das " + contador + " notas é " + média);
@@ -4779,7 +4824,7 @@ escreva("A média das " + contador + " notas é " + média);
 \end{figure}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{2}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{!}apt\PYZhy{}get install graphviz libgraphviz\PYZhy{}dev pkg\PYZhy{}config
 \PY{o}{!}pip install txtoflow
@@ -4787,7 +4832,7 @@ escreva("A média das " + contador + " notas é " + média);
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{3}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{from} \PY{n+nn}{txtoflow} \PY{k+kn}{import} \PY{n}{txtoflow}
 
@@ -4856,7 +4901,7 @@ A média das 10 notas é 7.3
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap04exem01.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap4ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 
 \PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
@@ -4876,7 +4921,7 @@ A média das 10 notas é 7.3
   \PY{n}{media} \PY{o}{=} \PY{n}{acumulador}\PY{o}{/}\PY{n}{contador}\PY{p}{;}
 
   \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA}
-  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{A média das }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ notas é }\PY{l+s+si}{\PYZpc{}.1f}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{contador}\PY{p}{,} \PY{n}{media}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{A média das }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ notas é }\PY{l+s+si}{\PYZpc{}.1f}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{contador}\PY{p}{,} \PY{n}{media}\PY{p}{)}\PY{p}{;}
 
   \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
 \PY{p}{\PYZcb{}}
@@ -4887,7 +4932,7 @@ A média das 10 notas é 7.3
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap04exem01.c \PYZhy{}o output2
+gcc cap4ex01.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -4895,7 +4940,7 @@ gcc cap04exem01.c \PYZhy{}o output2
     \hypertarget{exercuxedcios}{%
 \subsection{Exercícios}\label{exercuxedcios}}
 
-    Ver notebook Colab no arquivo \texttt{cap04.part2.lab.*.ipynb}
+    Ver notebook Colab no arquivo \texttt{cap4.part2.lab.*.ipynb}
 (\texttt{*} é a extensão da linguagem), utilizando alguma linguagem de
 programação de sua preferência, onganizadas em subpastas contidas de
 \texttt{"gen"}, na pasta do Google Drive
@@ -4975,13 +5020,6 @@ programação de sua preferência, onganizadas em subpastas contidas de
   Revisão deste capítulo de Estruturas de Repetição (Laços)
 \end{itemize}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-
-\end{Verbatim}
-\end{tcolorbox}
-
     \hypertarget{processando-a-informauxe7uxe3o-cap.-4-estruturas-de-repetiuxe7uxe3o-lauxe7os---pruxe1tica-1}{%
 \subsection{Processando a Informação: Cap. 4: Estruturas de Repetição
 (Laços) - Prática
@@ -5012,13 +5050,6 @@ nesse livro.
   Demonstre o uso de laços imprimindo os 50 primeiros múltiplos de 3.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -5036,13 +5067,6 @@ nesse livro.
 \begin{quote}
 Teste em um programa principal várias chamadas destes métodos.
 \end{quote}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -5066,13 +5090,6 @@ Teste em um programa principal várias chamadas destes métodos.
 Teste em um programa principal várias chamadas destes métodos, exibindo
 a mensagem \texttt{"Não\ é\ primo!"} ou \texttt{"é\ primo"}.
 \end{quote}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -5113,13 +5130,6 @@ Mês juros no mês    juros total  Investimento
   3     2.02           4.53     104.53
 \end{verbatim}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -5135,13 +5145,6 @@ Mês juros no mês    juros total  Investimento
     números como parâmetros e retorne o MMC ao ponto de chamada.
   \end{enumerate}
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \hypertarget{processando-a-informauxe7uxe3o-cap.-4-estruturas-de-repetiuxe7uxe3o-lauxe7os---pruxe1tica-2}{%
 \subsection{Processando a Informação: Cap. 4: Estruturas de Repetição
@@ -5188,13 +5191,6 @@ Fontes:
   A maior altura do grupo;
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -5208,13 +5204,6 @@ Fontes:
   dados deve terminar quando for lido um número negativo.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -5225,13 +5214,6 @@ Fontes:
   Escrever um algoritmo que gera e escreve os números ímpares entre 100
   e 200. Utilizar o método definido da lista anterior (Prática 1).
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -5247,13 +5229,6 @@ Fontes:
 
 \[a_n = a_1 + (n-1)r\]
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -5268,13 +5243,6 @@ Fontes:
 
 \[a_n = a_1q^{n-1}\]
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -5288,13 +5256,6 @@ Fontes:
 \end{enumerate}
 
 \[5! = 5 X 4 X 3 X 2 X 1 = 120\]
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -5320,13 +5281,6 @@ Fontes:
   o percentual de homens na população
 \end{itemize}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -5340,13 +5294,6 @@ Fontes:
   maior que Rafa.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -5381,61 +5328,47 @@ e escreva:
 \end{itemize}
 
 Como finalizador do conjunto de votos, tem-se o valor 0.
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{8}
-\tightlist
-\item
-  Em uma eleição presidencial existem quatro candidatos. Os votos são
-  informados através de códigos. Os dados utilizados para a contagem dos
-  votos obedecem à seguinte codificação:
-\end{enumerate}
-
-\begin{itemize}
-\item
-  1,2,3,4 = voto para os respectivos candidatos;
-\item
-  5 = voto nulo;
-\item
-  6 = voto em branco;
-\end{itemize}
-
-Elabore um algoritmo que leia o código do candidado em um voto. Calcule
-e escreva:
-
-\begin{itemize}
-\item
-  total de votos para cada candidato;
-\item
-  total de votos nulos;
-\item
-  total de votos em branco;
-\end{itemize}
-
-Como finalizador do conjunto de votos, tem-se o valor 0.
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{9}
+\tightlist
+\item
+  Em uma eleição presidencial existem quatro candidatos. Os votos são
+  informados através de códigos. Os dados utilizados para a contagem dos
+  votos obedecem à seguinte codificação:
+\end{enumerate}
+
+\begin{itemize}
+\item
+  1,2,3,4 = voto para os respectivos candidatos;
+\item
+  5 = voto nulo;
+\item
+  6 = voto em branco;
+\end{itemize}
+
+Elabore um algoritmo que leia o código do candidado em um voto. Calcule
+e escreva:
+
+\begin{itemize}
+\item
+  total de votos para cada candidato;
+\item
+  total de votos nulos;
+\item
+  total de votos em branco;
+\end{itemize}
+
+Como finalizador do conjunto de votos, tem-se o valor 0.
+
+    \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
 \tightlist
 \item
   Faça um programa que desenhe na tela losangos ou triângulos utilizando
@@ -5451,18 +5384,11 @@ Como finalizador do conjunto de votos, tem-se o valor 0.
 \caption{Captura de Tela 2021-06-16 às 14.40.30.png}
 \end{figure}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{10}
+\setcounter{enumi}{11}
 \tightlist
 \item
   Construa um algoritmo para o jogo da velha. Esse jogo consiste em um
@@ -5473,18 +5399,11 @@ Como finalizador do conjunto de votos, tem-se o valor 0.
   (nenhum jogador preencheu uma coluna, uma linha ou uma diagonal).
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\setcounter{enumi}{11}
+\setcounter{enumi}{12}
 \tightlist
 \item
   Faça um programa que calcule e mostre o maior divisor comum de dois
@@ -5500,177 +5419,6 @@ Como finalizador do conjunto de votos, tem-se o valor 0.
 \end{verbatim}
 
 Esse algoritmo deixará o resultado (MDC) em a, no final.
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \hypertarget{formatauxe7uxf5es-avanuxe7adas-com-format}{%
-\subsubsection{\texorpdfstring{Formatações avançadas com
-\texttt{format}}{Formatações avançadas com format}}\label{formatauxe7uxf5es-avanuxe7adas-com-format}}
-
-    https://docs.python.org/3/library/string.html\#format-specification-mini-language
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{}format\PYZus{}spec ::=  [[fill]align][sign][\PYZsh{}][0][width][,][.precision][type]                                 }
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}0\PYZcb{}}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZob{}2\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{c}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{c}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}  \PY{c+c1}{\PYZsh{} 3.1+ only}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}2\PYZcb{}}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZob{}0\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{c}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}2\PYZcb{}}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZob{}0\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{o}{*}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{abc}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}      \PY{c+c1}{\PYZsh{} unpacking argument sequence}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}0\PYZcb{}}\PY{l+s+si}{\PYZob{}1\PYZcb{}}\PY{l+s+si}{\PYZob{}0\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{abra}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{cad}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{)}   \PY{c+c1}{\PYZsh{} arguments\PYZsq{} indices can be repeated}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Coordinates: }\PY{l+s+si}{\PYZob{}latitude\PYZcb{}}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZob{}longitude\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{latitude}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{37.24N}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{longitude}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}115.81W}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{coord} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{latitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{37.24N}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{longitude}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}115.81W}\PY{l+s+s1}{\PYZsq{}}\PY{p}{\PYZcb{}}
-\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Coordinates: }\PY{l+s+si}{\PYZob{}latitude\PYZcb{}}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZob{}longitude\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{o}{*}\PY{o}{*}\PY{n}{coord}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{c} \PY{o}{=} \PY{l+m+mi}{3}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{n}{j}
-\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{The complex number }\PY{l+s+si}{\PYZob{}0\PYZcb{}}\PY{l+s+s1}{ is formed from the real part }\PY{l+s+si}{\PYZob{}0.real\PYZcb{}}\PY{l+s+s1}{ and the imaginary part }\PY{l+s+si}{\PYZob{}0.imag\PYZcb{}}\PY{l+s+s1}{.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{c}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{k}{class} \PY{n+nc}{Point}\PY{p}{:}
-     \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}\PY{p}{:}
-         \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{x}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{y} \PY{o}{=} \PY{n}{x}\PY{p}{,} \PY{n}{y}
-     \PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}str\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
-         \PY{k}{return} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Point(}\PY{l+s+si}{\PYZob{}self.x\PYZcb{}}\PY{l+s+s1}{, }\PY{l+s+si}{\PYZob{}self.y\PYZcb{}}\PY{l+s+s1}{)}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{=}\PY{n+nb+bp}{self}\PY{p}{)}
-
-\PY{n+nb}{str}\PY{p}{(}\PY{n}{Point}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{coord} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}
-\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{X: }\PY{l+s+si}{\PYZob{}0[0]\PYZcb{}}\PY{l+s+s1}{;  Y: }\PY{l+s+si}{\PYZob{}0[1]\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{coord}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{repr() shows quotes: }\PY{l+s+si}{\PYZob{}!r\PYZcb{}}\PY{l+s+s2}{; str() doesn}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{t: }\PY{l+s+si}{\PYZob{}!s\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{test1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{test2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}:\PYZlt{}30\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{left aligned}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}:\PYZgt{}30\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{right aligned}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}:\PYZca{}30\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{centered}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}:*\PYZca{}30\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{centered}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}  \PY{c+c1}{\PYZsh{} use \PYZsq{}*\PYZsq{} as a fill char}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}:+f\PYZcb{}}\PY{l+s+s1}{; }\PY{l+s+si}{\PYZob{}:+f\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{l+m+mf}{3.14}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{3.14}\PY{p}{)}  \PY{c+c1}{\PYZsh{} show it always}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}: f\PYZcb{}}\PY{l+s+s1}{; }\PY{l+s+si}{\PYZob{}: f\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{l+m+mf}{3.14}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{3.14}\PY{p}{)}  \PY{c+c1}{\PYZsh{} show a space for positive numbers}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}:\PYZhy{}f\PYZcb{}}\PY{l+s+s1}{; }\PY{l+s+si}{\PYZob{}:\PYZhy{}f\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{l+m+mf}{3.14}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{3.14}\PY{p}{)}  \PY{c+c1}{\PYZsh{} show only the minus \PYZhy{}\PYZhy{} same as \PYZsq{}\PYZob{}:f\PYZcb{}; \PYZob{}:f\PYZcb{}\PYZsq{}}
-\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3.140000; \PYZhy{}3.140000}\PY{l+s+s1}{\PYZsq{}}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{int: }\PY{l+s+si}{\PYZob{}0:d\PYZcb{}}\PY{l+s+s2}{;  hex: }\PY{l+s+si}{\PYZob{}0:x\PYZcb{}}\PY{l+s+s2}{;  oct: }\PY{l+s+si}{\PYZob{}0:o\PYZcb{}}\PY{l+s+s2}{;  bin: }\PY{l+s+si}{\PYZob{}0:b\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{l+m+mi}{42}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{int: }\PY{l+s+si}{\PYZob{}0:d\PYZcb{}}\PY{l+s+s2}{;  hex: }\PY{l+s+si}{\PYZob{}0:\PYZsh{}x\PYZcb{}}\PY{l+s+s2}{;  oct: }\PY{l+s+si}{\PYZob{}0:\PYZsh{}o\PYZcb{}}\PY{l+s+s2}{;  bin: }\PY{l+s+si}{\PYZob{}0:\PYZsh{}b\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{l+m+mi}{42}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}:,\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{l+m+mi}{1234567890}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{points} \PY{o}{=} \PY{l+m+mi}{19}
-\PY{n}{total} \PY{o}{=} \PY{l+m+mi}{22}
-\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Correct answers: }\PY{l+s+si}{\PYZob{}:.2\PYZpc{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{points}\PY{o}{/}\PY{n}{total}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{k+kn}{import} \PY{n+nn}{datetime}
-\PY{n}{d} \PY{o}{=} \PY{n}{datetime}\PY{o}{.}\PY{n}{datetime}\PY{p}{(}\PY{l+m+mi}{2010}\PY{p}{,} \PY{l+m+mi}{7}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{12}\PY{p}{,} \PY{l+m+mi}{15}\PY{p}{,} \PY{l+m+mi}{58}\PY{p}{)}
-\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZpc{}}\PY{l+s+s1}{Y\PYZhy{}}\PY{l+s+s1}{\PYZpc{}}\PY{l+s+s1}{m\PYZhy{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s1}{ }\PY{l+s+s1}{\PYZpc{}}\PY{l+s+s1}{H:}\PY{l+s+s1}{\PYZpc{}}\PY{l+s+s1}{M:}\PY{l+s+s1}{\PYZpc{}}\PY{l+s+s1}{S\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{d}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
 
     \hypertarget{processando-a-informauxe7uxe3o-cap.-4-estruturas-de-repetiuxe7uxe3o-lauxe7os---pruxe1tica-3}{%
 \subsection{Processando a Informação: Cap. 4: Estruturas de Repetição
@@ -5709,13 +5457,6 @@ Fontes:
   o somatório dos valores digitados, e a média aritmética do somatório.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -5730,13 +5471,6 @@ Fontes:
   ou \^{}. Para resolver o problema utilize estrutura de repetição.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -5749,13 +5483,6 @@ Fontes:
   Feito isto, o algoritmo deverá apresentar uma lista contendo todos os
   números da seqüencia que estão acima da média calculada.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -6102,13 +5829,6 @@ X & X & X\tabularnewline
 O final da leitura de dados se dará com a entrada de um salário
 negativo. (Use o comando ENQUANTO-FAÇA)
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -6124,13 +5844,6 @@ negativo. (Use o comando ENQUANTO-FAÇA)
   que 5. Repita a operação até que o código lido seja negativo.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -6144,13 +5857,6 @@ negativo. (Use o comando ENQUANTO-FAÇA)
   quadrado, seu cubo e sua raiz quadrada.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -6163,13 +5869,6 @@ negativo. (Use o comando ENQUANTO-FAÇA)
   calcula e escreve a soma dos n inteiros consecutivos a partir de m
   inclusive.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -6186,13 +5885,6 @@ negativo. (Use o comando ENQUANTO-FAÇA)
   m.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -6205,13 +5897,6 @@ negativo. (Use o comando ENQUANTO-FAÇA)
   valores pares e a média geral dos números lidos. O número que
   encerrará a leitura será zero.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -6242,13 +5927,6 @@ Deseja-se saber:
 a maior idade do grupo a quantidade de indivíduos do sexo feminino, cuja
 idade está entre 18 e 35 anos e que tenham olhos verdes e cabelos
 louros.
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -6287,13 +5965,6 @@ Deseja-se saber:
   do Sul.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -6307,13 +5978,6 @@ Deseja-se saber:
   ano passado e calcule um bônus de 10\% se o valor das compras for
   menor que 500.000 e de15 \%, caso contrário.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -6346,13 +6010,6 @@ de 7,0 a 8,9 & B\tabularnewline
 de 9,0 a 10,0 & A\tabularnewline
 \bottomrule
 \end{longtable}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \hypertarget{processando-a-informauxe7uxe3o-cap.-5-vetores}{%
 \section{Processando a Informação: Cap. 5:
@@ -6458,7 +6115,7 @@ Laços)}\label{revisuxe3o-do-capuxedtulo-anterior-estruturas-de-repetiuxe7uxe3o-
 \tightlist
 \item
   Um \textbf{vetor} em programação é formado por um \textbf{conjunto de
-  \(n\) variáveis de um mesmo tipo} de dado, sendo \(n\)
+  \(n\) variáveis de um mesmo tipo} de dado (em geral), sendo \(n\)
   obrigatoriamente maior que zero.
 \item
   Essas variáveis (ou elementos) são identificadas e acessadas por um
@@ -6478,7 +6135,7 @@ Laços)}\label{revisuxe3o-do-capuxedtulo-anterior-estruturas-de-repetiuxe7uxe3o-
     \begin{itemize}
 \tightlist
 \item
-  Quando um vetor é criado, é instanciada uma variável do tipo vetor (Em
+  Quando um vetor é criado, é instanciada uma variável do tipo vetor (em
   algumas linguagens de programação, sendo necessário se definir um
   nome, o tipo de dado e o tamanho do vetor).
 \item
@@ -6524,29 +6181,30 @@ Laços)}\label{revisuxe3o-do-capuxedtulo-anterior-estruturas-de-repetiuxe7uxe3o-
     mesmo tipo.
   \end{enumerate}
 \item
-  No exemplo da Figura abaixo,
+  No exemplo da figura abaixo,
 
   \begin{itemize}
   \tightlist
   \item
-    A criação da variável de referência de um vetor \texttt{v} define
+    a criação da variável de referência de um vetor \texttt{v} define
     apenas a posição de memória em hexadecimal \texttt{0A}, onde será
     armazenado o seu primeiro elemento.
 
     \begin{itemize}
     \tightlist
     \item
-      Neste exemplo, \texttt{V{[}0{]}\ =\ -128}
+      neste exemplo, \texttt{V{[}0{]}\ =\ -128} é o primeiro elemento do
+      vetor.
     \item
-      A quantidade de \texttt{bytes} por elemento vai depender to tipo
+      a quantidade de \texttt{bytes} por elemento vai depender to tipo
       de dado armazenado. Neste exemplo cada elemento ocupa um
       \texttt{byte}.
     \end{itemize}
   \item
-    O segundo passo da criação de um vetor é reservar (ou alocar)
+    o segundo passo da criação de um vetor é reservar (ou alocar)
     memória para todos os seus elementos (dependendo da linguagem).
     \textgreater{} essa alocação de memória pode ocorrer em tempo de
-    execução, com ocorre em Python!
+    execução, como ocorre em Python!
   \end{itemize}
 \end{itemize}
 
@@ -6567,7 +6225,12 @@ Laços)}\label{revisuxe3o-do-capuxedtulo-anterior-estruturas-de-repetiuxe7uxe3o-
 \item
   Isso pode requerer uso de laços para leitura e impressão dos seus
   elementos, dependendo da linguagem de programação utilizada.
-  \textgreater{} O índice de vetor é sempre um número inteiro.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    O índice de vetor é sempre um número inteiro.
+  \end{itemize}
 \end{itemize}
 
     \hypertarget{exemplo-01---lerescrever-vetor}{%
@@ -6619,28 +6282,29 @@ Número RA     Nota
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap05exem01.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 
 \PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
 
   \PY{o}{/}\PY{o}{/} \PY{n}{ENTRADA} \PY{n}{DE} \PY{n}{DADOS}
-  \PY{n+nb}{int} \PY{n}{n}\PY{p}{,} \PY{n}{ra}\PY{p}{[}\PY{l+m+mi}{100}\PY{p}{]}\PY{p}{;}     \PY{o}{/}\PY{o}{/} \PY{n}{aloca} \PY{l+m+mi}{100} \PY{n}{ra}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}
-  \PY{n}{char} \PY{n}{nome}\PY{p}{[}\PY{l+m+mi}{100}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{40}\PY{p}{]}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{aloca} \PY{l+m+mi}{100} \PY{n}{nomes} \PY{n}{de} \PY{n}{até} \PY{l+m+mi}{40} \PY{n}{caracteres} \PY{n}{cada}
+  \PY{n+nb}{int} \PY{n+nb}{max} \PY{o}{=} \PY{l+m+mi}{100}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{considerar} \PY{n}{sempre} \PY{n}{um} \PY{n}{número} \PY{n}{grande}
+  \PY{n+nb}{int} \PY{n}{n}\PY{p}{,} \PY{n}{ra}\PY{p}{[}\PY{n+nb}{max}\PY{p}{]}\PY{p}{;}     \PY{o}{/}\PY{o}{/} \PY{n}{aloca} \PY{l+m+mi}{100} \PY{n}{ra}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{s}
+  \PY{n}{char} \PY{n}{nome}\PY{p}{[}\PY{n+nb}{max}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{40}\PY{p}{]}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{aloca} \PY{l+m+mi}{100} \PY{n}{nomes} \PY{n}{de} \PY{n}{até} \PY{l+m+mi}{40} \PY{n}{caracteres} \PY{n}{cada}
 
   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Digite o numero de alunos: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
   \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{n}\PY{p}{)}\PY{p}{;}
   \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
-      \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{RA: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
-      \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{ra}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-      \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Nome: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
-      \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}s}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{nome}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{ATENÇÃO}\PY{p}{:} \PY{n}{NÃO} \PY{n}{ACEITA} \PY{n}{NOME} \PY{n}{COM} \PY{n}{ESPAÇOS}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{RA: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+    \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{ra}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Nome: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+    \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}s}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{nome}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{ATENÇÃO}\PY{p}{:} \PY{n}{NÃO} \PY{n}{ACEITA} \PY{n}{NOME} \PY{n}{COM} \PY{n}{ESPAÇOS} \PY{n}{e} \PY{n}{NÃO} \PY{n}{USA} \PY{o}{\PYZam{}}
   \PY{p}{\PYZcb{}}
   \PY{o}{/}\PY{o}{/} \PY{n}{PROCESSAMENTO} \PY{err}{?}
   \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA}
   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{LISTA DE ALUNOS}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Número}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ RA}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ Nome}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
   \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
-      \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{ra}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{nome}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{,} \PY{n}{ra}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{nome}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
   \PY{p}{\PYZcb{}}
   \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
 \PY{p}{\PYZcb{}}
@@ -6648,11 +6312,48 @@ Número RA     Nota
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{29}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap05exem01.c \PYZhy{}o output2
+gcc cap5ex01.c \PYZhy{}o output2
 ./output2
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{itemize}
+\item
+  As \emph{strings} em C têm um último caracter
+  \texttt{\textquotesingle{}\textbackslash{}0\textquotesingle{}}. Assim,
+  \texttt{char\ s{[}{]}\ =\ "oi";} tem três carateres.
+\item
+  Para ler uma \emph{string} com espaços
+  {[}\href{https://www.geeksforgeeks.org/gets-is-risky-to-use}{ref}{]}:
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{54}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex01teste.c
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}string.h\PYZgt{}}
+
+\PY{n}{void} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+   \PY{n}{char} \PY{n}{s}\PY{p}{[}\PY{l+m+mi}{40}\PY{p}{]}\PY{p}{;}
+   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{digite algo:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+   \PY{n}{fgets}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{l+m+mi}{40}\PY{p}{,} \PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{saida: }\PY{l+s+se}{\PYZbs{}\PYZdq{}}\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}\PYZdq{}}\PY{l+s+s2}{ tamanho: }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{s}\PY{p}{,} \PY{n}{strlen}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+   \PY{n}{s}\PY{p}{[}\PY{n}{strlen}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{substituir} \PYZbs{}\PY{n}{n} \PY{n}{por} \PYZbs{}\PY{l+m+mi}{0}
+   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{saida: }\PY{l+s+se}{\PYZbs{}\PYZdq{}}\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}\PYZdq{}}\PY{l+s+s2}{ tamanho: }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{s}\PY{p}{,} \PY{n}{strlen}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{55}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
+gcc cap5ex01teste.c \PYZhy{}o cap5ex01teste
+./cap5ex01teste
 \end{Verbatim}
 \end{tcolorbox}
 
@@ -6860,15 +6561,16 @@ Vetores}\label{modularizauxe7uxe3o-e-vetores}}
   \item
     \texttt{processaVetor} e
   \item
-    \texttt{escrevaVetor}, \textgreater{} satisfazendo essa definição de
-    sistema de informação.
+    \texttt{escrevaVetor},
   \end{itemize}
+
+  satisfazendo essa definição de sistema de informação.
 \end{itemize}
 
 \begin{quote}
 Para a reutilização de código, os módulos \texttt{leiaVetor} e
-\texttt{escrevaVetor} poderão ser muito reulizados para resolver outros
-problemas de manipulação de vetores.
+\texttt{escrevaVetor} poderão ser muito reutilizados para resolver
+outros problemas de manipulação de vetores.
 \end{quote}
 
     \hypertarget{pseudocuxf3digo-muxe9todo-para-ler-um-vetor-de-inteiro-tamanho-n.}{%
@@ -6978,14 +6680,135 @@ Número   RA Nota
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{7}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex02.c
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{ENTRADA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{n+nb}{int} \PY{n+nb}{max} \PY{o}{=} \PY{l+m+mi}{100}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{número} \PY{n}{máximo} \PY{n}{de} \PY{n}{alunos}
+  \PY{n+nb}{int} \PY{n}{n}\PY{p}{,} \PY{n}{ras}\PY{p}{[}\PY{n+nb}{max}\PY{p}{]}\PY{p}{,} \PY{n}{notas}\PY{p}{[}\PY{n+nb}{max}\PY{p}{]}\PY{p}{;}   \PY{o}{/}\PY{o}{/} \PY{n}{variaveis} \PY{n}{de} \PY{n}{referência} \PY{n}{ras} \PY{n}{e} \PY{n}{notas}
+
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Digite o numero de alunos: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{n}\PY{p}{)}\PY{p}{;}
+
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{RAs: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{RA }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+    \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{ras}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Notas: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Nota }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+    \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{notas}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{PROCESSAMENTO} \PY{err}{?}
+  \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{LISTA DE ALUNOS}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Número}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ RA}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ Nota}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{,} \PY{n}{ras}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{notas}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{8}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
+gcc cap5ex02.c \PYZhy{}o output2
+./output2
+\end{Verbatim}
+\end{tcolorbox}
+
+    Existem várias formas de usar vetor em métodos:
+
+\begin{itemize}
+\tightlist
+\item
+  como argumento:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{void\ metodo\ (int\ *v,\ int\ n)\ \{...\}}
+  \item
+    \texttt{void\ metodo\ (int\ v{[}{]},\ int\ n)\ \{...\}}
+  \item
+    \texttt{void\ metodo\ (int\ v{[}max{]},\ int\ n)\ \{...\}}
+  \end{itemize}
+\item
+  como retorno:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{int\ *\ metodo\ (int\ n)\ \{...\}} - alocar vetor dentro do
+    método, alocação dinâmica de memória.
+  \end{itemize}
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{65}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex02teste1.c
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+
+\PY{c+c1}{\PYZsh{}define MAX\PYZus{}ALUNOS 20 // número máximo de alunos}
+
+\PY{n}{void} \PY{n}{leiaVetor}\PY{p}{(}\PY{n+nb}{int} \PY{o}{*}\PY{n}{v}\PY{p}{,} \PY{n+nb}{int} \PY{n}{n}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} 
+    \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{v}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{ENTRADA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{n+nb}{int} \PY{n}{n}\PY{p}{,} \PY{n}{ras}\PY{p}{[}\PY{n}{MAX\PYZus{}ALUNOS}\PY{p}{]}\PY{p}{,} \PY{n}{notas}\PY{p}{[}\PY{n}{MAX\PYZus{}ALUNOS}\PY{p}{]}\PY{p}{;}   \PY{o}{/}\PY{o}{/} \PY{n}{variaveis} \PY{n}{de} \PY{n}{referência} \PY{n}{ras} \PY{n}{e} \PY{n}{notas}
+
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Digite o numero de alunos: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{n}\PY{p}{)}\PY{p}{;}
+
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{RAs: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{leiaVetor}\PY{p}{(}\PY{n}{ras}\PY{p}{,} \PY{n}{n}\PY{p}{)}\PY{p}{;}
+
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Notas: }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{leiaVetor}\PY{p}{(}\PY{n}{notas}\PY{p}{,} \PY{n}{n}\PY{p}{)}\PY{p}{;}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{PROCESSAMENTO} \PY{err}{?}
+  \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{LISTA DE ALUNOS}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Número}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ RA}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ Nota}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} 
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{,} \PY{n}{ras}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{notas}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+  
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap05exem02.c
+\PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
+gcc cap5ex02teste1.c \PYZhy{}o output2
+./output2
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{68}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex02teste2.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
-\PY{c+c1}{\PYZsh{}include\PYZlt{}malloc.h\PYZgt{}  }
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdlib.h\PYZgt{}  // malloc e free}
 
 \PY{n+nb}{int} \PY{o}{*} \PY{n}{leiaVetor}\PY{p}{(}\PY{n+nb}{int} \PY{n}{n}\PY{p}{)} \PY{p}{\PYZob{}}
-  \PY{n+nb}{int} \PY{o}{*}\PY{n}{v}\PY{o}{=} \PY{n}{malloc}\PY{p}{(}\PY{n}{sizeof}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{)}\PY{p}{;}  
+  \PY{n+nb}{int} \PY{o}{*}\PY{n}{v}\PY{o}{=} \PY{n}{malloc}\PY{p}{(}\PY{n}{sizeof}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{)}\PY{p}{;}  \PY{o}{/}\PY{o}{/} \PY{n}{ALOCAÇÃO} \PY{n}{DINÂMICA}
   \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
     \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{v}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;} 
   \PY{p}{\PYZcb{}}
@@ -7012,7 +6835,7 @@ Número   RA Nota
   \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
       \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{ras}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{notas}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
   \PY{p}{\PYZcb{}}
-  \PY{n}{free}\PY{p}{(}\PY{n}{ras}\PY{p}{)}\PY{p}{;}   \PY{o}{/}\PY{o}{/} \PY{n}{liberar} \PY{n}{memória} \PY{n}{alocado} \PY{n}{com} \PY{n}{malloc}
+  \PY{n}{free}\PY{p}{(}\PY{n}{ras}\PY{p}{)}\PY{p}{;}   \PY{o}{/}\PY{o}{/} \PY{n}{LIBERAR} \PY{n}{MEMÓRIA} \PY{n}{ALOCADA} \PY{n}{COM} \PY{n}{malloc}
   \PY{n}{free}\PY{p}{(}\PY{n}{notas}\PY{p}{)}\PY{p}{;}
   \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
 \PY{p}{\PYZcb{}}
@@ -7020,10 +6843,10 @@ Número   RA Nota
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{69}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap05exem02.c \PYZhy{}o output2
+gcc cap5ex02teste2.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -7093,11 +6916,11 @@ RA      Nota
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{52}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap05exem03.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex03.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
-\PY{c+c1}{\PYZsh{}include\PYZlt{}malloc.h\PYZgt{}  }
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdlib.h\PYZgt{}  }
 
 \PY{n+nb}{int} \PY{o}{*} \PY{n}{leiaVetor}\PY{p}{(}\PY{n+nb}{int} \PY{n}{n}\PY{p}{)} \PY{p}{\PYZob{}}
   \PY{n+nb}{int} \PY{o}{*}\PY{n}{v}\PY{o}{=} \PY{n}{malloc}\PY{p}{(}\PY{n}{sizeof}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{)}\PY{p}{;}  
@@ -7151,15 +6974,13 @@ RA      Nota
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{53}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap05exem03.c \PYZhy{}o output2
+gcc cap5ex03.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
-
-    
 
     \hypertarget{exemplo-04---aplicauxe7uxe3o-dilata-vetor}{%
 \subsection{Exemplo 04 - Aplicação ``dilata''
@@ -7282,9 +7103,9 @@ output=v2:
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap05exem04.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex04.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
-\PY{c+c1}{\PYZsh{}include\PYZlt{}malloc.h\PYZgt{}  }
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdlib.h\PYZgt{}  // malloc e free}
 
 \PY{n+nb}{int} \PY{o}{*} \PY{n}{leiaVetor}\PY{p}{(}\PY{n+nb}{int} \PY{n}{n}\PY{p}{)} \PY{p}{\PYZob{}}
   \PY{n+nb}{int} \PY{o}{*}\PY{n}{v} \PY{o}{=} \PY{n}{malloc}\PY{p}{(}\PY{n}{n}\PY{o}{*}\PY{n}{sizeof}\PY{p}{(}\PY{n+nb}{int}\PY{p}{)}\PY{p}{)}\PY{p}{;} 
@@ -7329,7 +7150,7 @@ output=v2:
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap05exem04.c \PYZhy{}o output2
+gcc cap5ex04.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -7337,7 +7158,7 @@ gcc cap05exem04.c \PYZhy{}o output2
     \hypertarget{exercuxedcios}{%
 \subsection{Exercícios}\label{exercuxedcios}}
 
-    Ver notebook Colab nos arquivos \texttt{cap05.partX.lab.*.ipynb}
+    Ver notebook Colab nos arquivos \texttt{cap5.partX.lab.*.ipynb}
 (\texttt{X} \(\in\) \texttt{{[}2,3{]}} e \texttt{*} é a extensão da
 linguagem), utilizando alguma linguagem de programação de sua
 preferência, organizadas em subpastas contidas de \texttt{"gen"}, na
@@ -7365,6 +7186,41 @@ Para não ter que incluir várias entradas inteiras, a melhor solução é
 fazer um método de leitura, passando como argumento um texto
 (\emph{string}) referente a cada linha. Esse método deve retornar o
 vetor.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{123}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} str2int.c
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}string.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdlib.h\PYZgt{}}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+   \PY{n}{char} \PY{n}{string}\PY{p}{[}\PY{p}{]} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{7 3 7 9 7 7 0 9 8 4 8 9 0 1     7 8 4 1 1 0     }\PY{l+s+s2}{\PYZdq{}}\PY{p}{;}
+   \PY{n}{char} \PY{o}{*} \PY{n}{token} \PY{o}{=} \PY{n}{strtok}\PY{p}{(}\PY{n}{string}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+   \PY{n+nb}{int} \PY{n}{v}\PY{p}{[}\PY{l+m+mi}{100}\PY{p}{]}\PY{p}{;}
+   \PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;}
+   \PY{k}{while}\PY{p}{(} \PY{n}{token} \PY{o}{!=} \PY{n}{NULL} \PY{p}{)} \PY{p}{\PYZob{}}
+      \PY{n}{v}\PY{p}{[}\PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{]} \PY{o}{=} \PY{n}{atoi}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{converte} \PY{n}{texto} \PY{n}{para} \PY{n}{inteiro}
+      \PY{n}{token} \PY{o}{=} \PY{n}{strtok}\PY{p}{(}\PY{n}{NULL}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+   \PY{p}{\PYZcb{}}
+   \PY{n+nb}{int} \PY{n}{n}\PY{o}{=}\PY{n}{i}\PY{p}{;}
+   \PY{k}{for} \PY{p}{(}\PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}\PY{n}{i}\PY{o}{\PYZlt{}}\PY{n}{n}\PY{p}{;}\PY{n}{i}\PY{o}{+}\PY{o}{+} \PY{p}{)}\PY{p}{\PYZob{}}
+     \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{v}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+   \PY{p}{\PYZcb{}}
+   \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{124}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
+gcc str2int.c \PYZhy{}o output2
+./output2
+\end{Verbatim}
+\end{tcolorbox}
 
     \hypertarget{entrada-de-dados-a-linha-contem-um-texto-ou-string}{%
 \subsubsection{\texorpdfstring{Entrada de Dados (a linha contem um texto
@@ -7439,13 +7295,6 @@ nesse livro.
   imprimir a maior e a menor nota da turma.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -7456,13 +7305,6 @@ nesse livro.
   Criar um vetor de inteiros com n elementos. Achar o menor valor e
   mostrar, junto com o número de vezes ele ocorre no vetor.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -7478,13 +7320,6 @@ nesse livro.
   \texttt{0} a \texttt{10} de \texttt{v2}.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -7499,13 +7334,6 @@ nesse livro.
   \texttt{0\textless{}=j\textless{}n} antes de realizar a troca.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -7518,13 +7346,6 @@ nesse livro.
 
 Ver simulações de vários algoritmos de ordenação:
 \href{https://www.toptal.com/developers/sorting-algorithms}{link}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \hypertarget{processando-a-informauxe7uxe3o-cap.-5-vetores---pruxe1tica-2}{%
 \subsection{Processando a Informação: Cap. 5: Vetores - Prática
@@ -7559,13 +7380,6 @@ nesse livro.
   próprio elemento \texttt{i} e do seu vizinho à direita \texttt{i+1}.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -7581,13 +7395,6 @@ nesse livro.
   direita \texttt{i+1} e \texttt{i+2}. Generalize este código para os
   \texttt{m} vizinhos à esquerda e à direita.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -7617,13 +7424,6 @@ a & b & /\tabularnewline
 
 \[MMC = 60 = 2*2*3*5\]
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -7635,13 +7435,6 @@ a & b & /\tabularnewline
   usar vetor auxiliar.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -7652,127 +7445,6 @@ a & b & /\tabularnewline
   Criar dois vetores de inteiros com n elementos cada. Calcular o
   produto escalar entre eles.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \hypertarget{guia-de-formatauxe7uxe3o-com-f-string}{%
-\subsection{Guia de formatação com
-f-string}\label{guia-de-formatauxe7uxe3o-com-f-string}}
-
-\href{http://cis.bentley.edu/sandbox/wp-content/uploads/Documentation-on-f-strings.pdf}{Ref}
-
-    \hypertarget{alinhamento}{%
-\subsubsection{Alinhamento}\label{alinhamento}}
-
-\begin{quote}
-\texttt{\textless{}} à esquerda
-\end{quote}
-
-\begin{quote}
-\texttt{\textgreater{}} à direita
-\end{quote}
-
-\begin{quote}
-\texttt{=} zeros à esquerda
-\end{quote}
-
-\begin{quote}
-\texttt{\^{}} centralizar
-\end{quote}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{37}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{x} \PY{o}{=} \PY{l+m+mf}{4.5}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{55}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{This will print out the variable x: }\PY{l+s+si}{\PYZob{}}\PY{n}{x}\PY{l+s+si}{:}\PY{l+s+s1}{12}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{This will print out the variable x: }\PY{l+s+si}{\PYZob{}}\PY{n}{x}\PY{l+s+si}{:}\PY{l+s+s1}{\PYZgt{}12}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{This will print out the variable x: }\PY{l+s+si}{\PYZob{}}\PY{n}{x}\PY{l+s+si}{:}\PY{l+s+s1}{\PYZgt{}14.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{This will print out the variable x: }\PY{l+s+si}{\PYZob{}}\PY{n}{x}\PY{l+s+si}{:}\PY{l+s+s1}{=014.3f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+si}{\PYZob{}}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{=}\PY{l+s+s2}{\PYZdq{}}\PY{o}{*}\PY{l+m+mi}{50}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{My List}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{:}\PY{l+s+s1}{\PYZca{}50s}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{=}\PY{l+s+s2}{\PYZdq{}}\PY{o}{*}\PY{l+m+mi}{50}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{62}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{table} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Sjoerd}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Jack}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Dcab}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-\PY{k}{for} \PY{n}{name} \PY{o+ow}{in} \PY{n}{table}\PY{p}{:}
-  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}}\PY{n}{name}\PY{l+s+si}{:}\PY{l+s+s1}{\PYZgt{}20}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-     
-\PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
-\PY{n}{table2} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{4127}\PY{p}{,} \PY{l+m+mi}{4098}\PY{p}{,}  \PY{l+m+mi}{7678}\PY{p}{]}
-\PY{k}{for} \PY{n}{num} \PY{o+ow}{in} \PY{n}{table2}\PY{p}{:}
-  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}}\PY{n}{num}\PY{l+s+si}{:}\PY{l+s+s1}{10}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{10}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
- \PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Number}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{Square}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{Cube}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{11}\PY{p}{)}\PY{p}{:}
-  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}}\PY{n}{x}\PY{l+s+si}{:}\PY{l+s+s1}{2d}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{ }\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}}\PY{n}{x}\PY{o}{*}\PY{n}{x}\PY{l+s+si}{:}\PY{l+s+s1}{3d}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{ }\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}}\PY{n}{x}\PY{o}{*}\PY{n}{x}\PY{o}{*}\PY{n}{x}\PY{l+s+si}{:}\PY{l+s+s1}{4d}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{25}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
- \PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Number}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{Square}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{Cube}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{11}\PY{p}{)}\PY{p}{:}
-  \PY{n}{x} \PY{o}{=} \PY{n+nb}{float}\PY{p}{(}\PY{n}{x}\PY{p}{)}
-  \PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}}\PY{n}{x}\PY{l+s+si}{:}\PY{l+s+s1}{5.2f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}}\PY{n}{x}\PY{o}{*}\PY{n}{x}\PY{l+s+si}{:}\PY{l+s+s1}{6.2f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}}\PY{n}{x}\PY{o}{*}\PY{n}{x}\PY{o}{*}\PY{n}{x}\PY{l+s+si}{:}\PY{l+s+s1}{12.2f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{31}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{APPLES} \PY{o}{=} \PY{l+m+mf}{.50}
-\PY{n}{BREAD} \PY{o}{=} \PY{l+m+mf}{1.50}
-\PY{n}{CHEESE} \PY{o}{=} \PY{l+m+mf}{2.25}
-\PY{n}{numApples} \PY{o}{=} \PY{l+m+mi}{3}
-\PY{n}{numBread} \PY{o}{=} \PY{l+m+mi}{4}
-\PY{n}{numCheese} \PY{o}{=} \PY{l+m+mi}{2}
-\PY{n}{prcApples} \PY{o}{=} \PY{l+m+mi}{3} \PY{o}{*} \PY{n}{APPLES}
-\PY{n}{prcBread} \PY{o}{=} \PY{l+m+mi}{4} \PY{o}{*} \PY{n}{BREAD}
-\PY{n}{prcCheese} \PY{o}{=} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{CHEESE}
-\PY{n}{strApples} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Apples}\PY{l+s+s1}{\PYZsq{}}
-\PY{n}{strBread} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Bread}\PY{l+s+s1}{\PYZsq{}}
-\PY{n}{strCheese} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Cheese}\PY{l+s+s1}{\PYZsq{}}
-
-\PY{n}{total} \PY{o}{=} \PY{n}{prcBread} \PY{o}{+} \PY{n}{prcBread} \PY{o}{+} \PY{n}{prcApples}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{My Grocery List}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{:}\PY{l+s+s1}{\PYZca{}31s}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{=}\PY{l+s+s2}{\PYZdq{}}\PY{o}{*}\PY{l+m+mi}{31}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}}\PY{n}{strApples}\PY{l+s+si}{\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}}\PY{n}{numApples}\PY{l+s+si}{:}\PY{l+s+s1}{10d}\PY{l+s+si}{\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{R\PYZdl{}}\PY{l+s+si}{\PYZob{}}\PY{n}{prcApples}\PY{l+s+si}{:}\PY{l+s+s1}{\PYZgt{}5.2f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}}\PY{n}{strBread}\PY{l+s+si}{\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}}\PY{n}{numBread}\PY{l+s+si}{:}\PY{l+s+s1}{10d}\PY{l+s+si}{\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{R\PYZdl{}}\PY{l+s+si}{\PYZob{}}\PY{n}{prcBread}\PY{l+s+si}{:}\PY{l+s+s1}{\PYZgt{}5.2f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}}\PY{n}{strCheese}\PY{l+s+si}{\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZob{}}\PY{n}{numCheese}\PY{l+s+si}{:}\PY{l+s+s1}{10d}\PY{l+s+si}{\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{R\PYZdl{}}\PY{l+s+si}{\PYZob{}}\PY{n}{prcCheese}\PY{l+s+si}{:}\PY{l+s+s1}{\PYZgt{}5.2f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZob{}}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Total:}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{:}\PY{l+s+s1}{\PYZgt{}19s}\PY{l+s+si}{\PYZcb{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s1}{R\PYZdl{}}\PY{l+s+si}{\PYZob{}}\PY{n}{total}\PY{l+s+si}{:}\PY{l+s+s1}{\PYZgt{}5.2f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{33}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{n}{number} \PY{o}{=} \PY{l+m+mi}{1000000}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{The number, 1000000, formatted with a comma}\PY{l+s+si}{\PYZob{}}\PY{n}{number}\PY{l+s+si}{:}\PY{l+s+s1}{,.2f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{l+s+sa}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{The number, 1000000, formatted with a comma and right\PYZhy{}aligned in a width of 15 }\PY{l+s+si}{\PYZob{}}\PY{n}{number}\PY{l+s+si}{:}\PY{l+s+s1}{\PYZgt{}15,.2f}\PY{l+s+si}{\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
 
     \hypertarget{processando-a-informauxe7uxe3o-cap.-5-vetores---pruxe1tica-3}{%
 \subsection{Processando a Informação: Cap. 5: Vetores - Prática
@@ -7811,13 +7483,6 @@ Fontes:
   módulo que retorna o número que mais se repete.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -7831,13 +7496,6 @@ Fontes:
   solução é \{1,2,3,4,2,3\}.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -7849,13 +7507,6 @@ Fontes:
   como resultado o produto da operação (((vet{[}0{]} E vet{[}1{]}) OU
   vet{[}2{]}) E vet{[}3{]}) \ldots{} e assim por diante.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -7871,13 +7522,6 @@ Fontes:
   valores.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -7892,13 +7536,6 @@ Fontes:
   anteriormente (guardados no vetor), ou NÃO ACHEI caso contrário.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -7912,13 +7549,6 @@ Fontes:
   resultado da contagem.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -7930,13 +7560,6 @@ Fontes:
   Escrever a seguir o valor do maior (e menor) elemento de Q e a
   respectiva posição que ele ocupa no vetor.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -7951,13 +7574,6 @@ Fontes:
   com os do vetor B (respeitando as mesmas posições) e escrever o vetor
   Soma.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -7983,13 +7599,6 @@ Fontes:
   anual
 \end{itemize}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -8004,13 +7613,6 @@ Fontes:
   correta, ou seja, mantendo a ordem crescente do vetor.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -8023,13 +7625,6 @@ Fontes:
   vetor ou não. Se existir, o algoritmo deve gerar um novo vetor sem
   esse número. (Considere que não haverão números repetidos no vetor).
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -8044,13 +7639,6 @@ Fontes:
   essa última restrição).
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -8064,13 +7652,6 @@ Fontes:
   intersecção entre os dois primeiros.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -8081,13 +7662,6 @@ Fontes:
   Dado um vetor com números ordenados de forma não decrescente, faça uma
   função que imprime somente os números que não sejam repetidos.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -8101,13 +7675,6 @@ Fontes:
   nos dois vetores. Ex: se v1=\{19, 5, 2, 6\} e v2=\{5, 0, 9, 4, 18,
   56\} deverá ser impresso somente o valor 5.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -8131,13 +7698,6 @@ Fontes:
 \item
   sub conjunto de valores primos que está contido no vetor
 \end{itemize}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -8166,13 +7726,6 @@ Fontes:
   esse vetor preenchido com os seguintes valores {[}1;3; 6; 10; 15{]}.
 \end{itemize}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -8186,13 +7739,6 @@ Fontes:
   são estes números e quantas vezes eles foram repetidos.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -8205,13 +7751,6 @@ Fontes:
   uma posição parao inicio. Imprimir o vetor após a retirada do primeiro
   elemento.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -8229,13 +7768,6 @@ Fontes:
   exclusão ter sido executada.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -8250,13 +7782,6 @@ Fontes:
   alunos aprovados e outra de alunos reprovados.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -8267,13 +7792,6 @@ Fontes:
   Escreva um programa para ler \(n\) palavras. A seguir imprimir as
   palavras em ordem alfabética.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -8287,13 +7805,6 @@ Fontes:
   as contagens.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -8306,13 +7817,6 @@ Fontes:
   modificada.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -8324,13 +7828,6 @@ Fontes:
   existentes na frase. Considere palavra um conjunto qualquer de
   caracteres separados por um conjunto qualquer de espaços em branco.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -8346,13 +7843,6 @@ Fontes:
   vetores, 10 elementos por linha.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -8366,13 +7856,6 @@ Fontes:
   10 elementos, mas nem todos os elementos são utilizados. No final
   escreva os elementos UTILIZADOS de v1 e v2.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -8390,13 +7873,6 @@ Fontes:
   fornecidos. Exibir na tela o vetor final que foi digitado.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -8409,13 +7885,6 @@ Fontes:
   em metros. Encontre o aluno mais baixo e o mais alto. Mostre o número
   do aluno mais baixo e do mais alto, juntamente com suas alturas.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -8431,13 +7900,6 @@ Fontes:
   anteriormente. Dica: some as posições correspondentes. Se a soma
   ultrapassar 10, subtraia 10 do resultado e some 1 à próxima posição.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -8455,13 +7917,6 @@ Fontes:
   ou seja, que contém os elementos dos dois vetores.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -8476,13 +7931,6 @@ Fontes:
   mostre o nome de todos os clientes, com a quantidade de locações
   grátis a que ele tem direito.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -8504,13 +7952,6 @@ Fontes:
   aumento será de 10\%.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -8522,13 +7963,6 @@ Fontes:
   \((i+5i)\%i\), sendo \(i\) aposição do elemento no vetor, em seguida
   imprima o vetor na tela.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -8542,13 +7976,6 @@ Fontes:
 \end{enumerate}
 
 \[ STD = \sqrt{\frac{1}{n-1} \sum_{i=0}^{n-1}(v[i]-m)^2} \]
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \hypertarget{processando-a-informauxe7uxe3o-cap.-6-matrizes}{%
 \section{Processando a Informação: Cap. 6:
@@ -8913,7 +8340,7 @@ LISTA DE ALUNOS vs Avaliações:
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}\PYZpc{}writefile} cap06exem01.c
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap6ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 \PY{c+c1}{\PYZsh{}include\PYZlt{}malloc.h\PYZgt{}  }
 
@@ -8982,7 +8409,7 @@ LISTA DE ALUNOS vs Avaliações:
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap06exem01.c \PYZhy{}o output2
+gcc cap6ex01.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -8990,7 +8417,7 @@ gcc cap06exem01.c \PYZhy{}o output2
     \hypertarget{exercuxedcios}{%
 \subsection{Exercícios}\label{exercuxedcios}}
 
-    Ver notebook Colab nos arquivos \texttt{cap06.partX.lab.*.ipynb}
+    Ver notebook Colab nos arquivos \texttt{cap6.partX.lab.*.ipynb}
 (\texttt{X} \(\in\) \texttt{{[}2,3,4,5{]}} e \texttt{*} é a extensão da
 linguagem), utilizando alguma linguagem de programação de sua
 preferência, onganizadas em subpastas contidas em \texttt{"gen"}, na
@@ -9079,13 +8506,6 @@ nesse livro.
   alunos.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -9099,13 +8519,6 @@ nesse livro.
   ou \texttt{"aprovado"}, caso contrário.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -9118,13 +8531,6 @@ nesse livro.
   e secundária da matriz.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -9135,13 +8541,6 @@ nesse livro.
   Criar uma matriz para armazenar \texttt{L} linhas e \texttt{C}
   colunas. Calcular a soma dos elementos acima da diagonal da matriz.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -9157,13 +8556,6 @@ nesse livro.
   primeira coluna de \texttt{m1}. Isso se repete para as demais linhas
   de \texttt{m2} e colunas de \texttt{m1}.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \hypertarget{processando-a-informauxe7uxe3o-cap.-6-matrizes---pruxe1tica-2}{%
 \subsection{Processando a Informação: Cap. 6: Matrizes - Prática
@@ -9195,13 +8587,6 @@ nesse livro.
   matriz \texttt{3\ x\ 3} de valores reais recebida como parâmetro.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -9214,13 +8599,6 @@ nesse livro.
   nada).
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -9232,13 +8610,6 @@ nesse livro.
   e retorne um vetor contendo a somatória dos valores contidos nas
   colunas.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -9284,13 +8655,6 @@ nesse livro.
   \end{enumerate}
 \end{itemize}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -9301,13 +8665,6 @@ nesse livro.
   Criar um método que receba duas matrizes de valores reais e retorne à
   multiplicação das duas matrizes.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \hypertarget{processando-a-informauxe7uxe3o-cap.-6-matrizes---pruxe1tica-3}{%
 \subsection{Processando a Informação: Cap. 6: Matrizes - Prática
@@ -9346,13 +8703,6 @@ Fonte:
   inteira ou coluna inteira) ou diagonal sem passar por uma mina sequer.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -9368,13 +8718,6 @@ Fonte:
   contrário recebe o valor 0. Imprimir as imagens de entrada e saída.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -9388,13 +8731,6 @@ Fonte:
   com o comando \texttt{round}.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -9407,13 +8743,6 @@ Fonte:
   de 5 números, gere estes dados de modo a não ter números repetidos
   dentro das cartelas. O programa deve exibir na tela a cartela gerada.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -9431,13 +8760,6 @@ Fonte:
   candidato. Imprimir também a lista de aprovados e em seguinda a lista
   de reprovados, considernado média 5.
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -9468,13 +8790,6 @@ Fonte:
 \bottomrule
 \end{longtable}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -9491,13 +8806,6 @@ Fonte:
   `X'.
 \end{enumerate}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
-
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \begin{enumerate}
@@ -9512,13 +8820,6 @@ Fonte:
   casa contendo uma peça minha (-1), uma casa vazia do tabuleiro (0), e
   uma casa contendo uma peça do meu oponente (1).
 \end{enumerate}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\end{Verbatim}
-\end{tcolorbox}
 
     \hypertarget{processando-a-informauxe7uxe3o-cap.-6-matrizes---pruxe1tica-4}{%
 \subsection{Processando a Informação: Cap. 6: Matrizes - Prática
@@ -9537,21 +8838,6 @@ Este conteúdo pode ser copiado e alterado livremente e foi inspirado
 nesse livro.
 \end{quote}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-\PY{k}{def} \PY{n+nf}{escreverMatriz}\PY{p}{(}\PY{n}{m}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} escreve matriz, linha por linha}
-  \PY{k}{for} \PY{n}{linha} \PY{o+ow}{in} \PY{n}{m}\PY{p}{:}
-    \PY{n+nb}{print}\PY{p}{(}\PY{o}{*}\PY{n}{linha}\PY{p}{)}
-
-\PY{n}{L}\PY{p}{,}\PY{n}{C} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,} \PY{n}{size} \PY{o}{=} \PY{l+m+mi}{2}\PY{p}{)} \PY{c+c1}{\PYZsh{} INTERESSANTE para testar}
-\PY{n+nb}{print}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{C}\PY{p}{)}
-\PY{n}{m} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{n}{size}\PY{o}{=}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{C}\PY{p}{)}\PY{p}{)}   \PY{c+c1}{\PYZsh{} INTERESSANTE para testar}
-\PY{n}{escreverMatriz}\PY{p}{(}\PY{n}{m}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
     \hypertarget{exercuxedcios}{%
 \subsubsection{Exercícios}\label{exercuxedcios}}
 
@@ -9559,89 +8845,13 @@ nesse livro.
 
 EP5\_1 - Média dos alunos
 
-    \hypertarget{ler-uma-matriz-considerando-cada-linha-da-matriz-um-input}{%
-\paragraph{\texorpdfstring{Ler uma matriz considerando cada LINHA da
-matriz um
-\texttt{input()}:}{Ler uma matriz considerando cada LINHA da matriz um input():}}\label{ler-uma-matriz-considerando-cada-linha-da-matriz-um-input}}
+    \hypertarget{ler-uma-matriz-linha-por-linha}{%
+\paragraph{Ler uma matriz LINHA por
+LINHA:}\label{ler-uma-matriz-linha-por-linha}}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{k}{def} \PY{n+nf}{lerMatriz}\PY{p}{(}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} ler matriz de inteiros}
-  \PY{n}{m}\PY{p}{,} \PY{n}{ler\PYZus{}linha} \PY{o}{=} \PY{p}{[}\PY{p}{]}\PY{p}{,} \PY{n+nb}{input}\PY{p}{(}\PY{p}{)}
-  \PY{k}{while} \PY{n}{ler\PYZus{}linha}\PY{p}{:}
-    \PY{n}{m}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n+nb}{int}\PY{p}{(}\PY{n}{i}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{ler\PYZus{}linha}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)} \PY{k}{if} \PY{n}{i}\PY{p}{]}\PY{p}{)}
-    \PY{n}{ler\PYZus{}linha} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{p}{)}
-  \PY{k}{return} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{n}{m}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{int}\PY{p}{)}
-
-\PY{n}{m1} \PY{o}{=} \PY{n}{lerMatriz}\PY{p}{(}\PY{p}{)}
-\PY{n}{L}\PY{p}{,}\PY{n}{C} \PY{o}{=} \PY{n}{m1}\PY{o}{.}\PY{n}{shape} \PY{c+c1}{\PYZsh{} para ler as dimensões de uma matriz no numpy}
-\PY{n+nb}{print}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{C}\PY{p}{)}
-\PY{n}{escreverMatriz}\PY{p}{(}\PY{n}{m1}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    O PROCESSAMENTO de um problema/questão INDEPENDE da forma como a matriz
-foi criada/lida com o comando \texttt{input()}:
-
-\begin{itemize}
-\tightlist
-\item
-  cada LINHA da matriz um \texttt{input()} ou
-\item
-  cada ELEMENTO da matriz um \texttt{input()}
-\end{itemize}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} escreva o seu código}
-\PY{k}{def} \PY{n+nf}{calcMedia}\PY{p}{(}\PY{n}{m}\PY{p}{)}\PY{p}{:}
-  \PY{n}{v} \PY{o}{=} \PY{p}{[}\PY{p}{]}
-  \PY{n}{L}\PY{p}{,} \PY{n}{C} \PY{o}{=} \PY{n}{m}\PY{o}{.}\PY{n}{shape}
-  \PY{n}{m1} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{C}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{dtype}\PY{o}{=}\PY{n+nb}{float}\PY{p}{)}
-  \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{L}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} para cada linha/aluno}
-    \PY{n}{soma} \PY{o}{=} \PY{l+m+mi}{0}
-    \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{C}\PY{p}{)}\PY{p}{:} \PY{c+c1}{\PYZsh{} para cada coluna/nota do aluno}
-      \PY{n}{soma} \PY{o}{+}\PY{o}{=} \PY{n}{m}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}
-      \PY{n}{m1}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{m}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{j}\PY{p}{]}
-    \PY{n}{m1}\PY{p}{[}\PY{n}{i}\PY{p}{,}\PY{n}{C}\PY{p}{]} \PY{o}{=} \PY{n+nb}{round}\PY{p}{(}\PY{n}{soma} \PY{o}{/} \PY{n}{C}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
-  \PY{k}{return} \PY{n}{m1}
-
-\PY{n}{escreverMatriz}\PY{p}{(}\PY{n}{m}\PY{p}{)}
-\PY{n+nb}{print}\PY{p}{(}\PY{p}{)}
-\PY{n}{escreverMatriz}\PY{p}{(}\PY{n}{calcMedia}\PY{p}{(}\PY{n}{m}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \hypertarget{ler-uma-matriz-considerando-cada-elemento-da-matriz-um-input}{%
-\paragraph{\texorpdfstring{Ler uma matriz considerando cada ELEMENTO da
-matriz um
-\texttt{input()}:}{Ler uma matriz considerando cada ELEMENTO da matriz um input():}}\label{ler-uma-matriz-considerando-cada-elemento-da-matriz-um-input}}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np} \PY{c+c1}{\PYZsh{} muito útil para trabalhar com vetor!}
-  
-\PY{k}{def} \PY{n+nf}{lerMatriz2}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{C}\PY{p}{)}\PY{p}{:}
-  \PY{n}{m} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{C}\PY{p}{)}\PY{p}{)}\PY{o}{.}\PY{n}{astype}\PY{p}{(}\PY{n+nb}{int}\PY{p}{)} \PY{c+c1}{\PYZsh{} matriz de inteiro com Linhas x Colunas}
-  \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{L}\PY{p}{)}\PY{p}{:}
-    \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{C}\PY{p}{)}\PY{p}{:}
-      \PY{n}{m}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{n+nb}{input}\PY{p}{(}\PY{p}{)}\PY{p}{)}
-  \PY{k}{return} \PY{n}{m}
-
-\PY{c+c1}{\PYZsh{} ENTRADA DE DADOS}
-\PY{n}{L} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Digite o numero de alunos:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
-\PY{n}{C} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{n+nb}{input}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Digite o numero de avaliações:}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
-\PY{n}{m} \PY{o}{=} \PY{n}{lerMatriz2}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{C}\PY{p}{)}
-\PY{c+c1}{\PYZsh{} PROCESSAMENTO ?}
-\PY{n}{m1} \PY{o}{=} \PY{n}{calcMedia}\PY{p}{(}\PY{n}{m}\PY{p}{)}
-
-\PY{c+c1}{\PYZsh{} SAÍDA DE DADOS}
-\PY{n}{escreverMatriz}\PY{p}{(}\PY{n}{m1}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
+    \hypertarget{ler-uma-matriz-considerando-cada-elemento-da-matriz-uma-entrada}{%
+\paragraph{Ler uma matriz considerando cada ELEMENTO da matriz uma
+entrada:}\label{ler-uma-matriz-considerando-cada-elemento-da-matriz-uma-entrada}}
 
 
     % Add a bibliography block to the postdoc
