@@ -1,0 +1,38 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[a4paper,width=160mm,top=25mm,bottom=25mm]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[EL]{\nouppercase\leftmark}
+\fancyhead[OR]{\nouppercase\rightmark}
+\fancyhead[ER,OL]{\thepage}
+
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+
+\renewcommand{\linethickness}{0.05em}
+\usepackage[brazil]{babel}   
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+
+
+\title{Processando a Informação: um livro prático de programação independente de linguagem 
+\\\large\vspace{2cm}
+Rogério Perino de Oliveira Neves 
+\\\vspace{5mm}
+Francisco de Assis Zampirolli
+\\\large\vspace{2cm}
+EDUFABC
+\\ \url{editora.ufabc.edu.br}
+\\\Huge\vspace{3cm}
+Notas de Aulas inspiradas no livro
+\\\Large\vspace{1cm}
+Utilizando a(s) Linguagem(ns) de Programação: 
+\\\Huge\vspace{1cm}
+___X___
+\\\large\vspace{1cm}
+Exemplos adaptados para Correção Automática no Moodle+VPL
+\vspace{2cm}}
+\author{Francisco de Assis Zampirolli\vspace{1cm}}
