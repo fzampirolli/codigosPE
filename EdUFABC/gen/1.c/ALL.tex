@@ -4820,7 +4820,7 @@ escreva("A média das " + contador + " notas é " + média);
 
     \begin{figure}
 \centering
-\caption{flowchartCap4c.png}
+\caption{flowchartCap4c.jpg}
 \end{figure}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
@@ -4933,6 +4933,89 @@ A média das 10 notas é 7.3
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
 gcc cap4ex01.c \PYZhy{}o output2
+./output2
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{recursuxe3o}{%
+\subsection{Recursão}\label{recursuxe3o}}
+
+    Este tópico de recursão é complementar ao livro.
+
+Assim como os laços de repetição, a recursão tem como objetivo rodar
+trechos de códigos (agora encapsulados em métodos) várias vezes.
+
+    \hypertarget{exemplo-02---ler-10-notas-com-recursuxe3o}{%
+\subsection{Exemplo 02 - Ler 10 notas, com
+recursão}\label{exemplo-02---ler-10-notas-com-recursuxe3o}}
+
+Considere um algoritmo para ler 10 notas válidas utilizando recursão e
+calcular a média.
+
+    Pseudocódigo
+
+\begin{verbatim}
+# MINHA FUNÇÃO RECURSIVA
+função lerNota(recebe: real acumulador, inteiro n) retorna real acumulador {
+  Real: nota;
+  se (n > 0) faça {
+    faça {
+      nota = leia();
+    } enquanto (nota < 0 || nota > 10); 
+    acumulador = lerNota(acumulador, n - 1); # CHAMDADA RECURSIVA!!!
+  }
+  retorne acumulador + nota;
+}
+
+Real: média, acumulador=0, contador=10;
+
+escreva("Entre com " + contador + " notas válidas")
+acumulador = lerNota(acumulador, contador); # CHAMDADA RECURSIVA!!!
+
+média = acumulador / contador;
+escreva("A média das " + contador + " notas é " + média);
+\end{verbatim}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{1}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap4ex02.c
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+
+\PY{n+nb}{float} \PY{n}{lerNota}\PY{p}{(}\PY{n+nb}{float} \PY{n}{acumulador}\PY{p}{,} \PY{n+nb}{int} \PY{n}{n}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n+nb}{float} \PY{n}{nota}\PY{p}{;}
+  \PY{k}{if} \PY{p}{(}\PY{n}{n} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{do} \PY{p}{\PYZob{}}
+      \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}f}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{nota}\PY{p}{)}\PY{p}{;}
+    \PY{p}{\PYZcb{}} \PY{k}{while} \PY{p}{(}\PY{n}{nota} \PY{o}{\PYZlt{}} \PY{l+m+mf}{0.0} \PY{o}{|}\PY{o}{|} \PY{n}{nota} \PY{o}{\PYZgt{}} \PY{l+m+mf}{10.0}\PY{p}{)}\PY{p}{;}
+    \PY{n}{acumulador} \PY{o}{=} \PY{n}{lerNota}\PY{p}{(}\PY{n}{acumulador}\PY{p}{,} \PY{n}{n} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{CHAMADA} \PY{n}{RECURSIVA}\PY{err}{!}\PY{err}{!}\PY{err}{!}
+  \PY{p}{\PYZcb{}}
+  \PY{k}{return} \PY{n}{acumulador} \PY{o}{+} \PY{n}{nota}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{ENTRADA} \PY{n}{DE} \PY{n}{DADOS} \PY{n}{e} \PY{n}{PROCESSAMENTO}
+  \PY{n+nb}{float} \PY{n}{acumulador} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{nota}\PY{p}{,} \PY{n}{media}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{contador} \PY{o}{=} \PY{l+m+mi}{10}\PY{p}{;}
+
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Entre com }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ notas válidas}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{contador}\PY{p}{)}\PY{p}{;}
+  \PY{n}{acumulador} \PY{o}{=} \PY{n}{lerNota}\PY{p}{(}\PY{n}{acumulador}\PY{p}{,} \PY{n}{contador}\PY{p}{)}\PY{p}{;}
+  \PY{n}{media} \PY{o}{=} \PY{n}{acumulador} \PY{o}{/} \PY{n}{contador}\PY{p}{;}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{A média das }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ notas é }\PY{l+s+si}{\PYZpc{}.1f}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{contador}\PY{p}{,} \PY{n}{media}\PY{p}{)}\PY{p}{;}
+
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
+gcc cap4ex02.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
