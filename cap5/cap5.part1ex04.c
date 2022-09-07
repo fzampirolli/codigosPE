@@ -8,11 +8,13 @@ int* leiaVetor(int n) {
   }
   return v;
 }
+
 void escrevaVetor(int* v, int n) {
   for (int i = 0; i < n; i++) {
     printf("%d\n", v[i]);
   }
 }
+
 int main(void) {
   // ENTRADA DE DADOS
   int n, * v1;   // variaveis de referência v1

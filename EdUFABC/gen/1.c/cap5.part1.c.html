@@ -14907,7 +14907,7 @@ Número RA     Nota
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex01.c
@@ -14948,11 +14948,11 @@ Número RA     Nota
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc cap5ex01.c -o output2
+gcc -Wall -std=c99 cap5ex01.c -o output2
 ./output2
 </pre></div>
 
@@ -14983,20 +14983,21 @@ gcc cap5ex01.c -o output2
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex01teste.c
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="c1">#include &lt;string.h&gt;</span>
 
-<span class="n">void</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
    <span class="n">char</span> <span class="n">s</span><span class="p">[</span><span class="mi">40</span><span class="p">];</span>
    <span class="n">printf</span><span class="p">(</span><span class="s2">"digite algo:</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
    <span class="n">fgets</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
    <span class="n">printf</span><span class="p">(</span><span class="s2">"saida: </span><span class="se">\"</span><span class="si">%s</span><span class="se">\"</span><span class="s2"> tamanho: </span><span class="si">%ld</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">));</span>
    <span class="n">s</span><span class="p">[</span><span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'</span><span class="se">\0</span><span class="s1">'</span><span class="p">;</span> <span class="o">//</span> <span class="n">substituir</span> \<span class="n">n</span> <span class="n">por</span> \<span class="mi">0</span>
    <span class="n">printf</span><span class="p">(</span><span class="s2">"saida: </span><span class="se">\"</span><span class="si">%s</span><span class="se">\"</span><span class="s2"> tamanho: </span><span class="si">%ld</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">s</span><span class="p">));</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -15010,11 +15011,11 @@ gcc cap5ex01.c -o output2
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc cap5ex01teste.c -o cap5ex01teste
+gcc -Wall -std=c99 cap5ex01teste.c -o cap5ex01teste
 ./cap5ex01teste
 </pre></div>
 
@@ -15549,7 +15550,7 @@ Número	 RA	Nota
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc cap5ex02.c -o output2
+gcc -Wall -std=c99 cap5ex02.c -o output2
 ./output2
 </pre></div>
 
@@ -15589,7 +15590,7 @@ gcc cap5ex02.c -o output2
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[65]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex02teste1.c
@@ -15636,11 +15637,11 @@ gcc cap5ex02.c -o output2
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc cap5ex02teste1.c -o output2
+gcc -Wall -std=c99 cap5ex02teste1.c -o output2
 ./output2
 </pre></div>
 
@@ -15654,7 +15655,7 @@ gcc cap5ex02teste1.c -o output2
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[68]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex02teste2.c
@@ -15705,11 +15706,11 @@ gcc cap5ex02teste1.c -o output2
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[69]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc cap5ex02teste2.c -o output2
+gcc -Wall -std=c99 cap5ex02teste2.c -o output2
 ./output2
 </pre></div>
 
@@ -15799,7 +15800,7 @@ RA      Nota
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex03.c
@@ -15866,11 +15867,11 @@ RA      Nota
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc cap5ex03.c -o output2
+gcc -Wall -std=c99 cap5ex03.c -o output2
 ./output2
 </pre></div>
 
@@ -15999,7 +16000,7 @@ output=v2:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex04.c
@@ -16054,11 +16055,11 @@ output=v2:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc cap5ex04.c -o output2
+gcc -Wall -std=c99 cap5ex04.c -o output2
 ./output2
 </pre></div>
 
@@ -16111,7 +16112,7 @@ gcc cap5ex04.c -o output2
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[123]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> str2int.c
@@ -16146,11 +16147,11 @@ gcc cap5ex04.c -o output2
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[124]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc str2int.c -o output2
+gcc -Wall -std=c99 str2int.c -o output2
 ./output2
 </pre></div>
 

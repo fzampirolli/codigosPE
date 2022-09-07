@@ -16299,7 +16299,7 @@ output=Alô, Mundo!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap1ex01.c
@@ -16320,10 +16320,10 @@ output=Alô, Mundo!
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gcc cap1ex01.c -o output2
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gcc -Wall -std<span class="o">=</span>c99 cap1ex01.c -o output2
 <span class="o">!</span>./output2
 </pre></div>
 
@@ -16332,6 +16332,28 @@ output=Alô, Mundo!
 </div>
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li>O comando <code>%%writefile</code> salva o arquivo no servidor <em>colab</em> (pasta à esquerda).</li>
+<li>O comando após <code>!</code> roda no terminal.</li>
+<li><code>gcc</code> é o compilador utilizado, com os argumentos:<ul>
+<li><code>-Wall</code> para mostrar <em>warnings</em> (programas mal feitos)</li>
+<li><code>-std=c99</code> compilador padrão ANSI (ou <code>c99</code>), compatível em mais arquiteturas</li>
+<li>arquivo de entrada <code>cap1ex01.c</code></li>
+<li><code>-o</code> arquivo de saída executável</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -16474,7 +16496,7 @@ output=
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap1ex02.c
@@ -16498,11 +16520,11 @@ output=
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc cap1ex02.c -o output2
+gcc -Wall -std=c99 cap1ex02.c -o output2
 ./output2
 </pre></div>
 
@@ -16563,6 +16585,128 @@ gcc cap1ex02.c -o output2
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Tipos-de-dados-em-C">Tipos de dados em C<a class="anchor-link" href="#Tipos-de-dados-em-C">&#182;</a></h3><p>O comando sizeof retorna a quantidade de bytes de cada variável.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap1ex03.c
+<span class="c1">#include &lt;stdio.h&gt;</span>
+<span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">char</span> <span class="n">ch</span><span class="p">;</span>
+  <span class="nb">int</span> <span class="n">i</span><span class="p">;</span>
+  <span class="n">long</span> <span class="nb">int</span> <span class="n">li</span><span class="p">;</span>
+  <span class="n">short</span> <span class="n">s</span><span class="p">;</span>
+  <span class="n">unsigned</span> <span class="nb">int</span> <span class="n">ui</span><span class="p">;</span>
+  <span class="nb">float</span> <span class="n">f</span><span class="p">;</span>
+  <span class="n">double</span> <span class="n">d</span><span class="p">;</span>
+  <span class="n">long</span> <span class="n">double</span> <span class="n">ld</span><span class="p">;</span>
+
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"Numero de bytes por tipo de dados:</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"char:         </span><span class="si">%ld</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">sizeof</span> <span class="p">(</span><span class="n">ch</span><span class="p">));</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"int:          </span><span class="si">%ld</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">sizeof</span> <span class="p">(</span><span class="n">i</span><span class="p">));</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"long int:     </span><span class="si">%ld</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">sizeof</span> <span class="p">(</span><span class="n">li</span><span class="p">));</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"short:        </span><span class="si">%ld</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">sizeof</span> <span class="p">(</span><span class="n">s</span><span class="p">));</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"unsigned int: </span><span class="si">%ld</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">sizeof</span> <span class="p">(</span><span class="n">ui</span><span class="p">));</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"float:        </span><span class="si">%ld</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">sizeof</span> <span class="p">(</span><span class="n">f</span><span class="p">));</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"double:       </span><span class="si">%ld</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">sizeof</span> <span class="p">(</span><span class="n">d</span><span class="p">));</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"long double:  </span><span class="si">%ld</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">sizeof</span> <span class="p">(</span><span class="n">ld</span><span class="p">));</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
+gcc -Wall -std=c99 cap1ex03.c -std=c99 -Wall -o output3
+./output3
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Casts">Casts<a class="anchor-link" href="#Casts">&#182;</a></h3><p>Para alterar um tipo de dados para outro utilizar <em>cast</em>.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap1ex04.c
+<span class="c1">#include &lt;stdio.h&gt;</span>
+<span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">double</span> <span class="n">d</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+  <span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="n">d</span><span class="p">;</span> <span class="o">//</span> <span class="n">AQUI</span> <span class="n">ESTA</span> <span class="n">O</span> <span class="n">CAST</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"double = </span><span class="si">%f</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">d</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s2">"int = </span><span class="si">%d</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
+gcc -Wall -std=c99 cap1ex04.c -std=c99 -Wall -o output4
+./output4
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">

@@ -1658,7 +1658,7 @@ output=Alô, Mundo!
 \end{itemize}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{25}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap1ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -1670,12 +1670,36 @@ output=Alô, Mundo!
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{26}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{!}gcc cap1ex01.c \PYZhy{}o output2
+\PY{o}{!}gcc \PYZhy{}Wall \PYZhy{}std\PY{o}{=}c99 cap1ex01.c \PYZhy{}o output2
 \PY{o}{!}./output2
 \end{Verbatim}
 \end{tcolorbox}
+
+    \begin{itemize}
+\tightlist
+\item
+  O comando \texttt{\%\%writefile} salva o arquivo no servidor
+  \emph{colab} (pasta à esquerda).
+\item
+  O comando após \texttt{!} roda no terminal.
+\item
+  \texttt{gcc} é o compilador utilizado, com os argumentos:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{-Wall} para mostrar \emph{warnings} (programas mal feitos)
+  \item
+    \texttt{-std=c99} compilador padrão ANSI (ou \texttt{c99}),
+    compatível em mais arquiteturas
+  \item
+    arquivo de entrada \texttt{cap1ex01.c}
+  \item
+    \texttt{-o} arquivo de saída executável
+  \end{itemize}
+\end{itemize}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -1738,7 +1762,7 @@ output=
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{28}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap1ex02.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -1753,10 +1777,10 @@ output=
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{29}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap1ex02.c \PYZhy{}o output2
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap1ex02.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -1802,6 +1826,78 @@ ENTRADA DE DADOS \(\Rightarrow\) PROCESSAMENTO DA INFORMAÇÃO
     As estruturas fundamentais de lógica de programação, usadas para
 orientar o fluxo do processamento, comuns a todas as linguagens de
 programação, são apresentadas nos próximos três capítulos.
+
+    \hypertarget{tipos-de-dados-em-c}{%
+\subsubsection{Tipos de dados em C}\label{tipos-de-dados-em-c}}
+
+O comando sizeof retorna a quantidade de bytes de cada variável.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{30}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap1ex03.c
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{char} \PY{n}{ch}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{i}\PY{p}{;}
+  \PY{n}{long} \PY{n+nb}{int} \PY{n}{li}\PY{p}{;}
+  \PY{n}{short} \PY{n}{s}\PY{p}{;}
+  \PY{n}{unsigned} \PY{n+nb}{int} \PY{n}{ui}\PY{p}{;}
+  \PY{n+nb}{float} \PY{n}{f}\PY{p}{;}
+  \PY{n}{double} \PY{n}{d}\PY{p}{;}
+  \PY{n}{long} \PY{n}{double} \PY{n}{ld}\PY{p}{;}
+
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Numero de bytes por tipo de dados:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{char:         }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sizeof} \PY{p}{(}\PY{n}{ch}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{int:          }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sizeof} \PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{long int:     }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sizeof} \PY{p}{(}\PY{n}{li}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{short:        }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sizeof} \PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{unsigned int: }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sizeof} \PY{p}{(}\PY{n}{ui}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{float:        }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sizeof} \PY{p}{(}\PY{n}{f}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{double:       }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sizeof} \PY{p}{(}\PY{n}{d}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{long double:  }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sizeof} \PY{p}{(}\PY{n}{ld}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{31}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap1ex03.c \PYZhy{}std=c99 \PYZhy{}Wall \PYZhy{}o output3
+./output3
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{casts}{%
+\subsubsection{Casts}\label{casts}}
+
+Para alterar um tipo de dados para outro utilizar \emph{cast}.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{48}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap1ex04.c
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{double} \PY{n}{d} \PY{o}{=} \PY{l+m+mf}{3.14}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{p}{(}\PY{n+nb}{int}\PY{p}{)}\PY{n}{d}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{AQUI} \PY{n}{ESTA} \PY{n}{O} \PY{n}{CAST}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{double = }\PY{l+s+si}{\PYZpc{}f}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{d}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{int = }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i}\PY{p}{)}\PY{p}{;}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{49}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap1ex04.c \PYZhy{}std=c99 \PYZhy{}Wall \PYZhy{}o output4
+./output4
+\end{Verbatim}
+\end{tcolorbox}
 
     \hypertarget{exercuxedcios}{%
 \subsection{Exercícios}\label{exercuxedcios}}

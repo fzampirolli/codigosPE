@@ -1658,7 +1658,7 @@ output=Alô, Mundo!
 \end{itemize}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{25}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap1ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -1670,12 +1670,36 @@ output=Alô, Mundo!
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{26}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{!}gcc cap1ex01.c \PYZhy{}o output2
+\PY{o}{!}gcc \PYZhy{}Wall \PYZhy{}std\PY{o}{=}c99 cap1ex01.c \PYZhy{}o output2
 \PY{o}{!}./output2
 \end{Verbatim}
 \end{tcolorbox}
+
+    \begin{itemize}
+\tightlist
+\item
+  O comando \texttt{\%\%writefile} salva o arquivo no servidor
+  \emph{colab} (pasta à esquerda).
+\item
+  O comando após \texttt{!} roda no terminal.
+\item
+  \texttt{gcc} é o compilador utilizado, com os argumentos:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{-Wall} para mostrar \emph{warnings} (programas mal feitos)
+  \item
+    \texttt{-std=c99} compilador padrão ANSI (ou \texttt{c99}),
+    compatível em mais arquiteturas
+  \item
+    arquivo de entrada \texttt{cap1ex01.c}
+  \item
+    \texttt{-o} arquivo de saída executável
+  \end{itemize}
+\end{itemize}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -1738,7 +1762,7 @@ output=
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{28}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap1ex02.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -1753,10 +1777,10 @@ output=
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{29}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap1ex02.c \PYZhy{}o output2
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap1ex02.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -1802,6 +1826,78 @@ ENTRADA DE DADOS \(\Rightarrow\) PROCESSAMENTO DA INFORMAÇÃO
     As estruturas fundamentais de lógica de programação, usadas para
 orientar o fluxo do processamento, comuns a todas as linguagens de
 programação, são apresentadas nos próximos três capítulos.
+
+    \hypertarget{tipos-de-dados-em-c}{%
+\subsubsection{Tipos de dados em C}\label{tipos-de-dados-em-c}}
+
+O comando sizeof retorna a quantidade de bytes de cada variável.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{30}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap1ex03.c
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{char} \PY{n}{ch}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{i}\PY{p}{;}
+  \PY{n}{long} \PY{n+nb}{int} \PY{n}{li}\PY{p}{;}
+  \PY{n}{short} \PY{n}{s}\PY{p}{;}
+  \PY{n}{unsigned} \PY{n+nb}{int} \PY{n}{ui}\PY{p}{;}
+  \PY{n+nb}{float} \PY{n}{f}\PY{p}{;}
+  \PY{n}{double} \PY{n}{d}\PY{p}{;}
+  \PY{n}{long} \PY{n}{double} \PY{n}{ld}\PY{p}{;}
+
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Numero de bytes por tipo de dados:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{char:         }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sizeof} \PY{p}{(}\PY{n}{ch}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{int:          }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sizeof} \PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{long int:     }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sizeof} \PY{p}{(}\PY{n}{li}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{short:        }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sizeof} \PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{unsigned int: }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sizeof} \PY{p}{(}\PY{n}{ui}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{float:        }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sizeof} \PY{p}{(}\PY{n}{f}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{double:       }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sizeof} \PY{p}{(}\PY{n}{d}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{long double:  }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{sizeof} \PY{p}{(}\PY{n}{ld}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{31}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap1ex03.c \PYZhy{}std=c99 \PYZhy{}Wall \PYZhy{}o output3
+./output3
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{casts}{%
+\subsubsection{Casts}\label{casts}}
+
+Para alterar um tipo de dados para outro utilizar \emph{cast}.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{48}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap1ex04.c
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{double} \PY{n}{d} \PY{o}{=} \PY{l+m+mf}{3.14}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{p}{(}\PY{n+nb}{int}\PY{p}{)}\PY{n}{d}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{AQUI} \PY{n}{ESTA} \PY{n}{O} \PY{n}{CAST}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{double = }\PY{l+s+si}{\PYZpc{}f}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{d}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{int = }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i}\PY{p}{)}\PY{p}{;}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{49}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap1ex04.c \PYZhy{}std=c99 \PYZhy{}Wall \PYZhy{}o output4
+./output4
+\end{Verbatim}
+\end{tcolorbox}
 
     \hypertarget{exercuxedcios}{%
 \subsection{Exercícios}\label{exercuxedcios}}
@@ -2267,6 +2363,25 @@ VSCode}\label{tuturial-em-construuxe7uxe3o-vscode}}
   \end{itemize}
 \item
   Clonar: https://github.com/fzampirolli/codigosPE
+\item
+  Alterar \texttt{settings.json} em \texttt{code-runner.executorMap}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{"c":\ "cd\ \$dir\ \&\&\ gcc\ -Wall\ -std=c99\ \$fileName\ -o\ ...}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \texttt{-Wall} para mostrar \texttt{warning} (programas ruins)
+    \item
+      \texttt{-std=c99} - padrão ANSI ou
+      \href{https://en.m.wikipedia.org/wiki/C99}{C99}, os programas
+      seguindo esse padrão são mais portáveis, ou seja, possuem menos
+      problemas de compatibilidade entre diferentes arquiteturas.
+    \end{itemize}
+  \end{itemize}
 \end{itemize}
 
     \hypertarget{processando-a-informauxe7uxe3o-cap.-2-organizauxe7uxe3o-de-cuxf3digo}{%
@@ -2566,27 +2681,30 @@ O delta de ax^2 + bx + c é -76.0
 \end{itemize}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{9}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap2ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{o}{/}\PY{o}{/} \PY{n}{MÉTODO}
+
 \PY{n+nb}{float} \PY{n}{delta}\PY{p}{(}\PY{n+nb}{float} \PY{n}{a}\PY{p}{,} \PY{n+nb}{float} \PY{n}{b}\PY{p}{,} \PY{n+nb}{float} \PY{n}{c}\PY{p}{)} \PY{p}{\PYZob{}}
-  \PY{n+nb}{float} \PY{n}{d} \PY{o}{=} \PY{n}{b}\PY{o}{*}\PY{n}{b}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{a}\PY{o}{*}\PY{n}{c}\PY{p}{;}
+  \PY{n+nb}{float} \PY{n}{d} \PY{o}{=} \PY{n}{b} \PY{o}{*} \PY{n}{b} \PY{o}{\PYZhy{}} \PY{l+m+mi}{4} \PY{o}{*} \PY{n}{a} \PY{o}{*} \PY{n}{c}\PY{p}{;}
   \PY{k}{return} \PY{n}{d}\PY{p}{;}
 \PY{p}{\PYZcb{}}
+\PY{o}{/}\PY{o}{/} \PY{n}{PROGRAMA} \PY{n}{PRINCIPAL}
 \PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
-  \PY{n+nb}{float} \PY{n}{a}\PY{o}{=}\PY{l+m+mf}{5.0}\PY{p}{,} \PY{n}{b}\PY{o}{=}\PY{o}{\PYZhy{}}\PY{l+m+mf}{2.0}\PY{p}{,} \PY{n}{c}\PY{o}{=}\PY{l+m+mf}{4.0}\PY{p}{;}
-  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{O delta de ax\PYZca{}2 + bx + c é }\PY{l+s+si}{\PYZpc{}.1f}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{delta}\PY{p}{(}\PY{n}{a}\PY{p}{,}\PY{n}{b}\PY{p}{,}\PY{n}{c}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n+nb}{float} \PY{n}{a} \PY{o}{=} \PY{l+m+mf}{5.0}\PY{p}{,} \PY{n}{b} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mf}{2.0}\PY{p}{,} \PY{n}{c} \PY{o}{=} \PY{l+m+mf}{4.0}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{O delta de ax\PYZca{}2 + bx + c e }\PY{l+s+si}{\PYZpc{}.1f}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{delta}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{,} \PY{n}{c}\PY{p}{)}\PY{p}{)}\PY{p}{;}
   \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
 \PY{p}{\PYZcb{}}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{10}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap2ex01.c \PYZhy{}o output2
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap2ex01.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -2708,7 +2826,7 @@ output=
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{11}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap2ex02.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -2744,10 +2862,10 @@ output=
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{12}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap2ex02.c \PYZhy{}o output2
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap2ex02.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -3566,7 +3684,7 @@ Raízes: -10.0 e -2.0.
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{1}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap3ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -3609,10 +3727,10 @@ Raízes: -10.0 e -2.0.
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{2}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap3ex01.c \PYZhy{}o output2 \PYZhy{}lm
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap3ex01.c \PYZhy{}o output2 \PYZhy{}lm
 ./output2
 \PYZsh{} A biblioteca matemática deve ser vinculada ao construir o executável. 
 \PYZsh{} Como fazer isso varia de acordo com o ambiente, 
@@ -3725,7 +3843,7 @@ Conceito A
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{3}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap3ex02.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -3760,10 +3878,10 @@ Conceito A
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{4}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap3ex02.c \PYZhy{}o output2
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap3ex02.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -3801,7 +3919,7 @@ menu de
 opções}{Exemplo 03 - Exemplo de switch com menu de opções}}\label{exemplo-03---exemplo-de-switch-com-menu-de-opuxe7uxf5es}}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{5}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap3ex03.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -3840,10 +3958,10 @@ opções}{Exemplo 03 - Exemplo de switch com menu de opções}}\label{exemplo-03
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{6}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap3ex03.c \PYZhy{}o output3
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap3ex03.c \PYZhy{}o output3
 ./output3
 \end{Verbatim}
 \end{tcolorbox}
@@ -4334,6 +4452,8 @@ nesse livro.
   Validação de dados com laços
 \item
   Interrupção da execução dos laços
+\item
+  Recursão
 \item
   Revisão deste capítulo
 \item
@@ -4899,7 +5019,7 @@ A média das 10 notas é 7.3
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{1}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap4ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -4929,10 +5049,10 @@ A média das 10 notas é 7.3
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{2}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap4ex01.c \PYZhy{}o output2
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap4ex01.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -4940,10 +5060,18 @@ gcc cap4ex01.c \PYZhy{}o output2
     \hypertarget{recursuxe3o}{%
 \subsection{Recursão}\label{recursuxe3o}}
 
-    Este tópico de recursão é complementar ao livro.
+    Este tópico de recursão (ou recursividade) é complementar ao livro, eu
+sua primeira edição.
 
-Assim como os laços de repetição, a recursão tem como objetivo rodar
-trechos de códigos (agora encapsulados em métodos) várias vezes.
+Como nos laços de repetição, a recursão tem como objetivo rodar trechos
+de códigos (agora encapsulados em métodos) várias vezes.
+
+Além disso, análogo ao laço, \textbf{muito cuidado com o critério de
+parada, senão o código irá fazer infinitas chamadas recursivas, podendo
+travar o seu computador!}
+
+Ou seja, o método recursivo teve ter pelo menos uma condicional e
+argumentos que variam nas chamadas recursivas. Veja um exemplo a seguir.
 
     \hypertarget{exemplo-02---ler-10-notas-com-recursuxe3o}{%
 \subsection{Exemplo 02 - Ler 10 notas, com
@@ -4958,11 +5086,12 @@ calcular a média.
 # MINHA FUNÇÃO RECURSIVA
 função lerNota(recebe: real acumulador, inteiro n) retorna real acumulador {
   Real: nota;
-  se (n > 0) faça {
+  se (n > 0) faça { # CRITÉRIO DE PARADA
     faça {
       nota = leia();
     } enquanto (nota < 0 || nota > 10); 
-    acumulador = lerNota(acumulador, n - 1); # CHAMDADA RECURSIVA!!!
+    acumulador = lerNota(acumulador, n - 1); # CHAMADA RECURSIVA, 
+    # COM ALTERAÇÃO DO VALOR DO ARGUMENTO !!!
   }
   retorne acumulador + nota;
 }
@@ -4977,18 +5106,19 @@ escreva("A média das " + contador + " notas é " + média);
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{1}{\boxspacing}
+\prompt{In}{incolor}{5}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap4ex02.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 
 \PY{n+nb}{float} \PY{n}{lerNota}\PY{p}{(}\PY{n+nb}{float} \PY{n}{acumulador}\PY{p}{,} \PY{n+nb}{int} \PY{n}{n}\PY{p}{)} \PY{p}{\PYZob{}}
   \PY{n+nb}{float} \PY{n}{nota}\PY{p}{;}
-  \PY{k}{if} \PY{p}{(}\PY{n}{n} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{k}{if} \PY{p}{(}\PY{n}{n} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{)} \PY{p}{\PYZob{}} \PY{o}{/}\PY{o}{/} \PY{n}{CRITÉRIO} \PY{n}{DE} \PY{n}{PARADA}
     \PY{n}{do} \PY{p}{\PYZob{}}
       \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}f}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{nota}\PY{p}{)}\PY{p}{;}
     \PY{p}{\PYZcb{}} \PY{k}{while} \PY{p}{(}\PY{n}{nota} \PY{o}{\PYZlt{}} \PY{l+m+mf}{0.0} \PY{o}{|}\PY{o}{|} \PY{n}{nota} \PY{o}{\PYZgt{}} \PY{l+m+mf}{10.0}\PY{p}{)}\PY{p}{;}
-    \PY{n}{acumulador} \PY{o}{=} \PY{n}{lerNota}\PY{p}{(}\PY{n}{acumulador}\PY{p}{,} \PY{n}{n} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{CHAMADA} \PY{n}{RECURSIVA}\PY{err}{!}\PY{err}{!}\PY{err}{!}
+    \PY{n}{acumulador} \PY{o}{=} \PY{n}{lerNota}\PY{p}{(}\PY{n}{acumulador}\PY{p}{,} \PY{n}{n} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{CHAMADA} \PY{n}{RECURSIVA}\PY{p}{,} 
+    \PY{o}{/}\PY{o}{/} \PY{n}{COM} \PY{n}{ALTERAÇÃO} \PY{n}{DO} \PY{n}{VALOR} \PY{n}{DO} \PY{n}{ARGUMENTO} \PY{err}{!}\PY{err}{!}\PY{err}{!}
   \PY{p}{\PYZcb{}}
   \PY{k}{return} \PY{n}{acumulador} \PY{o}{+} \PY{n}{nota}\PY{p}{;}
 \PY{p}{\PYZcb{}}
@@ -4996,7 +5126,7 @@ escreva("A média das " + contador + " notas é " + média);
 \PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
 
   \PY{o}{/}\PY{o}{/} \PY{n}{ENTRADA} \PY{n}{DE} \PY{n}{DADOS} \PY{n}{e} \PY{n}{PROCESSAMENTO}
-  \PY{n+nb}{float} \PY{n}{acumulador} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{nota}\PY{p}{,} \PY{n}{media}\PY{p}{;}
+  \PY{n+nb}{float} \PY{n}{acumulador} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{,} \PY{n}{media}\PY{p}{;}
   \PY{n+nb}{int} \PY{n}{contador} \PY{o}{=} \PY{l+m+mi}{10}\PY{p}{;}
 
   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Entre com }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ notas válidas}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{contador}\PY{p}{)}\PY{p}{;}
@@ -5012,10 +5142,10 @@ escreva("A média das " + contador + " notas é " + média);
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{6}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap4ex02.c \PYZhy{}o output2
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap4ex02.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -5096,6 +5226,17 @@ programação de sua preferência, onganizadas em subpastas contidas de
     \item
       \texttt{exit} - aborta o laço e o programa!
     \end{itemize}
+  \end{itemize}
+\item
+  Outra forma de executar trechos de códigos várias vezes é encapsular
+  em métodos recursivos.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Atenção com o critério de parada!
+  \item
+    Atenção com os argumentos do método recursivo!
   \end{itemize}
 \item
   Exercícios
@@ -6363,7 +6504,7 @@ Número RA     Nota
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{1}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -6395,10 +6536,10 @@ Número RA     Nota
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{29}{\boxspacing}
+\prompt{In}{incolor}{2}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap5ex01.c \PYZhy{}o output2
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex01.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -6414,28 +6555,29 @@ gcc cap5ex01.c \PYZhy{}o output2
 \end{itemize}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{54}{\boxspacing}
+\prompt{In}{incolor}{5}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex01teste.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 \PY{c+c1}{\PYZsh{}include \PYZlt{}string.h\PYZgt{}}
 
-\PY{n}{void} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
    \PY{n}{char} \PY{n}{s}\PY{p}{[}\PY{l+m+mi}{40}\PY{p}{]}\PY{p}{;}
    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{digite algo:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
    \PY{n}{fgets}\PY{p}{(}\PY{n}{s}\PY{p}{,} \PY{l+m+mi}{40}\PY{p}{,} \PY{n}{stdin}\PY{p}{)}\PY{p}{;}
    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{saida: }\PY{l+s+se}{\PYZbs{}\PYZdq{}}\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}\PYZdq{}}\PY{l+s+s2}{ tamanho: }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{s}\PY{p}{,} \PY{n}{strlen}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)}\PY{p}{;}
    \PY{n}{s}\PY{p}{[}\PY{n}{strlen}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{substituir} \PYZbs{}\PY{n}{n} \PY{n}{por} \PYZbs{}\PY{l+m+mi}{0}
    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{saida: }\PY{l+s+se}{\PYZbs{}\PYZdq{}}\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}\PYZdq{}}\PY{l+s+s2}{ tamanho: }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{s}\PY{p}{,} \PY{n}{strlen}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+   \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
 \PY{p}{\PYZcb{}}
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{55}{\boxspacing}
+\prompt{In}{incolor}{6}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap5ex01teste.c \PYZhy{}o cap5ex01teste
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex01teste.c \PYZhy{}o cap5ex01teste
 ./cap5ex01teste
 \end{Verbatim}
 \end{tcolorbox}
@@ -6804,7 +6946,7 @@ Número   RA Nota
 \prompt{In}{incolor}{8}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap5ex02.c \PYZhy{}o output2
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex02.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -6837,7 +6979,7 @@ gcc cap5ex02.c \PYZhy{}o output2
 \end{itemize}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{65}{\boxspacing}
+\prompt{In}{incolor}{9}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex02teste1.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -6875,16 +7017,16 @@ gcc cap5ex02.c \PYZhy{}o output2
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{10}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap5ex02teste1.c \PYZhy{}o output2
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex02teste1.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{68}{\boxspacing}
+\prompt{In}{incolor}{11}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex02teste2.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -6926,10 +7068,10 @@ gcc cap5ex02teste1.c \PYZhy{}o output2
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{69}{\boxspacing}
+\prompt{In}{incolor}{12}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap5ex02teste2.c \PYZhy{}o output2
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex02teste2.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -6999,7 +7141,7 @@ RA      Nota
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{52}{\boxspacing}
+\prompt{In}{incolor}{13}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex03.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -7057,10 +7199,10 @@ RA      Nota
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{53}{\boxspacing}
+\prompt{In}{incolor}{14}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap5ex03.c \PYZhy{}o output2
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex03.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -7184,7 +7326,7 @@ output=v2:
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{15}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex04.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -7230,10 +7372,10 @@ output=v2:
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{16}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap5ex04.c \PYZhy{}o output2
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex04.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -7271,7 +7413,7 @@ fazer um método de leitura, passando como argumento um texto
 vetor.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{123}{\boxspacing}
+\prompt{In}{incolor}{17}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} str2int.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -7297,10 +7439,10 @@ vetor.
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{124}{\boxspacing}
+\prompt{In}{incolor}{18}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc str2int.c \PYZhy{}o output2
+gcc \PYZhy{}Wall \PYZhy{}std=c99 str2int.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}
@@ -8421,7 +8563,7 @@ LISTA DE ALUNOS vs Avaliações:
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{1}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap6ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -8489,10 +8631,10 @@ LISTA DE ALUNOS vs Avaliações:
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{2}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
-gcc cap6ex01.c \PYZhy{}o output2
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap6ex01.c \PYZhy{}o output2
 ./output2
 \end{Verbatim}
 \end{tcolorbox}

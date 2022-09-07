@@ -11,8 +11,10 @@
             "cppStandard": "${default}",
             "intelliSenseMode": "macos-gcc-x64",
             "compilerArgs": [
-                ""
-            ]
+                "-Wall",
+                "-std=c99"
+            ],
+            "configurationProvider": "ms-vscode.makefile-tools"
         }
     ],
     "version": 4

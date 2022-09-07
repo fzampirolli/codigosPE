@@ -15554,7 +15554,7 @@ A média das 10 notas é 7.3
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap4ex01.c
@@ -15593,11 +15593,11 @@ A média das 10 notas é 7.3
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc cap4ex01.c -o output2
+gcc -Wall -std=c99 cap4ex01.c -o output2
 ./output2
 </pre></div>
 
@@ -15658,7 +15658,8 @@ função lerNota(recebe: real acumulador, inteiro n) retorna real acumulador {
     faça {
       nota = leia();
     } enquanto (nota &lt; 0 || nota &gt; 10); 
-    acumulador = lerNota(acumulador, n - 1); # CHAMADA RECURSIVA, COM ALTERAÇÃO DO VALOR DO ARGUMENTO !!!
+    acumulador = lerNota(acumulador, n - 1); # CHAMADA RECURSIVA, 
+    # COM ALTERAÇÃO DO VALOR DO ARGUMENTO !!!
   }
   retorne acumulador + nota;
 }
@@ -15680,7 +15681,7 @@ escreva(&quot;A média das &quot; + contador + &quot; notas é &quot; + média);
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap4ex02.c
@@ -15692,7 +15693,8 @@ escreva(&quot;A média das &quot; + contador + &quot; notas é &quot; + média);
     <span class="n">do</span> <span class="p">{</span>
       <span class="n">scanf</span><span class="p">(</span><span class="s2">"</span><span class="si">%f</span><span class="s2">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">nota</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">nota</span> <span class="o">&lt;</span> <span class="mf">0.0</span> <span class="o">||</span> <span class="n">nota</span> <span class="o">&gt;</span> <span class="mf">10.0</span><span class="p">);</span>
-    <span class="n">acumulador</span> <span class="o">=</span> <span class="n">lerNota</span><span class="p">(</span><span class="n">acumulador</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="o">//</span> <span class="n">CHAMADA</span> <span class="n">RECURSIVA</span><span class="p">,</span> <span class="n">COM</span> <span class="n">ALTERAÇÃO</span> <span class="n">DO</span> <span class="n">VALOR</span> <span class="n">DO</span> <span class="n">ARGUMENTO</span> <span class="err">!!!</span>
+    <span class="n">acumulador</span> <span class="o">=</span> <span class="n">lerNota</span><span class="p">(</span><span class="n">acumulador</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="o">//</span> <span class="n">CHAMADA</span> <span class="n">RECURSIVA</span><span class="p">,</span> 
+    <span class="o">//</span> <span class="n">COM</span> <span class="n">ALTERAÇÃO</span> <span class="n">DO</span> <span class="n">VALOR</span> <span class="n">DO</span> <span class="n">ARGUMENTO</span> <span class="err">!!!</span>
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">acumulador</span> <span class="o">+</span> <span class="n">nota</span><span class="p">;</span>
 <span class="p">}</span>
@@ -15700,7 +15702,7 @@ escreva(&quot;A média das &quot; + contador + &quot; notas é &quot; + média);
 <span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
 
   <span class="o">//</span> <span class="n">ENTRADA</span> <span class="n">DE</span> <span class="n">DADOS</span> <span class="n">e</span> <span class="n">PROCESSAMENTO</span>
-  <span class="nb">float</span> <span class="n">acumulador</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nota</span><span class="p">,</span> <span class="n">media</span><span class="p">;</span>
+  <span class="nb">float</span> <span class="n">acumulador</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">media</span><span class="p">;</span>
   <span class="nb">int</span> <span class="n">contador</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 
   <span class="n">printf</span><span class="p">(</span><span class="s2">"Entre com </span><span class="si">%d</span><span class="s2"> notas válidas</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">contador</span><span class="p">);</span>
@@ -15724,11 +15726,11 @@ escreva(&quot;A média das &quot; + contador + &quot; notas é &quot; + média);
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc cap4ex02.c -o output2
+gcc -Wall -std=c99 cap4ex02.c -o output2
 ./output2
 </pre></div>
 

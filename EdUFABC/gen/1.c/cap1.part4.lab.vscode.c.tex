@@ -472,6 +472,25 @@ VSCode}\label{tuturial-em-construuxe7uxe3o-vscode}}
   \end{itemize}
 \item
   Clonar: https://github.com/fzampirolli/codigosPE
+\item
+  Alterar \texttt{settings.json} em \texttt{code-runner.executorMap}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{"c":\ "cd\ \$dir\ \&\&\ gcc\ -Wall\ -std=c99\ \$fileName\ -o\ ...}
+
+    \begin{itemize}
+    \tightlist
+    \item
+      \texttt{-Wall} para mostrar \texttt{warning} (programas ruins)
+    \item
+      \texttt{-std=c99} - padrão ANSI ou
+      \href{https://en.m.wikipedia.org/wiki/C99}{C99}, os programas
+      seguindo esse padrão são mais portáveis, ou seja, possuem menos
+      problemas de compatibilidade entre diferentes arquiteturas.
+    \end{itemize}
+  \end{itemize}
 \end{itemize}
 
 
