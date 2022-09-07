@@ -4,7 +4,7 @@ Livro: [Processando a Informação: um livro prático de programação independe
 
 Na pasta 1.c estão os *colabs* até o Capítulo 6, adaptados para linguagem de programação C, em vários formatos. Consultar o *drive* do *link* anterior para mais detalhes de como esses formatos foram gerados automaticamente.
 
-Conteúdo disponível no [GitHub](https://github.com/fzampirolli/codigosPE).
+Conteúdo disponível no [GitHub](https://github.com/fzampirolli/codigosPE), em adaptação conforme o andamento do curso de [Programação Estruturada, ofertado em 2022.3](https://sites.google.com/site/fzampirolli/pe-2022-3).
 
 ## Capítulos do livro com Colabs:
 
