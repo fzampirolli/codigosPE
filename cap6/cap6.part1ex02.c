@@ -13,7 +13,7 @@ int main() {
   for (int i = 0; i < 10; i++)
     fprintf(fp, "Linha #%d\n", i + 1);
 
-  // close the file
+  // fechar arquivo
   fclose(fp);
 
   return 0;
