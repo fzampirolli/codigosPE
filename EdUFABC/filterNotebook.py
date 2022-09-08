@@ -47,6 +47,8 @@ for i in range(1, len(Types) + 1):
     for subset in genComb:
         permsTypes.append(list(subset))
 
+os.system('find . -name "Icon*" -type f -delete')
+
 
 def genLatex(file_out):
     file_tex = file_out[:-6] + '.tex'
@@ -61,7 +63,8 @@ def genLatex(file_out):
     with open(file_tex, 'w') as writer:
         writer.writelines(str_f)
 
-    cmd = ['pdflatex', '--shell-escape', '-interaction', 'nonstopmode', file_tex]
+    cmd = ['pdflatex', '--shell-escape',
+           '-interaction', 'nonstopmode', file_tex]
     proc = subprocess.Popen(cmd)
     proc.communicate()
     proc = subprocess.Popen(cmd)
@@ -76,11 +79,13 @@ def genTypes(file, Type, format):
         if x['cell_type'] in ['code', 'markdown']:
             aux = y['cells'][k]['source']
             if aux:
-                reg = re.compile('\#\[' + '(\w+)' + '\]', re.IGNORECASE | re.DOTALL | re.MULTILINE)
+                reg = re.compile('\#\[' + '(\w+)' + '\]',
+                                 re.IGNORECASE | re.DOTALL | re.MULTILINE)
                 if set(Type).intersection(set(reg.findall(aux[0]))):
                     y['cells'][k]['source'] = aux[1:]  # remove first line
                 elif len(reg.findall(aux[0])) > 0:
-                    y['cells'][k]['source'] = []  # remove code with another Type
+                    # remove code with another Type
+                    y['cells'][k]['source'] = []
 
     for k, x in enumerate(y['cells']):
         if 'metadata' in x:
@@ -107,7 +112,8 @@ def genTypes(file, Type, format):
         os.mkdir('gen/' + lenTps + tps)
     except:
         pass
-    file_out = 'gen/' + lenTps + tps + '/' + file.split('/')[1][:-6] + "." + tps + ".ipynb"
+    file_out = 'gen/' + lenTps + tps + '/' + \
+        file.split('/')[1][:-6] + "." + tps + ".ipynb"
     with open(file_out, encoding='utf-8', mode='w') as f:
         json.dump(y, f, indent=4)
     print('save: ' + file_out)
@@ -198,3 +204,21 @@ if le >= 3:
             os.system(ss)
 
             genLatex(file_name)
+
+# criar pastas para cada formato
+for path0 in sorted(glob.glob("gen/*")):
+    for path1 in sorted(glob.glob(path0+"/*")):
+        f0, e0 = os.path.splitext(path1)
+        for f in Formats + ['tex', 'pdf']:
+            if '.'+f == e0:
+                if '.slides.html' in path1:
+                    f = 'slides'
+                p = path1[:path1.rfind('/')]
+                try:
+                    os.mkdir(p+'/'+f)
+                except:
+                    pass
+                os.system('mv '+path1 + ' ' + p+'/'+f)
+                print('mv '+path1 + ' ' + p+'/'+f)
+
+os.system('find . -name "Icon*" -type f -delete')

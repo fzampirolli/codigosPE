@@ -43,7 +43,7 @@ file: example 'all/cap1.part1.ipynb' or 'all'
 type: save in 'py', 'js', 'java', 'c', 'cpp', 'r' or 'all'
       also: 'type1+type2+...' more one type per file, for comparisons. 
             eg. 'py+js' in alphabetic order
-format: empty, 'html', 'markdown', 'slides' or 'all'
+format: empty, 'html', 'markdown', 'slidess' or 'all'
 ```     
 
 New folders will be created with the filters made. For example:

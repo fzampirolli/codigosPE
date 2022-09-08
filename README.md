@@ -2,7 +2,7 @@
 
 Livro: [Processando a Informação: um livro prático de programação independente de linguagem](https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao)
 
-Na pasta [EdUFABC/gen/1.c](https://github.com/fzampirolli/codigosPE/tree/master/EdUFABC/gen/1.c) estão os *colabs* até o Capítulo 6, adaptados para linguagem de programação C, em vários formatos. Consultar [EdUFABC](https://github.com/fzampirolli/codigosPE/tree/master/EdUFABC) pasta para mais detalhes de como esses formatos foram gerados automaticamente.
+Na pasta [EdUFABC/gen/1.c](https://github.com/fzampirolli/codigosPE/tree/master/EdUFABC/gen/1.c) estão os *colabs* até o Capítulo 6, adaptados para linguagem de programação C, em vários formatos. Consultar [EdUFABC](https://github.com/fzampirolli/codigosPE/tree/master/EdUFABC) para mais detalhes de como esses formatos foram gerados automaticamente.
 
 Nas pastas cap* estão alguns exemplos e exercícios em C do livro.
 
