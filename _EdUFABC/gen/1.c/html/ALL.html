@@ -14938,9 +14938,9 @@ escreva(x)
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># instalando algumas bibliotecas no servidor do Colab (Linux)</span>
-<span class="o">!</span>apt-get install graphviz libgraphviz-dev pkg-config
-<span class="o">!</span>pip install txtoflow
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># instalando algumas bibliotecas no servidor do Colab (Linux)</span>
+<span class="err">!</span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">graphviz</span> <span class="n">libgraphviz</span><span class="o">-</span><span class="n">dev</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">txtoflow</span>
 </pre></div>
 
      </div>
@@ -14956,7 +14956,7 @@ escreva(x)
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># importando a biblioteca txtflow para gerar fluxograma a partir de código</span>
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># importando a biblioteca txtflow para gerar fluxograma a partir de código</span>
 <span class="kn">from</span> <span class="nn">txtoflow</span> <span class="kn">import</span> <span class="n">txtoflow</span>
 
 <span class="c1"># definindo o pseudocódigo e passando como entrada de dados para gerar o fluxograma</span>
@@ -15019,7 +15019,7 @@ Apesar deste primeiro fluxograma ser intuitivo, os detalhes (principalmente do p
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># definindo uma variável do tipo texto (string) para armazenar o pseudocódigo</span>
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># definindo uma variável do tipo texto (string) para armazenar o pseudocódigo</span>
 <span class="n">alg2</span> <span class="o">=</span> <span class="s1">'''</span>
 <span class="s1">leia(A);</span>
 <span class="s1">B = 10;</span>
@@ -15102,7 +15102,7 @@ Apesar deste primeiro fluxograma ser intuitivo, os detalhes (principalmente do p
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install --upgrade git+https://github.com/innovationOUtside/flowchart_js_jp_proxy_widget.git
+<div class=" highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">innovationOUtside</span><span class="o">/</span><span class="n">flowchart_js_jp_proxy_widget</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 
      </div>
@@ -15118,7 +15118,7 @@ Apesar deste primeiro fluxograma ser intuitivo, os detalhes (principalmente do p
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">output</span>
+<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">output</span>
 <span class="n">output</span><span class="o">.</span><span class="n">enable_custom_widget_manager</span><span class="p">()</span>
 </pre></div>
 
@@ -15135,7 +15135,7 @@ Apesar deste primeiro fluxograma ser intuitivo, os detalhes (principalmente do p
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">alg3</span> <span class="o">=</span> <span class="s1">'''</span>
+<div class=" highlight hl-python"><pre><span></span><span class="n">alg3</span> <span class="o">=</span> <span class="s1">'''</span>
 <span class="s1">A = int(input())</span>
 <span class="s1">B = 10</span>
 <span class="s1">if A &gt; 0:</span>
@@ -15162,7 +15162,7 @@ Apesar deste primeiro fluxograma ser intuitivo, os detalhes (principalmente do p
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pyflowchart</span> <span class="kn">import</span> <span class="n">Flowchart</span>
+<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">pyflowchart</span> <span class="kn">import</span> <span class="n">Flowchart</span>
 <span class="n">fc</span> <span class="o">=</span> <span class="n">Flowchart</span><span class="o">.</span><span class="n">from_code</span><span class="p">(</span><span class="n">alg3</span><span class="p">)</span>
 <span class="n">flowchart</span> <span class="o">=</span> <span class="n">fc</span><span class="o">.</span><span class="n">flowchart</span><span class="p">()</span>
 </pre></div>
@@ -15180,7 +15180,7 @@ Apesar deste primeiro fluxograma ser intuitivo, os detalhes (principalmente do p
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">jp_flowchartjs.jp_flowchartjs</span> <span class="kn">import</span> <span class="n">FlowchartWidget</span>
+<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">jp_flowchartjs.jp_flowchartjs</span> <span class="kn">import</span> <span class="n">FlowchartWidget</span>
 
 <span class="n">testEmbed</span> <span class="o">=</span> <span class="n">FlowchartWidget</span><span class="p">()</span>
 <span class="n">testEmbed</span><span class="o">.</span><span class="n">charter</span><span class="p">(</span><span class="n">flowchart</span><span class="p">)</span>
@@ -15586,7 +15586,7 @@ Apesar deste primeiro fluxograma ser intuitivo, os detalhes (principalmente do p
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>     <span class="c1"># esse é um comentário</span>
+<div class=" highlight hl-python"><pre><span></span><span class="n">idade</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>     <span class="c1"># esse é um comentário</span>
 <span class="n">anoAtual</span> <span class="o">=</span> <span class="mi">2021</span> <span class="c1"># observer que ';' é opcional em python e javascript</span>
 </pre></div>
 
@@ -15615,7 +15615,7 @@ Apesar deste primeiro fluxograma ser intuitivo, os detalhes (principalmente do p
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">idade</span>
+<div class=" highlight hl-python"><pre><span></span><span class="n">idade</span>
 </pre></div>
 
      </div>
@@ -15631,7 +15631,7 @@ Apesar deste primeiro fluxograma ser intuitivo, os detalhes (principalmente do p
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">anoNascimento</span> <span class="o">=</span> <span class="n">anoAtual</span> <span class="o">-</span> <span class="n">idade</span>
+<div class=" highlight hl-python"><pre><span></span><span class="n">anoNascimento</span> <span class="o">=</span> <span class="n">anoAtual</span> <span class="o">-</span> <span class="n">idade</span>
 <span class="n">anoNascimento</span>
 </pre></div>
 
@@ -15659,7 +15659,7 @@ Apesar deste primeiro fluxograma ser intuitivo, os detalhes (principalmente do p
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nomeAluno</span> <span class="o">=</span> <span class="s1">'Rafael Morais'</span>
+<div class=" highlight hl-python"><pre><span></span><span class="n">nomeAluno</span> <span class="o">=</span> <span class="s1">'Rafael Morais'</span>
 <span class="n">nomeAluno</span>
 </pre></div>
 
@@ -15676,7 +15676,7 @@ Apesar deste primeiro fluxograma ser intuitivo, os detalhes (principalmente do p
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nomeAluno</span> <span class="o">=</span> <span class="s2">"Rafael Morais"</span>
+<div class=" highlight hl-python"><pre><span></span><span class="n">nomeAluno</span> <span class="o">=</span> <span class="s2">"Rafael Morais"</span>
 <span class="n">nomeAluno</span>
 </pre></div>
 
@@ -15716,7 +15716,7 @@ Apesar deste primeiro fluxograma ser intuitivo, os detalhes (principalmente do p
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1415926535897932</span>
+<div class=" highlight hl-python"><pre><span></span><span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1415926535897932</span>
 <span class="n">pi</span>
 </pre></div>
 
@@ -16236,7 +16236,7 @@ output=Alô, Mundo!
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap1ex01.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap1ex01</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">printf</span><span class="p">(</span><span class="s2">"Alô, Mundo!"</span><span class="p">);</span>
@@ -16257,8 +16257,8 @@ output=Alô, Mundo!
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>gcc -Wall -std<span class="o">=</span>c99 cap1ex01.c -o output2
-<span class="o">!</span>./output2
+<div class=" highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap1ex01</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output2</span>
+<span class="err">!</span><span class="o">./</span><span class="n">output2</span>
 </pre></div>
 
      </div>
@@ -16433,7 +16433,7 @@ output=
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap1ex02.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap1ex02</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
   <span class="nb">int</span> <span class="n">C</span><span class="p">;</span>
@@ -16457,9 +16457,9 @@ output=
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap1ex02.c -o output2
-./output2
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap1ex02</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output2</span>
+<span class="o">./</span><span class="n">output2</span>
 </pre></div>
 
      </div>
@@ -16539,7 +16539,7 @@ gcc -Wall -std=c99 cap1ex02.c -o output2
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap1ex03.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap1ex03</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">char</span> <span class="n">ch</span><span class="p">;</span>
@@ -16577,9 +16577,9 @@ gcc -Wall -std=c99 cap1ex02.c -o output2
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap1ex03.c -std=c99 -Wall -o output3
-./output3
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap1ex03</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">o</span> <span class="n">output3</span>
+<span class="o">./</span><span class="n">output3</span>
 </pre></div>
 
      </div>
@@ -16607,7 +16607,7 @@ gcc -Wall -std=c99 cap1ex03.c -std=c99 -Wall -o output3
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap1ex04.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap1ex04</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">double</span> <span class="n">d</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
@@ -16631,9 +16631,9 @@ gcc -Wall -std=c99 cap1ex03.c -std=c99 -Wall -o output3
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap1ex04.c -std=c99 -Wall -o output4
-./output4
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap1ex04</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">o</span> <span class="n">output4</span>
+<span class="o">./</span><span class="n">output4</span>
 </pre></div>
 
      </div>
@@ -17618,7 +17618,7 @@ O delta de ax^2 + bx + c é -76.0
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap2ex01.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap2ex01</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="o">//</span> <span class="n">MÉTODO</span>
 
@@ -17647,9 +17647,9 @@ O delta de ax^2 + bx + c é -76.0
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap2ex01.c -o output2
-./output2
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap2ex01</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output2</span>
+<span class="o">./</span><span class="n">output2</span>
 </pre></div>
 
      </div>
@@ -17815,7 +17815,7 @@ output=
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap2ex02.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap2ex02</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 
 <span class="nb">float</span> <span class="n">delta</span><span class="p">(</span><span class="nb">float</span> <span class="n">a</span><span class="p">,</span> <span class="nb">float</span> <span class="n">b</span><span class="p">,</span> <span class="nb">float</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
@@ -17860,9 +17860,9 @@ output=
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap2ex02.c -o output2
-./output2
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap2ex02</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output2</span>
+<span class="o">./</span><span class="n">output2</span>
 </pre></div>
 
      </div>
@@ -18407,8 +18407,8 @@ Média: X.0
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>apt-get install graphviz libgraphviz-dev pkg-config
-<span class="o">!</span>pip install txtoflow
+<div class=" highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">graphviz</span> <span class="n">libgraphviz</span><span class="o">-</span><span class="n">dev</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">txtoflow</span>
 </pre></div>
 
      </div>
@@ -18424,7 +18424,7 @@ Média: X.0
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">txtoflow</span> <span class="kn">import</span> <span class="n">txtoflow</span>
+<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">txtoflow</span> <span class="kn">import</span> <span class="n">txtoflow</span>
 
 <span class="n">txtoflow</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
     <span class="sd">'''</span>
@@ -18731,7 +18731,7 @@ se (nota&lt;5)
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span>
+<div class=" highlight hl-python"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span> <span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span>
 <span class="n">equacao1</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">Y</span><span class="o">&lt;</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">equacao2</span> <span class="o">=</span> <span class="p">(</span><span class="n">Z</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">Z</span><span class="o">&lt;</span><span class="mi">5</span> <span class="ow">and</span> <span class="n">Y</span><span class="o">==</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">equacao3</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span><span class="o">&gt;&gt;</span><span class="mi">1</span> <span class="o">==</span><span class="mi">0</span> <span class="ow">or</span> <span class="n">Y</span><span class="o">&lt;&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="mi">100</span><span class="p">)</span>
@@ -18753,7 +18753,7 @@ se (nota&lt;5)
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># exemplo de uso de "&gt;&gt;" </span>
+<div class=" highlight hl-python"><pre><span></span><span class="c1"># exemplo de uso de "&gt;&gt;" </span>
 <span class="c1"># 6 = 1 1 0 em binário =&gt; 1*2^2 + 1*2^1 + 0*2^0</span>
 <span class="mi">6</span><span class="o">&gt;&gt;</span><span class="mi">1</span> <span class="c1"># = 3 = 0 1 1 em binário</span>
 </pre></div>
@@ -18940,7 +18940,7 @@ Raízes: -10.0 e -2.0.
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap3ex01.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap3ex01</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="c1">#include &lt;math.h&gt;</span>
 <span class="nb">float</span> <span class="n">delta</span><span class="p">(</span><span class="nb">float</span> <span class="n">a</span><span class="p">,</span> <span class="nb">float</span> <span class="n">b</span><span class="p">,</span> <span class="nb">float</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
@@ -18992,12 +18992,12 @@ Raízes: -10.0 e -2.0.
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap3ex01.c -o output2 -lm
-./output2
-# A biblioteca matemática deve ser vinculada ao construir o executável. 
-# Como fazer isso varia de acordo com o ambiente, 
-# mas no Linux / Unix, basta adicionar -lm ao comando
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap3ex01</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output2</span> <span class="o">-</span><span class="n">lm</span>
+<span class="o">./</span><span class="n">output2</span>
+<span class="c1"># A biblioteca matemática deve ser vinculada ao construir o executável. </span>
+<span class="c1"># Como fazer isso varia de acordo com o ambiente, </span>
+<span class="c1"># mas no Linux / Unix, basta adicionar -lm ao comando</span>
 </pre></div>
 
      </div>
@@ -19090,7 +19090,7 @@ senão
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">txtoflow</span> <span class="kn">import</span> <span class="n">txtoflow</span>
+<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">txtoflow</span> <span class="kn">import</span> <span class="n">txtoflow</span>
 
 <span class="n">txtoflow</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
     <span class="sd">'''</span>
@@ -19165,7 +19165,7 @@ Conceito A
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap3ex02.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap3ex02</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="nb">float</span> <span class="n">leia</span><span class="p">()</span> <span class="p">{</span>
   <span class="nb">float</span> <span class="n">valor</span><span class="p">;</span>
@@ -19209,9 +19209,9 @@ Conceito A
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap3ex02.c -o output2
-./output2
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap3ex02</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output2</span>
+<span class="o">./</span><span class="n">output2</span>
 </pre></div>
 
      </div>
@@ -19276,7 +19276,7 @@ gcc -Wall -std=c99 cap3ex02.c -o output2
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap3ex03.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap3ex03</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
   <span class="nb">float</span> <span class="n">area</span><span class="p">;</span>
@@ -19325,9 +19325,9 @@ gcc -Wall -std=c99 cap3ex02.c -o output2
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap3ex03.c -o output3
-./output3
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap3ex03</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output3</span>
+<span class="o">./</span><span class="n">output3</span>
 </pre></div>
 
      </div>
@@ -20355,8 +20355,8 @@ imprima (&quot;A média das &quot; + contador + &quot; notas é &quot; + média)
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>apt-get install graphviz libgraphviz-dev pkg-config
-<span class="o">!</span>pip install txtoflow
+<div class=" highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">graphviz</span> <span class="n">libgraphviz</span><span class="o">-</span><span class="n">dev</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">txtoflow</span>
 </pre></div>
 
      </div>
@@ -20372,7 +20372,7 @@ imprima (&quot;A média das &quot; + contador + &quot; notas é &quot; + média)
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">txtoflow</span> <span class="kn">import</span> <span class="n">txtoflow</span>
+<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">txtoflow</span> <span class="kn">import</span> <span class="n">txtoflow</span>
 
 <span class="n">txtoflow</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
     <span class="sd">'''</span>
@@ -20548,8 +20548,8 @@ imprima (&quot;A média das &quot; + contador + &quot; notas é &quot; + média)
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>apt-get install graphviz libgraphviz-dev pkg-config
-<span class="o">!</span>pip install txtoflow
+<div class=" highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">graphviz</span> <span class="n">libgraphviz</span><span class="o">-</span><span class="n">dev</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">txtoflow</span>
 </pre></div>
 
      </div>
@@ -20565,7 +20565,7 @@ imprima (&quot;A média das &quot; + contador + &quot; notas é &quot; + média)
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">txtoflow</span> <span class="kn">import</span> <span class="n">txtoflow</span>
+<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">txtoflow</span> <span class="kn">import</span> <span class="n">txtoflow</span>
 
 <span class="n">txtoflow</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
     <span class="sd">'''</span>
@@ -20694,8 +20694,8 @@ escreva(&quot;A média das &quot; + contador + &quot; notas é &quot; + média);
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>apt-get install graphviz libgraphviz-dev pkg-config
-<span class="o">!</span>pip install txtoflow
+<div class=" highlight hl-python"><pre><span></span><span class="err">!</span><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">graphviz</span> <span class="n">libgraphviz</span><span class="o">-</span><span class="n">dev</span> <span class="n">pkg</span><span class="o">-</span><span class="n">config</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">txtoflow</span>
 </pre></div>
 
      </div>
@@ -20711,7 +20711,7 @@ escreva(&quot;A média das &quot; + contador + &quot; notas é &quot; + média);
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">txtoflow</span> <span class="kn">import</span> <span class="n">txtoflow</span>
+<div class=" highlight hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">txtoflow</span> <span class="kn">import</span> <span class="n">txtoflow</span>
 
 <span class="n">txtoflow</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span>
     <span class="sd">'''</span>
@@ -20791,7 +20791,7 @@ A média das 10 notas é 7.3
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap4ex01.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap4ex01</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 
 <span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
@@ -20830,9 +20830,9 @@ A média das 10 notas é 7.3
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap4ex01.c -o output2
-./output2
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap4ex01</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output2</span>
+<span class="o">./</span><span class="n">output2</span>
 </pre></div>
 
      </div>
@@ -20918,7 +20918,7 @@ escreva(&quot;A média das &quot; + contador + &quot; notas é &quot; + média);
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap4ex02.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap4ex02</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 
 <span class="nb">float</span> <span class="n">lerNota</span><span class="p">(</span><span class="nb">float</span> <span class="n">acumulador</span><span class="p">,</span> <span class="nb">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
@@ -20963,9 +20963,9 @@ escreva(&quot;A média das &quot; + contador + &quot; notas é &quot; + média);
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap4ex02.c -o output2
-./output2
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap4ex02</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output2</span>
+<span class="o">./</span><span class="n">output2</span>
 </pre></div>
 
      </div>
@@ -22443,7 +22443,7 @@ Número RA     Nota
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex01.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap5ex01</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 
 <span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
@@ -22484,9 +22484,9 @@ Número RA     Nota
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap5ex01.c -o output2
-./output2
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap5ex01</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output2</span>
+<span class="o">./</span><span class="n">output2</span>
 </pre></div>
 
      </div>
@@ -22523,7 +22523,7 @@ gcc -Wall -std=c99 cap5ex01.c -o output2
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex01teste.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap5ex01teste</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="c1">#include &lt;string.h&gt;</span>
 
@@ -22551,9 +22551,9 @@ gcc -Wall -std=c99 cap5ex01.c -o output2
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap5ex01teste.c -o cap5ex01teste
-./cap5ex01teste
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap5ex01teste</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">cap5ex01teste</span>
+<span class="o">./</span><span class="n">cap5ex01teste</span>
 </pre></div>
 
      </div>
@@ -23059,7 +23059,7 @@ Número	 RA	Nota
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex02.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap5ex02</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 
 <span class="nb">int</span> <span class="n">main</span><span class="p">(</span><span class="n">void</span><span class="p">)</span> <span class="p">{</span>
@@ -23106,9 +23106,9 @@ Número	 RA	Nota
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap5ex02.c -o output2
-./output2
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap5ex02</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output2</span>
+<span class="o">./</span><span class="n">output2</span>
 </pre></div>
 
      </div>
@@ -23150,7 +23150,7 @@ gcc -Wall -std=c99 cap5ex02.c -o output2
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex02teste1.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap5ex02teste1</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 
 <span class="c1">#define MAX_ALUNOS 20 // número máximo de alunos</span>
@@ -23197,9 +23197,9 @@ gcc -Wall -std=c99 cap5ex02.c -o output2
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap5ex02teste1.c -o output2
-./output2
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap5ex02teste1</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output2</span>
+<span class="o">./</span><span class="n">output2</span>
 </pre></div>
 
      </div>
@@ -23215,7 +23215,7 @@ gcc -Wall -std=c99 cap5ex02teste1.c -o output2
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex02teste2.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap5ex02teste2</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="c1">#include &lt;stdlib.h&gt;  // malloc e free</span>
 
@@ -23266,9 +23266,9 @@ gcc -Wall -std=c99 cap5ex02teste1.c -o output2
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap5ex02teste2.c -o output2
-./output2
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap5ex02teste2</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output2</span>
+<span class="o">./</span><span class="n">output2</span>
 </pre></div>
 
      </div>
@@ -23360,7 +23360,7 @@ RA      Nota
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex03.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap5ex03</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="c1">#include &lt;stdlib.h&gt;  </span>
 
@@ -23427,9 +23427,9 @@ RA      Nota
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap5ex03.c -o output2
-./output2
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap5ex03</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output2</span>
+<span class="o">./</span><span class="n">output2</span>
 </pre></div>
 
      </div>
@@ -23560,7 +23560,7 @@ output=v2:
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap5ex04.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap5ex04</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="c1">#include &lt;stdlib.h&gt;  // malloc e free</span>
 
@@ -23615,9 +23615,9 @@ output=v2:
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap5ex04.c -o output2
-./output2
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap5ex04</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output2</span>
+<span class="o">./</span><span class="n">output2</span>
 </pre></div>
 
      </div>
@@ -23672,7 +23672,7 @@ gcc -Wall -std=c99 cap5ex04.c -o output2
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> str2int.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">str2int</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="c1">#include &lt;string.h&gt;</span>
 <span class="c1">#include &lt;stdlib.h&gt;</span>
@@ -23707,9 +23707,9 @@ gcc -Wall -std=c99 cap5ex04.c -o output2
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 str2int.c -o output2
-./output2
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">str2int</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output2</span>
+<span class="o">./</span><span class="n">output2</span>
 </pre></div>
 
      </div>
@@ -25100,10 +25100,10 @@ LISTA DE ALUNOS vs Avaliações:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap6ex01.c
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap6ex01</span><span class="o">.</span><span class="n">c</span>
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="c1">#include&lt;malloc.h&gt;  </span>
 
@@ -25177,12 +25177,204 @@ LISTA DE ALUNOS vs Avaliações:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
-gcc -Wall -std=c99 cap6ex01.c -o output2
-./output2
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap6ex01</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output2</span>
+<span class="o">./</span><span class="n">output2</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Arquivos">Arquivos<a class="anchor-link" href="#Arquivos">&#182;</a></h2><p>Os arquivos armazenados em disco são considerados como uma sequência de caracteres e podem ser acessados em memória através de um ponteiro para o primeiro caracter do arquivo (texto ou binário), como segue:</p>
+<pre><code>FILE *fp;
+fp = fopen(&quot;nomeArquivo.txt&quot;, &quot;modo&quot;); // modo é definido a seguir
+</code></pre>
+<p>Seguem as principais funções para manipular arquivos da biblioteca <code>stdio.h</code>:</p>
+<p>Função     | Descrição
+:---------:|----------
+<code>fopen()</code>  | Abre arquivo
+<code>fclose()</code> | Fecha arquivo
+<code>putc()</code>   | Escreve um caracter no arquivo
+<code>fputc()</code>  | Igual <code>putc()</code>
+<code>getc()</code>   | Lê um caracter do arquivo
+<code>fgetc()</code>  | Igual <code>getc()</code>
+<code>fseek()</code>  | Posiciona o arquivo em um determinado byte
+<code>fprintf()</code>| Semelhante ao <code>printf()</code>, mas para arquivo
+<code>fscanf()</code> | Semelhante ao <code>scanf()</code>, mas para arquivo
+<code>feof()</code>   | Verifica final de arquivo
+<code>ferror()</code> | Verifica se ocorreu erro
+<code>rewind()</code> | Posiciona o ponteiro para o início do arquivo
+<code>remove()</code> | Apaga arquivo
+<code>fflush()</code> | Descarrega o <em>buffer</em> do arquivo
+<code>fgets()</code>  | Obtém uma string do arquivo
+<code>fread()</code>  | Lê um bloco de dados do arquivo
+<code>fwrite()</code> | Escreve um bloco de dados no arquivo
+<code>ftell()</code>  | Retorna a posição do ponteiro</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>| <strong>Modo</strong> 	| <strong>Arquivo</strong> 	|    <strong>Função</strong>   	|
+|:--------:	|:-----------:	|:---------------:	|
+|     r    	|    Texto    	| Leitura     	|
+|     w    	|    Texto    	| Escrita em arquivo novo     |
+|     a    	|    Texto    	| Escrita em arquivo existente |
+|    r+    	|    Texto    	| Leitura/Escrita 	|
+|    w+    	|    Texto    	| Leitura/Escrita 	|
+|    a+    	|    Texto    	| Leitura/Escrita 	|
+|    rb    	|   Binário   	| Leitura     	|
+|    wb    	|   Binário   	| Escrita     	|
+|    ab    	|   Binário   	| Escrita     	|
+|    r+b   	|   Binário   	| Leitura/Escrita 	|
+|    w+b   	|   Binário   	| Leitura/Escrita 	|
+|    a+b   	|   Binário   	| Leitura/Escrita 	|</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Exemplo para criar um arquivo texto.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap6ex02</span><span class="o">.</span><span class="n">c</span>
+<span class="c1">#include &lt;stdio.h&gt;</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">char</span><span class="o">*</span> <span class="n">filename</span> <span class="o">=</span> <span class="s2">"teste.txt"</span><span class="p">;</span>
+
+  <span class="n">FILE</span><span class="o">*</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Cria</span> <span class="n">arquivo</span> <span class="n">para</span> <span class="n">escrita</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">fp</span> <span class="o">==</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">"Erro ao abrir o arquivo: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">filename</span><span class="p">);</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="s2">"Linha </span><span class="si">%02d</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> <span class="o">//</span> <span class="n">Escrever</span> <span class="n">algo</span> <span class="n">no</span> <span class="n">arquivo</span>
+
+  <span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span> <span class="o">//</span> <span class="n">fecha</span> <span class="n">arquivo</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap6ex02</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output2</span>
+<span class="o">./</span><span class="n">output2</span>
+<span class="n">cat</span> <span class="n">teste</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Exemplo para ler um arquivo texto.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">writefile</span> <span class="n">cap6ex03</span><span class="o">.</span><span class="n">c</span>
+<span class="c1">#include &lt;stdio.h&gt;</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">char</span><span class="o">*</span> <span class="n">filename</span> <span class="o">=</span> <span class="s2">"teste.txt"</span><span class="p">,</span> <span class="n">ch</span><span class="p">;</span>
+
+  <span class="n">FILE</span><span class="o">*</span> <span class="n">fp</span><span class="p">;</span>
+  <span class="n">fp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Cria</span> <span class="n">arquivo</span> <span class="n">para</span> <span class="n">escrita</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">fp</span> <span class="o">==</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">"Erro ao abrir o arquivo: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">filename</span><span class="p">);</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">while</span> <span class="p">((</span><span class="n">ch</span> <span class="o">=</span> <span class="n">fgetc</span><span class="p">(</span><span class="n">fp</span><span class="p">))</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span> <span class="p">{</span> <span class="o">//</span> <span class="n">Lê</span> <span class="n">arquivo</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">"</span><span class="si">%c</span><span class="s2">"</span><span class="p">,</span> <span class="n">ch</span><span class="p">);</span> <span class="o">//</span> <span class="n">caracter</span> <span class="n">por</span> <span class="n">caracter</span>
+  <span class="p">}</span>
+
+  <span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span> <span class="o">//</span> <span class="n">fecha</span> <span class="n">arquivo</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-python"><pre><span></span><span class="o">%%</span><span class="n">shell</span>
+<span class="n">gcc</span> <span class="o">-</span><span class="n">Wall</span> <span class="o">-</span><span class="n">std</span><span class="o">=</span><span class="n">c99</span> <span class="n">cap6ex03</span><span class="o">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">output3</span>
+<span class="o">./</span><span class="n">output3</span>
 </pre></div>
 
      </div>

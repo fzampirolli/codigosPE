@@ -791,7 +791,7 @@ LISTA DE ALUNOS vs Avaliações:
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{1}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap6ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -859,11 +859,151 @@ LISTA DE ALUNOS vs Avaliações:
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{2}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
 gcc \PYZhy{}Wall \PYZhy{}std=c99 cap6ex01.c \PYZhy{}o output2
 ./output2
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{arquivos}{%
+\subsection{Arquivos}\label{arquivos}}
+
+Os arquivos armazenados em disco são considerados como uma sequência de
+caracteres e podem ser acessados em memória através de um ponteiro para
+o primeiro caracter do arquivo (texto ou binário), como segue:
+
+\begin{verbatim}
+FILE *fp;
+fp = fopen("nomeArquivo.txt", "modo"); // modo é definido a seguir
+\end{verbatim}
+
+Seguem as principais funções para manipular arquivos da biblioteca
+\texttt{stdio.h}:
+
+\begin{longtable}[]{@{}cl@{}}
+\toprule
+Função & Descrição\tabularnewline
+\midrule
+\endhead
+\texttt{fopen()} & Abre arquivo\tabularnewline
+\texttt{fclose()} & Fecha arquivo\tabularnewline
+\texttt{putc()} & Escreve um caracter no arquivo\tabularnewline
+\texttt{fputc()} & Igual \texttt{putc()}\tabularnewline
+\texttt{getc()} & Lê um caracter do arquivo\tabularnewline
+\texttt{fgetc()} & Igual \texttt{getc()}\tabularnewline
+\texttt{fseek()} & Posiciona o arquivo em um determinado
+byte\tabularnewline
+\texttt{fprintf()} & Semelhante ao \texttt{printf()}, mas para
+arquivo\tabularnewline
+\texttt{fscanf()} & Semelhante ao \texttt{scanf()}, mas para
+arquivo\tabularnewline
+\texttt{feof()} & Verifica final de arquivo\tabularnewline
+\texttt{ferror()} & Verifica se ocorreu erro\tabularnewline
+\texttt{rewind()} & Posiciona o ponteiro para o início do
+arquivo\tabularnewline
+\texttt{remove()} & Apaga arquivo\tabularnewline
+\texttt{fflush()} & Descarrega o \emph{buffer} do arquivo\tabularnewline
+\texttt{fgets()} & Obtém uma string do arquivo\tabularnewline
+\texttt{fread()} & Lê um bloco de dados do arquivo\tabularnewline
+\texttt{fwrite()} & Escreve um bloco de dados no arquivo\tabularnewline
+\texttt{ftell()} & Retorna a posição do ponteiro\tabularnewline
+\bottomrule
+\end{longtable}
+
+    \begin{longtable}[]{@{}ccc@{}}
+\toprule
+\textbf{Modo} & \textbf{Arquivo} & \textbf{Função}\tabularnewline
+\midrule
+\endhead
+r & Texto & Leitura\tabularnewline
+w & Texto & Escrita em arquivo novo\tabularnewline
+a & Texto & Escrita em arquivo existente\tabularnewline
+r+ & Texto & Leitura/Escrita\tabularnewline
+w+ & Texto & Leitura/Escrita\tabularnewline
+a+ & Texto & Leitura/Escrita\tabularnewline
+rb & Binário & Leitura\tabularnewline
+wb & Binário & Escrita\tabularnewline
+ab & Binário & Escrita\tabularnewline
+r+b & Binário & Leitura/Escrita\tabularnewline
+w+b & Binário & Leitura/Escrita\tabularnewline
+a+b & Binário & Leitura/Escrita\tabularnewline
+\bottomrule
+\end{longtable}
+
+    Exemplo para criar um arquivo texto.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{7}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap6ex02.c
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{char}\PY{o}{*} \PY{n}{filename} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{teste.txt}\PY{l+s+s2}{\PYZdq{}}\PY{p}{;}
+
+  \PY{n}{FILE}\PY{o}{*} \PY{n}{fp} \PY{o}{=} \PY{n}{fopen}\PY{p}{(}\PY{n}{filename}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{w}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{Cria} \PY{n}{arquivo} \PY{n}{para} \PY{n}{escrita}
+  \PY{k}{if} \PY{p}{(}\PY{n}{fp} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Erro ao abrir o arquivo: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{filename}\PY{p}{)}\PY{p}{;}
+    \PY{k}{return} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+  
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{l+m+mi}{10}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)}
+    \PY{n}{fprintf}\PY{p}{(}\PY{n}{fp}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Linha }\PY{l+s+si}{\PYZpc{}02d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{Escrever} \PY{n}{algo} \PY{n}{no} \PY{n}{arquivo}
+
+  \PY{n}{fclose}\PY{p}{(}\PY{n}{fp}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{fecha} \PY{n}{arquivo}
+
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{8}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap6ex02.c \PYZhy{}o output2
+./output2
+cat teste.txt
+\end{Verbatim}
+\end{tcolorbox}
+
+    Exemplo para ler um arquivo texto.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{9}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}writefile} cap6ex03.c
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{char}\PY{o}{*} \PY{n}{filename} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{teste.txt}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{ch}\PY{p}{;}
+
+  \PY{n}{FILE}\PY{o}{*} \PY{n}{fp}\PY{p}{;}
+  \PY{n}{fp} \PY{o}{=} \PY{n}{fopen}\PY{p}{(}\PY{n}{filename}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{r}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{Cria} \PY{n}{arquivo} \PY{n}{para} \PY{n}{escrita}
+  \PY{k}{if} \PY{p}{(}\PY{n}{fp} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Erro ao abrir o arquivo: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{filename}\PY{p}{)}\PY{p}{;}
+    \PY{k}{return} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+
+  \PY{k}{while} \PY{p}{(}\PY{p}{(}\PY{n}{ch} \PY{o}{=} \PY{n}{fgetc}\PY{p}{(}\PY{n}{fp}\PY{p}{)}\PY{p}{)} \PY{o}{!=} \PY{n}{EOF}\PY{p}{)} \PY{p}{\PYZob{}} \PY{o}{/}\PY{o}{/} \PY{n}{Lê} \PY{n}{arquivo}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}c}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{ch}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{caracter} \PY{n}{por} \PY{n}{caracter}
+  \PY{p}{\PYZcb{}}
+
+  \PY{n}{fclose}\PY{p}{(}\PY{n}{fp}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{fecha} \PY{n}{arquivo}
+
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{10}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
+gcc \PYZhy{}Wall \PYZhy{}std=c99 cap6ex03.c \PYZhy{}o output3
+./output3
 \end{Verbatim}
 \end{tcolorbox}
 

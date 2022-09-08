@@ -15094,7 +15094,7 @@ LISTA DE ALUNOS vs Avaliações:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap6ex01.c
@@ -15171,12 +15171,204 @@ LISTA DE ALUNOS vs Avaliações:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
 gcc -Wall -std=c99 cap6ex01.c -o output2
 ./output2
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Arquivos">Arquivos<a class="anchor-link" href="#Arquivos">&#182;</a></h2><p>Os arquivos armazenados em disco são considerados como uma sequência de caracteres e podem ser acessados em memória através de um ponteiro para o primeiro caracter do arquivo (texto ou binário), como segue:</p>
+<pre><code>FILE *fp;
+fp = fopen(&quot;nomeArquivo.txt&quot;, &quot;modo&quot;); // modo é definido a seguir
+</code></pre>
+<p>Seguem as principais funções para manipular arquivos da biblioteca <code>stdio.h</code>:</p>
+<p>Função     | Descrição
+:---------:|----------
+<code>fopen()</code>  | Abre arquivo
+<code>fclose()</code> | Fecha arquivo
+<code>putc()</code>   | Escreve um caracter no arquivo
+<code>fputc()</code>  | Igual <code>putc()</code>
+<code>getc()</code>   | Lê um caracter do arquivo
+<code>fgetc()</code>  | Igual <code>getc()</code>
+<code>fseek()</code>  | Posiciona o arquivo em um determinado byte
+<code>fprintf()</code>| Semelhante ao <code>printf()</code>, mas para arquivo
+<code>fscanf()</code> | Semelhante ao <code>scanf()</code>, mas para arquivo
+<code>feof()</code>   | Verifica final de arquivo
+<code>ferror()</code> | Verifica se ocorreu erro
+<code>rewind()</code> | Posiciona o ponteiro para o início do arquivo
+<code>remove()</code> | Apaga arquivo
+<code>fflush()</code> | Descarrega o <em>buffer</em> do arquivo
+<code>fgets()</code>  | Obtém uma string do arquivo
+<code>fread()</code>  | Lê um bloco de dados do arquivo
+<code>fwrite()</code> | Escreve um bloco de dados no arquivo
+<code>ftell()</code>  | Retorna a posição do ponteiro</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>| <strong>Modo</strong> 	| <strong>Arquivo</strong> 	|    <strong>Função</strong>   	|
+|:--------:	|:-----------:	|:---------------:	|
+|     r    	|    Texto    	| Leitura     	|
+|     w    	|    Texto    	| Escrita em arquivo novo     |
+|     a    	|    Texto    	| Escrita em arquivo existente |
+|    r+    	|    Texto    	| Leitura/Escrita 	|
+|    w+    	|    Texto    	| Leitura/Escrita 	|
+|    a+    	|    Texto    	| Leitura/Escrita 	|
+|    rb    	|   Binário   	| Leitura     	|
+|    wb    	|   Binário   	| Escrita     	|
+|    ab    	|   Binário   	| Escrita     	|
+|    r+b   	|   Binário   	| Leitura/Escrita 	|
+|    w+b   	|   Binário   	| Leitura/Escrita 	|
+|    a+b   	|   Binário   	| Leitura/Escrita 	|</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Exemplo para criar um arquivo texto.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap6ex02.c
+<span class="c1">#include &lt;stdio.h&gt;</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">char</span><span class="o">*</span> <span class="n">filename</span> <span class="o">=</span> <span class="s2">"teste.txt"</span><span class="p">;</span>
+
+  <span class="n">FILE</span><span class="o">*</span> <span class="n">fp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Cria</span> <span class="n">arquivo</span> <span class="n">para</span> <span class="n">escrita</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">fp</span> <span class="o">==</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">"Erro ao abrir o arquivo: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">filename</span><span class="p">);</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="s2">"Linha </span><span class="si">%02d</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> <span class="o">//</span> <span class="n">Escrever</span> <span class="n">algo</span> <span class="n">no</span> <span class="n">arquivo</span>
+
+  <span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span> <span class="o">//</span> <span class="n">fecha</span> <span class="n">arquivo</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
+gcc -Wall -std=c99 cap6ex02.c -o output2
+./output2
+cat teste.txt
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Exemplo para ler um arquivo texto.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> cap6ex03.c
+<span class="c1">#include &lt;stdio.h&gt;</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">char</span><span class="o">*</span> <span class="n">filename</span> <span class="o">=</span> <span class="s2">"teste.txt"</span><span class="p">,</span> <span class="n">ch</span><span class="p">;</span>
+
+  <span class="n">FILE</span><span class="o">*</span> <span class="n">fp</span><span class="p">;</span>
+  <span class="n">fp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">);</span> <span class="o">//</span> <span class="n">Cria</span> <span class="n">arquivo</span> <span class="n">para</span> <span class="n">escrita</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">fp</span> <span class="o">==</span> <span class="n">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">"Erro ao abrir o arquivo: </span><span class="si">%s</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">filename</span><span class="p">);</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">while</span> <span class="p">((</span><span class="n">ch</span> <span class="o">=</span> <span class="n">fgetc</span><span class="p">(</span><span class="n">fp</span><span class="p">))</span> <span class="o">!=</span> <span class="n">EOF</span><span class="p">)</span> <span class="p">{</span> <span class="o">//</span> <span class="n">Lê</span> <span class="n">arquivo</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s2">"</span><span class="si">%c</span><span class="s2">"</span><span class="p">,</span> <span class="n">ch</span><span class="p">);</span> <span class="o">//</span> <span class="n">caracter</span> <span class="n">por</span> <span class="n">caracter</span>
+  <span class="p">}</span>
+
+  <span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span> <span class="o">//</span> <span class="n">fecha</span> <span class="n">arquivo</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
+gcc -Wall -std=c99 cap6ex03.c -o output3
+./output3
 </pre></div>
 
      </div>
