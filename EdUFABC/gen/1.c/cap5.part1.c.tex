@@ -699,7 +699,7 @@ Número RA     Nota
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{1}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex01.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -731,7 +731,7 @@ Número RA     Nota
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{2}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
 gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex01.c \PYZhy{}o output2
@@ -740,17 +740,26 @@ gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex01.c \PYZhy{}o output2
 \end{tcolorbox}
 
     \begin{itemize}
+\tightlist
 \item
   As \emph{strings} em C têm um último caracter
   \texttt{\textquotesingle{}\textbackslash{}0\textquotesingle{}}. Assim,
-  \texttt{char\ s{[}{]}\ =\ "oi";} tem três carateres.
+  \texttt{s1=s2} e tem três carateres cada:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{char\ s1{[}{]}\ =\ "oi";} ou
+  \item
+    \texttt{char\ s2{[}{]}\ =\ \{\textquotesingle{}o\textquotesingle{},\textquotesingle{}i\textquotesingle{},\textquotesingle{}\textbackslash{}0\textquotesingle{}\};}
+  \end{itemize}
 \item
   Para ler uma \emph{string} com espaços
   {[}\href{https://www.geeksforgeeks.org/gets-is-risky-to-use}{ref}{]}:
 \end{itemize}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{5}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex01teste.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -769,13 +778,32 @@ gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex01.c \PYZhy{}o output2
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{6}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
 gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex01teste.c \PYZhy{}o cap5ex01teste
 ./cap5ex01teste
 \end{Verbatim}
 \end{tcolorbox}
+
+    Algumas funções da biblioteca padrão \textbf{string.h}:
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+função & descrição\tabularnewline
+\midrule
+\endhead
+strcopy(s1,s2) & copia s1 em s2\tabularnewline
+strcat(s1,s2) & copia s2 no final de s1\tabularnewline
+strlen(s) & tamanho de s\tabularnewline
+strcmp(s1,s2) & 0 se s1=s2; negativo se s1\textless s2; positivo se
+s1\textgreater s2\tabularnewline
+strchr(s,ch) & ponteiro para a primeira ocorrência de ch em
+s\tabularnewline
+strstr(s1,s2) & ponteiro para a primeira ocorrência de s2 em
+s1\tabularnewline
+\bottomrule
+\end{longtable}
 
     \hypertarget{formas-de-percorrer-um-vetor}{%
 \subsection{Formas de Percorrer um
@@ -1100,7 +1128,7 @@ Número   RA Nota
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{7}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex02.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -1138,7 +1166,7 @@ Número   RA Nota
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{8}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
 gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex02.c \PYZhy{}o output2
@@ -1174,7 +1202,7 @@ gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex02.c \PYZhy{}o output2
 \end{itemize}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{9}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex02teste1.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -1212,7 +1240,7 @@ gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex02.c \PYZhy{}o output2
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{10}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
 gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex02teste1.c \PYZhy{}o output2
@@ -1221,7 +1249,7 @@ gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex02teste1.c \PYZhy{}o output2
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{11}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex02teste2.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -1263,7 +1291,7 @@ gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex02teste1.c \PYZhy{}o output2
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{12}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
 gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex02teste2.c \PYZhy{}o output2
@@ -1336,7 +1364,7 @@ RA      Nota
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{13}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex03.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -1394,7 +1422,7 @@ RA      Nota
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{14}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
 gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex03.c \PYZhy{}o output2
@@ -1521,7 +1549,7 @@ output=v2:
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{15}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} cap5ex04.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -1567,7 +1595,7 @@ output=v2:
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{16}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
 gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex04.c \PYZhy{}o output2
@@ -1608,7 +1636,7 @@ fazer um método de leitura, passando como argumento um texto
 vetor.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{17}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}writefile} str2int.c
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -1634,7 +1662,7 @@ vetor.
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{18}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}\PYZpc{}}\PY{k}{shell}
 gcc \PYZhy{}Wall \PYZhy{}std=c99 str2int.c \PYZhy{}o output2
