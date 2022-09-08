@@ -3,18 +3,17 @@
 int main() {
   char* filename = "teste.txt";
 
-  // Criar arquivo para escrita
-  FILE* fp = fopen(filename, "w");
+  FILE* fp;
+  fp = fopen(filename, "w"); // Cria arquivo para escrita
   if (fp == NULL) {
     printf("Erro ao abrir o arquivo: %s\n", filename);
     return -1;
   }
-  // Escrever algo no arquivo
-  for (int i = 0; i < 10; i++)
-    fprintf(fp, "Linha #%d\n", i + 1);
 
-  // fechar arquivo
-  fclose(fp);
+  for (int i = 0; i < 10; i++)
+    fprintf(fp, "Linha %02d\n", i + 1); // Escrever algo no arquivo
+
+  fclose(fp); // fecha arquivo
 
   return 0;
 }
