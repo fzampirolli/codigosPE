@@ -4,7 +4,9 @@ Livro: [Processando a Informação: um livro prático de programação independe
 
 Na pasta [EdUFABC/gen/1.c](https://github.com/fzampirolli/codigosPE/tree/master/EdUFABC/gen/1.c) estão os *colabs* até o Capítulo 6, adaptados para linguagem de programação C, em vários formatos. Consultar [EdUFABC](https://github.com/fzampirolli/codigosPE/tree/master/EdUFABC) para mais detalhes de como esses formatos foram gerados automaticamente.
 
-Nas pastas cap* estão alguns exemplos e exercícios em C do livro.
+Nas pastas cap* estão alguns exemplos e exercícios em C do livro. 
+
+Todo o conteúdo do livro (conceitos e **todos os exercícios** na linguagem de programação Python) está explicado em vídeos na disciplina de [Processando a Informação, oferta 2022.2](https://sites.google.com/site/fzampirolli/pi-2022-2).
 
 Conteúdo disponível no [GitHub](https://github.com/fzampirolli/codigosPE), em adaptação conforme o andamento do curso de [Programação Estruturada, ofertado em 2022.3](https://sites.google.com/site/fzampirolli/pe-2022-3).
 
