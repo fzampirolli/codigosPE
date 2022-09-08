@@ -17,7 +17,7 @@ Conteúdo disponível no [GitHub](https://github.com/fzampirolli/codigosPE), em 
 * Capítulo 3: Desvios condicionais
 * Capítulo 4: Estruturas de repetição (laços) (+Recursão)
 * Capítulo 5: Vetores (+Introdução a alocação)
-* Capítulo 6: Matrizes e vetores multi-dimensionais 
+* Capítulo 6: Matrizes e vetores multi-dimensionais (+Arquivo)
 
 ## Capítulos do livro sem Colabs:
 
