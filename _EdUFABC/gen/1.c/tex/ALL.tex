@@ -6578,7 +6578,7 @@ Número RA     Nota
 \item
   As \emph{strings} em C têm um último caracter
   \texttt{\textquotesingle{}\textbackslash{}0\textquotesingle{}}. Assim,
-  \texttt{s1=s2} e tem três carateres cada:
+  no exemplo a seguir \texttt{s1=s2} tem três carateres cada:
 
   \begin{itemize}
   \tightlist
@@ -7464,8 +7464,8 @@ texto ou \emph{string} incluindo os elementos do vetor e vários espaços
 2 1 9 4 3 6 0 9 8 4 2 8 0 6 7 3 2 4 5 9
 \end{verbatim}
 
-Para não ter que incluir várias entradas inteiras, a melhor solução é
-fazer um método de leitura, passando como argumento um texto
+Para não ter que incluir várias entradas inteiras, uma por linha, uma
+solução é fazer um método de leitura, passando como argumento um texto
 (\emph{string}) referente a cada linha. Esse método deve retornar o
 vetor.
 
@@ -8764,7 +8764,7 @@ a+b & Binário & Leitura/Escrita\tabularnewline
     Exemplo para criar um arquivo texto.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{7}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap6ex02}\PY{o}{.}\PY{n}{c}
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -8789,7 +8789,7 @@ a+b & Binário & Leitura/Escrita\tabularnewline
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{8}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
 \PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap6ex02}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output2}
@@ -8801,7 +8801,7 @@ a+b & Binário & Leitura/Escrita\tabularnewline
     Exemplo para ler um arquivo texto.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{9}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap6ex03}\PY{o}{.}\PY{n}{c}
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -8828,7 +8828,7 @@ a+b & Binário & Leitura/Escrita\tabularnewline
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{10}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
 \PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap6ex03}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output3}

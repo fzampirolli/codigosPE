@@ -15035,7 +15035,7 @@ gcc -Wall -std=c99 cap5ex01.c -o output2
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li><p>As <em>strings</em> em C têm um último caracter <code>'\0'</code>. Assim, <code>s1=s2</code> e tem três carateres cada:</p>
+<li><p>As <em>strings</em> em C têm um último caracter <code>'\0'</code>. Assim, no exemplo a seguir <code>s1=s2</code> tem três carateres cada:</p>
 <ul>
 <li><code>char s1[] = &quot;oi&quot;;</code> ou</li>
 <li><code>char s2[] = {'o','i','\0'};</code></li>
@@ -16192,7 +16192,7 @@ gcc -Wall -std=c99 cap5ex04.c -o output2
 <h3 id="Entrada-de-Dados-(cada-linha-contem-um-texto-ou-string-incluindo-os-elementos-do-vetor-e-v%C3%A1rios-espa%C3%A7os-%22%22):">Entrada de Dados (cada linha contem um texto ou <em>string</em> incluindo os elementos do vetor e v&#225;rios espa&#231;os "<code />"):<a class="anchor-link" href="#Entrada-de-Dados-(cada-linha-contem-um-texto-ou-string-incluindo-os-elementos-do-vetor-e-v%C3%A1rios-espa%C3%A7os-%22%22):">&#182;</a></h3><pre><code>7 3 7 9 7 7 0 9 8 4 8 9 0 1 7 8 4 1 1 0 
 2 1 9 4 3 6 0 9 8 4 2 8 0 6 7 3 2 4 5 9
 </code></pre>
-<p>Para não ter que incluir várias entradas inteiras, a melhor solução é fazer um método de leitura, passando como argumento um texto (<em>string</em>) referente a cada linha. Esse método deve retornar o vetor.</p>
+<p>Para não ter que incluir várias entradas inteiras, uma por linha, uma solução é fazer um método de leitura, passando como argumento um texto (<em>string</em>) referente a cada linha. Esse método deve retornar o vetor.</p>
 
 </div>
 </div>
