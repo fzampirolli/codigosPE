@@ -15638,7 +15638,7 @@ gcc -Wall -std=c99 cap4ex01.c -o output2
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Este tópico de recursão (ou recursividade) é complementar ao livro, eu sua primeira edição.</p>
+<p>Este tópico de recursão (ou recursividade) é complementar ao livro, em sua primeira edição.</p>
 <p>Como nos laços de repetição, a recursão tem como objetivo rodar trechos de códigos (agora encapsulados em métodos) várias vezes.</p>
 <p>Além disso, análogo ao laço, <font color='red'><strong>muito cuidado com o critério de parada, senão o código irá fazer infinitas chamadas recursivas, podendo travar o seu computador!</strong></font></p>
 <p>Ou seja, o método recursivo teve ter pelo menos uma condicional e argumentos que variam nas chamadas recursivas. Veja um exemplo a seguir.</p>
@@ -15717,12 +15717,12 @@ escreva(&quot;A média das &quot; + contador + &quot; notas é &quot; + média);
 
 <span class="nb">float</span> <span class="n">lerNota</span><span class="p">(</span><span class="nb">float</span> <span class="n">acumulador</span><span class="p">,</span> <span class="nb">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
   <span class="nb">float</span> <span class="n">nota</span><span class="p">;</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="o">//</span> <span class="n">CRITÉRIO</span> <span class="n">DE</span> <span class="n">PARADA</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="o">//</span> <span class="n">CRITÉRIO</span> <span class="n">DE</span> <span class="n">PARADA</span><span class="err">!!!</span>
     <span class="n">do</span> <span class="p">{</span>
       <span class="n">scanf</span><span class="p">(</span><span class="s2">"</span><span class="si">%f</span><span class="s2">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">nota</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">nota</span> <span class="o">&lt;</span> <span class="mf">0.0</span> <span class="o">||</span> <span class="n">nota</span> <span class="o">&gt;</span> <span class="mf">10.0</span><span class="p">);</span>
-    <span class="n">acumulador</span> <span class="o">=</span> <span class="n">lerNota</span><span class="p">(</span><span class="n">acumulador</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="o">//</span> <span class="n">CHAMADA</span> <span class="n">RECURSIVA</span><span class="p">,</span> 
-    <span class="o">//</span> <span class="n">COM</span> <span class="n">ALTERAÇÃO</span> <span class="n">DO</span> <span class="n">VALOR</span> <span class="n">DO</span> <span class="n">ARGUMENTO</span> <span class="err">!!!</span>
+    <span class="o">//</span> <span class="n">CHAMADA</span> <span class="n">RECURSIVA</span><span class="p">,</span> <span class="n">COM</span> <span class="n">ALTERAÇÃO</span> <span class="n">DO</span> <span class="n">VALOR</span> <span class="n">DO</span> <span class="n">ARGUMENTO</span><span class="err">!!!</span>
+    <span class="n">acumulador</span> <span class="o">=</span> <span class="n">lerNota</span><span class="p">(</span><span class="n">acumulador</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> 
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">acumulador</span> <span class="o">+</span> <span class="n">nota</span><span class="p">;</span>
 <span class="p">}</span>
@@ -15734,8 +15734,11 @@ escreva(&quot;A média das &quot; + contador + &quot; notas é &quot; + média);
   <span class="nb">int</span> <span class="n">contador</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 
   <span class="n">printf</span><span class="p">(</span><span class="s2">"Entre com </span><span class="si">%d</span><span class="s2"> notas válidas</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">contador</span><span class="p">);</span>
+  
+  <span class="o">//</span> <span class="n">CHAMADA</span> <span class="n">RECURSIVA</span>
   <span class="n">acumulador</span> <span class="o">=</span> <span class="n">lerNota</span><span class="p">(</span><span class="n">acumulador</span><span class="p">,</span> <span class="n">contador</span><span class="p">);</span>
-  <span class="n">media</span> <span class="o">=</span> <span class="n">acumulador</span> <span class="o">/</span> <span class="n">contador</span><span class="p">;</span>
+
+  <span class="n">media</span> <span class="o">=</span> <span class="n">acumulador</span> <span class="o">/</span> <span class="n">contador</span><span class="p">;</span> <span class="o">//</span> <span class="n">MÉDIA</span>
 
   <span class="o">//</span> <span class="n">SAÍDA</span>
   <span class="n">printf</span><span class="p">(</span><span class="s2">"A média das </span><span class="si">%d</span><span class="s2"> notas é </span><span class="si">%.1f</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">contador</span><span class="p">,</span> <span class="n">media</span><span class="p">);</span>

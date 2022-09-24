@@ -839,10 +839,63 @@ Código}\label{reaproveitamento-e-manutenuxe7uxe3o-de-cuxf3digo}}
   \begin{itemize}
   \tightlist
   \item
-    quando funções para ler e escrever um vetor/matriz poderão ser
+    quando métodos para ler e escrever um vetor/matriz poderão ser
     reaproveitados em várias questões.
   \end{itemize}
+\item
+  Para não ter muitas cópias desses métodos, é possível criar as nossas
+  bibliotecas.
 \end{itemize}
+
+    Para criar uma biblioteca em C devemos:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Criar um arquivo \emph{header}, por exemplo \texttt{meusMetodos.h},
+  contendo as assinaturas dos métodos. Para o Exemplo 2 a seguir, esse
+  arquivo deve conter:
+\end{enumerate}
+
+\begin{verbatim}
+float delta(float a, float b, float c);
+float leia();
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Criar um arquivo com as implementações dos métodos, incluindo no
+  início \texttt{\#include\ "meusMetodos.h"}.
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Observar que não devemos utilizar \texttt{\textless{}\textgreater{}},
+  como ocorrem nas bibliotecas padrão do C, como exemplo:
+  \texttt{\#include\ \textless{}stdio.h\textgreater{}}.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Nos programas que irão utilizar esses métodos, incluir também no
+  início a biblioteca criada, por exemplo:
+  \texttt{\#include\ "meusMetodos.h"}.
+\item
+  Para compilar e rodar, basta fazer:
+\end{enumerate}
+
+\begin{verbatim}
+gcc -Wall -std=c99 meusMetodos.c meusProgramas.c -o meusProgramas.o
+./meusProgramas.o
+\end{verbatim}
 
     \hypertarget{exemplo-02---uso-de-funuxe7uxf5es-com-entrada-e-sauxedda-de-dados}{%
 \paragraph{Exemplo 02 - Uso de Funções com Entrada e Saída de

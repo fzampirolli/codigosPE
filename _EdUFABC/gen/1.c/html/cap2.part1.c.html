@@ -15171,10 +15171,43 @@ gcc -Wall -std=c99 cap2ex01.c -o output2
 </li>
 <li><p><font color='red'>Esse recurso de métodos de entrada e saída serão muito úteis nos tópicos de Vetores e Matrízes, abordados nos Capítulos 5 e 6, respectivamente</font>,</p>
 <ul>
-<li>quando funções para ler e escrever um vetor/matriz poderão ser reaproveitados em várias questões.</li>
+<li>quando métodos para ler e escrever um vetor/matriz poderão ser reaproveitados em várias questões.</li>
 </ul>
 </li>
+<li><p>Para não ter muitas cópias desses métodos, é possível criar as nossas bibliotecas.</p>
+</li>
 </ul>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Para criar uma biblioteca em C devemos:</p>
+<ol>
+<li>Criar um arquivo <em>header</em>, por exemplo <code>meusMetodos.h</code>, contendo as assinaturas dos métodos. Para o Exemplo 2 a seguir, esse arquivo deve conter:</li>
+</ol>
+<pre><code>float delta(float a, float b, float c);
+float leia();
+</code></pre>
+<ol start="2">
+<li>Criar um arquivo com as implementações dos métodos, incluindo no início <code>#include &quot;meusMetodos.h&quot;</code>.</li>
+</ol>
+<ul>
+<li>Observar que não devemos utilizar <code>&lt;&gt;</code>, como ocorrem nas bibliotecas padrão do C, como exemplo: <code>#include &lt;stdio.h&gt;</code>.</li>
+</ul>
+<ol start="3">
+<li>Nos programas que irão utilizar esses métodos, incluir também no início a biblioteca criada, por exemplo: <code>#include &quot;meusMetodos.h&quot;</code>.</li>
+<li>Para compilar e rodar, basta fazer:</li>
+</ol>
+<pre><code>gcc -Wall -std=c99 meusMetodos.c meusProgramas.c -o meusProgramas.o
+./meusProgramas.o
+</code></pre>
 
 </div>
 </div>

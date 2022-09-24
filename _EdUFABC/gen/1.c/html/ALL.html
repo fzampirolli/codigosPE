@@ -16278,7 +16278,7 @@ output=Alô, Mundo!
 <li>O comando após <code>!</code> roda no terminal.</li>
 <li><code>gcc</code> é o compilador utilizado, com os argumentos:<ul>
 <li><code>-Wall</code> para mostrar <em>warnings</em> (programas mal feitos)</li>
-<li><code>-std=c99</code> compilador padrão ANSI (ou <code>c99</code>), compatível em mais arquiteturas</li>
+<li><code>-std=c99</code> compilador padrão ANSI (<code>c99</code> é um padrão de 1999, porém existem outros, ver por exemplo <a href="en.wikipedia.org/wiki/ANSI_C">ref1</a> e <a href="https://pt.wikipedia.org/wiki/Biblioteca_padr%C3%A3o_do_C">ref2</a>), compatível em mais arquiteturas</li>
 <li>arquivo de entrada <code>cap1ex01.c</code></li>
 <li><code>-o</code> arquivo de saída executável</li>
 </ul>
@@ -17759,10 +17759,43 @@ O delta de ax^2 + bx + c é -76.0
 </li>
 <li><p><font color='red'>Esse recurso de métodos de entrada e saída serão muito úteis nos tópicos de Vetores e Matrízes, abordados nos Capítulos 5 e 6, respectivamente</font>,</p>
 <ul>
-<li>quando funções para ler e escrever um vetor/matriz poderão ser reaproveitados em várias questões.</li>
+<li>quando métodos para ler e escrever um vetor/matriz poderão ser reaproveitados em várias questões.</li>
 </ul>
 </li>
+<li><p>Para não ter muitas cópias desses métodos, é possível criar as nossas bibliotecas.</p>
+</li>
 </ul>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Para criar uma biblioteca em C devemos:</p>
+<ol>
+<li>Criar um arquivo <em>header</em>, por exemplo <code>meusMetodos.h</code>, contendo as assinaturas dos métodos. Para o Exemplo 2 a seguir, esse arquivo deve conter:</li>
+</ol>
+<pre><code>float delta(float a, float b, float c);
+float leia();
+</code></pre>
+<ol start="2">
+<li>Criar um arquivo com as implementações dos métodos, incluindo no início <code>#include &quot;meusMetodos.h&quot;</code>.</li>
+</ol>
+<ul>
+<li>Observar que não devemos utilizar <code>&lt;&gt;</code>, como ocorrem nas bibliotecas padrão do C, como exemplo: <code>#include &lt;stdio.h&gt;</code>.</li>
+</ul>
+<ol start="3">
+<li>Nos programas que irão utilizar esses métodos, incluir também no início a biblioteca criada, por exemplo: <code>#include &quot;meusMetodos.h&quot;</code>.</li>
+<li>Para compilar e rodar, basta fazer:</li>
+</ol>
+<pre><code>gcc -Wall -std=c99 meusMetodos.c meusProgramas.c -o meusProgramas.o
+./meusProgramas.o
+</code></pre>
 
 </div>
 </div>
@@ -20888,7 +20921,7 @@ A média das 10 notas é 7.3
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Este tópico de recursão (ou recursividade) é complementar ao livro, eu sua primeira edição.</p>
+<p>Este tópico de recursão (ou recursividade) é complementar ao livro, em sua primeira edição.</p>
 <p>Como nos laços de repetição, a recursão tem como objetivo rodar trechos de códigos (agora encapsulados em métodos) várias vezes.</p>
 <p>Além disso, análogo ao laço, <font color='red'><strong>muito cuidado com o critério de parada, senão o código irá fazer infinitas chamadas recursivas, podendo travar o seu computador!</strong></font></p>
 <p>Ou seja, o método recursivo teve ter pelo menos uma condicional e argumentos que variam nas chamadas recursivas. Veja um exemplo a seguir.</p>
@@ -20967,12 +21000,12 @@ escreva(&quot;A média das &quot; + contador + &quot; notas é &quot; + média);
 
 <span class="nb">float</span> <span class="n">lerNota</span><span class="p">(</span><span class="nb">float</span> <span class="n">acumulador</span><span class="p">,</span> <span class="nb">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
   <span class="nb">float</span> <span class="n">nota</span><span class="p">;</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="o">//</span> <span class="n">CRITÉRIO</span> <span class="n">DE</span> <span class="n">PARADA</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="o">//</span> <span class="n">CRITÉRIO</span> <span class="n">DE</span> <span class="n">PARADA</span><span class="err">!!!</span>
     <span class="n">do</span> <span class="p">{</span>
       <span class="n">scanf</span><span class="p">(</span><span class="s2">"</span><span class="si">%f</span><span class="s2">"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">nota</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">nota</span> <span class="o">&lt;</span> <span class="mf">0.0</span> <span class="o">||</span> <span class="n">nota</span> <span class="o">&gt;</span> <span class="mf">10.0</span><span class="p">);</span>
-    <span class="n">acumulador</span> <span class="o">=</span> <span class="n">lerNota</span><span class="p">(</span><span class="n">acumulador</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="o">//</span> <span class="n">CHAMADA</span> <span class="n">RECURSIVA</span><span class="p">,</span> 
-    <span class="o">//</span> <span class="n">COM</span> <span class="n">ALTERAÇÃO</span> <span class="n">DO</span> <span class="n">VALOR</span> <span class="n">DO</span> <span class="n">ARGUMENTO</span> <span class="err">!!!</span>
+    <span class="o">//</span> <span class="n">CHAMADA</span> <span class="n">RECURSIVA</span><span class="p">,</span> <span class="n">COM</span> <span class="n">ALTERAÇÃO</span> <span class="n">DO</span> <span class="n">VALOR</span> <span class="n">DO</span> <span class="n">ARGUMENTO</span><span class="err">!!!</span>
+    <span class="n">acumulador</span> <span class="o">=</span> <span class="n">lerNota</span><span class="p">(</span><span class="n">acumulador</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> 
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">acumulador</span> <span class="o">+</span> <span class="n">nota</span><span class="p">;</span>
 <span class="p">}</span>
@@ -20984,8 +21017,11 @@ escreva(&quot;A média das &quot; + contador + &quot; notas é &quot; + média);
   <span class="nb">int</span> <span class="n">contador</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
 
   <span class="n">printf</span><span class="p">(</span><span class="s2">"Entre com </span><span class="si">%d</span><span class="s2"> notas válidas</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">contador</span><span class="p">);</span>
+  
+  <span class="o">//</span> <span class="n">CHAMADA</span> <span class="n">RECURSIVA</span>
   <span class="n">acumulador</span> <span class="o">=</span> <span class="n">lerNota</span><span class="p">(</span><span class="n">acumulador</span><span class="p">,</span> <span class="n">contador</span><span class="p">);</span>
-  <span class="n">media</span> <span class="o">=</span> <span class="n">acumulador</span> <span class="o">/</span> <span class="n">contador</span><span class="p">;</span>
+
+  <span class="n">media</span> <span class="o">=</span> <span class="n">acumulador</span> <span class="o">/</span> <span class="n">contador</span><span class="p">;</span> <span class="o">//</span> <span class="n">MÉDIA</span>
 
   <span class="o">//</span> <span class="n">SAÍDA</span>
   <span class="n">printf</span><span class="p">(</span><span class="s2">"A média das </span><span class="si">%d</span><span class="s2"> notas é </span><span class="si">%.1f</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">contador</span><span class="p">,</span> <span class="n">media</span><span class="p">);</span>

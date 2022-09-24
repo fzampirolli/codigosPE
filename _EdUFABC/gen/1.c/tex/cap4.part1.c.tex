@@ -1080,7 +1080,7 @@ gcc \PYZhy{}Wall \PYZhy{}std=c99 cap4ex01.c \PYZhy{}o output2
     \hypertarget{recursuxe3o}{%
 \subsection{Recursão}\label{recursuxe3o}}
 
-    Este tópico de recursão (ou recursividade) é complementar ao livro, eu
+    Este tópico de recursão (ou recursividade) é complementar ao livro, em
 sua primeira edição.
 
 Como nos laços de repetição, a recursão tem como objetivo rodar trechos
@@ -1141,12 +1141,12 @@ escreva("A média das " + contador + " notas é " + média);
 
 \PY{n+nb}{float} \PY{n}{lerNota}\PY{p}{(}\PY{n+nb}{float} \PY{n}{acumulador}\PY{p}{,} \PY{n+nb}{int} \PY{n}{n}\PY{p}{)} \PY{p}{\PYZob{}}
   \PY{n+nb}{float} \PY{n}{nota}\PY{p}{;}
-  \PY{k}{if} \PY{p}{(}\PY{n}{n} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{)} \PY{p}{\PYZob{}} \PY{o}{/}\PY{o}{/} \PY{n}{CRITÉRIO} \PY{n}{DE} \PY{n}{PARADA}
+  \PY{k}{if} \PY{p}{(}\PY{n}{n} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{)} \PY{p}{\PYZob{}} \PY{o}{/}\PY{o}{/} \PY{n}{CRITÉRIO} \PY{n}{DE} \PY{n}{PARADA}\PY{err}{!}\PY{err}{!}\PY{err}{!}
     \PY{n}{do} \PY{p}{\PYZob{}}
       \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}f}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{nota}\PY{p}{)}\PY{p}{;}
     \PY{p}{\PYZcb{}} \PY{k}{while} \PY{p}{(}\PY{n}{nota} \PY{o}{\PYZlt{}} \PY{l+m+mf}{0.0} \PY{o}{|}\PY{o}{|} \PY{n}{nota} \PY{o}{\PYZgt{}} \PY{l+m+mf}{10.0}\PY{p}{)}\PY{p}{;}
-    \PY{n}{acumulador} \PY{o}{=} \PY{n}{lerNota}\PY{p}{(}\PY{n}{acumulador}\PY{p}{,} \PY{n}{n} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{CHAMADA} \PY{n}{RECURSIVA}\PY{p}{,} 
-    \PY{o}{/}\PY{o}{/} \PY{n}{COM} \PY{n}{ALTERAÇÃO} \PY{n}{DO} \PY{n}{VALOR} \PY{n}{DO} \PY{n}{ARGUMENTO} \PY{err}{!}\PY{err}{!}\PY{err}{!}
+    \PY{o}{/}\PY{o}{/} \PY{n}{CHAMADA} \PY{n}{RECURSIVA}\PY{p}{,} \PY{n}{COM} \PY{n}{ALTERAÇÃO} \PY{n}{DO} \PY{n}{VALOR} \PY{n}{DO} \PY{n}{ARGUMENTO}\PY{err}{!}\PY{err}{!}\PY{err}{!}
+    \PY{n}{acumulador} \PY{o}{=} \PY{n}{lerNota}\PY{p}{(}\PY{n}{acumulador}\PY{p}{,} \PY{n}{n} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} 
   \PY{p}{\PYZcb{}}
   \PY{k}{return} \PY{n}{acumulador} \PY{o}{+} \PY{n}{nota}\PY{p}{;}
 \PY{p}{\PYZcb{}}
@@ -1158,8 +1158,11 @@ escreva("A média das " + contador + " notas é " + média);
   \PY{n+nb}{int} \PY{n}{contador} \PY{o}{=} \PY{l+m+mi}{10}\PY{p}{;}
 
   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Entre com }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ notas válidas}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{contador}\PY{p}{)}\PY{p}{;}
+  
+  \PY{o}{/}\PY{o}{/} \PY{n}{CHAMADA} \PY{n}{RECURSIVA}
   \PY{n}{acumulador} \PY{o}{=} \PY{n}{lerNota}\PY{p}{(}\PY{n}{acumulador}\PY{p}{,} \PY{n}{contador}\PY{p}{)}\PY{p}{;}
-  \PY{n}{media} \PY{o}{=} \PY{n}{acumulador} \PY{o}{/} \PY{n}{contador}\PY{p}{;}
+
+  \PY{n}{media} \PY{o}{=} \PY{n}{acumulador} \PY{o}{/} \PY{n}{contador}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{MÉDIA}
 
   \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA}
   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{A média das }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ notas é }\PY{l+s+si}{\PYZpc{}.1f}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{contador}\PY{p}{,} \PY{n}{media}\PY{p}{)}\PY{p}{;}

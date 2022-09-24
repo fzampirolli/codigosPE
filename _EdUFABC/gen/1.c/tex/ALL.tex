@@ -1692,7 +1692,10 @@ output=Alô, Mundo!
   \item
     \texttt{-Wall} para mostrar \emph{warnings} (programas mal feitos)
   \item
-    \texttt{-std=c99} compilador padrão ANSI (ou \texttt{c99}),
+    \texttt{-std=c99} compilador padrão ANSI (\texttt{c99} é um padrão
+    de 1999, porém existem outros, ver por exemplo
+    \href{en.wikipedia.org/wiki/ANSI_C}{ref1} e
+    \href{https://pt.wikipedia.org/wiki/Biblioteca_padr\%C3\%A3o_do_C}{ref2}),
     compatível em mais arquiteturas
   \item
     arquivo de entrada \texttt{cap1ex01.c}
@@ -2793,10 +2796,63 @@ Código}\label{reaproveitamento-e-manutenuxe7uxe3o-de-cuxf3digo}}
   \begin{itemize}
   \tightlist
   \item
-    quando funções para ler e escrever um vetor/matriz poderão ser
+    quando métodos para ler e escrever um vetor/matriz poderão ser
     reaproveitados em várias questões.
   \end{itemize}
+\item
+  Para não ter muitas cópias desses métodos, é possível criar as nossas
+  bibliotecas.
 \end{itemize}
+
+    Para criar uma biblioteca em C devemos:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Criar um arquivo \emph{header}, por exemplo \texttt{meusMetodos.h},
+  contendo as assinaturas dos métodos. Para o Exemplo 2 a seguir, esse
+  arquivo deve conter:
+\end{enumerate}
+
+\begin{verbatim}
+float delta(float a, float b, float c);
+float leia();
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Criar um arquivo com as implementações dos métodos, incluindo no
+  início \texttt{\#include\ "meusMetodos.h"}.
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Observar que não devemos utilizar \texttt{\textless{}\textgreater{}},
+  como ocorrem nas bibliotecas padrão do C, como exemplo:
+  \texttt{\#include\ \textless{}stdio.h\textgreater{}}.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Nos programas que irão utilizar esses métodos, incluir também no
+  início a biblioteca criada, por exemplo:
+  \texttt{\#include\ "meusMetodos.h"}.
+\item
+  Para compilar e rodar, basta fazer:
+\end{enumerate}
+
+\begin{verbatim}
+gcc -Wall -std=c99 meusMetodos.c meusProgramas.c -o meusProgramas.o
+./meusProgramas.o
+\end{verbatim}
 
     \hypertarget{exemplo-02---uso-de-funuxe7uxf5es-com-entrada-e-sauxedda-de-dados}{%
 \paragraph{Exemplo 02 - Uso de Funções com Entrada e Saída de
@@ -5081,7 +5137,7 @@ A média das 10 notas é 7.3
     \hypertarget{recursuxe3o}{%
 \subsection{Recursão}\label{recursuxe3o}}
 
-    Este tópico de recursão (ou recursividade) é complementar ao livro, eu
+    Este tópico de recursão (ou recursividade) é complementar ao livro, em
 sua primeira edição.
 
 Como nos laços de repetição, a recursão tem como objetivo rodar trechos
@@ -5142,12 +5198,12 @@ escreva("A média das " + contador + " notas é " + média);
 
 \PY{n+nb}{float} \PY{n}{lerNota}\PY{p}{(}\PY{n+nb}{float} \PY{n}{acumulador}\PY{p}{,} \PY{n+nb}{int} \PY{n}{n}\PY{p}{)} \PY{p}{\PYZob{}}
   \PY{n+nb}{float} \PY{n}{nota}\PY{p}{;}
-  \PY{k}{if} \PY{p}{(}\PY{n}{n} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{)} \PY{p}{\PYZob{}} \PY{o}{/}\PY{o}{/} \PY{n}{CRITÉRIO} \PY{n}{DE} \PY{n}{PARADA}
+  \PY{k}{if} \PY{p}{(}\PY{n}{n} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{)} \PY{p}{\PYZob{}} \PY{o}{/}\PY{o}{/} \PY{n}{CRITÉRIO} \PY{n}{DE} \PY{n}{PARADA}\PY{err}{!}\PY{err}{!}\PY{err}{!}
     \PY{n}{do} \PY{p}{\PYZob{}}
       \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}f}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{nota}\PY{p}{)}\PY{p}{;}
     \PY{p}{\PYZcb{}} \PY{k}{while} \PY{p}{(}\PY{n}{nota} \PY{o}{\PYZlt{}} \PY{l+m+mf}{0.0} \PY{o}{|}\PY{o}{|} \PY{n}{nota} \PY{o}{\PYZgt{}} \PY{l+m+mf}{10.0}\PY{p}{)}\PY{p}{;}
-    \PY{n}{acumulador} \PY{o}{=} \PY{n}{lerNota}\PY{p}{(}\PY{n}{acumulador}\PY{p}{,} \PY{n}{n} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{CHAMADA} \PY{n}{RECURSIVA}\PY{p}{,} 
-    \PY{o}{/}\PY{o}{/} \PY{n}{COM} \PY{n}{ALTERAÇÃO} \PY{n}{DO} \PY{n}{VALOR} \PY{n}{DO} \PY{n}{ARGUMENTO} \PY{err}{!}\PY{err}{!}\PY{err}{!}
+    \PY{o}{/}\PY{o}{/} \PY{n}{CHAMADA} \PY{n}{RECURSIVA}\PY{p}{,} \PY{n}{COM} \PY{n}{ALTERAÇÃO} \PY{n}{DO} \PY{n}{VALOR} \PY{n}{DO} \PY{n}{ARGUMENTO}\PY{err}{!}\PY{err}{!}\PY{err}{!}
+    \PY{n}{acumulador} \PY{o}{=} \PY{n}{lerNota}\PY{p}{(}\PY{n}{acumulador}\PY{p}{,} \PY{n}{n} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} 
   \PY{p}{\PYZcb{}}
   \PY{k}{return} \PY{n}{acumulador} \PY{o}{+} \PY{n}{nota}\PY{p}{;}
 \PY{p}{\PYZcb{}}
@@ -5159,8 +5215,11 @@ escreva("A média das " + contador + " notas é " + média);
   \PY{n+nb}{int} \PY{n}{contador} \PY{o}{=} \PY{l+m+mi}{10}\PY{p}{;}
 
   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Entre com }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ notas válidas}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{contador}\PY{p}{)}\PY{p}{;}
+  
+  \PY{o}{/}\PY{o}{/} \PY{n}{CHAMADA} \PY{n}{RECURSIVA}
   \PY{n}{acumulador} \PY{o}{=} \PY{n}{lerNota}\PY{p}{(}\PY{n}{acumulador}\PY{p}{,} \PY{n}{contador}\PY{p}{)}\PY{p}{;}
-  \PY{n}{media} \PY{o}{=} \PY{n}{acumulador} \PY{o}{/} \PY{n}{contador}\PY{p}{;}
+
+  \PY{n}{media} \PY{o}{=} \PY{n}{acumulador} \PY{o}{/} \PY{n}{contador}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{MÉDIA}
 
   \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA}
   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{A média das }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ notas é }\PY{l+s+si}{\PYZpc{}.1f}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{contador}\PY{p}{,} \PY{n}{media}\PY{p}{)}\PY{p}{;}
