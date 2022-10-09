@@ -19,19 +19,21 @@
 #include <stdio.h>
 
 int main() {
-  char* filename = "teste.txt";
+  char* filename = "teste.txt", ch;
+  FILE* file;
 
-  FILE* fp;
-  fp = fopen(filename, "w"); // Cria arquivo para escrita
-  if (fp == NULL) {
+  // ENTRADA DE DADOS
+  file = fopen(filename, "r"); // Cria arquivo para leitura
+  if (file == NULL) {
     printf("Erro ao abrir o arquivo: %s\n", filename);
     return -1;
   }
 
-  for (int i = 0; i < 10; i++)
-    fprintf(fp, "Linha %02d\n", i + 1); // Escrever algo no arquivo
+  // SAÍDA DE DADOS
+  while ((ch = fgetc(file)) != EOF) { // Lê arquivo
+    printf("%c", ch); // caracter por caracter
+  }
 
-  fclose(fp); // fecha arquivo
-
+  fclose(file); // fecha arquivo
   return 0;
 }

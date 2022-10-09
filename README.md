@@ -26,6 +26,6 @@ Conteúdo disponível no [GitHub](https://github.com/fzampirolli/codigosPE), em 
 
 ## Colabs com tópicos avançados não abordados no livro (EM CONSTRUÇÃO):
 
-* Capítulo 7: Registros e arquivos
+* Capítulo 7: Tipos Definidos Pelo Programador e Arquivos
 * Capítulo 8: Ponteiros e alocações dinâmicas
 * Capítulo 9: Ordenação, listas, filas e pilhas

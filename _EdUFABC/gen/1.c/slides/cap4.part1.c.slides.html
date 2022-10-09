@@ -15641,7 +15641,18 @@ gcc -Wall -std=c99 cap4ex01.c -o output2
 <p>Este tópico de recursão (ou recursividade) é complementar ao livro, em sua primeira edição.</p>
 <p>Como nos laços de repetição, a recursão tem como objetivo rodar trechos de códigos (agora encapsulados em métodos) várias vezes.</p>
 <p>Além disso, análogo ao laço, <font color='red'><strong>muito cuidado com o critério de parada, senão o código irá fazer infinitas chamadas recursivas, podendo travar o seu computador!</strong></font></p>
-<p>Ou seja, o método recursivo teve ter pelo menos uma condicional e argumentos que variam nas chamadas recursivas. Veja um exemplo a seguir.</p>
+<p>Ou seja, o método recursivo teve ter pelo menos uma condicional e argumentos que variam nas chamadas recursivas que garantam a convergência (critério de parada).</p>
+<p>As funções a seguir atendem a esses requisitos? Senão, como corrigir? O que elas fazem?</p>
+<pre><code>int funcao_recursiva(int a) {
+    if (a == 0) return a;
+    return 1+funcao_recursiva(a-1);
+}
+int funcao_recursiva(int a) {
+    if (a == 0) return a;
+    return 1+funcao_recursiva(a-2);
+}
+</code></pre>
+<p>Veja mais um exemplo a seguir.</p>
 
 </div>
 </div>

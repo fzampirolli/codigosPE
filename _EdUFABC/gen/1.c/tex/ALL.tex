@@ -1658,7 +1658,7 @@ output=Alô, Mundo!
 \end{itemize}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{1}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap1ex01}\PY{o}{.}\PY{n}{c}
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -1765,7 +1765,7 @@ output=
 \end{verbatim}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{2}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap1ex02}\PY{o}{.}\PY{n}{c}
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -1780,7 +1780,7 @@ output=
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
+\prompt{In}{incolor}{3}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
 \PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap1ex02}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output2}
@@ -5148,7 +5148,24 @@ parada, senão o código irá fazer infinitas chamadas recursivas, podendo
 travar o seu computador!}
 
 Ou seja, o método recursivo teve ter pelo menos uma condicional e
-argumentos que variam nas chamadas recursivas. Veja um exemplo a seguir.
+argumentos que variam nas chamadas recursivas que garantam a
+convergência (critério de parada).
+
+As funções a seguir atendem a esses requisitos? Senão, como corrigir? O
+que elas fazem?
+
+\begin{verbatim}
+int funcao_recursiva(int a) {
+    if (a == 0) return a;
+    return 1+funcao_recursiva(a-1);
+}
+int funcao_recursiva(int a) {
+    if (a == 0) return a;
+    return 1+funcao_recursiva(a-2);
+}
+\end{verbatim}
+
+Veja mais um exemplo a seguir.
 
     \hypertarget{exemplo-02---ler-10-notas-com-recursuxe3o}{%
 \subsection{Exemplo 02 - Ler 10 notas, com
@@ -7090,7 +7107,10 @@ Número   RA Nota
   \tightlist
   \item
     \texttt{int\ *\ metodo\ (int\ n)\ \{...\}} - alocar vetor dentro do
-    método, alocação dinâmica de memória.
+    método, alocação dinâmica de memória, com \texttt{malloc} ou
+    \texttt{calloc}.
+  \item
+    não esquecer de liberar a memórica com \texttt{free}.
   \end{itemize}
 \end{itemize}
 
@@ -7535,18 +7555,19 @@ vetor.
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 \PY{c+c1}{\PYZsh{}include \PYZlt{}string.h\PYZgt{}}
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdlib.h\PYZgt{}}
-
-\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
-   \PY{n}{char} \PY{n}{string}\PY{p}{[}\PY{p}{]} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{7 3 7 9 7 7 0 9 8 4 8 9 0 1     7 8 4 1 1 0     }\PY{l+s+s2}{\PYZdq{}}\PY{p}{;}
+\PY{n+nb}{int} \PY{n}{MAX}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{,} \PY{n}{tamanho} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{n}{void} \PY{n}{leiaVetor}\PY{p}{(}\PY{n+nb}{int} \PY{n}{v}\PY{p}{[}\PY{n}{MAX}\PY{p}{]}\PY{p}{,} \PY{n}{char} \PY{n}{string}\PY{p}{[}\PY{p}{]}\PY{p}{)} \PY{p}{\PYZob{}}
    \PY{n}{char} \PY{o}{*} \PY{n}{token} \PY{o}{=} \PY{n}{strtok}\PY{p}{(}\PY{n}{string}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
-   \PY{n+nb}{int} \PY{n}{v}\PY{p}{[}\PY{l+m+mi}{100}\PY{p}{]}\PY{p}{;}
-   \PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;}
    \PY{k}{while}\PY{p}{(} \PY{n}{token} \PY{o}{!=} \PY{n}{NULL} \PY{p}{)} \PY{p}{\PYZob{}}
-      \PY{n}{v}\PY{p}{[}\PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{]} \PY{o}{=} \PY{n}{atoi}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{converte} \PY{n}{texto} \PY{n}{para} \PY{n}{inteiro}
+      \PY{n}{v}\PY{p}{[}\PY{n}{tamanho}\PY{o}{+}\PY{o}{+}\PY{p}{]} \PY{o}{=} \PY{n}{atoi}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{converte} \PY{n}{texto} \PY{n}{para} \PY{n}{inteiro}
       \PY{n}{token} \PY{o}{=} \PY{n}{strtok}\PY{p}{(}\PY{n}{NULL}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
    \PY{p}{\PYZcb{}}
-   \PY{n+nb}{int} \PY{n}{n}\PY{o}{=}\PY{n}{i}\PY{p}{;}
-   \PY{k}{for} \PY{p}{(}\PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}\PY{n}{i}\PY{o}{\PYZlt{}}\PY{n}{n}\PY{p}{;}\PY{n}{i}\PY{o}{+}\PY{o}{+} \PY{p}{)}\PY{p}{\PYZob{}}
+\PY{p}{\PYZcb{}}
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+   \PY{n}{char} \PY{n}{string}\PY{p}{[}\PY{p}{]} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{7 3 7 9 7 7 0 9 8 4 8 9 0 1     7 8 4 1 1 0     }\PY{l+s+s2}{\PYZdq{}}\PY{p}{;}
+   \PY{n+nb}{int} \PY{n}{v}\PY{p}{[}\PY{n}{MAX}\PY{p}{]}\PY{p}{;}
+   \PY{n}{leiaVetor}\PY{p}{(}\PY{n}{v}\PY{p}{,} \PY{n}{string}\PY{p}{)}\PY{p}{;}
+   \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}\PY{n}{i}\PY{o}{\PYZlt{}}\PY{n}{tamanho}\PY{p}{;}\PY{n}{i}\PY{o}{+}\PY{o}{+} \PY{p}{)}\PY{p}{\PYZob{}}
      \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{v}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
    \PY{p}{\PYZcb{}}
    \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
@@ -7556,6 +7577,48 @@ vetor.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
+\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{str2int}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output2}
+\PY{o}{.}\PY{o}{/}\PY{n}{output2}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{str2int}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}string.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdlib.h\PYZgt{}}
+\PY{n+nb}{int} \PY{n}{tamanho} \PY{o}{=} \PY{l+m+mi}{20}\PY{p}{;}
+\PY{o}{/}\PY{o}{/} \PY{n}{método} \PY{n}{para} \PY{n}{ler} \PY{n}{um} \PY{n}{vetor} \PY{n}{de} \PY{n}{inteiros} \PY{n}{digitado} \PY{n}{em} \PY{n}{uma} \PY{n}{linha}\PY{p}{,} \PY{n}{separados} \PY{n}{por} \PY{n}{espaços}
+\PY{n+nb}{int}\PY{o}{*} \PY{n}{leiaVetor}\PY{p}{(}\PY{n+nb}{int} \PY{n}{n}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n+nb}{int}\PY{o}{*} \PY{n}{v} \PY{o}{=} \PY{n}{malloc}\PY{p}{(}\PY{n}{n} \PY{o}{*} \PY{n}{sizeof}\PY{p}{(}\PY{n+nb}{int}\PY{p}{)}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{aloca} \PY{n}{um} \PY{n}{vetor} \PY{n}{de} \PY{n}{n} \PY{n}{inteiros}
+  \PY{n}{char} \PY{n}{texto}\PY{p}{[}\PY{l+m+mi}{512}\PY{p}{]}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{espaço} \PY{n}{para} \PY{n}{todos} \PY{n}{os} \PY{n}{números} \PY{n}{como} \PY{n}{um} \PY{n}{texto}
+  \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZpc{}}\PY{l+s+s2}{[\PYZca{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{]}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{texto}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{lê} \PY{n}{todos} \PY{n}{os} \PY{n}{números} \PY{n}{como} \PY{n}{um} \PY{n}{texto}
+  \PY{n}{char}\PY{o}{*} \PY{n}{token} \PY{o}{=} \PY{n}{strtok}\PY{p}{(}\PY{n}{texto}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{lê} \PY{n}{até} \PY{n}{o} \PY{n}{primeiro} \PY{n}{espaço} \PY{n}{na} \PY{n}{variável} \PY{n}{token}
+  \PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;}
+  \PY{k}{while} \PY{p}{(}\PY{n}{token} \PY{o}{!=} \PY{n}{NULL} \PY{o}{\PYZam{}}\PY{o}{\PYZam{}} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{n}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{v}\PY{p}{[}\PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{]} \PY{o}{=} \PY{n}{atoi}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{guarda} \PY{n}{o} \PY{n}{valor} \PY{n}{convertido} \PY{n}{em} \PY{n}{numero} \PY{n}{no} \PY{n}{vetor} \PY{n}{e} \PY{n}{avança}
+    \PY{n}{token} \PY{o}{=} \PY{n}{strtok}\PY{p}{(}\PY{n}{NULL}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{lê} \PY{n}{até} \PY{n}{ao} \PY{n}{próximo} \PY{n}{espaço} \PY{n}{a} \PY{n}{partir} \PY{n}{de} \PY{n}{onde} \PY{n}{terminou}
+  \PY{p}{\PYZcb{}}
+  \PY{k}{return} \PY{n}{v}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+   \PY{o}{/}\PY{o}{/}\PY{n}{char} \PY{n}{string}\PY{p}{[}\PY{p}{]} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{7 3 7 9 7 7 0 9 8 4 8 9 0 1     7 8 4 1 1 0     }\PY{l+s+s2}{\PYZdq{}}\PY{p}{;}
+   \PY{n+nb}{int} \PY{o}{*} \PY{n}{v} \PY{o}{=} \PY{n}{leiaVetor}\PY{p}{(}\PY{n}{tamanho}\PY{p}{)}\PY{p}{;}
+   \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{;}\PY{n}{i}\PY{o}{\PYZlt{}}\PY{n}{tamanho}\PY{p}{;}\PY{n}{i}\PY{o}{+}\PY{o}{+} \PY{p}{)}\PY{p}{\PYZob{}}
+     \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{v}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+   \PY{p}{\PYZcb{}}
+   \PY{n}{free}\PY{p}{(}\PY{n}{v}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{libera} \PY{n}{memória} \PY{n}{alocada} \PY{n}{com} \PY{n}{malloc}
+   \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{6}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
 \PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{str2int}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output2}
@@ -8689,30 +8752,20 @@ LISTA DE ALUNOS vs Avaliações:
   \PY{n+nb}{int} \PY{o}{*}\PY{o}{*}\PY{n}{m} \PY{o}{=} \PY{p}{(}\PY{n+nb}{int} \PY{o}{*}\PY{o}{*}\PY{p}{)}\PY{n}{malloc}\PY{p}{(}\PY{n}{L}\PY{o}{*}\PY{n}{sizeof}\PY{p}{(}\PY{n+nb}{int}\PY{o}{*}\PY{p}{)}\PY{p}{)}\PY{p}{;} 
   \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{L}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
     \PY{n}{m}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{n+nb}{int} \PY{o}{*}\PY{p}{)}\PY{n}{malloc}\PY{p}{(}\PY{n}{C} \PY{o}{*} \PY{n}{sizeof}\PY{p}{(}\PY{n+nb}{int}\PY{p}{)}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{k}{for} \PY{n}{each} \PY{n}{row} \PY{n}{allocate} \PY{n}{C} \PY{n}{ints}
-    \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{j} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{j} \PY{o}{\PYZlt{}} \PY{n}{C}\PY{p}{;} \PY{n}{j}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{j} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{j} \PY{o}{\PYZlt{}} \PY{n}{C}\PY{p}{;} \PY{n}{j}\PY{o}{+}\PY{o}{+}\PY{p}{)} 
       \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{m}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{p}{)}\PY{p}{;} 
-    \PY{p}{\PYZcb{}}
   \PY{p}{\PYZcb{}}
   \PY{k}{return} \PY{n}{m}\PY{p}{;}
 \PY{p}{\PYZcb{}}
-
-\PY{o}{/}\PY{o}{/} \PY{n}{you} \PY{n}{must} \PY{n}{supply} \PY{n}{the} \PY{n}{number} \PY{n}{of} \PY{n}{rows}
-\PY{n}{void} \PY{n}{free\PYZus{}matrix}\PY{p}{(}\PY{n+nb}{int} \PY{o}{*}\PY{o}{*}\PY{n}{m}\PY{p}{,} \PY{n+nb}{int} \PY{n}{L}\PY{p}{)} 
-\PY{p}{\PYZob{}}
-    \PY{o}{/}\PY{o}{/} \PY{n}{first} \PY{n}{free} \PY{n}{each} \PY{n}{row}
-    \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{L}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+\PY{n}{void} \PY{n}{free\PYZus{}matrix}\PY{p}{(}\PY{n+nb}{int} \PY{o}{*}\PY{o}{*}\PY{n}{m}\PY{p}{,} \PY{n+nb}{int} \PY{n}{L}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{L}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} 
          \PY{n}{free}\PY{p}{(}\PY{n}{m}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
-    \PY{p}{\PYZcb{}}
-
-    \PY{o}{/}\PY{o}{/} \PY{n}{Eventually} \PY{n}{free} \PY{n}{the} \PY{n}{memory} \PY{n}{of} \PY{n}{the} \PY{n}{pointers} \PY{n}{to} \PY{n}{the} \PY{n}{rows}
     \PY{n}{free}\PY{p}{(}\PY{n}{m}\PY{p}{)}\PY{p}{;}
  \PY{p}{\PYZcb{}}
-
 \PY{n}{void} \PY{n}{escrevaMatriz}\PY{p}{(}\PY{n+nb}{int} \PY{o}{*}\PY{o}{*}\PY{n}{m}\PY{p}{,} \PY{n+nb}{int} \PY{n}{L}\PY{p}{,} \PY{n+nb}{int} \PY{n}{C}\PY{p}{)} \PY{p}{\PYZob{}}
   \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{L}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
-   \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{j} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{j} \PY{o}{\PYZlt{}} \PY{n}{C}\PY{p}{;} \PY{n}{j}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+   \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{j} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{j} \PY{o}{\PYZlt{}} \PY{n}{C}\PY{p}{;} \PY{n}{j}\PY{o}{+}\PY{o}{+}\PY{p}{)} 
       \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{m}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{j}\PY{p}{]}\PY{p}{)}\PY{p}{;} 
-   \PY{p}{\PYZcb{}}
    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
   \PY{p}{\PYZcb{}}
 \PY{p}{\PYZcb{}}
@@ -8735,9 +8788,9 @@ LISTA DE ALUNOS vs Avaliações:
   \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA} \PY{n}{DE} \PY{n}{DADOS}
   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{LISTA DE ALUNOS vs Avaliações:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{RA }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
-  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{C}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{C}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} 
     \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}t}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{p}{(}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{;} 
-  \PY{p}{\PYZcb{}}
+  
   \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
   \PY{n}{escrevaMatriz}\PY{p}{(}\PY{n}{m}\PY{p}{,}\PY{n}{L}\PY{p}{,}\PY{n}{C}\PY{p}{)}\PY{p}{;}
   \PY{n}{free\PYZus{}matrix}\PY{p}{(}\PY{n}{m}\PY{p}{,}\PY{n}{L}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{liberar} \PY{n}{memória} \PY{n}{alocado} \PY{n}{com} \PY{n}{malloc}
@@ -8755,145 +8808,50 @@ LISTA DE ALUNOS vs Avaliações:
 \end{Verbatim}
 \end{tcolorbox}
 
-    \hypertarget{arquivos}{%
-\subsection{Arquivos}\label{arquivos}}
+    \hypertarget{acessando-elemento-com}{%
+\subparagraph{\texorpdfstring{Acessando elemento com
+\texttt{*}}{Acessando elemento com *}}\label{acessando-elemento-com}}
 
-Os arquivos armazenados em disco são considerados como uma sequência de
-caracteres e podem ser acessados em memória através de um ponteiro para
-o primeiro caracter do arquivo (texto ou binário), como segue:
+Outras forma de acessar elementos em matriz.
 
 \begin{verbatim}
-FILE *fp;
-fp = fopen("nomeArquivo.txt", "modo"); // modo é definido a seguir
+  for (int i = 0; i < L; i++) 
+   for (int j = 0; j < C; j++) {
+      printf("%d\t", m[i][j]); // ou
+      printf("%d\t", *(m + i*C + j));
+   }
 \end{verbatim}
 
-Seguem as principais funções para manipular arquivos da biblioteca
-\texttt{stdio.h}:
+Ou utilizando apenas um laço para varrar uma matriz:
 
-\begin{longtable}[]{@{}cl@{}}
-\toprule
-Função & Descrição\tabularnewline
-\midrule
-\endhead
-\texttt{fopen()} & Abre arquivo\tabularnewline
-\texttt{fclose()} & Fecha arquivo\tabularnewline
-\texttt{putc()} & Escreve um caracter no arquivo\tabularnewline
-\texttt{fputc()} & Igual \texttt{putc()}\tabularnewline
-\texttt{getc()} & Lê um caracter do arquivo\tabularnewline
-\texttt{fgetc()} & Igual \texttt{getc()}\tabularnewline
-\texttt{fseek()} & Posiciona o arquivo em um determinado
-byte\tabularnewline
-\texttt{fprintf()} & Semelhante ao \texttt{printf()}, mas para
-arquivo\tabularnewline
-\texttt{fscanf()} & Semelhante ao \texttt{scanf()}, mas para
-arquivo\tabularnewline
-\texttt{feof()} & Verifica final de arquivo\tabularnewline
-\texttt{ferror()} & Verifica se ocorreu erro\tabularnewline
-\texttt{rewind()} & Posiciona o ponteiro para o início do
-arquivo\tabularnewline
-\texttt{remove()} & Apaga arquivo\tabularnewline
-\texttt{fflush()} & Descarrega o \emph{buffer} do arquivo\tabularnewline
-\texttt{fgets()} & Obtém uma string do arquivo\tabularnewline
-\texttt{fread()} & Lê um bloco de dados do arquivo\tabularnewline
-\texttt{fwrite()} & Escreve um bloco de dados no arquivo\tabularnewline
-\texttt{ftell()} & Retorna a posição do ponteiro\tabularnewline
-\bottomrule
-\end{longtable}
+\begin{verbatim}
+  for (int i = 0; i < L*C; i++) {
+      printf("%d\t", m[i/C][i%C]); // ou
+      printf("%d\t", *(m + i));
+   }
+\end{verbatim}
 
-    \begin{longtable}[]{@{}ccc@{}}
-\toprule
-\textbf{Modo} & \textbf{Arquivo} & \textbf{Função}\tabularnewline
-\midrule
-\endhead
-r & Texto & Leitura\tabularnewline
-w & Texto & Escrita em arquivo novo\tabularnewline
-a & Texto & Escrita em arquivo existente\tabularnewline
-r+ & Texto & Leitura/Escrita\tabularnewline
-w+ & Texto & Leitura/Escrita\tabularnewline
-a+ & Texto & Leitura/Escrita\tabularnewline
-rb & Binário & Leitura\tabularnewline
-wb & Binário & Escrita\tabularnewline
-ab & Binário & Escrita\tabularnewline
-r+b & Binário & Leitura/Escrita\tabularnewline
-w+b & Binário & Leitura/Escrita\tabularnewline
-a+b & Binário & Leitura/Escrita\tabularnewline
-\bottomrule
-\end{longtable}
+    \hypertarget{matriz-multimensional}{%
+\subparagraph{Matriz Multimensional}\label{matriz-multimensional}}
 
-    Exemplo para criar um arquivo texto.
+\begin{verbatim}
+for (int k = 0; k < D; k++) // profundidade
+  for (int i = 0; i < L; i++) // linha
+   for (int j = 0; j < C; j++) { // coluna
+      printf("%d\t", m[k][i][j]); // ou
+      printf("%d\t", *(m + k*L*C + i*C + j));
+   }
+\end{verbatim}
 
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap6ex02}\PY{o}{.}\PY{n}{c}
-\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+Ou utilizando apenas um laço para varrar uma matriz:
 
-\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
-  \PY{n}{char}\PY{o}{*} \PY{n}{filename} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{teste.txt}\PY{l+s+s2}{\PYZdq{}}\PY{p}{;}
-
-  \PY{n}{FILE}\PY{o}{*} \PY{n}{fp} \PY{o}{=} \PY{n}{fopen}\PY{p}{(}\PY{n}{filename}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{w}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{Cria} \PY{n}{arquivo} \PY{n}{para} \PY{n}{escrita}
-  \PY{k}{if} \PY{p}{(}\PY{n}{fp} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{p}{\PYZob{}}
-    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Erro ao abrir o arquivo: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{filename}\PY{p}{)}\PY{p}{;}
-    \PY{k}{return} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{;}
-  \PY{p}{\PYZcb{}}
-  
-  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{l+m+mi}{10}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)}
-    \PY{n}{fprintf}\PY{p}{(}\PY{n}{fp}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Linha }\PY{l+s+si}{\PYZpc{}02d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{Escrever} \PY{n}{algo} \PY{n}{no} \PY{n}{arquivo}
-
-  \PY{n}{fclose}\PY{p}{(}\PY{n}{fp}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{fecha} \PY{n}{arquivo}
-
-  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
-\PY{p}{\PYZcb{}}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
-\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap6ex02}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output2}
-\PY{o}{.}\PY{o}{/}\PY{n}{output2}
-\PY{n}{cat} \PY{n}{teste}\PY{o}{.}\PY{n}{txt}
-\end{Verbatim}
-\end{tcolorbox}
-
-    Exemplo para ler um arquivo texto.
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap6ex03}\PY{o}{.}\PY{n}{c}
-\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
-
-\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
-  \PY{n}{char}\PY{o}{*} \PY{n}{filename} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{teste.txt}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{ch}\PY{p}{;}
-
-  \PY{n}{FILE}\PY{o}{*} \PY{n}{fp}\PY{p}{;}
-  \PY{n}{fp} \PY{o}{=} \PY{n}{fopen}\PY{p}{(}\PY{n}{filename}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{r}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{Cria} \PY{n}{arquivo} \PY{n}{para} \PY{n}{escrita}
-  \PY{k}{if} \PY{p}{(}\PY{n}{fp} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{p}{\PYZob{}}
-    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Erro ao abrir o arquivo: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{filename}\PY{p}{)}\PY{p}{;}
-    \PY{k}{return} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{;}
-  \PY{p}{\PYZcb{}}
-
-  \PY{k}{while} \PY{p}{(}\PY{p}{(}\PY{n}{ch} \PY{o}{=} \PY{n}{fgetc}\PY{p}{(}\PY{n}{fp}\PY{p}{)}\PY{p}{)} \PY{o}{!=} \PY{n}{EOF}\PY{p}{)} \PY{p}{\PYZob{}} \PY{o}{/}\PY{o}{/} \PY{n}{Lê} \PY{n}{arquivo}
-    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}c}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{ch}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{caracter} \PY{n}{por} \PY{n}{caracter}
-  \PY{p}{\PYZcb{}}
-
-  \PY{n}{fclose}\PY{p}{(}\PY{n}{fp}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{fecha} \PY{n}{arquivo}
-
-  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
-\PY{p}{\PYZcb{}}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
-\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap6ex03}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output3}
-\PY{o}{.}\PY{o}{/}\PY{n}{output3}
-\end{Verbatim}
-\end{tcolorbox}
+\begin{verbatim}
+  for (int i = 0; i < D*L*C; i++) {
+      d = i/(L*C);
+      printf("%d\t", m[d][(d-i)/C][(d-i)%C]); // ou
+      printf("%d\t", *(m + i));
+   }
+\end{verbatim}
 
     \hypertarget{exercuxedcios}{%
 \subsection{Exercícios}\label{exercuxedcios}}
@@ -8934,9 +8892,9 @@ fazer um método de leitura, passando como argumento um texto
 branco com apenas \texttt{\textbackslash{}n}. Esse método deve retornar
 a matriz.
 
-    \hypertarget{revisuxe3o-deste-capuxedtulo-de-vetores}{%
+    \hypertarget{revisuxe3o-deste-capuxedtulo-de-matriz}{%
 \subsection{Revisão deste capítulo de
-Vetores}\label{revisuxe3o-deste-capuxedtulo-de-vetores}}
+Matriz}\label{revisuxe3o-deste-capuxedtulo-de-matriz}}
 
 \begin{itemize}
 \tightlist
@@ -8953,7 +8911,7 @@ Vetores}\label{revisuxe3o-deste-capuxedtulo-de-vetores}}
 \item
   Exercícios
 \item
-  Revisão deste capítulo de Vetores
+  Revisão deste capítulo de Matriz
 \end{itemize}
 
     \hypertarget{processando-a-informauxe7uxe3o-cap.-6-matrizes---pruxe1tica-1}{%
@@ -9333,6 +9291,970 @@ LINHA:}\label{ler-uma-matriz-linha-por-linha}}
     \hypertarget{ler-uma-matriz-considerando-cada-elemento-da-matriz-uma-entrada}{%
 \paragraph{Ler uma matriz considerando cada ELEMENTO da matriz uma
 entrada:}\label{ler-uma-matriz-considerando-cada-elemento-da-matriz-uma-entrada}}
+
+    \hypertarget{processando-a-informauxe7uxe3o-cap.-7-tipos-definidos-pelo-programador-e-arquivos}{%
+\section{Processando a Informação: Cap. 7: Tipos Definidos Pelo
+Programador e
+Arquivos}\label{processando-a-informauxe7uxe3o-cap.-7-tipos-definidos-pelo-programador-e-arquivos}}
+
+    \includegraphics{"figs/Capa_Processando_Informacao.jpg"}
+
+Este caderno (Notebook) é parte complementar \emph{online} do livro
+\textbf{\href{https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao}{Processando
+a Informação}: um livro prático de programação independente de
+linguagem}, que deve ser consultado no caso de dúvidas sobre os temas
+apresentados.
+
+\begin{quote}
+Este conteúdo pode ser copiado e alterado livremente e foi inspirado
+nesse livro.
+\end{quote}
+
+\begin{quote}
+O conteúdo deste capítulo foi inspirado em: * Cap. 7: Conceitos de
+programação orientada a objetos do livro anterior * Notas de aula de
+professores da UFABC, em especial, dos professores Luiz Rozante e Wagner
+Botelho.
+\end{quote}
+
+    \hypertarget{sumuxe1rio}{%
+\subsection{Sumário}\label{sumuxe1rio}}
+
+\begin{itemize}
+\tightlist
+\item
+  Revisão do capítulo anterior
+\item
+  Introdução
+\item
+  Paradigma Estruturado
+\item
+  Paradigma Orientado a Objetos
+\item
+  Tipos de dados
+\item
+  Arquivos
+\item
+  Revisão deste capítulo
+\item
+  Exercícios
+\end{itemize}
+
+    \hypertarget{revisuxe3o-do-capuxedtulo-anterior-matriz}{%
+\subsection{Revisão do capítulo anterior
+(Matriz)}\label{revisuxe3o-do-capuxedtulo-anterior-matriz}}
+
+    \begin{itemize}
+\tightlist
+\item
+  Introdução
+\item
+  Instanciando matrizes
+\item
+  Acessando elementos de uma matriz
+\item
+  Formas de percorrer uma matriz
+\item
+  Aplicações usando matrizes
+\item
+  Exercícios
+\end{itemize}
+
+    \hypertarget{introduuxe7uxe3o}{%
+\subsection{Introdução}\label{introduuxe7uxe3o}}
+
+    \begin{itemize}
+\tightlist
+\item
+  Este capítulo introduz alguns conceitos usados em:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Programação Estruturada,
+  \item
+    Programação Orientada a Objetos (POO) e
+  \item
+    Engenharia de Software (ES).
+  \end{itemize}
+\item
+  Esses conceitos serão úteis em estudos futuros.
+\item
+  Não é o propósito deste capítulo cobrir completamente estes temas, mas
+  sim proporcionar um ponto de partida para o estudo avançados em
+  programação.
+\item
+  Além de introduzir processos para desenvolver códigos envolvendo
+  equipes e utilizando princípios da Engenharia de Software.
+\end{itemize}
+
+    \hypertarget{paradigma-estruturado}{%
+\subsection{Paradigma Estruturado}\label{paradigma-estruturado}}
+
+    \begin{itemize}
+\item
+  Uns dos primeiros estilos (ou paradigma) para estruturar um Software é
+  chamado de \textbf{Programação Estruturada}.
+\item
+  Neste paradigma estruturado, o programador define \textbf{Tabelas} (ou
+  \textbf{Registros} ou também chamadas \textbf{Entidades}), onde se
+  podem armazenar variáveis de vários tipos de dados,
+
+  \begin{itemize}
+  \tightlist
+  \item
+    diferentemente dos vetores e matrizes vistos nos capítulos anterios,
+    onde todos os dados devem ser de um mesmo tipo de dado (exceto as
+    listas em Python).
+  \end{itemize}
+\item
+  Por exemplo, é possível definir uma tabela para armazenar as
+  informações de um aluno num contexto de um sistema acadêmico, chamada
+  \textbf{Aluno}.
+\item
+  Esta tabela \textbf{Aluno}, na verdade, pode ser considera um novo
+  tipo de dados e é possível, por exemplo, ``instanciar'' uma variável
+  (ou registro), como \emph{Julia} do tipo \textbf{Aluno}.
+\item
+  Como atributos da tabela \textbf{Aluno}, é possível ter \emph{nome},
+  \emph{matrícula}, \emph{data de nascimento}, \emph{ano de ingresso},
+  etc.
+\item
+  Observe que na tabela \textbf{Aluno} é importante também ter
+  informação de curso e de disciplinas já cursadas.
+\item
+  Estas informações podem ser ``instâncias'' de outras tabelas, como
+  \textbf{Curso} e \textbf{Disciplina}, com seus respectivos atributos
+  apropriados.
+\item
+  Em Banco de Dados estas ``instâncias'' são possíveis através de um
+  atributo representando a chave (estrangeira) de outra tabela.
+\item
+  Além disso, cada tabela possui um atributo (chamado chave primária)
+  que identifica o registro, por exemplo, Julia, que pode estar
+  armazenada num registro de número 33.
+\item
+  Resumindo, as \textbf{estrutura} definidas pelo programador podem
+  armazenar em tempo de execução as \textbf{tabelas} definidas em Bancos
+  de Dados (com informações armazenadas em disco).
+\end{itemize}
+
+    \hypertarget{diagrama-entidade-relacionamento}{%
+\subsection{Diagrama Entidade
+Relacionamento}\label{diagrama-entidade-relacionamento}}
+
+    \begin{itemize}
+\item
+  Para poder visualizar melhor esta relação entre as tabelas
+  \textbf{Aluno}, \textbf{Curso} e \textbf{Disciplina}, existe um modelo
+  apropriado, chamado \textbf{Diagrama Entidade Relacionamento (DER)},
+  como apresentado na figura abaixo.
+\item
+  Observe o relacionamento ``\textbf{Aluno} faz
+  \textbf{Disciplina}(s)''.
+\item
+  Se for considerar um contexto onde um aluno está cursando uma
+  disciplina, existe a necessidade de incluir uma nova tabela, chamada,
+  por exemplo, \textbf{Turma}.
+\item
+  Assim, ``\textbf{Turma} possui \textbf{Aluno}(s)'' e
+  ``\textbf{Disciplina} possui Turma(s)''.
+\end{itemize}
+
+\includegraphics{"figs/image45.png"}
+
+    \begin{figure}
+\centering
+\caption{image45.png}
+\end{figure}
+
+    \begin{itemize}
+\item
+  Desse modo, para um sistema acadêmico completo, é necessário criar
+  várias tabelas e seus relacionamentos.
+\item
+  Todos esses dados das tabelas devem ser lidos (digitados) uma vez e
+  armazenados em disco.
+\item
+  Senão, toda vez que esse sistema acadêmico for executado, todos os
+  dados deverão ser lidos novamente.
+\item
+  Existem várias formas de guardar os dados de variáveis em disco:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    arquivo texto,
+  \item
+    arquivo binário ou
+  \item
+    tabelas em um Sistema de Gerenciamento de Banco de Dados (SGBD),
+    como Oracle, JDBC, SQL, PostgreSQL, etc.
+  \end{itemize}
+\item
+  Nas disciplinas de Banco de Dados, o aluno aprende como criar essas
+  tabelas em um SGBD e também como usá-las dentro de uma linguagem de
+  programação.
+\end{itemize}
+
+    \begin{itemize}
+\item
+  Essa forma de organizar vários tipos de dados em tabelas chama-se
+  \textbf{encapsulamento de dados}.
+\item
+  O grande desafio dos programadores e analistas de sistemas é definir
+  corretamente essas tabelas e os seus relacionamentos. Os sistemas bem
+  modelados são mais fáceis de realizar manutenções.
+\item
+  Além disso, os programadores devem criar estruturas, funções e
+  procedimentos de forma bem organizada, por exemplo, usando vários
+  arquivos organizados em pastas.
+\item
+  O paradigma estruturado não facilita completamente esta organização.
+  Isso já não ocorre no paradigma orientado a objetos, resumido a
+  seguir.
+\end{itemize}
+
+    \hypertarget{paradigma-orientado-a-objetos}{%
+\subsection{Paradigma Orientado a
+Objetos}\label{paradigma-orientado-a-objetos}}
+
+    \begin{itemize}
+\item
+  Na programação estruturada não existe uma forma eficiente de organizar
+  (encapsular) as funções específicas de uma tabela, como ocorre no
+  encapsulamento dos dados, visto na programação estruturada.
+\item
+  Assim, surgiu a necessidade de criar um novo paradigma de programação,
+  que é a \textbf{Programação Orientada a Objetos (POO)}, onde, além de
+  encapsular os dados, é possível encapsular as funções ou métodos que
+  os processam.
+\item
+  Na POO, tabela passou a se chamar \textbf{Classe}, e um registro de
+  uma tabela passou a ser chamado de \textbf{instância} de uma classe,
+  também chamado de \textbf{objeto}.
+\item
+  Como no exemplo anterior, para o sistema acadêmico, é possível criar a
+  classe \textbf{Aluno} (que é um novo tipo de dados) e com ela
+  instanciar uma variável \emph{Julia} da classe \textbf{Aluno}.
+\end{itemize}
+
+    O restante deste capítulo é complemetar ao livro
+\textbf{\href{https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao}{Processando
+a Informação}: um livro prático de programação independente de
+linguagem}, apresentando conceitos e exemplos de Programação
+Estruturada.
+
+    \hypertarget{tipos-de-dados}{%
+\subsection{Tipos de dados}\label{tipos-de-dados}}
+
+    \begin{itemize}
+\item
+  Os tipos de dados em C são:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{struct}
+  \end{itemize}
+
+\begin{verbatim}
+struct MEU_TIPO{ 
+ tipo1 nome1; 
+ tipo2 nome2; 
+ ... 
+};
+struct MEU_TIPO Entidade1, Entidade2; 
+\end{verbatim}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Ou melhor, com \texttt{typedef} (utilizado para renomear um tipo de
+    dado da própria linguagem ou definido pelo programador):
+  \end{itemize}
+
+\begin{verbatim}
+typedef struct { 
+tipo1 nome1; 
+tipo2 nome2; 
+... 
+} MEU_TIPO;
+MEU_TIPO Entidade1, Entidade2; 
+\end{verbatim}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{union}
+  \item
+    \texttt{enum}
+  \end{itemize}
+\end{itemize}
+
+    \hypertarget{exemplo-01---criar-um-registro-de-aluno}{%
+\subsubsection{Exemplo 01 - Criar um registro de
+Aluno}\label{exemplo-01---criar-um-registro-de-aluno}}
+
+Exemplo para criar a \texttt{struct} \textbf{TAluno} contendo 4
+atributos.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{7}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap7ex01}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}string.h\PYZgt{}}
+
+\PY{n}{struct} \PY{n}{TAluno} \PY{p}{\PYZob{}}
+  \PY{n}{char} \PY{n}{nome}\PY{p}{[}\PY{l+m+mi}{50}\PY{p}{]}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{idade}\PY{p}{;}
+  \PY{n}{char} \PY{n}{rua}\PY{p}{[}\PY{l+m+mi}{50}\PY{p}{]}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{numero}\PY{p}{;}
+\PY{p}{\PYZcb{}}\PY{p}{;}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{struct} \PY{n}{TAluno} \PY{n}{ana}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{instancia} \PY{n}{uma} \PY{n}{variável} \PY{n}{c} \PY{n}{do} \PY{n}{tipo} \PY{n}{TAluno}
+  \PY{o}{/}\PY{o}{/} \PY{n}{ENTRADA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{n}{strcpy}\PY{p}{(}\PY{n}{ana}\PY{o}{.}\PY{n}{nome}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Ana Silva}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{ana}\PY{o}{.}\PY{n}{idade} \PY{o}{=} \PY{l+m+mi}{18}\PY{p}{;}
+  \PY{n}{strcpy}\PY{p}{(}\PY{n}{ana}\PY{o}{.}\PY{n}{rua}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Avenida Paulista}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{ana}\PY{o}{.}\PY{n}{numero} \PY{o}{=} \PY{l+m+mi}{1000}\PY{p}{;}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{nome: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{idade: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{ana}\PY{o}{.}\PY{n}{nome}\PY{p}{,} \PY{n}{ana}\PY{o}{.}\PY{n}{idade}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{rua: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{número: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{ana}\PY{o}{.}\PY{n}{rua}\PY{p}{,} \PY{n}{ana}\PY{o}{.}\PY{n}{numero}\PY{p}{)}\PY{p}{;}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{8}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
+\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap7ex01}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output}
+\PY{o}{.}\PY{o}{/}\PY{n}{output}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{exemplo-02---criar-um-registro-de-aluno-com-scanf}{%
+\subsubsection{\texorpdfstring{Exemplo 02 - Criar um registro de Aluno,
+com
+\texttt{scanf}}{Exemplo 02 - Criar um registro de Aluno, com scanf}}\label{exemplo-02---criar-um-registro-de-aluno-com-scanf}}
+
+Exemplo para criar a \texttt{struct} \textbf{TAluno} contendo 4
+atributos lidos do teclado com \texttt{scanf}.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{3}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap7ex02}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}string.h\PYZgt{}}
+
+\PY{n}{struct} \PY{n}{TAluno} \PY{p}{\PYZob{}}
+  \PY{n}{char} \PY{n}{nome}\PY{p}{[}\PY{l+m+mi}{50}\PY{p}{]}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{idade}\PY{p}{;}
+  \PY{n}{char} \PY{n}{rua}\PY{p}{[}\PY{l+m+mi}{50}\PY{p}{]}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{numero}\PY{p}{;}
+\PY{p}{\PYZcb{}}\PY{p}{;}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{struct} \PY{n}{TAluno} \PY{n}{Alunos}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{instancia} \PY{n}{uma} \PY{n}{vetor} \PY{n}{do} \PY{n}{tipo} \PY{n}{TAluno}
+  \PY{o}{/}\PY{o}{/} \PY{n}{ENTRADA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{l+m+mi}{2}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Entre com os dados: nome, idade, rua, número:}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+    \PY{n}{fflush}\PY{p}{(}\PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+    \PY{n}{fgets}\PY{p}{(}\PY{n}{Alunos}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{nome}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,} \PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+    \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{Alunos}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{idade}\PY{p}{)}\PY{p}{;}
+    \PY{n}{fflush}\PY{p}{(}\PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+    \PY{n}{fgets}\PY{p}{(}\PY{n}{Alunos}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{rua}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,} \PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+    \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{Alunos}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{numero}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+  \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{l+m+mi}{2}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{nome: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{idade: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{Alunos}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{nome}\PY{p}{,} \PY{n}{Alunos}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{idade}\PY{p}{)}\PY{p}{;}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{rua: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{número: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{Alunos}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{rua}\PY{p}{,} \PY{n}{Alunos}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{numero}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
+\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap7ex02}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output}
+\PY{o}{.}\PY{o}{/}\PY{n}{output}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{exemplo-03---criar-um-registro-de-aluno-com-typedef}{%
+\subsubsection{\texorpdfstring{Exemplo 03 - Criar um registro de Aluno,
+com
+\texttt{typedef}}{Exemplo 03 - Criar um registro de Aluno, com typedef}}\label{exemplo-03---criar-um-registro-de-aluno-com-typedef}}
+
+Exemplo para criar a \texttt{struct} \textbf{TAluno} contendo 4
+atributos lidos do teclado, renomeando com \texttt{typedef} para
+\textbf{Aluno}.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{10}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap7ex03}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}string.h\PYZgt{}}
+
+\PY{n}{struct} \PY{n}{TAluno} \PY{p}{\PYZob{}}
+  \PY{n}{char} \PY{n}{nome}\PY{p}{[}\PY{l+m+mi}{50}\PY{p}{]}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{idade}\PY{p}{;}
+  \PY{n}{char} \PY{n}{rua}\PY{p}{[}\PY{l+m+mi}{50}\PY{p}{]}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{numero}\PY{p}{;}
+\PY{p}{\PYZcb{}}\PY{p}{;}
+
+\PY{n}{typedef} \PY{n}{struct} \PY{n}{TAluno} \PY{n}{Aluno}\PY{p}{;}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{o}{/}\PY{o}{/} \PY{n}{ENTRADA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{n}{Aluno} \PY{n}{Ana} \PY{o}{=} \PY{p}{\PYZob{}} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Ana Silva}\PY{l+s+s2}{\PYZdq{}} \PY{p}{,} \PY{l+m+mi}{18}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Avenida Paulista}\PY{l+s+s2}{\PYZdq{}} \PY{p}{,} \PY{l+m+mi}{1000} \PY{p}{\PYZcb{}}\PY{p}{;}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}s}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{Ana}\PY{o}{.}\PY{n}{nome}\PY{p}{,} \PY{n}{Ana}\PY{o}{.}\PY{n}{idade}\PY{p}{,} \PY{n}{Ana}\PY{o}{.}\PY{n}{rua}\PY{p}{,} \PY{n}{Ana}\PY{o}{.}\PY{n}{numero}\PY{p}{)}\PY{p}{;}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{11}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
+\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap7ex03}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output}
+\PY{o}{.}\PY{o}{/}\PY{n}{output}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{exemplo-04---criar-um-registro-de-aluno-com-typedef-opuxe7uxe3o-2}{%
+\subsubsection{\texorpdfstring{Exemplo 04 - Criar um registro de Aluno,
+com \texttt{typedef}, opção
+2}{Exemplo 04 - Criar um registro de Aluno, com typedef, opção 2}}\label{exemplo-04---criar-um-registro-de-aluno-com-typedef-opuxe7uxe3o-2}}
+
+Exemplo para criar a \texttt{struct} \textbf{Aluno} de forma
+simplificada, contendo 4 atributos.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{18}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap7ex04}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}string.h\PYZgt{}}
+
+\PY{n}{typedef} \PY{n}{struct} \PY{n}{TAluno} \PY{p}{\PYZob{}}
+  \PY{n}{char} \PY{n}{nome}\PY{p}{[}\PY{l+m+mi}{50}\PY{p}{]}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{idade}\PY{p}{;}
+  \PY{n}{char} \PY{n}{rua}\PY{p}{[}\PY{l+m+mi}{50}\PY{p}{]}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{numero}\PY{p}{;}
+\PY{p}{\PYZcb{}} \PY{n}{Aluno}\PY{p}{;}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{o}{/}\PY{o}{/} \PY{n}{ENTRADA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{n}{Aluno} \PY{n}{ana} \PY{o}{=} \PY{p}{\PYZob{}} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Ana Silva}\PY{l+s+s2}{\PYZdq{}} \PY{p}{,} \PY{l+m+mi}{18}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Avenida Paulista}\PY{l+s+s2}{\PYZdq{}} \PY{p}{,} \PY{l+m+mi}{1000} \PY{p}{\PYZcb{}}\PY{p}{;}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}s}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+s2}{ }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{ana}\PY{o}{.}\PY{n}{nome}\PY{p}{,} \PY{n}{ana}\PY{o}{.}\PY{n}{idade}\PY{p}{,} \PY{n}{ana}\PY{o}{.}\PY{n}{rua}\PY{p}{,} \PY{n}{ana}\PY{o}{.}\PY{n}{numero}\PY{p}{)}\PY{p}{;}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{19}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
+\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap7ex04}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output}
+\PY{o}{.}\PY{o}{/}\PY{n}{output}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{exemplo-05---criar-dois-registros}{%
+\subsubsection{Exemplo 05 - Criar dois
+registros}\label{exemplo-05---criar-dois-registros}}
+
+Exemplo para criar a \texttt{struct} \textbf{Cliente} contendo 3
+atributos, sendo um deles uma outra estrutura \textbf{Endereco}.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{61}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap7ex05}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}string.h\PYZgt{}}
+
+\PY{n}{typedef} \PY{n}{struct} \PY{p}{\PYZob{}}
+  \PY{n}{char} \PY{n}{rua}\PY{p}{[}\PY{l+m+mi}{50}\PY{p}{]}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{numero}\PY{p}{;}
+\PY{p}{\PYZcb{}} \PY{n}{Endereco}\PY{p}{;}
+
+\PY{n}{typedef} \PY{n}{struct} \PY{p}{\PYZob{}}
+  \PY{n}{char} \PY{n}{nome}\PY{p}{[}\PY{l+m+mi}{50}\PY{p}{]}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{idade}\PY{p}{;}
+  \PY{n}{Endereco} \PY{n}{end}\PY{p}{;}
+\PY{p}{\PYZcb{}} \PY{n}{Cliente}\PY{p}{;}
+
+\PY{n}{void} \PY{n}{leiaCliente}\PY{p}{(}\PY{n}{Cliente}\PY{o}{*} \PY{n}{cliente}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{fflush}\PY{p}{(}\PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{nome: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{fgets}\PY{p}{(}\PY{p}{(}\PY{o}{*}\PY{n}{cliente}\PY{p}{)}\PY{o}{.}\PY{n}{nome}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,} \PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{idade: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{p}{(}\PY{o}{*}\PY{n}{cliente}\PY{p}{)}\PY{o}{.}\PY{n}{idade}\PY{p}{)}\PY{p}{;}
+  \PY{n}{fflush}\PY{p}{(}\PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{rua: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{fgets}\PY{p}{(}\PY{p}{(}\PY{o}{*}\PY{n}{cliente}\PY{p}{)}\PY{o}{.}\PY{n}{end}\PY{o}{.}\PY{n}{rua}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,} \PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{numero: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{p}{(}\PY{o}{*}\PY{n}{cliente}\PY{p}{)}\PY{o}{.}\PY{n}{end}\PY{o}{.}\PY{n}{numero}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+
+\PY{n}{void} \PY{n}{escrevaCliente}\PY{p}{(}\PY{n}{Cliente} \PY{n}{cliente}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{nome: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{idade: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{cliente}\PY{o}{.}\PY{n}{nome}\PY{p}{,} \PY{n}{cliente}\PY{o}{.}\PY{n}{idade}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{rua: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{numero: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{cliente}\PY{o}{.}\PY{n}{end}\PY{o}{.}\PY{n}{rua}\PY{p}{,} \PY{n}{cliente}\PY{o}{.}\PY{n}{end}\PY{o}{.}\PY{n}{numero}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{Cliente} \PY{n}{clientes}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{;}
+  \PY{o}{/}\PY{o}{/} \PY{n}{ENTRADA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{l+m+mi}{2}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Cadastrar dados do cliente }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+    \PY{n}{leiaCliente}\PY{p}{(}\PY{o}{\PYZam{}}\PY{n}{clientes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{l+m+mi}{2}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Imprimir dados do cliente }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+    \PY{n}{escrevaCliente}\PY{p}{(}\PY{n}{clientes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
+\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap7ex05}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output}
+\PY{o}{.}\PY{o}{/}\PY{n}{output}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{exemplo-06---criar-dois-registros-usando-biblioteca}{%
+\subsubsection{Exemplo 06 - Criar dois registros usando
+biblioteca}\label{exemplo-06---criar-dois-registros-usando-biblioteca}}
+
+Exemplo para criar a \texttt{struct} \textbf{Cliente} contendo 3
+atributos, sendo um deles uma outra estrutura \textbf{Endereco},
+organizados em uma biblioteca.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{57}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap7ex06}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZdq{}myBiblioteca.h\PYZdq{}}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{Cliente} \PY{n}{clientes}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{;}
+  \PY{o}{/}\PY{o}{/} \PY{n}{ENTRADA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{l+m+mi}{2}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Cadastrar dados do cliente }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+    \PY{n}{leiaCliente}\PY{p}{(}\PY{o}{\PYZam{}}\PY{n}{clientes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{l+m+mi}{2}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Imprimir dados do cliente }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+    \PY{n}{escrevaCliente}\PY{p}{(}\PY{n}{clientes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{58}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{myBiblioteca}\PY{o}{.}\PY{n}{h}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}string.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdlib.h\PYZgt{}}
+
+\PY{n}{typedef} \PY{n}{struct} \PY{p}{\PYZob{}}
+  \PY{n}{char} \PY{n}{rua}\PY{p}{[}\PY{l+m+mi}{50}\PY{p}{]}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{numero}\PY{p}{;}
+\PY{p}{\PYZcb{}} \PY{n}{Endereco}\PY{p}{;}
+
+\PY{n}{typedef} \PY{n}{struct} \PY{p}{\PYZob{}}
+  \PY{n}{char} \PY{n}{nome}\PY{p}{[}\PY{l+m+mi}{50}\PY{p}{]}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{idade}\PY{p}{;}
+  \PY{n}{Endereco} \PY{n}{end}\PY{p}{;}
+\PY{p}{\PYZcb{}} \PY{n}{Cliente}\PY{p}{;}
+
+\PY{n}{void} \PY{n}{leiaCliente}\PY{p}{(}\PY{n}{Cliente}\PY{o}{*} \PY{n}{cliente}\PY{p}{)}\PY{p}{;}
+\PY{n}{void} \PY{n}{escrevaCliente}\PY{p}{(}\PY{n}{Cliente} \PY{n}{cliente}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{59}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{myBiblioteca}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZdq{}myBiblioteca.h\PYZdq{}}
+
+\PY{n}{void} \PY{n}{escrevaCliente}\PY{p}{(}\PY{n}{Cliente} \PY{n}{cliente}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{nome: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{idade: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{cliente}\PY{o}{.}\PY{n}{nome}\PY{p}{,} \PY{n}{cliente}\PY{o}{.}\PY{n}{idade}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{rua: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{número: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{cliente}\PY{o}{.}\PY{n}{end}\PY{o}{.}\PY{n}{rua}\PY{p}{,} \PY{n}{cliente}\PY{o}{.}\PY{n}{end}\PY{o}{.}\PY{n}{numero}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+
+\PY{o}{/}\PY{o}{/} \PY{n}{leia} \PY{n}{um} \PY{n}{cliente} \PY{n}{a} \PY{n}{partir} \PY{n}{do} \PY{n}{teclado}
+\PY{o}{/}\PY{o}{/} \PY{n}{nome}\PY{p}{,} \PY{n}{idade}\PY{p}{,} \PY{n}{rua}\PY{p}{,} \PY{n}{numero}
+\PY{n}{void} \PY{n}{leiaCliente}\PY{p}{(}\PY{n}{Cliente}\PY{o}{*} \PY{n}{cliente}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{fflush}\PY{p}{(}\PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{nome: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{fgets}\PY{p}{(}\PY{p}{(}\PY{o}{*}\PY{n}{cliente}\PY{p}{)}\PY{o}{.}\PY{n}{nome}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,} \PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{idade: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{p}{(}\PY{o}{*}\PY{n}{cliente}\PY{p}{)}\PY{o}{.}\PY{n}{idade}\PY{p}{)}\PY{p}{;}
+  \PY{n}{fflush}\PY{p}{(}\PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{rua: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{fgets}\PY{p}{(}\PY{p}{(}\PY{o}{*}\PY{n}{cliente}\PY{p}{)}\PY{o}{.}\PY{n}{end}\PY{o}{.}\PY{n}{rua}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,} \PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{numero: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{p}{(}\PY{o}{*}\PY{n}{cliente}\PY{p}{)}\PY{o}{.}\PY{n}{end}\PY{o}{.}\PY{n}{numero}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
+\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap7ex06}\PY{o}{.}\PY{n}{c} \PY{n}{myBiblioteca}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output}
+\PY{o}{.}\PY{o}{/}\PY{n}{output}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{arquivos}{%
+\subsection{Arquivos}\label{arquivos}}
+
+Os arquivos armazenados em disco são considerados como uma sequência de
+caracteres e podem ser acessados em memória através de um ponteiro para
+o primeiro caracter do arquivo (texto ou binário), como segue:
+
+\begin{verbatim}
+FILE *fp;
+fp = fopen("nomeArquivo.txt", "modo"); // modo é definido a seguir
+\end{verbatim}
+
+Seguem as principais funções para manipular arquivos da biblioteca
+\texttt{stdio.h}:
+
+\begin{longtable}[]{@{}cl@{}}
+\toprule
+Função & Descrição\tabularnewline
+\midrule
+\endhead
+\texttt{fopen()} & Abre arquivo\tabularnewline
+\texttt{fclose()} & Fecha arquivo\tabularnewline
+\texttt{putc()} & Escreve um caracter no arquivo\tabularnewline
+\texttt{fputc()} & Igual \texttt{putc()}\tabularnewline
+\texttt{getc()} & Lê um caracter do arquivo\tabularnewline
+\texttt{fgetc()} & Igual \texttt{getc()}\tabularnewline
+\texttt{fseek()} & Posiciona o arquivo em um determinado
+byte\tabularnewline
+\texttt{fprintf()} & Semelhante ao \texttt{printf()}, mas para
+arquivo\tabularnewline
+\texttt{fscanf()} & Semelhante ao \texttt{scanf()}, mas para
+arquivo\tabularnewline
+\texttt{feof()} & Verifica final de arquivo\tabularnewline
+\texttt{ferror()} & Verifica se ocorreu erro\tabularnewline
+\texttt{rewind()} & Posiciona o ponteiro para o início do
+arquivo\tabularnewline
+\texttt{remove()} & Apaga arquivo\tabularnewline
+\texttt{fflush()} & Descarrega o \emph{buffer} do arquivo\tabularnewline
+\texttt{fgets()} & Obtém uma string do arquivo\tabularnewline
+\texttt{fread()} & Lê um bloco de dados do arquivo\tabularnewline
+\texttt{fwrite()} & Escreve um bloco de dados no arquivo\tabularnewline
+\texttt{ftell()} & Retorna a posição do ponteiro\tabularnewline
+\bottomrule
+\end{longtable}
+
+    \begin{longtable}[]{@{}ccc@{}}
+\toprule
+\textbf{Modo} & \textbf{Arquivo} & \textbf{Função}\tabularnewline
+\midrule
+\endhead
+r & Texto & Leitura\tabularnewline
+w & Texto & Escrita em arquivo novo\tabularnewline
+a & Texto & Escrita em arquivo existente\tabularnewline
+r+ & Texto & Leitura/Escrita\tabularnewline
+w+ & Texto & Leitura/Escrita\tabularnewline
+a+ & Texto & Leitura/Escrita\tabularnewline
+rb & Binário & Leitura\tabularnewline
+wb & Binário & Escrita\tabularnewline
+ab & Binário & Escrita\tabularnewline
+r+b & Binário & Leitura/Escrita\tabularnewline
+w+b & Binário & Leitura/Escrita\tabularnewline
+a+b & Binário & Leitura/Escrita\tabularnewline
+\bottomrule
+\end{longtable}
+
+    \hypertarget{exemplo-07---criar-arquivo}{%
+\subsubsection{Exemplo 07 - Criar
+Arquivo}\label{exemplo-07---criar-arquivo}}
+
+Exemplo para criar um arquivo texto.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{41}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap7ex07}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{char}\PY{o}{*} \PY{n}{filename} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{teste.txt}\PY{l+s+s2}{\PYZdq{}}\PY{p}{;}
+  \PY{n}{FILE}\PY{o}{*} \PY{n}{file}\PY{p}{;}
+
+  \PY{n}{file} \PY{o}{=} \PY{n}{fopen}\PY{p}{(}\PY{n}{filename}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{w}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{Cria} \PY{n}{arquivo} \PY{n}{para} \PY{n}{escrita}
+  \PY{k}{if} \PY{p}{(}\PY{n}{file} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Erro ao abrir o arquivo: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{filename}\PY{p}{)}\PY{p}{;}
+    \PY{k}{return} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{l+m+mi}{10}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)}
+    \PY{n}{fprintf}\PY{p}{(}\PY{n}{file}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Linha }\PY{l+s+si}{\PYZpc{}02d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{Escrever} \PY{n}{algo} \PY{n}{no} \PY{n}{arquivo}
+
+  \PY{n}{fclose}\PY{p}{(}\PY{n}{file}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{fecha} \PY{n}{arquivo}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
+\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap7ex07}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output}
+\PY{o}{.}\PY{o}{/}\PY{n}{output}
+\PY{n}{cat} \PY{n}{teste}\PY{o}{.}\PY{n}{txt}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{exemplo-08---ler-arquivo}{%
+\subsubsection{Exemplo 08 - Ler
+arquivo}\label{exemplo-08---ler-arquivo}}
+
+Exemplo para ler um arquivo texto.
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{43}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap7ex08}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{char}\PY{o}{*} \PY{n}{filename} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{teste.txt}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{ch}\PY{p}{;}
+  \PY{n}{FILE}\PY{o}{*} \PY{n}{file}\PY{p}{;}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{ENTRADA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{n}{file} \PY{o}{=} \PY{n}{fopen}\PY{p}{(}\PY{n}{filename}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{r}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{Cria} \PY{n}{arquivo} \PY{n}{para} \PY{n}{leitura}
+  \PY{k}{if} \PY{p}{(}\PY{n}{file} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Erro ao abrir o arquivo: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{filename}\PY{p}{)}\PY{p}{;}
+    \PY{k}{return} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{k}{while} \PY{p}{(}\PY{p}{(}\PY{n}{ch} \PY{o}{=} \PY{n}{fgetc}\PY{p}{(}\PY{n}{file}\PY{p}{)}\PY{p}{)} \PY{o}{!=} \PY{n}{EOF}\PY{p}{)} \PY{p}{\PYZob{}} \PY{o}{/}\PY{o}{/} \PY{n}{Lê} \PY{n}{arquivo}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}c}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{ch}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{caracter} \PY{n}{por} \PY{n}{caracter}
+  \PY{p}{\PYZcb{}}
+
+  \PY{n}{fclose}\PY{p}{(}\PY{n}{file}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{fecha} \PY{n}{arquivo}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{44}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
+\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap7ex08}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output}
+\PY{o}{.}\PY{o}{/}\PY{n}{output}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{exemplo-09---criar-dois-registros-usando-biblioteca-lendo-arquivo}{%
+\subsubsection{Exemplo 09 - Criar dois registros usando biblioteca,
+lendo
+arquivo}\label{exemplo-09---criar-dois-registros-usando-biblioteca-lendo-arquivo}}
+
+Exemplo para criar a \texttt{struct} \textbf{Cliente} contendo 3
+atributos, sendo um deles uma outra estrutura \textbf{Endereco},
+organizados em uma biblioteca.
+
+Destacando que os dados serão lidos do arquivo CSV abaixo:
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{35}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{dados}\PY{o}{.}\PY{n}{csv}
+\PY{n}{Maria} \PY{n}{Souza}\PY{p}{,} \PY{l+m+mi}{19}\PY{p}{,} \PY{n}{Avenida} \PY{n}{Paulista}\PY{p}{,} \PY{l+m+mi}{1000}
+\PY{n}{Pedro} \PY{n}{Silva}\PY{p}{,} \PY{l+m+mi}{18}\PY{p}{,} \PY{n}{Avenida} \PY{n}{Rebouças}\PY{p}{,} \PY{l+m+mi}{2500}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{53}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap7ex09}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZdq{}myBiblioteca.h\PYZdq{}}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{Cliente} \PY{n}{clientes}\PY{p}{[}\PY{l+m+mi}{20}\PY{p}{]}\PY{p}{;}
+  \PY{n}{char}\PY{o}{*} \PY{n}{filename} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{dados.csv}\PY{l+s+s2}{\PYZdq{}}\PY{p}{;}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{ENTRADA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{n}{FILE}\PY{o}{*} \PY{n}{file}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{Cria} \PY{n}{arquivo} \PY{n}{para} \PY{n}{leitura}
+  \PY{k}{if} \PY{p}{(}\PY{p}{(}\PY{n}{file} \PY{o}{=} \PY{n}{fopen}\PY{p}{(}\PY{n}{filename}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{r}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{)} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Erro ao abrir o arquivo: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{filename}\PY{p}{)}\PY{p}{;}
+    \PY{k}{return} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+
+  \PY{n+nb}{int} \PY{n}{contador} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;}
+  \PY{n}{char} \PY{n}{linha}\PY{p}{[}\PY{l+m+mi}{512}\PY{p}{]}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{espaço} \PY{n}{para} \PY{n}{cada} \PY{n}{linha} \PY{n}{lida}
+  \PY{k}{while} \PY{p}{(}\PY{n}{fgets}\PY{p}{(}\PY{n}{linha}\PY{p}{,} \PY{n}{sizeof}\PY{p}{(}\PY{n}{linha}\PY{p}{)}\PY{p}{,} \PY{n}{file}\PY{p}{)}\PY{p}{)}  \PY{o}{/}\PY{o}{/} \PY{n}{para} \PY{n}{cada} \PY{n}{linha}
+    \PY{n}{criaCliente}\PY{p}{(}\PY{o}{\PYZam{}}\PY{n}{clientes}\PY{p}{[}\PY{n}{contador}\PY{o}{+}\PY{o}{+}\PY{p}{]}\PY{p}{,} \PY{n}{linha}\PY{p}{)}\PY{p}{;}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{SAÍDA} \PY{n}{DE} \PY{n}{DADOS}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{contador}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{Imprimir dados do cliente }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+    \PY{n}{escrevaCliente}\PY{p}{(}\PY{n}{clientes}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+
+  \PY{n}{fclose}\PY{p}{(}\PY{n}{file}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{fecha} \PY{n}{arquivo}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{54}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{myBiblioteca}\PY{o}{.}\PY{n}{h}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}string.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdlib.h\PYZgt{}}
+
+\PY{n}{typedef} \PY{n}{struct} \PY{p}{\PYZob{}}
+  \PY{n}{char} \PY{n}{rua}\PY{p}{[}\PY{l+m+mi}{50}\PY{p}{]}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{numero}\PY{p}{;}
+\PY{p}{\PYZcb{}} \PY{n}{Endereco}\PY{p}{;}
+
+\PY{n}{typedef} \PY{n}{struct} \PY{p}{\PYZob{}}
+  \PY{n}{char} \PY{n}{nome}\PY{p}{[}\PY{l+m+mi}{50}\PY{p}{]}\PY{p}{;}
+  \PY{n+nb}{int} \PY{n}{idade}\PY{p}{;}
+  \PY{n}{Endereco} \PY{n}{end}\PY{p}{;}
+\PY{p}{\PYZcb{}} \PY{n}{Cliente}\PY{p}{;}
+
+\PY{n}{void} \PY{n}{leiaCliente}\PY{p}{(}\PY{n}{Cliente}\PY{o}{*} \PY{n}{cliente}\PY{p}{)}\PY{p}{;}
+\PY{n}{void} \PY{n}{escrevaCliente}\PY{p}{(}\PY{n}{Cliente} \PY{n}{cliente}\PY{p}{)}\PY{p}{;}
+\PY{n}{void} \PY{n}{criaCliente}\PY{p}{(}\PY{n}{Cliente}\PY{o}{*} \PY{n}{cliente}\PY{p}{,} \PY{n}{char} \PY{n}{linha}\PY{p}{[}\PY{l+m+mi}{512}\PY{p}{]}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{55}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{myBiblioteca}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZdq{}myBiblioteca.h\PYZdq{}}
+\PY{o}{/}\PY{o}{/} \PY{n}{cria} \PY{n}{um} \PY{n}{cliente} \PY{n}{a} \PY{n}{partir} \PY{n}{de} \PY{n}{uma} \PY{n}{linha} \PY{n}{de} \PY{n}{texto}\PY{o}{.} \PY{n}{Exemplo}\PY{p}{:}
+\PY{o}{/}\PY{o}{/} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Maria Souza, 20, Avenida Paulista, 1200}\PY{l+s+s2}{\PYZdq{}}
+\PY{n}{void} \PY{n}{criaCliente}\PY{p}{(}\PY{n}{Cliente}\PY{o}{*} \PY{n}{cliente}\PY{p}{,} \PY{n}{char} \PY{n}{linha}\PY{p}{[}\PY{l+m+mi}{512}\PY{p}{]}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{o}{/}\PY{o}{/} \PY{n}{Ler} \PY{n}{nome}
+  \PY{n}{char}\PY{o}{*} \PY{n}{token} \PY{o}{=} \PY{n}{strtok}\PY{p}{(}\PY{n}{linha}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{,}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{ler} \PY{n}{até} \PY{n}{a} \PY{n}{primeira} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{,}\PY{l+s+s2}{\PYZdq{}}
+  \PY{n}{strcpy}\PY{p}{(}\PY{p}{(}\PY{o}{*}\PY{n}{cliente}\PY{p}{)}\PY{o}{.}\PY{n}{nome}\PY{p}{,} \PY{n}{token}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{nome}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{Ler} \PY{n}{idade}
+  \PY{n}{token} \PY{o}{=} \PY{n}{strtok}\PY{p}{(}\PY{n}{NULL}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{,}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{continar} \PY{n}{lendo} \PY{n}{até} \PY{n}{a} \PY{n}{próxima} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{,}\PY{l+s+s2}{\PYZdq{}}
+  \PY{p}{(}\PY{o}{*}\PY{n}{cliente}\PY{p}{)}\PY{o}{.}\PY{n}{idade} \PY{o}{=} \PY{n}{atoi}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{converter} \PY{n+nb}{str} \PY{n}{to} \PY{n+nb}{int}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{Ler} \PY{n}{rua}
+  \PY{n}{token} \PY{o}{=} \PY{n}{strtok}\PY{p}{(}\PY{n}{NULL}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{,}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{strcpy}\PY{p}{(}\PY{p}{(}\PY{o}{*}\PY{n}{cliente}\PY{p}{)}\PY{o}{.}\PY{n}{end}\PY{o}{.}\PY{n}{rua}\PY{p}{,} \PY{n}{token} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{o}{+}\PY{l+m+mi}{1} \PY{n}{retira} \PY{l+m+mi}{1}\PY{n}{o} \PY{n}{espaço} \PY{n}{em} \PY{n}{branco}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{Ler} \PY{n}{numero}
+  \PY{n}{token} \PY{o}{=} \PY{n}{strtok}\PY{p}{(}\PY{n}{NULL}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{,}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{p}{(}\PY{o}{*}\PY{n}{cliente}\PY{p}{)}\PY{o}{.}\PY{n}{end}\PY{o}{.}\PY{n}{numero} \PY{o}{=} \PY{n}{atoi}\PY{p}{(}\PY{n}{token}\PY{p}{)}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{converter} \PY{n+nb}{str} \PY{n}{to} \PY{n+nb}{int}
+\PY{p}{\PYZcb{}}
+\PY{n}{void} \PY{n}{escrevaCliente}\PY{p}{(}\PY{n}{Cliente} \PY{n}{cliente}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{nome: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{idade: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{cliente}\PY{o}{.}\PY{n}{nome}\PY{p}{,} \PY{n}{cliente}\PY{o}{.}\PY{n}{idade}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{rua: }\PY{l+s+si}{\PYZpc{}s}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{número: }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{cliente}\PY{o}{.}\PY{n}{end}\PY{o}{.}\PY{n}{rua}\PY{p}{,} \PY{n}{cliente}\PY{o}{.}\PY{n}{end}\PY{o}{.}\PY{n}{numero}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+
+\PY{o}{/}\PY{o}{/} \PY{n}{leia} \PY{n}{um} \PY{n}{cliente} \PY{n}{a} \PY{n}{partir} \PY{n}{do} \PY{n}{teclado}
+\PY{o}{/}\PY{o}{/} \PY{n}{nome}\PY{p}{,} \PY{n}{idade}\PY{p}{,} \PY{n}{rua}\PY{p}{,} \PY{n}{numero}
+\PY{n}{void} \PY{n}{leiaCliente}\PY{p}{(}\PY{n}{Cliente}\PY{o}{*} \PY{n}{cliente}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{fflush}\PY{p}{(}\PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{nome: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{fgets}\PY{p}{(}\PY{p}{(}\PY{o}{*}\PY{n}{cliente}\PY{p}{)}\PY{o}{.}\PY{n}{nome}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,} \PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{idade: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{p}{(}\PY{o}{*}\PY{n}{cliente}\PY{p}{)}\PY{o}{.}\PY{n}{idade}\PY{p}{)}\PY{p}{;}
+  \PY{n}{fflush}\PY{p}{(}\PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{rua: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{fgets}\PY{p}{(}\PY{p}{(}\PY{o}{*}\PY{n}{cliente}\PY{p}{)}\PY{o}{.}\PY{n}{end}\PY{o}{.}\PY{n}{rua}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,} \PY{n}{stdin}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{numero: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{p}{(}\PY{o}{*}\PY{n}{cliente}\PY{p}{)}\PY{o}{.}\PY{n}{end}\PY{o}{.}\PY{n}{numero}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{56}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
+\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap7ex09}\PY{o}{.}\PY{n}{c} \PY{n}{myBiblioteca}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output}
+\PY{o}{.}\PY{o}{/}\PY{n}{output}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{exercuxedcios}{%
+\subsection{Exercícios}\label{exercuxedcios}}
+
+    Ver notebook Colab nos arquivos \texttt{cap7.partX.lab.*.ipynb}
+(\texttt{X} \(\in\) \texttt{{[}2,3,4,5{]}} e \texttt{*} é a extensão da
+linguagem), utilizando alguma linguagem de programação de sua
+preferência, onganizadas em subpastas contidas em \texttt{"gen"}, na
+pasta do Google Drive
+\href{https://drive.google.com/drive/folders/1YlFwv8XYN7PYYf-HwDMlkxzbmXzJw9cM?usp=sharing}{colabs}.
+
+    \hypertarget{revisuxe3o-deste-capuxedtulo}{%
+\subsection{Revisão deste capítulo}\label{revisuxe3o-deste-capuxedtulo}}
+
+\begin{itemize}
+\tightlist
+\item
+  Introdução
+\item
+  Paradigma Estruturado
+\item
+  Paradigma Orientado a Objetos
+\item
+  Tipos de dados
+\item
+  Arquivos
+\item
+  Exercícios
+\item
+  Revisão deste capítulo de Vetores
+\end{itemize}
 
 
     % Add a bibliography block to the postdoc

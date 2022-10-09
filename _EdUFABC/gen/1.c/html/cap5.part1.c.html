@@ -15601,7 +15601,8 @@ gcc -Wall -std=c99 cap5ex02.c -o output2
 </li>
 <li><p>como retorno:</p>
 <ul>
-<li><code>int * metodo (int n) {...}</code> - alocar vetor dentro do método, alocação dinâmica de memória.</li>
+<li><code>int * metodo (int n) {...}</code> - alocar vetor dentro do método, alocação dinâmica de memória, com <code>malloc</code> ou <code>calloc</code>.</li>
+<li>não esquecer de liberar a memórica com <code>free</code>.</li>
 </ul>
 </li>
 </ul>
@@ -16143,18 +16144,19 @@ gcc -Wall -std=c99 cap5ex04.c -o output2
 <span class="c1">#include &lt;stdio.h&gt;</span>
 <span class="c1">#include &lt;string.h&gt;</span>
 <span class="c1">#include &lt;stdlib.h&gt;</span>
-
-<span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
-   <span class="n">char</span> <span class="n">string</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">"7 3 7 9 7 7 0 9 8 4 8 9 0 1     7 8 4 1 1 0     "</span><span class="p">;</span>
+<span class="nb">int</span> <span class="n">MAX</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">tamanho</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">void</span> <span class="n">leiaVetor</span><span class="p">(</span><span class="nb">int</span> <span class="n">v</span><span class="p">[</span><span class="n">MAX</span><span class="p">],</span> <span class="n">char</span> <span class="n">string</span><span class="p">[])</span> <span class="p">{</span>
    <span class="n">char</span> <span class="o">*</span> <span class="n">token</span> <span class="o">=</span> <span class="n">strtok</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="s2">" "</span><span class="p">);</span>
-   <span class="nb">int</span> <span class="n">v</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
-   <span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
    <span class="k">while</span><span class="p">(</span> <span class="n">token</span> <span class="o">!=</span> <span class="n">NULL</span> <span class="p">)</span> <span class="p">{</span>
-      <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">token</span><span class="p">);</span> <span class="o">//</span> <span class="n">converte</span> <span class="n">texto</span> <span class="n">para</span> <span class="n">inteiro</span>
+      <span class="n">v</span><span class="p">[</span><span class="n">tamanho</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">token</span><span class="p">);</span> <span class="o">//</span> <span class="n">converte</span> <span class="n">texto</span> <span class="n">para</span> <span class="n">inteiro</span>
       <span class="n">token</span> <span class="o">=</span> <span class="n">strtok</span><span class="p">(</span><span class="n">NULL</span><span class="p">,</span> <span class="s2">" "</span><span class="p">);</span>
    <span class="p">}</span>
-   <span class="nb">int</span> <span class="n">n</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
-   <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span> <span class="p">){</span>
+<span class="p">}</span>
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+   <span class="n">char</span> <span class="n">string</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">"7 3 7 9 7 7 0 9 8 4 8 9 0 1     7 8 4 1 1 0     "</span><span class="p">;</span>
+   <span class="nb">int</span> <span class="n">v</span><span class="p">[</span><span class="n">MAX</span><span class="p">];</span>
+   <span class="n">leiaVetor</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">string</span><span class="p">);</span>
+   <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">tamanho</span><span class="p">;</span><span class="n">i</span><span class="o">++</span> <span class="p">){</span>
      <span class="n">printf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2"> "</span><span class="p">,</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
    <span class="p">}</span>
    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
@@ -16172,6 +16174,66 @@ gcc -Wall -std=c99 cap5ex04.c -o output2
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
+gcc -Wall -std=c99 str2int.c -o output2
+./output2
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%writefile</span> str2int.c
+<span class="c1">#include &lt;stdio.h&gt;</span>
+<span class="c1">#include &lt;string.h&gt;</span>
+<span class="c1">#include &lt;stdlib.h&gt;</span>
+<span class="nb">int</span> <span class="n">tamanho</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="o">//</span> <span class="n">método</span> <span class="n">para</span> <span class="n">ler</span> <span class="n">um</span> <span class="n">vetor</span> <span class="n">de</span> <span class="n">inteiros</span> <span class="n">digitado</span> <span class="n">em</span> <span class="n">uma</span> <span class="n">linha</span><span class="p">,</span> <span class="n">separados</span> <span class="n">por</span> <span class="n">espaços</span>
+<span class="nb">int</span><span class="o">*</span> <span class="n">leiaVetor</span><span class="p">(</span><span class="nb">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">int</span><span class="o">*</span> <span class="n">v</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">sizeof</span><span class="p">(</span><span class="nb">int</span><span class="p">));</span> <span class="o">//</span> <span class="n">aloca</span> <span class="n">um</span> <span class="n">vetor</span> <span class="n">de</span> <span class="n">n</span> <span class="n">inteiros</span>
+  <span class="n">char</span> <span class="n">texto</span><span class="p">[</span><span class="mi">512</span><span class="p">];</span> <span class="o">//</span> <span class="n">espaço</span> <span class="n">para</span> <span class="n">todos</span> <span class="n">os</span> <span class="n">números</span> <span class="n">como</span> <span class="n">um</span> <span class="n">texto</span>
+  <span class="n">scanf</span><span class="p">(</span><span class="s2">"%[^</span><span class="se">\n</span><span class="s2">]"</span><span class="p">,</span> <span class="n">texto</span><span class="p">);</span> <span class="o">//</span> <span class="n">lê</span> <span class="n">todos</span> <span class="n">os</span> <span class="n">números</span> <span class="n">como</span> <span class="n">um</span> <span class="n">texto</span>
+  <span class="n">char</span><span class="o">*</span> <span class="n">token</span> <span class="o">=</span> <span class="n">strtok</span><span class="p">(</span><span class="n">texto</span><span class="p">,</span> <span class="s2">" "</span><span class="p">);</span> <span class="o">//</span> <span class="n">lê</span> <span class="n">até</span> <span class="n">o</span> <span class="n">primeiro</span> <span class="n">espaço</span> <span class="n">na</span> <span class="n">variável</span> <span class="n">token</span>
+  <span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">token</span> <span class="o">!=</span> <span class="n">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">token</span><span class="p">);</span> <span class="o">//</span> <span class="n">guarda</span> <span class="n">o</span> <span class="n">valor</span> <span class="n">convertido</span> <span class="n">em</span> <span class="n">numero</span> <span class="n">no</span> <span class="n">vetor</span> <span class="n">e</span> <span class="n">avança</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="n">strtok</span><span class="p">(</span><span class="n">NULL</span><span class="p">,</span> <span class="s2">" "</span><span class="p">);</span> <span class="o">//</span> <span class="n">lê</span> <span class="n">até</span> <span class="n">ao</span> <span class="n">próximo</span> <span class="n">espaço</span> <span class="n">a</span> <span class="n">partir</span> <span class="n">de</span> <span class="n">onde</span> <span class="n">terminou</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">v</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+   <span class="o">//</span><span class="n">char</span> <span class="n">string</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">"7 3 7 9 7 7 0 9 8 4 8 9 0 1     7 8 4 1 1 0     "</span><span class="p">;</span>
+   <span class="nb">int</span> <span class="o">*</span> <span class="n">v</span> <span class="o">=</span> <span class="n">leiaVetor</span><span class="p">(</span><span class="n">tamanho</span><span class="p">);</span>
+   <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">tamanho</span><span class="p">;</span><span class="n">i</span><span class="o">++</span> <span class="p">){</span>
+     <span class="n">printf</span><span class="p">(</span><span class="s2">"</span><span class="si">%d</span><span class="s2"> "</span><span class="p">,</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+   <span class="p">}</span>
+   <span class="n">free</span><span class="p">(</span><span class="n">v</span><span class="p">);</span> <span class="o">//</span> <span class="n">libera</span> <span class="n">memória</span> <span class="n">alocada</span> <span class="n">com</span> <span class="n">malloc</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">shell</span>
