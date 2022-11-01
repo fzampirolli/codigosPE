@@ -14599,14 +14599,17 @@ div.jp-OutputPrompt {
 
 /* Scrollbars */
 
-::-webkit-scrollbar {
+::-webkit-scrollbar
+{
   width: 6px;
   height: 6px;
 }
-::-webkit-scrollbar * {
-  background: transparent;
+::-webkit-scrollbar *
+{
+  background:transparent;
 }
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb
+{
   background: #727272 !important;
 }
 </style>
@@ -14633,12 +14636,12 @@ div.jp-OutputPrompt {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: {
-                    automatic: true
+                    linebreaks: { 
+                    automatic: true 
                     }
                 }
             });
-
+        
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14670,11 +14673,10 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right">
-<p><img src="%22figs/Capa_Processando_Informacao.jpg%22" alt="" /></p>
+<p><img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right"></p>
+<p><img src="&quot;figs/Capa_Processando_Informacao.jpg&quot;" alt=""></p>
 <p>Este caderno (Notebook) é parte complementar <em>online</em> do livro <strong><a href="https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao">Processando a Informação</a>: um livro prático de programação independente de linguagem</strong>, que deve ser consultado no caso de dúvidas sobre os temas apresentados.</p>
-<blockquote>
-<p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
+<blockquote><p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
 </blockquote>
 
 </div>
@@ -14698,7 +14700,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>[Fonte: https://wiki.python.org.br/ExerciciosFuncoes]</p>
+<p>[Fonte: <a href="https://wiki.python.org.br/ExerciciosFuncoes">https://wiki.python.org.br/ExerciciosFuncoes</a>]</p>
 <p>Organizar cada questão em partes:</p>
 <ul>
 <li><strong>ENTRADA DE DADOS   $\Rightarrow$   PROCESSAMENTO DA INFORMAÇÃO   $\Rightarrow$   SAÍDA</strong></li>
@@ -14715,6 +14717,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+
 <pre><code># MINHA(S) FUNÇÃO(ÕES)
 função delta(recebe: real a, real b, real c) retorna real d {
      d = b2 – 4ac
@@ -14732,8 +14735,7 @@ principal {
 
   # SAÍDA
   escreva(“O delta de ax2 +bx + c é ” + valor)
-}
-</code></pre>
+}</code></pre>
 
 </div>
 </div>
@@ -14745,11 +14747,11 @@ principal {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
+<hr>
 <ol>
-<li>Fazer uma função que recebe três argumentos e retorne o produto</li>
+<li>Fazer uma função que recebe três argumentos e retorne o produto
+desses três argumentos. Teste em um programa principal várias chamadas deste método.</li>
 </ol>
-<p>desses três argumentos. Teste em um programa principal várias chamadas deste método.</p>
 
 </div>
 </div>
@@ -14761,8 +14763,8 @@ principal {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="2">
+<hr>
+<ol>
 <li>Faça um programa com uma função chamada <code>somaImposto</code>. A função possui dois parâmetros formais: taxaImposto, que é a quantia de imposto sobre vendas expressa em porcentagem e custo, que é o custo de um item antes do imposto. A função “altera” o valor de custo para incluir o imposto sobre vendas.</li>
 </ol>
 
@@ -14776,8 +14778,8 @@ principal {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="3">
+<hr>
+<ol>
 <li>Faça um programa que use a função valorPagamento para determinar o valor a ser pago por uma prestação de uma conta. O programa deverá solicitar ao usuário o valor da prestação e o número de dias em atraso e passar estes valores para a função valorPagamento, que calculará o valor a ser pago e devolverá este valor ao programa que a chamou. O programa deverá então exibir o valor a ser pago na tela. O cálculo do valor a ser pago é feito da seguinte forma. Considere que sempre tem atraso. Nestes casos, cobrar 3% de multa, mais 0,1% de juros por dia de atraso.</li>
 </ol>
 
@@ -14791,16 +14793,16 @@ principal {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="4">
-<li>Escreva uma função que recebe dois inteiros, $n$ e $p$, como parâmetros e retorna a <strong>combinação</strong> $\frac{n!}{p!(n-p)!}$. Use a função <code>math.factorial(x)</code> para calcular o fatorial de <code>x</code>. Conceitos:</li>
-</ol>
-<ul>
-<li><strong>Permutação</strong> são agrupamentos de elementos de um conjunto nos quais a ordem dos elementos faz diferença.<blockquote>
-Exemplo $\{a,b,c\} = abc, acb, bac, bca, cab, cba$. O número de combinações de um conjunto com $n$ elementos é $n!$ (fatorial de $n$), onde $0! = 1$.</blockquote>
+<hr>
+<ol>
+<li>Escreva uma função que recebe dois inteiros, $n$ e $p$, como parâmetros e retorna a <strong>combinação</strong> $\frac{n!}{p!(n-p)!}$. Use a função <code>math.factorial(x)</code> para calcular o fatorial de <code>x</code>. Conceitos:<ul>
+<li><strong>Permutação</strong> são agrupamentos de elementos de um conjunto nos quais a ordem dos elementos faz diferença. <blockquote><p>Exemplo $\{a,b,c\} = abc, acb, bac, bca, cab, cba$. O número de combinações de um conjunto com $n$ elementos é $n!$ (fatorial de $n$), onde $0! = 1$.</p>
+</blockquote>
 </li>
 <li><strong>Combinação</strong> indica quantas variedades de subconjuntos diferentes com $p\leq n$ elementos existem, onde a ordem dos elementos não interfere.</li>
 </ul>
+</li>
+</ol>
 
 </div>
 </div>
@@ -14812,16 +14814,16 @@ Exemplo $\{a,b,c\} = abc, acb, bac, bca, cab, cba$. O número de combinações d
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="5">
+<hr>
+<ol>
 <li>Cria uma função para ler três notas para prova1, prova2, projeto, declaradas como variáveis globais. Crie outra função para retornar a média ponderada com pesos, prova1 30%, prova2 40% e trabalho 30%. Crie uma terceira função para receber como parâmetros o nome de um aluno e a média e imprimir nesse formato:</li>
 </ol>
+
 <pre><code>Aluno: Ana Maria Chavier
 Prova1: 7.0
 Prova2: 8.0
 Trabalho: 10.0
-Média: X.0
-</code></pre>
+Média: X.0</code></pre>
 
 </div>
 </div>

@@ -14465,6 +14465,10 @@ a.anchor-link {
   display: none;
 }
 
+.highlight  {
+  margin: 0.4em;
+}
+
 /* Input area styling */
 .jp-InputArea {
   overflow: hidden;
@@ -14474,26 +14478,9 @@ a.anchor-link {
   overflow: hidden;
 }
 
-.CodeMirror.cm-s-jupyter .highlight pre {
-/* weird, but --jp-code-padding defined to be 5px but 4px horizontal padding is hardcoded for pre.CodeMirror-line */
-  padding: var(--jp-code-padding) 4px;
+.CodeMirror pre {
   margin: 0;
-
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
-
-}
-
-.jp-OutputArea-output pre {
-  line-height: inherit;
-  font-family: inherit;
-}
-
-.jp-RenderedText pre {
-  color: var(--jp-content-font-color1);
-  font-size: var(--jp-code-font-size);
+  padding: 0;
 }
 
 /* Using table instead of flexbox so that we can use break-inside property */
@@ -14573,12 +14560,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: {
-                    automatic: true
+                    linebreaks: { 
+                    automatic: true 
                     }
                 }
             });
-
+        
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14604,11 +14591,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right">
-<p><img src="%22figs/Capa_Processando_Informacao.jpg%22" alt="" /></p>
+<p><img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right"></p>
+<p><img src="&quot;figs/Capa_Processando_Informacao.jpg&quot;" alt=""></p>
 <p>Este caderno (Notebook) é parte complementar <em>online</em> do livro <strong><a href="https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao">Processando a Informação</a>: um livro prático de programação independente de linguagem</strong>, que deve ser consultado no caso de dúvidas sobre os temas apresentados.</p>
-<blockquote>
-<p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
+<blockquote><p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
 </blockquote>
 
 </div>
@@ -14634,8 +14620,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
 <li>A lista de exercícios PODERÁ NÃO SER AVALIADA PELO PROFESSOR, mas entre em contato com o monitor ou o professor se tiver alguma dúvida.</li>
-<li>É recomendado tirar uma cópia do notebook clicando na opção <strong>&quot;copiar para o drive&quot;</strong> no menu acima à direita (você precisa estar logado na sua conta no Google para fazer isto). Alternativamente, selecione <strong>&quot;Arquivo&quot;</strong>--&gt;<strong>&quot;Salvar cópia no drive&quot;</strong>. Desta forma você poderá editá-lo e executar os campos de código sempre que quiser, sem perder os seu progresso ao fechar esta página.</li>
-<li>Após digitar o código pedido no campo indicado, clique no botão <strong>&quot;executar&quot;</strong> ou <strong>&quot;play&quot;</strong> para ver a saída do código entrado.</li>
+<li>É recomendado tirar uma cópia do notebook clicando na opção <strong>"copiar para o drive"</strong> no menu acima à direita (você precisa estar logado na sua conta no Google para fazer isto). Alternativamente, selecione <strong>"Arquivo"</strong>--&gt;<strong>"Salvar cópia no drive"</strong>. Desta forma você poderá editá-lo e executar os campos de código sempre que quiser, sem perder os seu progresso ao fechar esta página.</li>
+<li>Após digitar o código pedido no campo indicado, clique no botão <strong>"executar"</strong> ou <strong>"play"</strong> para ver a saída do código entrado.</li>
 <li>É recomendado seguir a ordem sugerida dos exercícios, uma vez que familiaridade com os conceitos introduzidos são esperados nos exercícios seguintes.</li>
 <li>O <em>notebook Colab</em> tem o Python nativo para rodar as células de código. Se desejar outra linguagem de programação, consulte o material do Capítulo 1, na pasta do Google Drive <a href="https://drive.google.com/drive/folders/1YlFwv8XYN7PYYf-HwDMlkxzbmXzJw9cM?usp=sharing">colabs</a></li>
 </ul>
@@ -14663,10 +14649,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
 <li>Fique atento as datas de entrega no calendário do Moodle.</li>
-<li>Escolha uma linguagem de programação para submeter os exercícios (ou a definida pelo seu professor).</li>
+<li>Escolha uma linguagem de programação para submeter os exercícios (ou a definida pelo seu professor). </li>
 <li>A atividade no Moodle considera sempre a última submissão, com a nota atribuída de forma automática.</li>
 <li>Faça uma cópia do Colab e tente resolver as questões aqui, ou em alguma IDE de sua preferência, antes de enviar para avaliação no Moodle.</li>
-<li>É possível rodar códigos independentes em IDEs e também <em>online</em>, utilizando navegadores como o chrome: https://ideone.com/, https://www.codechef.com/ide, https://replit.com/, https://www.jdoodle.com.</li>
+<li>É possível rodar códigos independentes em IDEs e também <em>online</em>, utilizando navegadores como o chrome: <a href="https://ideone.com/">https://ideone.com/</a>, <a href="https://www.codechef.com/ide">https://www.codechef.com/ide</a>, <a href="https://replit.com/">https://replit.com/</a>, <a href="https://www.jdoodle.com">https://www.jdoodle.com</a>.</li>
 <li>É possível também rodar códigos no seu celular, utilizando navegadores acessando esses links.</li>
 </ul>
 
@@ -14691,9 +14677,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
+<hr>
 <ol>
-<li>No espaço abaixo, escreva um programa para exibir a mensagem &quot;Alô mundo!&quot;. Execute-o e verifique se a saída está correta.</li>
+<li>No espaço abaixo, escreva um programa para exibir a mensagem "Alô mundo!". Execute-o e verifique se a saída está correta.</li>
 </ol>
 
 </div>
@@ -14706,14 +14692,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="2">
+<hr>
+<ol>
 <li><strong>Complete</strong> o processamento do código abaixo com a fórmula correta para o delta ($\Delta = b^2-4ac$) da equação do segundo grau, na forma $ax^{2}+bx+c=0$. <strong>Dados</strong>: a operação 'elevado' em Python é <code>**</code>. Considere alguns valores inteiros e reais para $a$, $b$ e $c$. <strong>Resposta correta:</strong> delta = 49</li>
 </ol>
+
 <pre><code>a = 2
 b = 3
-c = -5
-</code></pre>
+c = -5</code></pre>
 
 </div>
 </div>
@@ -14725,8 +14711,8 @@ c = -5
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="3">
+<hr>
+<ol>
 <li><strong>Complete o código anterior</strong> no campo abaixo com comandos para calcular e exibir as raízes da equação do segundo grau, usando a fórmula $raiz_1=\frac{-b+\sqrt{\Delta}}{2a}$ e $raiz_2=\frac{-b-\sqrt{\Delta}}{2a}$. <strong>Dados</strong>: raiz de um número = número**.5 (elevado a meio). <strong>Respostas:</strong> (-2.5, 1.0).</li>
 </ol>
 
@@ -14740,8 +14726,8 @@ c = -5
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="4">
+<hr>
+<ol>
 <li>Adicione <code>código</code> na parte indicada para trocar os valores das variáveis <code>a, b e c</code> (<u>definidas anteriormente</u>) de forma que <code>a</code> contenha o menor valor, <code>b</code> contenha o valor central e <code>c</code> contenha o maior valor. A última linha <code>(a, b, c)</code> <u>não deve ser alterada</u>. <strong>Saída</strong>: <code>(-5, 2, 3)</code></li>
 </ol>
 
@@ -14755,14 +14741,14 @@ c = -5
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="5">
-<li>Escreva abaixo um programa completo que leia dois números (devem ser digitados pelo usuário) e calcule e exiba a média. Quando executado, o programa deve gerar a seguinte saída:</li>
+<hr>
+<ol>
+<li>Escreva abaixo um programa completo que leia dois números (devem ser digitados pelo usuário) e calcule e exiba a média. Quando executado, o programa deve gerar a seguinte saída: </li>
 </ol>
+
 <pre><code>Entre com o primeiro número: 10
 Entre com o segundo número: 5
-Média: 7.5
-</code></pre>
+Média: 7.5</code></pre>
 
 </div>
 </div>

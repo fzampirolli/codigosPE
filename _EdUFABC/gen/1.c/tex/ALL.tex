@@ -84,7 +84,7 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
     \fi
 
     \usepackage{fancyvrb} % verbatim replacement that allows latex
-    \usepackage{grffile} % extends the file name processing of package graphics
+    \usepackage{grffile} % extends the file name processing of package graphics 
                          % to support a larger range
     \makeatletter % fix for old versions of grffile with XeLaTeX
     \@ifpackagelater{grffile}{2019/11/01}
@@ -169,7 +169,7 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
     \newcommand{\RegionMarkerTok}[1]{{#1}}
     \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
     \newcommand{\NormalTok}[1]{{#1}}
-
+    
     % Additional commands for more recent versions of Pandoc
     \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
     \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
@@ -188,8 +188,8 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
     \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
     \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
     \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-
-
+    
+    
     % Define a nice break command that doesn't care if a line doesn't already
     % exist.
     \def\br{\hspace*{\fill} \\* }
@@ -310,53 +310,53 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
 \makeatother
 
 
-    % For linebreaks inside Verbatim environment from package fancyvrb.
+    % For linebreaks inside Verbatim environment from package fancyvrb. 
     \makeatletter
-        \newbox\Wrappedcontinuationbox
-        \newbox\Wrappedvisiblespacebox
-        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}}
-        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}}
-        \newcommand*\Wrappedcontinuationindent {3ex }
-        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox}
-        % Take advantage of the already applied Pygments mark-up to insert
-        % potential linebreaks for TeX processing.
-        %        {, <, #, %, $, ' and ": go to next line.
-        %        _, }, ^, &, >, - and ~: stay at end of broken line.
-        % Use of \textquotesingle for straight quote.
-        \newcommand*\Wrappedbreaksatspecials {%
-            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}%
-            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}%
-            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}%
-            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}%
-            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}%
-            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}%
-            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}%
-            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}%
-            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}%
-            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}%
-            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}%
-            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}%
-            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}%
-            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}%
-        }
-        % Some characters . , ; ? ! / are not pygmentized.
-        % This macro makes them "active" and they will insert potential linebreaks
-        \newcommand*\Wrappedbreaksatpunct {%
-            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}%
-            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}%
-            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}%
-            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}%
-            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}%
-            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}%
-            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}%
+        \newbox\Wrappedcontinuationbox 
+        \newbox\Wrappedvisiblespacebox 
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}} 
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}} 
+        \newcommand*\Wrappedcontinuationindent {3ex } 
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox} 
+        % Take advantage of the already applied Pygments mark-up to insert 
+        % potential linebreaks for TeX processing. 
+        %        {, <, #, %, $, ' and ": go to next line. 
+        %        _, }, ^, &, >, - and ~: stay at end of broken line. 
+        % Use of \textquotesingle for straight quote. 
+        \newcommand*\Wrappedbreaksatspecials {% 
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}% 
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}% 
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}% 
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}% 
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}% 
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}% 
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}% 
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}% 
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}% 
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}% 
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}% 
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}% 
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}% 
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}% 
+        } 
+        % Some characters . , ; ? ! / are not pygmentized. 
+        % This macro makes them "active" and they will insert potential linebreaks 
+        \newcommand*\Wrappedbreaksatpunct {% 
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}% 
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}% 
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}% 
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}% 
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}% 
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}% 
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}% 
             \catcode`\.\active
-            \catcode`\,\active
+            \catcode`\,\active 
             \catcode`\;\active
             \catcode`\:\active
             \catcode`\?\active
             \catcode`\!\active
-            \catcode`\/\active
-            \lccode`\~`\~
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
         }
     \makeatother
 
@@ -379,10 +379,10 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
             \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
             {\kern\fontdimen2\font}%
         }%
-
+        
         % Allow breaks at special characters using \PYG... macros.
         \Wrappedbreaksatspecials
-        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active 	
         \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
     }
     \makeatother
@@ -392,7 +392,7 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
     \definecolor{outcolor}{HTML}{D84315}
     \definecolor{cellborder}{HTML}{CFCFCF}
     \definecolor{cellbackground}{HTML}{F7F7F7}
-
+    
     % prompt
     \makeatletter
     \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
@@ -404,7 +404,7 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
 
     
     % Prevent overflowing lines due to hard-to-break entities
-    \sloppy
+    \sloppy 
     % Setup hyperref package
     \hypersetup{
       breaklinks=true,  % so long urls are correctly broken across lines
@@ -1150,15 +1150,15 @@ real}\label{exemplo-de-variuxe1vel-do-tipo-real}}
     Exemplos de variáveis válidas e inválidas:
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule
-Válido & Inválido\tabularnewline
-\midrule
+\toprule()
+Válido & Inválido \\
+\midrule()
 \endhead
-idade4 & 4idade\tabularnewline
-Nome\_Completo & Nome Completo\tabularnewline
-resta\_um & resta-um\tabularnewline
-V8S9F0D7S7D9 & V@R!V\&+\tabularnewline
-\bottomrule
+idade4 & 4idade \\
+Nome\_Completo & Nome Completo \\
+resta\_um & resta-um \\
+V8S9F0D7S7D9 & V@R!V\&+ \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{operadores-e-preceduxeancia}{%
@@ -1178,18 +1178,18 @@ Tabela: Operadores aritméticos em Java/C/CPP/JS
 **
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule
-operador & descrição\tabularnewline
-\midrule
+\toprule()
+operador & descrição \\
+\midrule()
 \endhead
-+ & soma com\tabularnewline
-- & subtração por\tabularnewline
-* & multiplicação por\tabularnewline
-/ & divisão por\tabularnewline
-\% & resto da divisão por\tabularnewline
-++ & incremento\tabularnewline
--- & decremento\tabularnewline
-\bottomrule
++ & soma com \\
+- & subtração por \\
+* & multiplicação por \\
+/ & divisão por \\
+\% & resto da divisão por \\
+++ & incremento \\
+-- & decremento \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{operadores-relacionais}{%
@@ -1202,17 +1202,17 @@ Tabela: Operadores relacionais em Java/C/CPP/JS
 **
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule
-operador & descrição\tabularnewline
-\midrule
+\toprule()
+operador & descrição \\
+\midrule()
 \endhead
-== & é igual a\tabularnewline
-!= & é diferente de\tabularnewline
-\textgreater{} & é maior que\tabularnewline
-\textless{} & é menor que\tabularnewline
-\textgreater= & é maior ou igual a\tabularnewline
-\textless= & é menor ou igual a\tabularnewline
-\bottomrule
+== & é igual a \\
+!= & é diferente de \\
+\textgreater{} & é maior que \\
+\textless{} & é menor que \\
+\textgreater= & é maior ou igual a \\
+\textless= & é menor ou igual a \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{operadores-luxf3gicos}{%
@@ -1225,24 +1225,22 @@ Tabela: Operadores lógicos binários em Java/C/CPP/JS
 **
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule
-operador & descrição\tabularnewline
-\midrule
+\toprule()
+operador & descrição \\
+\midrule()
 \endhead
-x \textbf{\&\&} y & True se ambos também forem\tabularnewline
-x \textbf{\&} y & True se ambos também forem bit-a-bit\tabularnewline
-x \textbf{\textbar\textbar{}} y & False se ambos também
-forem\tabularnewline
-x \textbf{\textbar{}} y & False se ambos também forem
-bit-a-bit\tabularnewline
-\textbf{!} x & contrário de x\tabularnewline
-\textbf{\textasciitilde{}} x & contrário de x bit-a-bit\tabularnewline
-\textbf{\^{}} x & ou exclusivo \texttt{XOR} bit-a-bit\tabularnewline
+x \textbf{\&\&} y & True se ambos também forem \\
+x \textbf{\&} y & True se ambos também forem bit-a-bit \\
+x \textbf{\textbar\textbar{}} y & False se ambos também forem \\
+x \textbf{\textbar{}} y & False se ambos também forem bit-a-bit \\
+\textbf{!} x & contrário de x \\
+\textbf{\textasciitilde{}} x & contrário de x bit-a-bit \\
+\textbf{\^{}} x & ou exclusivo \texttt{XOR} bit-a-bit \\
 \textbf{\textless\textless{}}N & \emph{shift-left}, adiciona N zeros à
-direita do número binário\tabularnewline
+direita do número binário \\
 \textbf{\textless\textless{}}N & \emph{shift-right}, elimina N zeros à
-direita do número binário\tabularnewline
-\bottomrule
+direita do número binário \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{operadores-de-atribuiuxe7uxe3o}{%
@@ -1256,19 +1254,18 @@ Tabela: Operadores de atribuição em Python/Java/C/CPP/JS
 **
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule
-operador & descrição\tabularnewline
-\midrule
+\toprule()
+operador & descrição \\
+\midrule()
 \endhead
-= & recebe o valor de\tabularnewline
-+= & é somado ao valor de\tabularnewline
--= & é subtraído do valor de\tabularnewline
-*= & é multiplicado pelo valor de\tabularnewline
-/= & é dividido pelo valor de\tabularnewline
-\%= & recebe o resto da divisão por\tabularnewline
-similarmente & \textgreater\textgreater=, \textless\textless=,
-\&=,\tabularnewline
-\bottomrule
+= & recebe o valor de \\
++= & é somado ao valor de \\
+-= & é subtraído do valor de \\
+*= & é multiplicado pelo valor de \\
+/= & é dividido pelo valor de \\
+\%= & recebe o resto da divisão por \\
+similarmente & \textgreater\textgreater=, \textless\textless=, \&=, \\
+\bottomrule()
 \end{longtable}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -1289,125 +1286,48 @@ Tabela: Precedência de Operadores
 
 **
 
-\begin{longtable}[]{@{}lll@{}}
-\toprule
-\begin{minipage}[b]{0.26\columnwidth}\raggedright
-Categoria\strut
-\end{minipage} & \begin{minipage}[b]{0.44\columnwidth}\raggedright
-Operador\strut
-\end{minipage} & \begin{minipage}[b]{0.21\columnwidth}\raggedright
-Associatividade\strut
-\end{minipage}\tabularnewline
-\midrule
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2794}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4853}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2353}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Categoria
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Operador
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Associatividade
+\end{minipage} \\
+\midrule()
 \endhead
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Pós-fixado\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-() (parênteses, operador ponto)\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Índice\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-{[}{]}\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Unário\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-++ - - ! \textasciitilde{} (incremento, decremento)\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\leftarrow\) Direita para a esquerda\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Multiplicativo\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-* / \% (vezes, dividido, resto)\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Aditivo\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-+ - (soma, subtração)\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Shift binário\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-\textgreater\textgreater{} \textgreater\textgreater\textgreater{}
-\textless\textless{}\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Relacional\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-\textgreater{} \textgreater= \textless{} \textless=\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Igualdade\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-== != (é igual a, é diferente de)\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-E (AND) bit-a-bit\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-\&\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-XOR bit-a-bit\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-\^{}\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Ou (OR) bit-a-bit\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-\textbar{}\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-E lógico\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-\&\&\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Ou lógico\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-\textbar\textbar{}\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Condicional\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-?:\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\leftarrow\) Direita para a esquerda\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Atribuição\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-= += -= *= /= \%= \textgreater\textgreater= \textless\textless= \&=
-\^{}= \textbar=\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\leftarrow\) Direita para a esquerda\strut
-\end{minipage}\tabularnewline
-\bottomrule
+Pós-fixado & () (parênteses, operador ponto) & \(\rightarrow\) Esquerda
+para a direita \\
+Índice & {[}{]} & \(\rightarrow\) Esquerda para a direita \\
+Unário & ++ - - ! \textasciitilde{} (incremento, decremento) &
+\(\leftarrow\) Direita para a esquerda \\
+Multiplicativo & * / \% (vezes, dividido, resto) & \(\rightarrow\)
+Esquerda para a direita \\
+Aditivo & + - (soma, subtração) & \(\rightarrow\) Esquerda para a
+direita \\
+Shift binário & \textgreater\textgreater{}
+\textgreater\textgreater\textgreater{} \textless\textless{} &
+\(\rightarrow\) Esquerda para a direita \\
+Relacional & \textgreater{} \textgreater= \textless{} \textless= &
+\(\rightarrow\) Esquerda para a direita \\
+Igualdade & == != (é igual a, é diferente de) & \(\rightarrow\) Esquerda
+para a direita \\
+E (AND) bit-a-bit & \& & \(\rightarrow\) Esquerda para a direita \\
+XOR bit-a-bit & \^{} & \(\rightarrow\) Esquerda para a direita \\
+Ou (OR) bit-a-bit & \textbar{} & \(\rightarrow\) Esquerda para a
+direita \\
+E lógico & \&\& & \(\rightarrow\) Esquerda para a direita \\
+Ou lógico & \textbar\textbar{} & \(\rightarrow\) Esquerda para a
+direita \\
+Condicional & ?: & \(\leftarrow\) Direita para a esquerda \\
+Atribuição & = += -= *= /= \%= \textgreater\textgreater=
+\textless\textless= \&= \^{}= \textbar= & \(\leftarrow\) Direita para a
+esquerda \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{tipos-buxe1sicos-de-variuxe1veis}{%
@@ -1424,38 +1344,41 @@ Tabela: Tipos de variáveis em Java/C/CPP/JS
 
 **
 
-\begin{longtable}[]{@{}lllll@{}}
-\toprule
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule()
 \endhead
 \textbf{Tipo} & \textbf{Descrição} & \textbf{n.~Bits} & \textbf{Mínimo}
-& \textbf{Máximo ( valor )}\tabularnewline
-& & & &\tabularnewline
-\textbf{Tipos inteiros+sinal} & & & &\tabularnewline
-byte & inteiro de 1 byte & \(8\) & \(-128\) & \(127\)\tabularnewline
-short & inteiro curto & \(16\) & \(-2^{15}\) &
-\(2^{15}-1\)\tabularnewline
-int & inteiro & \(32\) & \(-2^{31}\) & \(2^{31}-1\)\tabularnewline
-long & inteiro longo & \(64\) & \(-2^{63}\) &
-\(2^{63}-1\)\tabularnewline
-& & & &\tabularnewline
-\textbf{Tipos reais+ponto flut.} & & & &\tabularnewline
+& \textbf{Máximo ( valor )} \\
+& & & & \\
+\textbf{Tipos inteiros+sinal} & & & & \\
+byte & inteiro de 1 byte & \(8\) & \(-128\) & \(127\) \\
+short & inteiro curto & \(16\) & \(-2^{15}\) & \(2^{15}-1\) \\
+int & inteiro & \(32\) & \(-2^{31}\) & \(2^{31}-1\) \\
+long & inteiro longo & \(64\) & \(-2^{63}\) & \(2^{63}-1\) \\
+& & & & \\
+\textbf{Tipos reais+ponto flut.} & & & & \\
 float & precisão simples & \(32\) & \(2^{-149}\) &
-\((2-2^{-23})2^{127}\)\tabularnewline
+\((2-2^{-23})2^{127}\) \\
 double & precisão dupla & \(64\) & \(2^{-1074}\) &
-\((2-2^{-52}))2^{1023}\)\tabularnewline
-& & & &\tabularnewline
-\textbf{Tipos lógicos} & & & &\tabularnewline
-boolean & valor booleano & \(1\) & \(false\) & \(true\)\tabularnewline
-& & & &\tabularnewline
-\textbf{Tipos alfanuméricos} & & & &\tabularnewline
-char & caractere unicode & \(16\) & \(0\) & \(2^{16}-1\)\tabularnewline
-& & & &\tabularnewline
-\textbf{Classecadeia de caract.} & & & &\tabularnewline
-String & sequência n chars & \(16*n\) & - & -\tabularnewline
-& & & &\tabularnewline
-\textbf{Outras} & & & &\tabularnewline
-void & variável vazia & \(0\) & - & -\tabularnewline
-\bottomrule
+\((2-2^{-52}))2^{1023}\) \\
+& & & & \\
+\textbf{Tipos lógicos} & & & & \\
+boolean & valor booleano & \(1\) & \(false\) & \(true\) \\
+& & & & \\
+\textbf{Tipos alfanuméricos} & & & & \\
+char & caractere unicode & \(16\) & \(0\) & \(2^{16}-1\) \\
+& & & & \\
+\textbf{Classecadeia de caract.} & & & & \\
+String & sequência n chars & \(16*n\) & - & - \\
+& & & & \\
+\textbf{Outras} & & & & \\
+void & variável vazia & \(0\) & - & - \\
+\bottomrule()
 \end{longtable}
 
     **
@@ -1464,115 +1387,38 @@ Tabela: Exemplos de conversão de valores entre tipos de variáveis
 
 **
 
-\begin{longtable}[]{@{}lll@{}}
-\toprule
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2281}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2456}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5263}}@{}}
+\toprule()
 \endhead
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-\textbf{Conversão}\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\textbf{Método}\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\textbf{Exemplo}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\textbf{C/C++/Java}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-float \(\rightarrow\) int\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-Type cast\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{int\ i\ =\ (int)\ varFloat;}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-double \(\rightarrow\) float\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-Type cast\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{float\ f\ =\ (float)\ varDouble;}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-float, int \(\rightarrow\) double\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-Direto\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{double\ d\ =\ i;\ d\ =\ f;}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-Número \(\rightarrow\) String\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-(Java) direto (C) stdlib.h\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{String\ str\ =\ ""\ +\ f;\ \ str\ =\ snprintf(num);}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-String \(\rightarrow\) int\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-(Java) parse (C) stdlib.h\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{i\ =\ Integer.parseInt(str);\ i\ =\ atoi(str);}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-String \(\rightarrow\) float\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-(Java) parse (C) stdlib.h\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{f\ =\ Float.parseFloat(str);f\ =\ atof(str);}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-String \(\rightarrow\) double\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-(Java) parse (C) stdlib.h\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{d\ =\ Double.parseDouble(str);d\ =\ strtod(str,\ NULL);}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\textbf{JavaScript}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-String \(\rightarrow\) int\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-Parse\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{var\ i\ =\ parseInt(str);}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-String \(\rightarrow\) float\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-Parse\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{var\ f\ =\ parseFloat(str);}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-Número \(\rightarrow\) String\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-toString()\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{var\ str\ =\ toString(f);}\strut
-\end{minipage}\tabularnewline
-\bottomrule
+\textbf{Conversão} & \textbf{Método} & \textbf{Exemplo} \\
+& & \\
+& & \textbf{C/C++/Java} \\
+float \(\rightarrow\) int & Type cast &
+\texttt{int\ i\ =\ (int)\ varFloat;} \\
+double \(\rightarrow\) float & Type cast &
+\texttt{float\ f\ =\ (float)\ varDouble;} \\
+float, int \(\rightarrow\) double & Direto &
+\texttt{double\ d\ =\ i;\ d\ =\ f;} \\
+Número \(\rightarrow\) String & (Java) direto (C) stdlib.h &
+\texttt{String\ str\ =\ ""\ +\ f;\ \ str\ =\ snprintf(num);} \\
+String \(\rightarrow\) int & (Java) parse (C) stdlib.h &
+\texttt{i\ =\ Integer.parseInt(str);\ i\ =\ atoi(str);} \\
+String \(\rightarrow\) float & (Java) parse (C) stdlib.h &
+\texttt{f\ =\ Float.parseFloat(str);f\ =\ atof(str);} \\
+String \(\rightarrow\) double & (Java) parse (C) stdlib.h &
+\texttt{d\ =\ Double.parseDouble(str);d\ =\ strtod(str,\ NULL);} \\
+& & \\
+& & \textbf{JavaScript} \\
+String \(\rightarrow\) int & Parse &
+\texttt{var\ i\ =\ parseInt(str);} \\
+String \(\rightarrow\) float & Parse &
+\texttt{var\ f\ =\ parseFloat(str);} \\
+Número \(\rightarrow\) String & toString() &
+\texttt{var\ str\ =\ toString(f);} \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{teste-de-mesa}{%
@@ -1596,21 +1442,21 @@ toString()\strut
 Veja um exemplo de teste de mesa, apresentado a seguir:
 
 \begin{longtable}[]{@{}lllll@{}}
-\toprule
-código & c & f & ano & idd\tabularnewline
-\midrule
+\toprule()
+código & c & f & ano & idd \\
+\midrule()
 \endhead
-\texttt{c\ =\ 1} & 1 & & &\tabularnewline
-\texttt{f\ =\ 22} & & 22 & &\tabularnewline
-\texttt{ano\ =\ 1994} & & & 1994 &\tabularnewline
-\texttt{idd\ =\ 0} & & & & 0\tabularnewline
-\texttt{ano=ano+idd} & & & 1994 &\tabularnewline
-\texttt{idd\ *=\ f} & & & & 0\tabularnewline
-\texttt{c\ +=\ 1} & 2 & & &\tabularnewline
-\texttt{ano+=f} & & & 2016 &\tabularnewline
-\texttt{f\ -=\ 4} & & 18 & &\tabularnewline
-\texttt{c\ +=\ 1} & 3 & & &\tabularnewline
-\bottomrule
+\texttt{c\ =\ 1} & 1 & & & \\
+\texttt{f\ =\ 22} & & 22 & & \\
+\texttt{ano\ =\ 1994} & & & 1994 & \\
+\texttt{idd\ =\ 0} & & & & 0 \\
+\texttt{ano=ano+idd} & & & 1994 & \\
+\texttt{idd\ *=\ f} & & & & 0 \\
+\texttt{c\ +=\ 1} & 2 & & & \\
+\texttt{ano+=f} & & & 2016 & \\
+\texttt{f\ -=\ 4} & & 18 & & \\
+\texttt{c\ +=\ 1} & 3 & & & \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{aprendendo-a-programar}{%
@@ -2518,19 +2364,18 @@ A \textbf{saída} desejada do programa
 \end{itemize}
 
     \begin{longtable}[]{@{}lll@{}}
-\toprule
-Tabela. Identificadores de comentário. & &\tabularnewline
-\midrule
+\toprule()
+Tabela. Identificadores de comentário. & & \\
+\midrule()
 \endhead
-Linguagem & Uma linha & Várias linhas\tabularnewline
-Java/JS/C/C++ & //\ldots{} & /*\ldots*/\tabularnewline
-Python & \#\ldots{} & ""``\ldots{}''"" ou
-'\,'`\ldots{}''\,'\tabularnewline
-Matlab & \%\ldots{} & \%\{\ldots\}\%\tabularnewline
-Pascal & \{\ldots\} & \{\emph{\ldots{}}\}\tabularnewline
-SQL & --\ldots{} & /\emph{\ldots{}}/\tabularnewline
-R & \#.. &\tabularnewline
-\bottomrule
+Linguagem & Uma linha & Várias linhas \\
+Java/JS/C/C++ & //\ldots{} & /*\ldots*/ \\
+Python & \#\ldots{} & ``\,````\ldots{}''``\,'' ou '\,'`\ldots{}''\,' \\
+Matlab & \%\ldots{} & \%\{\ldots\}\% \\
+Pascal & \{\ldots\} & \{\emph{\ldots{}}\} \\
+SQL & --\ldots{} & /\emph{\ldots{}}/ \\
+R & \#.. & \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{desvio-de-fluxo}{%
@@ -3513,33 +3358,33 @@ se (nota<5)
 \end{itemize}
 
     \begin{longtable}[]{@{}ccc@{}}
-\toprule
-\&\& & V & F\tabularnewline
-\midrule
+\toprule()
+\&\& & V & F \\
+\midrule()
 \endhead
-V & \textbf{V} & F\tabularnewline
-F & F & F\tabularnewline
-\bottomrule
+V & \textbf{V} & F \\
+F & F & F \\
+\bottomrule()
 \end{longtable}
 
     \begin{longtable}[]{@{}ccc@{}}
-\toprule
-\textbar\textbar{} & V & F\tabularnewline
-\midrule
+\toprule()
+\textbar\textbar{} & V & F \\
+\midrule()
 \endhead
-V & V & V\tabularnewline
-F & V & \textbf{F}\tabularnewline
-\bottomrule
+V & V & V \\
+F & V & \textbf{F} \\
+\bottomrule()
 \end{longtable}
 
     \begin{longtable}[]{@{}ccc@{}}
-\toprule
-\^{} & V & F\tabularnewline
-\midrule
+\toprule()
+\^{} & V & F \\
+\midrule()
 \endhead
-V & F & V\tabularnewline
-F & V & F\tabularnewline
-\bottomrule
+V & F & V \\
+F & V & F \\
+\bottomrule()
 \end{longtable}
 
     \begin{itemize}
@@ -4141,16 +3986,16 @@ Teste em um programa principal várias chamadas destes métodos.
 \end{enumerate}
 
     \begin{longtable}[]{@{}cc@{}}
-\toprule
-Tabela: IMC = peso / altura2 &\tabularnewline
-\midrule
+\toprule()
+Tabela: IMC = peso / altura2 & \\
+\midrule()
 \endhead
-Magro & IMC até 18,5\tabularnewline
-Saudável & IMC até 25,0\tabularnewline
-Acima do peso & IMC até 30,0\tabularnewline
-Obeso & IMC até 35,0\tabularnewline
-Morbidez & IMC 35 mais\tabularnewline
-\bottomrule
+Magro & IMC até 18,5 \\
+Saudável & IMC até 25,0 \\
+Acima do peso & IMC até 30,0 \\
+Obeso & IMC até 35,0 \\
+Morbidez & IMC 35 mais \\
+\bottomrule()
 \end{longtable}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -4424,14 +4269,14 @@ Opção
 \end{enumerate}
 
 \begin{longtable}[]{@{}lll@{}}
-\toprule
-Consumo & Km/l & Mensagem\tabularnewline
-\midrule
+\toprule()
+Consumo & Km/l & Mensagem \\
+\midrule()
 \endhead
-menor que & 8 & venda o carro!\tabularnewline
-entre & 8 e 14 & econômico!\tabularnewline
-maior que & 14 & super econômico!\tabularnewline
-\bottomrule
+menor que & 8 & venda o carro! \\
+entre & 8 e 14 & econômico! \\
+maior que & 14 & super econômico! \\
+\bottomrule()
 \end{longtable}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -4446,16 +4291,16 @@ maior que & 14 & super econômico!\tabularnewline
 \end{enumerate}
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule
-Categora & Idade\tabularnewline
-\midrule
+\toprule()
+Categora & Idade \\
+\midrule()
 \endhead
-Infantil A & 5 a 7\tabularnewline
-Infantil B & 8 a 10\tabularnewline
-Juvenil A & 11 a 13\tabularnewline
-Juvenil B & 14 a 17\tabularnewline
-Sênior & maior que 17\tabularnewline
-\bottomrule
+Infantil A & 5 a 7 \\
+Infantil B & 8 a 10 \\
+Juvenil A & 11 a 13 \\
+Juvenil B & 14 a 17 \\
+Sênior & maior que 17 \\
+\bottomrule()
 \end{longtable}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -4473,18 +4318,18 @@ Sênior & maior que 17\tabularnewline
 \end{enumerate}
 
 \begin{longtable}[]{@{}lll@{}}
-\toprule
-Especificação & Código & Preço\tabularnewline
-\midrule
+\toprule()
+Especificação & Código & Preço \\
+\midrule()
 \endhead
-Cachorro quente & 100 & 12.0\tabularnewline
-Bauru Simples & 101 & 13.0\tabularnewline
-Bauru Simples & 102 & 13.0\tabularnewline
-Hamburguer & 103 & 12.0\tabularnewline
-Cheeseburguer & 104 & 17.0\tabularnewline
-Suco & 105 & 6.0\tabularnewline
-Refrigerante & 106 & 4.0\tabularnewline
-\bottomrule
+Cachorro quente & 100 & 12.0 \\
+Bauru Simples & 101 & 13.0 \\
+Bauru Simples & 102 & 13.0 \\
+Hamburguer & 103 & 12.0 \\
+Cheeseburguer & 104 & 17.0 \\
+Suco & 105 & 6.0 \\
+Refrigerante & 106 & 4.0 \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{processando-a-informauxe7uxe3o-cap.-4-estruturas-de-repetiuxe7uxe3o-lauxe7os}{%
@@ -5129,8 +4974,8 @@ A média das 10 notas é 7.3
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
-\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap4ex01}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output2}
-\PY{o}{.}\PY{o}{/}\PY{n}{output2}
+\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap4ex01}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output}
+\PY{o}{.}\PY{o}{/}\PY{n}{output}
 \end{Verbatim}
 \end{tcolorbox}
 
@@ -5167,9 +5012,79 @@ int funcao_recursiva(int a) {
 
 Veja mais um exemplo a seguir.
 
-    \hypertarget{exemplo-02---ler-10-notas-com-recursuxe3o}{%
-\subsection{Exemplo 02 - Ler 10 notas, com
-recursão}\label{exemplo-02---ler-10-notas-com-recursuxe3o}}
+    \hypertarget{exemplo-02---fatorial}{%
+\subsection{Exemplo 02 - Fatorial}\label{exemplo-02---fatorial}}
+
+Considere um algoritmo para calcular o fatorial de n
+{[}\href{https://www.inf.ufpr.br/roberto/ci067/10_aloc.html}{ref}{]}.
+
+    Pseudocódigo
+
+\begin{verbatim}
+# MINHA FUNÇÃO RECURSIVA
+função fatorial(recebe: inteiro n) retorna inteiro {
+  se (n == 1) faça { # CRITÉRIO DE PARADA
+    retorne 1
+  }
+  retorne n * fatorial(n-1);
+}
+
+Inteiro: n;
+escreva("Entre com numero: " + n)
+escreva("Fatorial de " + n + " é " + fatorial(n) );
+\end{verbatim}
+
+    \begin{itemize}
+\tightlist
+\item
+  Experimente essa ferramenta \emph{online} para visualizar o fluxograma
+  do código a seguir (copie o código e cole na ferramenta):
+  \href{https://app.code2flow.com/}{code2flow}.
+\end{itemize}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{16}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap4ex02}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+
+\PY{n+nb}{int} \PY{n}{fatorial}\PY{p}{(}\PY{n+nb}{int} \PY{n}{n}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{long} \PY{n+nb}{int} \PY{n}{f}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{debug \PYZhy{} antes  \PYZhy{} n = }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{n}{n}\PY{p}{)}\PY{p}{;}
+  \PY{k}{if} \PY{p}{(}\PY{n}{n} \PY{o}{==} \PY{l+m+mi}{1}\PY{p}{)} \PY{n}{f} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{;} \PY{o}{/}\PY{o}{/} \PY{n}{CRITÉRIO} \PY{n}{DE} \PY{n}{PARADA}\PY{err}{!}\PY{err}{!}\PY{err}{!}
+  \PY{k}{else} \PY{o}{/}\PY{o}{/} \PY{n}{CHAMADA} \PY{n}{RECURSIVA}\PY{p}{,} \PY{n}{COM} \PY{n}{ALTERAÇÃO} \PY{n}{DO} \PY{n}{VALOR} \PY{n}{DO} \PY{n}{ARGUMENTO}\PY{err}{!}\PY{err}{!}\PY{err}{!}
+    \PY{n}{f} \PY{o}{=} \PY{n}{n} \PY{o}{*} \PY{n}{fatorial}\PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;} 
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{debug \PYZhy{} depois \PYZhy{} n = }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{; fatorial = }\PY{l+s+si}{\PYZpc{}ld}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{n}\PY{p}{,} \PY{n}{f}\PY{p}{)}\PY{p}{;}
+  \PY{k}{return} \PY{n}{f}\PY{p}{;} 
+\PY{p}{\PYZcb{}}
+
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{o}{/}\PY{o}{/} \PY{n}{ENTRADA} \PY{n}{DE} \PY{n}{DADOS} \PY{n}{e} \PY{n}{PROCESSAMENTO}
+  \PY{n+nb}{int} \PY{n}{n}\PY{p}{;}
+
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Entre com n: }\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+  \PY{n}{scanf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{o}{\PYZam{}}\PY{n}{n}\PY{p}{)}\PY{p}{;}
+
+  \PY{o}{/}\PY{o}{/} \PY{n}{PROCESSAMENTO} \PY{n}{E} \PY{n}{SAÍDA}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Fatorial de }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ é }\PY{l+s+si}{\PYZpc{}d}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{n}\PY{p}{,} \PY{n}{fatorial}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{17}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
+\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap4ex02}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output}
+\PY{o}{.}\PY{o}{/}\PY{n}{output}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \hypertarget{exemplo-03---ler-10-notas-com-recursuxe3o}{%
+\subsection{Exemplo 03 - Ler 10 notas, com
+recursão}\label{exemplo-03---ler-10-notas-com-recursuxe3o}}
 
 Considere um algoritmo para ler 10 notas válidas utilizando recursão e
 calcular a média.
@@ -5210,7 +5125,7 @@ escreva("A média das " + contador + " notas é " + média);
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap4ex02}\PY{o}{.}\PY{n}{c}
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap4ex03}\PY{o}{.}\PY{n}{c}
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
 
 \PY{n+nb}{float} \PY{n}{lerNota}\PY{p}{(}\PY{n+nb}{float} \PY{n}{acumulador}\PY{p}{,} \PY{n+nb}{int} \PY{n}{n}\PY{p}{)} \PY{p}{\PYZob{}}
@@ -5250,8 +5165,8 @@ escreva("A média das " + contador + " notas é " + média);
 \prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
-\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap4ex02}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output2}
-\PY{o}{.}\PY{o}{/}\PY{n}{output2}
+\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{cap4ex03}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output}
+\PY{o}{.}\PY{o}{/}\PY{n}{output}
 \end{Verbatim}
 \end{tcolorbox}
 
@@ -5851,15 +5766,15 @@ fim
 \paragraph{Resposta:}\label{resposta}}
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule
-J & X & I\tabularnewline
-\midrule
+\toprule()
+J & X & I \\
+\midrule()
 \endhead
-100 & &\tabularnewline
-& 3 &\tabularnewline
-140 & &\tabularnewline
-& & 500\tabularnewline
-\bottomrule
+100 & & \\
+& 3 & \\
+140 & & \\
+& & 500 \\
+\bottomrule()
 \end{longtable}
 
 saída: 140, 500, 3
@@ -5891,12 +5806,12 @@ fim
 \paragraph{Sua Resposta:}\label{sua-resposta}}
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule
-J & X & I\tabularnewline
-\midrule
+\toprule()
+J & X & I \\
+\midrule()
 \endhead
-& &\tabularnewline
-\bottomrule
+& & \\
+\bottomrule()
 \end{longtable}
 
     \begin{enumerate}
@@ -5926,12 +5841,12 @@ fim
 \paragraph{Sua Resposta:}\label{sua-resposta}}
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule
-J & X & I\tabularnewline
-\midrule
+\toprule()
+J & X & I \\
+\midrule()
 \endhead
-& &\tabularnewline
-\bottomrule
+& & \\
+\bottomrule()
 \end{longtable}
 
     \begin{enumerate}
@@ -5958,12 +5873,12 @@ fim
 \paragraph{Sua Resposta:}\label{sua-resposta}}
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule
-M & N & Y\tabularnewline
-\midrule
+\toprule()
+M & N & Y \\
+\midrule()
 \endhead
-& &\tabularnewline
-\bottomrule
+& & \\
+\bottomrule()
 \end{longtable}
 
     \begin{enumerate}
@@ -5993,12 +5908,12 @@ fim
 \paragraph{Sua Resposta:}\label{sua-resposta}}
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule
-P & Q & Valor\tabularnewline
-\midrule
+\toprule()
+P & Q & Valor \\
+\midrule()
 \endhead
-& &\tabularnewline
-\bottomrule
+& & \\
+\bottomrule()
 \end{longtable}
 
     \begin{enumerate}
@@ -6031,12 +5946,12 @@ fim
 \paragraph{Sua Resposta:}\label{sua-resposta}}
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule
-X & X & X\tabularnewline
-\midrule
+\toprule()
+X & X & X \\
+\midrule()
 \endhead
-& &\tabularnewline
-\bottomrule
+& & \\
+\bottomrule()
 \end{longtable}
 
     \begin{enumerate}
@@ -6062,12 +5977,12 @@ fim
 \paragraph{Sua Resposta:}\label{sua-resposta}}
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule
-X & X & X\tabularnewline
-\midrule
+\toprule()
+X & X & X \\
+\midrule()
 \endhead
-& &\tabularnewline
-\bottomrule
+& & \\
+\bottomrule()
 \end{longtable}
 
     \begin{enumerate}
@@ -6096,12 +6011,12 @@ fim
 \paragraph{Sua Resposta:}\label{sua-resposta}}
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule
-X & X & X\tabularnewline
-\midrule
+\toprule()
+X & X & X \\
+\midrule()
 \endhead
-& &\tabularnewline
-\bottomrule
+& & \\
+\bottomrule()
 \end{longtable}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -6329,15 +6244,15 @@ Deseja-se saber:
 \end{enumerate}
 
 \begin{longtable}[]{@{}cc@{}}
-\toprule
-Nota & Conceito\tabularnewline
-\midrule
+\toprule()
+Nota & Conceito \\
+\midrule()
 \endhead
-de 0,0 a 4,9 & D\tabularnewline
-de 5,0 a 6,9 & C\tabularnewline
-de 7,0 a 8,9 & B\tabularnewline
-de 9,0 a 10,0 & A\tabularnewline
-\bottomrule
+de 0,0 a 4,9 & D \\
+de 5,0 a 6,9 & C \\
+de 7,0 a 8,9 & B \\
+de 9,0 a 10,0 & A \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{processando-a-informauxe7uxe3o-cap.-5-vetores}{%
@@ -6699,20 +6614,18 @@ Número RA     Nota
     Algumas funções da biblioteca padrão \textbf{string.h}:
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule
-função & descrição\tabularnewline
-\midrule
+\toprule()
+função & descrição \\
+\midrule()
 \endhead
-strcopy(s1,s2) & copia s1 em s2\tabularnewline
-strcat(s1,s2) & copia s2 no final de s1\tabularnewline
-strlen(s) & tamanho de s\tabularnewline
+strcopy(s1,s2) & copia s1 em s2 \\
+strcat(s1,s2) & copia s2 no final de s1 \\
+strlen(s) & tamanho de s \\
 strcmp(s1,s2) & 0 se s1=s2; negativo se s1\textless s2; positivo se
-s1\textgreater s2\tabularnewline
-strchr(s,ch) & ponteiro para a primeira ocorrência de ch em
-s\tabularnewline
-strstr(s1,s2) & ponteiro para a primeira ocorrência de s2 em
-s1\tabularnewline
-\bottomrule
+s1\textgreater s2 \\
+strchr(s,ch) & ponteiro para a primeira ocorrência de ch em s \\
+strstr(s1,s2) & ponteiro para a primeira ocorrência de s2 em s1 \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{formas-de-percorrer-um-vetor}{%
@@ -7814,16 +7727,16 @@ nesse livro.
 \end{enumerate}
 
     \begin{longtable}[]{@{}lll@{}}
-\toprule
-a & b & /\tabularnewline
-\midrule
+\toprule()
+a & b & / \\
+\midrule()
 \endhead
-12 & 15 & 2\tabularnewline
-6 & 15 & 2\tabularnewline
-3 & 15 & 3\tabularnewline
-1 & 5 & 5\tabularnewline
-1 & 1 & 60\tabularnewline
-\bottomrule
+12 & 15 & 2 \\
+6 & 15 & 2 \\
+3 & 15 & 3 \\
+1 & 5 & 5 \\
+1 & 1 & 60 \\
+\bottomrule()
 \end{longtable}
 
 \[MMC = 60 = 2*2*3*5\]
@@ -8312,8 +8225,8 @@ Fontes:
 \setcounter{enumi}{30}
 \tightlist
 \item
-  Faça um programa que leia dois números n e m e:Crie e leia um vetor
-  de inteiros de n posições;Crie e leia um vetor de inteiros de m
+  Faça um programa que leia dois números n e m e:Crie e leia um vetor de
+  inteiros de n posições;Crie e leia um vetor de inteiros de m
   posições;Crie e construa um vetor de inteiros que seja a interseção
   entre os dois vetores anteriores, ou seja, que contém apenas os
   números que estão em ambos os vetores.Crie e construa um quarto vetor
@@ -9069,17 +8982,17 @@ nesse livro.
 \end{itemize}
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule
-& vizinhança &\tabularnewline
-\midrule
+\toprule()
+& vizinhança & \\
+\midrule()
 \endhead
 \texttt{{[}i-1,j-1{]}} & \texttt{{[}i-1,j{]}} &
-\texttt{{[}i-1,j+1{]}}\tabularnewline
+\texttt{{[}i-1,j+1{]}} \\
 \texttt{{[}i\ \ ,j-1{]}} & \textbf{\texttt{{[}i\ ,j{]}}} &
-\texttt{{[}i\ \ ,j+1{]}}\tabularnewline
+\texttt{{[}i\ \ ,j+1{]}} \\
 \texttt{{[}i+1,j-1{]}} & \texttt{{[}i+1,j{]}} &
-\texttt{{[}i+1,j+1{]}}\tabularnewline
-\bottomrule
+\texttt{{[}i+1,j+1{]}} \\
+\bottomrule()
 \end{longtable}
 
 \begin{itemize}
@@ -9216,17 +9129,17 @@ Fonte:
 \end{enumerate}
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule
-& vizinhança &\tabularnewline
-\midrule
+\toprule()
+& vizinhança & \\
+\midrule()
 \endhead
 \texttt{{[}i-1,j-1{]}} & \texttt{{[}i-1,j{]}} &
-\texttt{{[}i-1,j+1{]}}\tabularnewline
+\texttt{{[}i-1,j+1{]}} \\
 \texttt{{[}i\ \ ,j-1{]}} & \textbf{\texttt{{[}i\ ,j{]}}} &
-\texttt{{[}i\ \ ,j+1{]}}\tabularnewline
+\texttt{{[}i\ \ ,j+1{]}} \\
 \texttt{{[}i+1,j-1{]}} & \texttt{{[}i+1,j{]}} &
-\texttt{{[}i+1,j+1{]}}\tabularnewline
-\bottomrule
+\texttt{{[}i+1,j+1{]}} \\
+\bottomrule()
 \end{longtable}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -9299,7 +9212,8 @@ Arquivos}\label{processando-a-informauxe7uxe3o-cap.-7-tipos-definidos-pelo-progr
 
     \includegraphics{"figs/Capa_Processando_Informacao.jpg"}
 
-Este caderno (Notebook) é parte complementar \emph{online} do livro
+Este caderno (Notebook em CONSTRUÇÃO) é parte complementar \emph{online}
+do livro
 \textbf{\href{https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao}{Processando
 a Informação}: um livro prático de programação independente de
 linguagem}, que deve ser consultado no caso de dúvidas sobre os temas
@@ -9538,6 +9452,13 @@ Objetos}\label{paradigma-orientado-a-objetos}}
   classe \textbf{Aluno} (que é um novo tipo de dados) e com ela
   instanciar uma variável \emph{Julia} da classe \textbf{Aluno}.
 \end{itemize}
+
+\includegraphics{"figs/image45.png"}
+
+    \begin{figure}
+\centering
+\caption{image46.png}
+\end{figure}
 
     O restante deste capítulo é complemetar ao livro
 \textbf{\href{https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao}{Processando
@@ -9957,53 +9878,50 @@ Seguem as principais funções para manipular arquivos da biblioteca
 \texttt{stdio.h}:
 
 \begin{longtable}[]{@{}cl@{}}
-\toprule
-Função & Descrição\tabularnewline
-\midrule
+\toprule()
+Função & Descrição \\
+\midrule()
 \endhead
-\texttt{fopen()} & Abre arquivo\tabularnewline
-\texttt{fclose()} & Fecha arquivo\tabularnewline
-\texttt{putc()} & Escreve um caracter no arquivo\tabularnewline
-\texttt{fputc()} & Igual \texttt{putc()}\tabularnewline
-\texttt{getc()} & Lê um caracter do arquivo\tabularnewline
-\texttt{fgetc()} & Igual \texttt{getc()}\tabularnewline
-\texttt{fseek()} & Posiciona o arquivo em um determinado
-byte\tabularnewline
+\texttt{fopen()} & Abre arquivo \\
+\texttt{fclose()} & Fecha arquivo \\
+\texttt{putc()} & Escreve um caracter no arquivo \\
+\texttt{fputc()} & Igual \texttt{putc()} \\
+\texttt{getc()} & Lê um caracter do arquivo \\
+\texttt{fgetc()} & Igual \texttt{getc()} \\
+\texttt{fseek()} & Posiciona o arquivo em um determinado byte \\
 \texttt{fprintf()} & Semelhante ao \texttt{printf()}, mas para
-arquivo\tabularnewline
-\texttt{fscanf()} & Semelhante ao \texttt{scanf()}, mas para
-arquivo\tabularnewline
-\texttt{feof()} & Verifica final de arquivo\tabularnewline
-\texttt{ferror()} & Verifica se ocorreu erro\tabularnewline
-\texttt{rewind()} & Posiciona o ponteiro para o início do
-arquivo\tabularnewline
-\texttt{remove()} & Apaga arquivo\tabularnewline
-\texttt{fflush()} & Descarrega o \emph{buffer} do arquivo\tabularnewline
-\texttt{fgets()} & Obtém uma string do arquivo\tabularnewline
-\texttt{fread()} & Lê um bloco de dados do arquivo\tabularnewline
-\texttt{fwrite()} & Escreve um bloco de dados no arquivo\tabularnewline
-\texttt{ftell()} & Retorna a posição do ponteiro\tabularnewline
-\bottomrule
+arquivo \\
+\texttt{fscanf()} & Semelhante ao \texttt{scanf()}, mas para arquivo \\
+\texttt{feof()} & Verifica final de arquivo \\
+\texttt{ferror()} & Verifica se ocorreu erro \\
+\texttt{rewind()} & Posiciona o ponteiro para o início do arquivo \\
+\texttt{remove()} & Apaga arquivo \\
+\texttt{fflush()} & Descarrega o \emph{buffer} do arquivo \\
+\texttt{fgets()} & Obtém uma string do arquivo \\
+\texttt{fread()} & Lê um bloco de dados do arquivo \\
+\texttt{fwrite()} & Escreve um bloco de dados no arquivo \\
+\texttt{ftell()} & Retorna a posição do ponteiro \\
+\bottomrule()
 \end{longtable}
 
     \begin{longtable}[]{@{}ccc@{}}
-\toprule
-\textbf{Modo} & \textbf{Arquivo} & \textbf{Função}\tabularnewline
-\midrule
+\toprule()
+\textbf{Modo} & \textbf{Arquivo} & \textbf{Função} \\
+\midrule()
 \endhead
-r & Texto & Leitura\tabularnewline
-w & Texto & Escrita em arquivo novo\tabularnewline
-a & Texto & Escrita em arquivo existente\tabularnewline
-r+ & Texto & Leitura/Escrita\tabularnewline
-w+ & Texto & Leitura/Escrita\tabularnewline
-a+ & Texto & Leitura/Escrita\tabularnewline
-rb & Binário & Leitura\tabularnewline
-wb & Binário & Escrita\tabularnewline
-ab & Binário & Escrita\tabularnewline
-r+b & Binário & Leitura/Escrita\tabularnewline
-w+b & Binário & Leitura/Escrita\tabularnewline
-a+b & Binário & Leitura/Escrita\tabularnewline
-\bottomrule
+r & Texto & Leitura \\
+w & Texto & Escrita em arquivo novo \\
+a & Texto & Escrita em arquivo existente \\
+r+ & Texto & Leitura/Escrita \\
+w+ & Texto & Leitura/Escrita \\
+a+ & Texto & Leitura/Escrita \\
+rb & Binário & Leitura \\
+wb & Binário & Escrita \\
+ab & Binário & Escrita \\
+r+b & Binário & Leitura/Escrita \\
+w+b & Binário & Leitura/Escrita \\
+a+b & Binário & Leitura/Escrita \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{exemplo-07---criar-arquivo}{%
@@ -10262,7 +10180,8 @@ Ponteiros}\label{processando-a-informauxe7uxe3o-cap.-8-ponteiros}}
 
     \includegraphics{"figs/Capa_Processando_Informacao.jpg"}
 
-Este caderno (Notebook) é parte complementar \emph{online} do livro
+Este caderno (Notebook em CONSTRUÇÃO) é parte complementar \emph{online}
+do livro
 \textbf{\href{https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao}{Processando
 a Informação}: um livro prático de programação independente de
 linguagem}, que deve ser consultado no caso de dúvidas sobre os temas
@@ -10274,10 +10193,14 @@ nesse livro.
 \end{quote}
 
 \begin{quote}
-O conteúdo deste capítulo foi inspirado em: *
-\href{https://www.ime.usp.br/~pf/algoritmos/aulas/pont.html}{Notas do
-prof. Paulo Feofiloff} * Notas de aula de professores da UFABC, em
-especial, dos professores Luiz Rozante e Wagner Botelho.
+O conteúdo deste capítulo foi inspirado em: * Notas do prof. Paulo
+Feofiloff:
+{[}\href{https://www.ime.usp.br/~pf/algoritmos/aulas/pont.html}{1}{]};
+{[}\href{https://www.ime.usp.br/~pf/algoritmos/aulas/aloca.html}{2}{]}.
+* Notas de aula de professores da UFABC, em especial, dos professores
+Luiz Rozante e Wagner Botelho. * Para mais detalhes de tipos de alocação
+de memória, ver
+{[}\href{https://www.inf.ufpr.br/roberto/ci067/10_aloc.html}{ref}{]}.
 \end{quote}
 
     \hypertarget{sumuxe1rio}{%
@@ -10290,6 +10213,11 @@ especial, dos professores Luiz Rozante e Wagner Botelho.
 \item
   Introdução
 \item
+  Alocação estática
+\item
+  Alocação dinâmica
+\item
+  Alocação dinâmica para \emph{array} multidimensional
 \item
   Revisão deste capítulo
 \item
@@ -10392,22 +10320,22 @@ especial, dos professores Luiz Rozante e Wagner Botelho.
 \item
   Para a variável ponteiro do tipo \emph{char}, \texttt{char\ *p} ocupa
   um \emph{byte}. Para \emph{int} são 4 \emph{bytes} e para
-  \emph{double} são 8 \emph{bytes}, a dependendo da arquitetura do
+  \emph{double} são 8 \emph{bytes}, a depender da arquitetura do
   computador.
 \item
-  Para saber a quantidade de bytes que uma variável ocupa, usar a função
-  \texttt{sizeof}.
+  Para saber a quantidade de \emph{bytes} de uma variável/tipo, usar a
+  função \texttt{sizeof}.
 \item
-  Por exemplo, para uma variável do tipo \texttt{double} ocupa, basta
-  fazer \texttt{sizeof\ (double)}, ou \texttt{sizeof(p1)}, onde
-  \texttt{p1} foi definido no anterior.
+  Por exemplo, para uma variável do tipo \texttt{double}, basta fazer
+  \texttt{sizeof\ (double)}, ou \texttt{sizeof(p1)}, onde \texttt{p1}
+  foi definido no exemplo anterior.
 \item
-  Também é possível calcular o tamanho de um vetor em tempo de execução.
-  Para o exemplo anterior, basta fazer:
+  Também é possível calcular o tamanho de um vetor alocado
+  estaticamente. Para o exemplo anterior, basta fazer:
   \texttt{sizeof(v)\ /\ sizeof(int)}.
 \item
-  Esse cálculo é útil para saber o tamanho de um \emph{array} definido
-  em tempo de execução (\emph{alocação dinâmica} - ver próxima seção).
+  Esse cálculo é útil para saber o tamanho de um \emph{array} porém tem
+  algumas restriçoes, ver próxima seção.
 \end{itemize}
 
 \includegraphics{"figs/cap8_1.png"}
@@ -10521,7 +10449,7 @@ ponteiro para essa \texttt{struct}.
     \begin{itemize}
     \tightlist
     \item
-      sintaxe:
+      sintaxe para \emph{array} de inteiros:
       \texttt{int\ *\ p\ =\ (int\ *)\ malloc(\ TAMANHO\ *\ sizeof(int)\ )}
     \item
       comando utilizado para alocar um \emph{array} de \texttt{TAMANHO}
@@ -10530,8 +10458,8 @@ ponteiro para essa \texttt{struct}.
       O ponteiro \texttt{p} aponta para o primeiro elemento do
       \emph{array}.
     \item
-      É possível definir um \emph{array} para qualquer tipo de dado,
-      inclusive para \texttt{struct}.
+      É possível definir um \emph{array} para qualquer tipo de dado, não
+      apenas para \texttt{int}, inclusive para \texttt{struct}.
     \item
       Se \texttt{p\ =\ NULL} então não existe memória suficiente para a
       alocação.
@@ -10542,11 +10470,20 @@ ponteiro para essa \texttt{struct}.
     \begin{itemize}
     \tightlist
     \item
-      sintaxe:
+      sintaxe para \emph{array} de inteiros:
       \texttt{int\ *\ p\ =\ (int\ *)\ calloc(\ TAMANHO,\ \ sizeof(int)\ )}
     \item
-      análogo ao \texttt{malloc}, porém com \texttt{calloca} possui dois
-      argumentos e inicializa todos os elementos com 0s.
+      análogo ao \texttt{malloc}, porém:
+
+      \begin{itemize}
+      \tightlist
+      \item
+        o \texttt{calloc} possui dois argumentos;
+      \item
+        inicializa todos os elementos com zeros;
+      \item
+        logo, um pouco mais lento.
+      \end{itemize}
     \end{itemize}
   \item
     \texttt{realloc}
@@ -10554,8 +10491,8 @@ ponteiro para essa \texttt{struct}.
     \begin{itemize}
     \tightlist
     \item
-      sintaxe:
-      \texttt{int\ *\ p\ =\ (int\ *)\ realloc(\ TAMANHO,\ \ sizeof(int)\ )}
+      sintaxe para \emph{array} de inteiros:
+      \texttt{p\ =\ (int\ *)\ realloc(\ p,\ TAMANHO\ *\ \ sizeof(int)\ )}
     \item
       realoca um \emph{array}
     \end{itemize}
@@ -10569,8 +10506,8 @@ ponteiro para essa \texttt{struct}.
       memória no final, com o camando \texttt{free(p)}.
     \item
       se isso não for feito, a memória será liberada somente quando o
-      computador for desligado (se o sistema operacional não tiver algum
-      recurso de ``coleta de lixo'').
+      computador for desligado ou a aplicação encerrada (se o sistema
+      operacional não tiver algum recurso de ``coleta de lixo'').
     \end{itemize}
   \end{itemize}
 \end{itemize}
@@ -10583,9 +10520,55 @@ estática}\label{exemplo-de-alocauxe7uxe3o-estuxe1tica}}
 void main(){
     int TAMANHO = 0;
     scanf("%i", &TAMANHO);
-    int v[TAMANHO]; // NÃO PODE ALTER O TAMANHO APÓS CRIADO!!!
+    int v[TAMANHO]; // NÃO PODE ALTER O TAMANHO DE v APÓS CRIADO!!!
     // free(v); // LOGO, NÃO PODE USAR free!!!
 }
+\end{verbatim}
+
+\hypertarget{tamanho-de-um-array}{%
+\paragraph{\texorpdfstring{Tamanho de um
+\emph{array}}{Tamanho de um array}}\label{tamanho-de-um-array}}
+
+\begin{verbatim}
+int main() {
+  int v[5] = { 3,4,5,6,7 };
+
+  printf("sizeof(v)=%ld\n", sizeof(v));
+  printf("sizeof(int)=%ld\n", sizeof(int));
+  printf("tamanho=%li\n", (int) sizeof(p) / sizeof(int));
+  return 0;
+}
+\end{verbatim}
+
+Retorna tamanho CORRETO:
+
+\begin{verbatim}
+sizeof(v)=20
+sizeof(int)=4
+tamanho=5
+\end{verbatim}
+
+Porém, aqui não retorna o esperado
+
+\begin{verbatim}
+void funcao(int* v) {
+  printf("sizeof(v)=%ld\n", sizeof(v));
+  printf("sizeof(int)=%ld\n", sizeof(int));
+  printf("tamanho=%li\n", (int)sizeof(v) / sizeof(int));
+}
+int main() {
+  int v[5] = { 3,4,5,6,7 };
+  funcao(v);
+  return 0;
+}
+\end{verbatim}
+
+Retorna tamanho INCORRETO:
+
+\begin{verbatim}
+sizeof(v)=8
+sizeof(int)=4
+tamanho=2
 \end{verbatim}
 
     \hypertarget{exemplo-de-alocauxe7uxe3o-dinuxe2mica}{%
@@ -10601,9 +10584,51 @@ void main(){
 }
 \end{verbatim}
 
+\hypertarget{nuxe3o-uxe9-possuxedvel-retornar-o-tamanho-de-um-array-alocado-dinamicamente}{%
+\paragraph{\texorpdfstring{Não é possível retornar o tamanho de um
+\emph{array} alocado
+dinamicamente}{Não é possível retornar o tamanho de um array alocado dinamicamente}}\label{nuxe3o-uxe9-possuxedvel-retornar-o-tamanho-de-um-array-alocado-dinamicamente}}
+
+\begin{verbatim}
+int main() {
+  int* p = (int*)malloc(5 * sizeof(int));
+
+  printf("sizeof(p)=%li\n", sizeof(p));
+  printf("sizeof(int)=%li\n", sizeof(int));
+  printf("tamanho=%li\n", (int) sizeof(p) / sizeof(int));
+  return 0;
+}
+\end{verbatim}
+
+Retorna tamanho INCORRETO:
+
+\begin{verbatim}
+sizeof(p)=8
+sizeof(int)=4
+tamanho=2
+\end{verbatim}
+
     \hypertarget{alocauxe7uxe3o-dinuxe2mica-para-array-multidimensional}{%
 \subsection{\texorpdfstring{Alocação dinâmica para \emph{array}
 multidimensional}{Alocação dinâmica para array multidimensional}}\label{alocauxe7uxe3o-dinuxe2mica-para-array-multidimensional}}
+
+    \begin{itemize}
+\item
+  É possível usar um \emph{array} unidimensional para tratar matriz
+  multidimensional. Por exemplo, para uma matriz de L linha e C colunas
+  de inteiros, temos:
+
+\begin{verbatim}
+int * m = (int *) malloc( L*C*sizeof(int) );
+for (int i=0; i < L; i++) 
+  for (int j=0; j < C; j++) 
+    scanf("%d", m + i*C +j); // m+i*C+j = &m[i*C+j]
+
+// ou simplesmente
+for (int i=0; i < L*C; i++) 
+    scanf("%d", m + i); // linha=i/C e coluna=i%C
+\end{verbatim}
+\end{itemize}
 
     \begin{itemize}
 \tightlist
@@ -10632,7 +10657,7 @@ multidimensional}{Alocação dinâmica para array multidimensional}}\label{aloca
 
 \begin{verbatim}
   for (int i=0; i < L; i++) 
-    for (int j=0; j < C; J++) 
+    for (int j=0; j < C; j++) 
       scanf("%d", &m[i][j]); // &m[i][j] = m + i*C + j
 \end{verbatim}
   \item
@@ -10666,6 +10691,12 @@ multidimensional}{Alocação dinâmica para array multidimensional}}\label{aloca
 free(m);
 \end{verbatim}
   \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  Quais as vantagens de usar matriz como \textbf{ponteiro de ponteiro}?
 \end{itemize}
 
     \hypertarget{exemplo-01---lerescrever-matriz-com-muxe9todos-cap.6---matriz}{%
@@ -10890,13 +10921,11 @@ pasta do Google Drive
 \item
   Introdução
 \item
-  Paradigma Estruturado
+  Alocação estática
 \item
-  Paradigma Orientado a Objetos
+  Alocação dinâmica
 \item
-  Tipos de dados
-\item
-  Arquivos
+  Alocação dinâmica para \emph{array} multidimensional
 \item
   Exercícios
 \item

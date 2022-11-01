@@ -84,7 +84,7 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
     \fi
 
     \usepackage{fancyvrb} % verbatim replacement that allows latex
-    \usepackage{grffile} % extends the file name processing of package graphics
+    \usepackage{grffile} % extends the file name processing of package graphics 
                          % to support a larger range
     \makeatletter % fix for old versions of grffile with XeLaTeX
     \@ifpackagelater{grffile}{2019/11/01}
@@ -169,7 +169,7 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
     \newcommand{\RegionMarkerTok}[1]{{#1}}
     \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
     \newcommand{\NormalTok}[1]{{#1}}
-
+    
     % Additional commands for more recent versions of Pandoc
     \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
     \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
@@ -188,8 +188,8 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
     \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
     \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
     \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-
-
+    
+    
     % Define a nice break command that doesn't care if a line doesn't already
     % exist.
     \def\br{\hspace*{\fill} \\* }
@@ -310,53 +310,53 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
 \makeatother
 
 
-    % For linebreaks inside Verbatim environment from package fancyvrb.
+    % For linebreaks inside Verbatim environment from package fancyvrb. 
     \makeatletter
-        \newbox\Wrappedcontinuationbox
-        \newbox\Wrappedvisiblespacebox
-        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}}
-        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}}
-        \newcommand*\Wrappedcontinuationindent {3ex }
-        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox}
-        % Take advantage of the already applied Pygments mark-up to insert
-        % potential linebreaks for TeX processing.
-        %        {, <, #, %, $, ' and ": go to next line.
-        %        _, }, ^, &, >, - and ~: stay at end of broken line.
-        % Use of \textquotesingle for straight quote.
-        \newcommand*\Wrappedbreaksatspecials {%
-            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}%
-            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}%
-            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}%
-            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}%
-            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}%
-            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}%
-            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}%
-            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}%
-            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}%
-            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}%
-            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}%
-            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}%
-            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}%
-            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}%
-        }
-        % Some characters . , ; ? ! / are not pygmentized.
-        % This macro makes them "active" and they will insert potential linebreaks
-        \newcommand*\Wrappedbreaksatpunct {%
-            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}%
-            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}%
-            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}%
-            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}%
-            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}%
-            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}%
-            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}%
+        \newbox\Wrappedcontinuationbox 
+        \newbox\Wrappedvisiblespacebox 
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}} 
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}} 
+        \newcommand*\Wrappedcontinuationindent {3ex } 
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox} 
+        % Take advantage of the already applied Pygments mark-up to insert 
+        % potential linebreaks for TeX processing. 
+        %        {, <, #, %, $, ' and ": go to next line. 
+        %        _, }, ^, &, >, - and ~: stay at end of broken line. 
+        % Use of \textquotesingle for straight quote. 
+        \newcommand*\Wrappedbreaksatspecials {% 
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}% 
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}% 
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}% 
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}% 
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}% 
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}% 
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}% 
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}% 
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}% 
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}% 
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}% 
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}% 
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}% 
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}% 
+        } 
+        % Some characters . , ; ? ! / are not pygmentized. 
+        % This macro makes them "active" and they will insert potential linebreaks 
+        \newcommand*\Wrappedbreaksatpunct {% 
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}% 
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}% 
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}% 
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}% 
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}% 
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}% 
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}% 
             \catcode`\.\active
-            \catcode`\,\active
+            \catcode`\,\active 
             \catcode`\;\active
             \catcode`\:\active
             \catcode`\?\active
             \catcode`\!\active
-            \catcode`\/\active
-            \lccode`\~`\~
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
         }
     \makeatother
 
@@ -379,10 +379,10 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
             \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
             {\kern\fontdimen2\font}%
         }%
-
+        
         % Allow breaks at special characters using \PYG... macros.
         \Wrappedbreaksatspecials
-        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active 	
         \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
     }
     \makeatother
@@ -392,7 +392,7 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
     \definecolor{outcolor}{HTML}{D84315}
     \definecolor{cellborder}{HTML}{CFCFCF}
     \definecolor{cellbackground}{HTML}{F7F7F7}
-
+    
     % prompt
     \makeatletter
     \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
@@ -404,7 +404,7 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
 
     
     % Prevent overflowing lines due to hard-to-break entities
-    \sloppy
+    \sloppy 
     % Setup hyperref package
     \hypersetup{
       breaklinks=true,  % so long urls are correctly broken across lines
@@ -1150,15 +1150,15 @@ real}\label{exemplo-de-variuxe1vel-do-tipo-real}}
     Exemplos de variáveis válidas e inválidas:
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule
-Válido & Inválido\tabularnewline
-\midrule
+\toprule()
+Válido & Inválido \\
+\midrule()
 \endhead
-idade4 & 4idade\tabularnewline
-Nome\_Completo & Nome Completo\tabularnewline
-resta\_um & resta-um\tabularnewline
-V8S9F0D7S7D9 & V@R!V\&+\tabularnewline
-\bottomrule
+idade4 & 4idade \\
+Nome\_Completo & Nome Completo \\
+resta\_um & resta-um \\
+V8S9F0D7S7D9 & V@R!V\&+ \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{operadores-e-preceduxeancia}{%
@@ -1178,18 +1178,18 @@ Tabela: Operadores aritméticos em Java/C/CPP/JS
 **
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule
-operador & descrição\tabularnewline
-\midrule
+\toprule()
+operador & descrição \\
+\midrule()
 \endhead
-+ & soma com\tabularnewline
-- & subtração por\tabularnewline
-* & multiplicação por\tabularnewline
-/ & divisão por\tabularnewline
-\% & resto da divisão por\tabularnewline
-++ & incremento\tabularnewline
--- & decremento\tabularnewline
-\bottomrule
++ & soma com \\
+- & subtração por \\
+* & multiplicação por \\
+/ & divisão por \\
+\% & resto da divisão por \\
+++ & incremento \\
+-- & decremento \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{operadores-relacionais}{%
@@ -1202,17 +1202,17 @@ Tabela: Operadores relacionais em Java/C/CPP/JS
 **
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule
-operador & descrição\tabularnewline
-\midrule
+\toprule()
+operador & descrição \\
+\midrule()
 \endhead
-== & é igual a\tabularnewline
-!= & é diferente de\tabularnewline
-\textgreater{} & é maior que\tabularnewline
-\textless{} & é menor que\tabularnewline
-\textgreater= & é maior ou igual a\tabularnewline
-\textless= & é menor ou igual a\tabularnewline
-\bottomrule
+== & é igual a \\
+!= & é diferente de \\
+\textgreater{} & é maior que \\
+\textless{} & é menor que \\
+\textgreater= & é maior ou igual a \\
+\textless= & é menor ou igual a \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{operadores-luxf3gicos}{%
@@ -1225,24 +1225,22 @@ Tabela: Operadores lógicos binários em Java/C/CPP/JS
 **
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule
-operador & descrição\tabularnewline
-\midrule
+\toprule()
+operador & descrição \\
+\midrule()
 \endhead
-x \textbf{\&\&} y & True se ambos também forem\tabularnewline
-x \textbf{\&} y & True se ambos também forem bit-a-bit\tabularnewline
-x \textbf{\textbar\textbar{}} y & False se ambos também
-forem\tabularnewline
-x \textbf{\textbar{}} y & False se ambos também forem
-bit-a-bit\tabularnewline
-\textbf{!} x & contrário de x\tabularnewline
-\textbf{\textasciitilde{}} x & contrário de x bit-a-bit\tabularnewline
-\textbf{\^{}} x & ou exclusivo \texttt{XOR} bit-a-bit\tabularnewline
+x \textbf{\&\&} y & True se ambos também forem \\
+x \textbf{\&} y & True se ambos também forem bit-a-bit \\
+x \textbf{\textbar\textbar{}} y & False se ambos também forem \\
+x \textbf{\textbar{}} y & False se ambos também forem bit-a-bit \\
+\textbf{!} x & contrário de x \\
+\textbf{\textasciitilde{}} x & contrário de x bit-a-bit \\
+\textbf{\^{}} x & ou exclusivo \texttt{XOR} bit-a-bit \\
 \textbf{\textless\textless{}}N & \emph{shift-left}, adiciona N zeros à
-direita do número binário\tabularnewline
+direita do número binário \\
 \textbf{\textless\textless{}}N & \emph{shift-right}, elimina N zeros à
-direita do número binário\tabularnewline
-\bottomrule
+direita do número binário \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{operadores-de-atribuiuxe7uxe3o}{%
@@ -1256,19 +1254,18 @@ Tabela: Operadores de atribuição em Python/Java/C/CPP/JS
 **
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule
-operador & descrição\tabularnewline
-\midrule
+\toprule()
+operador & descrição \\
+\midrule()
 \endhead
-= & recebe o valor de\tabularnewline
-+= & é somado ao valor de\tabularnewline
--= & é subtraído do valor de\tabularnewline
-*= & é multiplicado pelo valor de\tabularnewline
-/= & é dividido pelo valor de\tabularnewline
-\%= & recebe o resto da divisão por\tabularnewline
-similarmente & \textgreater\textgreater=, \textless\textless=,
-\&=,\tabularnewline
-\bottomrule
+= & recebe o valor de \\
++= & é somado ao valor de \\
+-= & é subtraído do valor de \\
+*= & é multiplicado pelo valor de \\
+/= & é dividido pelo valor de \\
+\%= & recebe o resto da divisão por \\
+similarmente & \textgreater\textgreater=, \textless\textless=, \&=, \\
+\bottomrule()
 \end{longtable}
 
     \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
@@ -1289,125 +1286,48 @@ Tabela: Precedência de Operadores
 
 **
 
-\begin{longtable}[]{@{}lll@{}}
-\toprule
-\begin{minipage}[b]{0.26\columnwidth}\raggedright
-Categoria\strut
-\end{minipage} & \begin{minipage}[b]{0.44\columnwidth}\raggedright
-Operador\strut
-\end{minipage} & \begin{minipage}[b]{0.21\columnwidth}\raggedright
-Associatividade\strut
-\end{minipage}\tabularnewline
-\midrule
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2794}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4853}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2353}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Categoria
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Operador
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Associatividade
+\end{minipage} \\
+\midrule()
 \endhead
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Pós-fixado\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-() (parênteses, operador ponto)\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Índice\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-{[}{]}\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Unário\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-++ - - ! \textasciitilde{} (incremento, decremento)\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\leftarrow\) Direita para a esquerda\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Multiplicativo\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-* / \% (vezes, dividido, resto)\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Aditivo\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-+ - (soma, subtração)\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Shift binário\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-\textgreater\textgreater{} \textgreater\textgreater\textgreater{}
-\textless\textless{}\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Relacional\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-\textgreater{} \textgreater= \textless{} \textless=\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Igualdade\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-== != (é igual a, é diferente de)\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-E (AND) bit-a-bit\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-\&\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-XOR bit-a-bit\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-\^{}\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Ou (OR) bit-a-bit\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-\textbar{}\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-E lógico\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-\&\&\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Ou lógico\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-\textbar\textbar{}\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\rightarrow\) Esquerda para a direita\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Condicional\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-?:\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\leftarrow\) Direita para a esquerda\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.26\columnwidth}\raggedright
-Atribuição\strut
-\end{minipage} & \begin{minipage}[t]{0.44\columnwidth}\raggedright
-= += -= *= /= \%= \textgreater\textgreater= \textless\textless= \&=
-\^{}= \textbar=\strut
-\end{minipage} & \begin{minipage}[t]{0.21\columnwidth}\raggedright
-\(\leftarrow\) Direita para a esquerda\strut
-\end{minipage}\tabularnewline
-\bottomrule
+Pós-fixado & () (parênteses, operador ponto) & \(\rightarrow\) Esquerda
+para a direita \\
+Índice & {[}{]} & \(\rightarrow\) Esquerda para a direita \\
+Unário & ++ - - ! \textasciitilde{} (incremento, decremento) &
+\(\leftarrow\) Direita para a esquerda \\
+Multiplicativo & * / \% (vezes, dividido, resto) & \(\rightarrow\)
+Esquerda para a direita \\
+Aditivo & + - (soma, subtração) & \(\rightarrow\) Esquerda para a
+direita \\
+Shift binário & \textgreater\textgreater{}
+\textgreater\textgreater\textgreater{} \textless\textless{} &
+\(\rightarrow\) Esquerda para a direita \\
+Relacional & \textgreater{} \textgreater= \textless{} \textless= &
+\(\rightarrow\) Esquerda para a direita \\
+Igualdade & == != (é igual a, é diferente de) & \(\rightarrow\) Esquerda
+para a direita \\
+E (AND) bit-a-bit & \& & \(\rightarrow\) Esquerda para a direita \\
+XOR bit-a-bit & \^{} & \(\rightarrow\) Esquerda para a direita \\
+Ou (OR) bit-a-bit & \textbar{} & \(\rightarrow\) Esquerda para a
+direita \\
+E lógico & \&\& & \(\rightarrow\) Esquerda para a direita \\
+Ou lógico & \textbar\textbar{} & \(\rightarrow\) Esquerda para a
+direita \\
+Condicional & ?: & \(\leftarrow\) Direita para a esquerda \\
+Atribuição & = += -= *= /= \%= \textgreater\textgreater=
+\textless\textless= \&= \^{}= \textbar= & \(\leftarrow\) Direita para a
+esquerda \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{tipos-buxe1sicos-de-variuxe1veis}{%
@@ -1424,38 +1344,41 @@ Tabela: Tipos de variáveis em Java/C/CPP/JS
 
 **
 
-\begin{longtable}[]{@{}lllll@{}}
-\toprule
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2000}}@{}}
+\toprule()
 \endhead
 \textbf{Tipo} & \textbf{Descrição} & \textbf{n.~Bits} & \textbf{Mínimo}
-& \textbf{Máximo ( valor )}\tabularnewline
-& & & &\tabularnewline
-\textbf{Tipos inteiros+sinal} & & & &\tabularnewline
-byte & inteiro de 1 byte & \(8\) & \(-128\) & \(127\)\tabularnewline
-short & inteiro curto & \(16\) & \(-2^{15}\) &
-\(2^{15}-1\)\tabularnewline
-int & inteiro & \(32\) & \(-2^{31}\) & \(2^{31}-1\)\tabularnewline
-long & inteiro longo & \(64\) & \(-2^{63}\) &
-\(2^{63}-1\)\tabularnewline
-& & & &\tabularnewline
-\textbf{Tipos reais+ponto flut.} & & & &\tabularnewline
+& \textbf{Máximo ( valor )} \\
+& & & & \\
+\textbf{Tipos inteiros+sinal} & & & & \\
+byte & inteiro de 1 byte & \(8\) & \(-128\) & \(127\) \\
+short & inteiro curto & \(16\) & \(-2^{15}\) & \(2^{15}-1\) \\
+int & inteiro & \(32\) & \(-2^{31}\) & \(2^{31}-1\) \\
+long & inteiro longo & \(64\) & \(-2^{63}\) & \(2^{63}-1\) \\
+& & & & \\
+\textbf{Tipos reais+ponto flut.} & & & & \\
 float & precisão simples & \(32\) & \(2^{-149}\) &
-\((2-2^{-23})2^{127}\)\tabularnewline
+\((2-2^{-23})2^{127}\) \\
 double & precisão dupla & \(64\) & \(2^{-1074}\) &
-\((2-2^{-52}))2^{1023}\)\tabularnewline
-& & & &\tabularnewline
-\textbf{Tipos lógicos} & & & &\tabularnewline
-boolean & valor booleano & \(1\) & \(false\) & \(true\)\tabularnewline
-& & & &\tabularnewline
-\textbf{Tipos alfanuméricos} & & & &\tabularnewline
-char & caractere unicode & \(16\) & \(0\) & \(2^{16}-1\)\tabularnewline
-& & & &\tabularnewline
-\textbf{Classecadeia de caract.} & & & &\tabularnewline
-String & sequência n chars & \(16*n\) & - & -\tabularnewline
-& & & &\tabularnewline
-\textbf{Outras} & & & &\tabularnewline
-void & variável vazia & \(0\) & - & -\tabularnewline
-\bottomrule
+\((2-2^{-52}))2^{1023}\) \\
+& & & & \\
+\textbf{Tipos lógicos} & & & & \\
+boolean & valor booleano & \(1\) & \(false\) & \(true\) \\
+& & & & \\
+\textbf{Tipos alfanuméricos} & & & & \\
+char & caractere unicode & \(16\) & \(0\) & \(2^{16}-1\) \\
+& & & & \\
+\textbf{Classecadeia de caract.} & & & & \\
+String & sequência n chars & \(16*n\) & - & - \\
+& & & & \\
+\textbf{Outras} & & & & \\
+void & variável vazia & \(0\) & - & - \\
+\bottomrule()
 \end{longtable}
 
     **
@@ -1464,115 +1387,38 @@ Tabela: Exemplos de conversão de valores entre tipos de variáveis
 
 **
 
-\begin{longtable}[]{@{}lll@{}}
-\toprule
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2281}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.2456}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5263}}@{}}
+\toprule()
 \endhead
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-\textbf{Conversão}\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\textbf{Método}\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\textbf{Exemplo}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\textbf{C/C++/Java}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-float \(\rightarrow\) int\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-Type cast\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{int\ i\ =\ (int)\ varFloat;}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-double \(\rightarrow\) float\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-Type cast\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{float\ f\ =\ (float)\ varDouble;}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-float, int \(\rightarrow\) double\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-Direto\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{double\ d\ =\ i;\ d\ =\ f;}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-Número \(\rightarrow\) String\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-(Java) direto (C) stdlib.h\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{String\ str\ =\ ""\ +\ f;\ \ str\ =\ snprintf(num);}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-String \(\rightarrow\) int\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-(Java) parse (C) stdlib.h\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{i\ =\ Integer.parseInt(str);\ i\ =\ atoi(str);}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-String \(\rightarrow\) float\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-(Java) parse (C) stdlib.h\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{f\ =\ Float.parseFloat(str);f\ =\ atof(str);}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-String \(\rightarrow\) double\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-(Java) parse (C) stdlib.h\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{d\ =\ Double.parseDouble(str);d\ =\ strtod(str,\ NULL);}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\textbf{JavaScript}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-String \(\rightarrow\) int\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-Parse\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{var\ i\ =\ parseInt(str);}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-String \(\rightarrow\) float\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-Parse\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{var\ f\ =\ parseFloat(str);}\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright
-Número \(\rightarrow\) String\strut
-\end{minipage} & \begin{minipage}[t]{0.22\columnwidth}\raggedright
-toString()\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright
-\texttt{var\ str\ =\ toString(f);}\strut
-\end{minipage}\tabularnewline
-\bottomrule
+\textbf{Conversão} & \textbf{Método} & \textbf{Exemplo} \\
+& & \\
+& & \textbf{C/C++/Java} \\
+float \(\rightarrow\) int & Type cast &
+\texttt{int\ i\ =\ (int)\ varFloat;} \\
+double \(\rightarrow\) float & Type cast &
+\texttt{float\ f\ =\ (float)\ varDouble;} \\
+float, int \(\rightarrow\) double & Direto &
+\texttt{double\ d\ =\ i;\ d\ =\ f;} \\
+Número \(\rightarrow\) String & (Java) direto (C) stdlib.h &
+\texttt{String\ str\ =\ ""\ +\ f;\ \ str\ =\ snprintf(num);} \\
+String \(\rightarrow\) int & (Java) parse (C) stdlib.h &
+\texttt{i\ =\ Integer.parseInt(str);\ i\ =\ atoi(str);} \\
+String \(\rightarrow\) float & (Java) parse (C) stdlib.h &
+\texttt{f\ =\ Float.parseFloat(str);f\ =\ atof(str);} \\
+String \(\rightarrow\) double & (Java) parse (C) stdlib.h &
+\texttt{d\ =\ Double.parseDouble(str);d\ =\ strtod(str,\ NULL);} \\
+& & \\
+& & \textbf{JavaScript} \\
+String \(\rightarrow\) int & Parse &
+\texttt{var\ i\ =\ parseInt(str);} \\
+String \(\rightarrow\) float & Parse &
+\texttt{var\ f\ =\ parseFloat(str);} \\
+Número \(\rightarrow\) String & toString() &
+\texttt{var\ str\ =\ toString(f);} \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{teste-de-mesa}{%
@@ -1596,21 +1442,21 @@ toString()\strut
 Veja um exemplo de teste de mesa, apresentado a seguir:
 
 \begin{longtable}[]{@{}lllll@{}}
-\toprule
-código & c & f & ano & idd\tabularnewline
-\midrule
+\toprule()
+código & c & f & ano & idd \\
+\midrule()
 \endhead
-\texttt{c\ =\ 1} & 1 & & &\tabularnewline
-\texttt{f\ =\ 22} & & 22 & &\tabularnewline
-\texttt{ano\ =\ 1994} & & & 1994 &\tabularnewline
-\texttt{idd\ =\ 0} & & & & 0\tabularnewline
-\texttt{ano=ano+idd} & & & 1994 &\tabularnewline
-\texttt{idd\ *=\ f} & & & & 0\tabularnewline
-\texttt{c\ +=\ 1} & 2 & & &\tabularnewline
-\texttt{ano+=f} & & & 2016 &\tabularnewline
-\texttt{f\ -=\ 4} & & 18 & &\tabularnewline
-\texttt{c\ +=\ 1} & 3 & & &\tabularnewline
-\bottomrule
+\texttt{c\ =\ 1} & 1 & & & \\
+\texttt{f\ =\ 22} & & 22 & & \\
+\texttt{ano\ =\ 1994} & & & 1994 & \\
+\texttt{idd\ =\ 0} & & & & 0 \\
+\texttt{ano=ano+idd} & & & 1994 & \\
+\texttt{idd\ *=\ f} & & & & 0 \\
+\texttt{c\ +=\ 1} & 2 & & & \\
+\texttt{ano+=f} & & & 2016 & \\
+\texttt{f\ -=\ 4} & & 18 & & \\
+\texttt{c\ +=\ 1} & 3 & & & \\
+\bottomrule()
 \end{longtable}
 
     \hypertarget{aprendendo-a-programar}{%

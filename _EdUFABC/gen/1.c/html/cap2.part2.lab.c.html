@@ -14465,6 +14465,10 @@ a.anchor-link {
   display: none;
 }
 
+.highlight  {
+  margin: 0.4em;
+}
+
 /* Input area styling */
 .jp-InputArea {
   overflow: hidden;
@@ -14474,26 +14478,9 @@ a.anchor-link {
   overflow: hidden;
 }
 
-.CodeMirror.cm-s-jupyter .highlight pre {
-/* weird, but --jp-code-padding defined to be 5px but 4px horizontal padding is hardcoded for pre.CodeMirror-line */
-  padding: var(--jp-code-padding) 4px;
+.CodeMirror pre {
   margin: 0;
-
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
-
-}
-
-.jp-OutputArea-output pre {
-  line-height: inherit;
-  font-family: inherit;
-}
-
-.jp-RenderedText pre {
-  color: var(--jp-content-font-color1);
-  font-size: var(--jp-code-font-size);
+  padding: 0;
 }
 
 /* Using table instead of flexbox so that we can use break-inside property */
@@ -14573,12 +14560,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: {
-                    automatic: true
+                    linebreaks: { 
+                    automatic: true 
                     }
                 }
             });
-
+        
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14604,11 +14591,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right">
-<p><img src="%22figs/Capa_Processando_Informacao.jpg%22" alt="" /></p>
+<p><img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right"></p>
+<p><img src="&quot;figs/Capa_Processando_Informacao.jpg&quot;" alt=""></p>
 <p>Este caderno (Notebook) é parte complementar <em>online</em> do livro <strong><a href="https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao">Processando a Informação</a>: um livro prático de programação independente de linguagem</strong>, que deve ser consultado no caso de dúvidas sobre os temas apresentados.</p>
-<blockquote>
-<p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
+<blockquote><p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
 </blockquote>
 
 </div>
@@ -14648,6 +14634,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+
 <pre><code># MINHA(S) FUNÇÃO(ÕES)
 função delta(recebe: real a, real b, real c) retorna real d {
      d = b2 – 4ac
@@ -14665,8 +14652,7 @@ principal {
 
   # SAÍDA
   escreva(“O delta de ax2 +bx + c é ” + valor)
-}
-</code></pre>
+}</code></pre>
 
 </div>
 </div>
@@ -14678,7 +14664,7 @@ principal {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
+<hr>
 <ol>
 <li>Crie um método que receba um valor inteiro qualquer e retorne 0 se este valor for par ou 1 se for ímpar (Dica: utilizar o operador resto %). Teste em um programa principal várias chamadas deste método.</li>
 </ol>
@@ -14693,8 +14679,8 @@ principal {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="2">
+<hr>
+<ol>
 <li>Descreva o procedimento ou função para receber um ponto em coordenadas cartesianas (X, Y) e retornar a distância euclidiana até a origem (0, 0). Teste em um programa principal várias chamadas deste método.</li>
 </ol>
 
@@ -14708,8 +14694,8 @@ principal {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="3">
+<hr>
+<ol>
 <li>Crie um método para calcular o ângulo formado entre um par de pontos X, Y, e o eixo x no plano cartesiano. Teste em um programa principal várias chamadas deste método.</li>
 </ol>
 
@@ -14723,8 +14709,8 @@ principal {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="4">
+<hr>
+<ol>
 <li>Crie um método para calcular o ângulo formado entre um par de pontos X1, Y1 e X2, Y2 e o eixo x no plano cartesiano. Teste em um programa principal várias chamadas deste método.</li>
 </ol>
 
@@ -14738,8 +14724,8 @@ principal {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="5">
+<hr>
+<ol>
 <li>Crie um programa com variáveis globais de um retângulo para base, altura e área. Crie no mesmo programa funções para calcular cada um dos 3 valores a partir dos outros 2: <code>calcula_base()</code>, <code>calcula_altura()</code> e <code>calcula_area()</code>. Teste em um programa principal várias chamadas deste método.</li>
 </ol>
 

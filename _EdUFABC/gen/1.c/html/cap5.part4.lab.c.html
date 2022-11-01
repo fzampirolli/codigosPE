@@ -14465,6 +14465,10 @@ a.anchor-link {
   display: none;
 }
 
+.highlight  {
+  margin: 0.4em;
+}
+
 /* Input area styling */
 .jp-InputArea {
   overflow: hidden;
@@ -14474,26 +14478,9 @@ a.anchor-link {
   overflow: hidden;
 }
 
-.CodeMirror.cm-s-jupyter .highlight pre {
-/* weird, but --jp-code-padding defined to be 5px but 4px horizontal padding is hardcoded for pre.CodeMirror-line */
-  padding: var(--jp-code-padding) 4px;
+.CodeMirror pre {
   margin: 0;
-
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
-
-}
-
-.jp-OutputArea-output pre {
-  line-height: inherit;
-  font-family: inherit;
-}
-
-.jp-RenderedText pre {
-  color: var(--jp-content-font-color1);
-  font-size: var(--jp-code-font-size);
+  padding: 0;
 }
 
 /* Using table instead of flexbox so that we can use break-inside property */
@@ -14573,12 +14560,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: {
-                    automatic: true
+                    linebreaks: { 
+                    automatic: true 
                     }
                 }
             });
-
+        
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14604,11 +14591,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right">
-<p><img src="%22figs/Capa_Processando_Informacao.jpg%22" alt="" /></p>
+<p><img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right"></p>
+<p><img src="&quot;figs/Capa_Processando_Informacao.jpg&quot;" alt=""></p>
 <p>Este caderno (Notebook) é parte complementar <em>online</em> do livro <strong><a href="https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao">Processando a Informação</a>: um livro prático de programação independente de linguagem</strong>, que deve ser consultado no caso de dúvidas sobre os temas apresentados.</p>
-<blockquote>
-<p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
+<blockquote><p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
 </blockquote>
 
 </div>
@@ -14633,7 +14619,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
+<hr>
 <ol>
 <li>Dado um vetor qualquer com $n$ números inteiros entre 0 e 9, faça um módulo que retorna o número que mais se repete.</li>
 </ol>
@@ -14648,8 +14634,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="2">
+<hr>
+<ol>
 <li>Escreva um módulo que retira todos os números repetidos das primeiras N posições de um vetor em ordem crescente, colocando-os em ordem crescente no final do vetor. Exemplo: Para o vetor {1,2,2,3,3,4}, a solução é {1,2,3,4,2,3}.</li>
 </ol>
 
@@ -14663,8 +14649,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="3">
+<hr>
+<ol>
 <li>Escreva um módulo que recebe um vetor lógico de 10 posições e oferece como resultado o produto da operação (((vet[0] E vet[1]) OU vet[2]) E vet[3]) ... e assim por diante.</li>
 </ol>
 
@@ -14678,8 +14664,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="4">
+<hr>
+<ol>
 <li>Faça um programa que leia 30 valores do tipo inteiro e armazene-os em um vetor. A seguir, o programa deverá informar (1) todos os números pares que existem no vetor; (2) o menor e o maior valor existente no vetor; (3) quantos dos valores do vetor são maiores que a média desses valores.</li>
 </ol>
 
@@ -14693,9 +14679,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="5">
-<li>Escreva um algoritmo que permita a leitura dos nomes de 10 pessoas e armaze os nomes lidos em um vetor. Após isto, o algoritmo deve permitir a leitura de mais 1 nome qualquer de pessoa e depois escrever a mensagem ACHEI, se o nome estiver entre os 10 nomes lidos anteriormente (guardados no vetor), ou NÃO ACHEI caso contrário.</li>
+<hr>
+<ol>
+<li>Escreva um algoritmo que permita a leitura dos nomes de 10 pessoas e armaze os nomes lidos em um vetor. Após isto, o algoritmo deve permitir a leitura de mais 1 nome qualquer de pessoa e depois escrever a mensagem ACHEI, se o nome estiver entre os 10 nomes lidos anteriormente (guardados no vetor), ou NÃO ACHEI caso contrário. </li>
 </ol>
 
 </div>
@@ -14708,9 +14694,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="6">
-<li>Escreva um algoritmo que permita a leitura das notas de uma turma de 20 alunos. Calcular a média da turma e contar quantos alunos obtiveram nota acima desta média calculada. Escrever a média da turma e o resultado da contagem.</li>
+<hr>
+<ol>
+<li>Escreva um algoritmo que permita a leitura das notas de uma turma de 20 alunos. Calcular a média da turma e contar quantos alunos obtiveram nota acima desta média calculada. Escrever a média da turma e o resultado da contagem. </li>
 </ol>
 
 </div>
@@ -14723,9 +14709,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="7">
-<li>Ler um vetor Q de 20 posições (aceitar somente números positivos). Escrever a seguir o valor do maior (e menor) elemento de Q e a respectiva posição que ele ocupa no vetor.</li>
+<hr>
+<ol>
+<li>Ler um vetor Q de 20 posições (aceitar somente números positivos). Escrever a seguir o valor do maior (e menor) elemento de Q e a respectiva posição que ele ocupa no vetor. </li>
 </ol>
 
 </div>
@@ -14738,9 +14724,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="8">
-<li>Faça um algoritmo para ler um valor N qualquer (que será o tamanho dos vetores). Após, ler dois vetores A e B (de tamanho N cada um) e depois armazenar em um terceiro vetor Soma a soma dos elementos do vetor A com os do vetor B (respeitando as mesmas posições) e escrever o vetor Soma.</li>
+<hr>
+<ol>
+<li>Faça um algoritmo para ler um valor N qualquer (que será o tamanho dos vetores). Após, ler dois vetores A e B (de tamanho N cada um) e depois armazenar em um terceiro vetor Soma a soma dos elementos do vetor A com os do vetor B (respeitando as mesmas posições) e escrever o vetor Soma.  </li>
 </ol>
 
 </div>
@@ -14753,46 +14739,15 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="9">
-<li>Faça um algoritmo para ler e armazenar em um vetor a temperatura média de todos os dias do ano. Calcular e escrever:</li>
-</ol>
-<ul>
+<hr>
+<ol>
+<li>Faça um algoritmo para ler e armazenar em um vetor a temperatura média de todos os dias do ano. Calcular e escrever:<ul>
 <li>Menor temperatura do ano</li>
 <li>Maior temperatura do ano</li>
 <li>Temperatura média anual</li>
-<li>O número de dias no ano em que a temperatura foi inferior a média anual</li>
+<li>O número de dias no ano em que a temperatura foi inferior a média anual </li>
 </ul>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="10">
-<li>Faça um algoritmo para ler 10 números e armazenar em um vetor. Após isto, o algoritmo deve ordenar os números no vetor em ordem crescente. Depois de ordenar os elementos do vetor em ordem crescente, deve ser lido mais um número qualquer e inserir esse novo número na posição correta, ou seja,</li>
-</ol>
-<p>mantendo a ordem crescente do vetor.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="11">
-<li>Faça um algoritmo para ler um vetor de 20 números. Após isto, deverá ser lido mais um número qualquer e verificar se esse número existe no vetor ou não. Se existir, o algoritmo deve gerar um novo vetor sem esse número. (Considere que não haverão números repetidos no vetor).</li>
+</li>
 </ol>
 
 </div>
@@ -14805,8 +14760,39 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="12">
+<hr>
+<ol>
+<li>Faça um algoritmo para ler 10 números e armazenar em um vetor. Após isto, o algoritmo deve ordenar os números no vetor em ordem crescente. Depois de ordenar os elementos do vetor em ordem crescente, deve ser lido mais um número qualquer e inserir esse novo número na posição correta, ou seja,
+mantendo a ordem crescente do vetor. </li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<ol>
+<li>Faça um algoritmo para ler um vetor de 20 números. Após isto, deverá ser lido mais um número qualquer e verificar se esse número existe no vetor ou não. Se existir, o algoritmo deve gerar um novo vetor sem esse número. (Considere que não haverão números repetidos no vetor). </li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<ol>
 <li>Faça um algoritmo para ler dois vetores V1 e V2 de 15 números cada. Calcular e escrever a quantidade de vezes que V1 e V2 possuem os mesmos números e nas mesmas posições (também, alterar para não ter essa última restrição).</li>
 </ol>
 
@@ -14820,8 +14806,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="13">
+<hr>
+<ol>
 <li>Faça um programa que leia 2 vetores com 10 elementos cada. Considerando cada vetor   como   sendo   um   conjunto,   crie   um   terceiro   vetor,   que   seja   a   união   dos   dois primeiros, e um quarto, que seja a intersecção entre os dois primeiros.</li>
 </ol>
 
@@ -14835,8 +14821,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="14">
+<hr>
+<ol>
 <li>Dado um vetor com números ordenados de forma não decrescente, faça uma função que imprime somente os números que não sejam repetidos.</li>
 </ol>
 
@@ -14850,8 +14836,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="15">
+<hr>
+<ol>
 <li>Faça   uma   função   que   recebe   dois   vetores   de   inteiros,   com   qualquer   número   de elementos cada. Ela deve imprimir todos os valores presentes nos dois vetores. Ex: se v1={19, 5, 2, 6} e v2={5, 0, 9, 4, 18, 56} deverá ser impresso somente o valor 5.</li>
 </ol>
 
@@ -14865,36 +14851,16 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="16">
-<li>Faça um programa que dado o vetor unidimensional [2; 4; 35; 50; 23; 17; 9; 12; 27; 5] retorne:</li>
-</ol>
-<ul>
-<li>maior valor</li>
-<li>média dos valores</li>
-<li>os valores dispostos em ordem crescente</li>
+<hr>
+<ol>
+<li>Faça um programa que dado o vetor unidimensional [2; 4; 35; 50; 23; 17; 9; 12; 27; 5] retorne:  <ul>
+<li>maior valor </li>
+<li>média dos valores </li>
+<li>os valores dispostos em ordem crescente </li>
 <li>sub conjunto de valores primos que está contido no vetor</li>
 </ul>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="17">
-<li>Faça um programa que:</li>
+</li>
 </ol>
-<ul>
-<li>leia 7 valores inteiros e os armazene em um vetor. Listar o vetor com as referidasposições de armazenamento de cada valor.</li>
-<li>ofereça uma função de pesquisa onde dado um valor inteiro qualquer de entrada retornar   a   posição   deste   valor   dentro   do   vetor,   e   caso   este   valor   não   esteja presente no vetor retornar –1.</li>
-<li>ofereça uma função que troque os valores contido no vetor pela seguinte política: cada   elemento   i     dentro   do   vetor   será   substituído   pela   soma   de   todos   os   (i-1) elementos mais o elemento i. Por exemplo, dado um vetor [1; 2; 3; 4; 5] após a aplicação da função teríamos esse vetor preenchido com os seguintes valores [1;3; 6; 10; 15].</li>
-</ul>
 
 </div>
 </div>
@@ -14906,8 +14872,28 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="18">
+<hr>
+<ol>
+<li>Faça um programa que:<ul>
+<li>leia 7 valores inteiros e os armazene em um vetor. Listar o vetor com as referidasposições de armazenamento de cada valor.</li>
+<li>ofereça uma função de pesquisa onde dado um valor inteiro qualquer de entrada retornar   a   posição   deste   valor   dentro   do   vetor,   e   caso   este   valor   não   esteja presente no vetor retornar –1. </li>
+<li>ofereça uma função que troque os valores contido no vetor pela seguinte política: cada   elemento   i     dentro   do   vetor   será   substituído   pela   soma   de   todos   os   (i-1) elementos mais o elemento i. Por exemplo, dado um vetor [1; 2; 3; 4; 5] após a aplicação da função teríamos esse vetor preenchido com os seguintes valores [1;3; 6; 10; 15]. </li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<ol>
 <li>Escrever um programa para ler um vetor de 25 elementos do tipo inteiro e que, apósos valores serem lidos, verifique se existem números repetidos dentro do vetor. Caso exista, deverão ser informados quais são estes números e quantas vezes eles foram repetidos.</li>
 </ol>
 
@@ -14921,8 +14907,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="19">
+<hr>
+<ol>
 <li>Escreva um programa em C para ler um vetor de 10 elementos inteiros. Excluir o1 o  elemento do vetor deslocando os elementos subsequentes de uma posição parao inicio. Imprimir o vetor após a retirada do primeiro elemento.</li>
 </ol>
 
@@ -14936,8 +14922,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="20">
+<hr>
+<ol>
 <li>Escreva   um   programa   em   C   para   ler   um   vetor   X   de   10   elementos   e   um   valor   P(aceitar apenas valores entre 0 e 9) que representa a posição de um elemento dentrodo vetor X. Imprimir o valor do elemento que ocupa a posição informada. Logo após excluir   esse   elemento   do   vetor   fazendo   com   que   os   elementos   subseqüentes   (sehouverem) sejam deslocados de 1 posição para o inicio. Imprimir o vetor   X após a exclusão ter sido executada.</li>
 </ol>
 
@@ -14951,8 +14937,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="21">
+<hr>
+<ol>
 <li>Faça um programa que receba uma lista com  nomes de  alunos,  as  notas de cada aluno e a nota mínima para aprovação na disciplina. O aluno é considerado aprovadose  a média  de  suas  notas  forma  maior  ou  igual  a  nota  mínima  para  aprovação.   O programa deve informar uma lista de alunos aprovados e outra de alunos reprovados.</li>
 </ol>
 
@@ -14966,8 +14952,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="22">
+<hr>
+<ol>
 <li>Escreva um programa para ler $n$ palavras. A seguir imprimir as palavras em ordem alfabética.</li>
 </ol>
 
@@ -14981,8 +14967,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="23">
+<hr>
+<ol>
 <li>Escreva um programa para ler uma frase e contar o número de ocorrências de cada uma das 15 primeiras letras do alfabeto. Imprimir as contagens.</li>
 </ol>
 
@@ -14996,8 +14982,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="24">
+<hr>
+<ol>
 <li>Escreva um programa para ler uma frase e uma letra. A seguir retirar da frase, todas as letras iguais a informada. Imprimir a frase modificada.</li>
 </ol>
 
@@ -15011,8 +14997,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="25">
+<hr>
+<ol>
 <li>Escreva   um   programa  para   ler   uma   frase   e   contar   o   número   de   palavras existentes na frase. Considere palavra um conjunto qualquer de caracteres separados por um conjunto qualquer de espaços em branco.</li>
 </ol>
 
@@ -15026,8 +15012,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="26">
+<hr>
+<ol>
 <li>Escreva  um  programa  que  leia  n  números  inteiros  no  intervalo  [0,50]  e  os  armazeneem um vetor estaticamente alocado com 100 posições.   Preencha um segundo vetor, também alocado estaticamente, apenas com os números ímpares do primeiro vetor. Imprima os dois vetores, 10 elementos por linha.</li>
 </ol>
 
@@ -15041,8 +15027,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="27">
+<hr>
+<ol>
 <li>Leia 10 números inteiros e armazene em um vetor v.  Crie dois novos vetores v1 e v2. Copie os valores ímpares de v para v1, e os valores pares de v para v2. Note que cada um dos vetores v1 e v2 têm no máximo 10 elementos, mas nem todos os elementos são utilizados. No final escreva os elementos UTILIZADOS de v1 e v2.</li>
 </ol>
 
@@ -15056,8 +15042,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="28">
+<hr>
+<ol>
 <li>Faça um programa para ler 10 números DIFERENTES a serem armazenados em um vetor.  Os dados deverão ser armazenados no vetor na ordem que forem sendo lidos, sendo que caso o usuário digite um número que já foi digitado anteriormente, o programadeverá pedir para ele digitar outro número.  Note que cada valor digitado pelo usuário deve ser pesquisado no vetor, verificando se ele existe entre os números que já foram fornecidos. Exibir na tela o vetor final que foi digitado.</li>
 </ol>
 
@@ -15071,8 +15057,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="29">
+<hr>
+<ol>
 <li>Faça um programa que leia dez conjuntos de dois valores, o primeiro representando o número do aluno e o segundo representando a sua altura em metros.  Encontre o aluno mais baixo e o mais alto. Mostre o número do aluno mais baixo e do mais alto, juntamente com suas alturas.</li>
 </ol>
 
@@ -15086,8 +15072,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="30">
+<hr>
+<ol>
 <li>Faça um programa que leia dois números a e b (positivos menores que 10000) e:Crie um vetor onde cada posição é um algarismo do número. A primeira posição é o algarismo menos significativo;Crie um vetor que seja a soma de a e b,  mas faça-o usando apenas os vetores construídos anteriormente. Dica:  some as posições correspondentes.   Se a soma ultrapassar 10,  subtraia 10 do resultado e some 1 à próxima posição.</li>
 </ol>
 
@@ -15101,8 +15087,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="31">
+<hr>
+<ol>
 <li>Faça um programa que leia dois números n e m e:Crie e leia um vetor de inteiros de n posições;Crie e leia um vetor de inteiros de m posições;Crie e construa um vetor de inteiros que seja a interseção entre os dois vetores anteriores, ou seja, que contém apenas os números que estão em ambos os vetores.Crie e construa um quarto vetor de inteiros que seja a uniãoo entre os dois vetores anteriores lidos, ou seja, que contém os elementos dos dois vetores.</li>
 </ol>
 
@@ -15116,8 +15102,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="32">
+<hr>
+<ol>
 <li>Faça um programa que receba o nome de $n$ clientes e armazene-os em um vetor. Em um segundo vetor, armazene a quantidade de DVDs locados em 2009 por cada um dos clientes.  Sabe-se que, para cada dez locações, o cliente tem direito a uma locação grátis. Faça um programa que mostre o nome de todos os clientes, com a quantidade de locações grátis a que ele tem direito.</li>
 </ol>
 
@@ -15131,8 +15117,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="33">
+<hr>
+<ol>
 <li>Faça um programa que preencha três vetores com $n$ posições cada um: o primeiro vetor, com os nomes dos produtos; o segundo vetor, com os códigos dos produtos; e o terceiro vetor; com os preços dos produtos. Mostre um relatório apenas com o nome, o código, o preço e o novo preço dos produtos que sofrerão aumento.  Sabe-se que os produtos que sofrerão aumento são aqueles que possuem código par ou preço superiora R$ 1.000,00. Sabe-se ainda que, para os produtos que satisfizerem às duas condições anteriores, código e preço, o aumento será de 20%; para aqueles que satisfazerem apenas a condição de código, o aumento será de 15%; e aqueles que satisfazerem apenas a condição de preço, o aumento será de 10%.</li>
 </ol>
 
@@ -15146,8 +15132,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="34">
+<hr>
+<ol>
 <li>Faça  um  vetor  de  tamanho  50  preenchido  com  o  seguinte  valor:  $(i+5i)\%i$,  sendo  $i$  aposição do elemento no vetor, em seguida imprima o vetor na tela.</li>
 </ol>
 
@@ -15161,8 +15147,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="35">
+<hr>
+<ol>
 <li>Faça um programa que calcule o desvio padrão (STD) de um vetor $v$ contendo $n$ números, ondem $m$ a média do vetor.</li>
 </ol>
 $$ STD = \sqrt{\frac{1}{n-1} \sum_{i=0}^{n-1}(v[i]-m)^2} $$

@@ -14465,6 +14465,10 @@ a.anchor-link {
   display: none;
 }
 
+.highlight  {
+  margin: 0.4em;
+}
+
 /* Input area styling */
 .jp-InputArea {
   overflow: hidden;
@@ -14474,26 +14478,9 @@ a.anchor-link {
   overflow: hidden;
 }
 
-.CodeMirror.cm-s-jupyter .highlight pre {
-/* weird, but --jp-code-padding defined to be 5px but 4px horizontal padding is hardcoded for pre.CodeMirror-line */
-  padding: var(--jp-code-padding) 4px;
+.CodeMirror pre {
   margin: 0;
-
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
-
-}
-
-.jp-OutputArea-output pre {
-  line-height: inherit;
-  font-family: inherit;
-}
-
-.jp-RenderedText pre {
-  color: var(--jp-content-font-color1);
-  font-size: var(--jp-code-font-size);
+  padding: 0;
 }
 
 /* Using table instead of flexbox so that we can use break-inside property */
@@ -14573,12 +14560,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: {
-                    automatic: true
+                    linebreaks: { 
+                    automatic: true 
                     }
                 }
             });
-
+        
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14604,11 +14591,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right">
-<p><img src="%22figs/Capa_Processando_Informacao.jpg%22" alt="" /></p>
+<p><img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right"></p>
+<p><img src="&quot;figs/Capa_Processando_Informacao.jpg&quot;" alt=""></p>
 <p>Este caderno (Notebook) é parte complementar <em>online</em> do livro <strong><a href="https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao">Processando a Informação</a>: um livro prático de programação independente de linguagem</strong>, que deve ser consultado no caso de dúvidas sobre os temas apresentados.</p>
-<blockquote>
-<p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
+<blockquote><p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
 </blockquote>
 
 </div>
@@ -14632,7 +14618,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
+<hr>
 <ol>
 <li>Criar um vetor de entrada com <code>n</code> posições com valores inteiros positivos e como saída criar um outro vetor também com <code>n</code> posições, onde a cada posição <code>i</code> seja atribuído a cálculo do mínimo do seu vizinho de <code>v1</code> à esquerda <code>i-1</code>, do próprio elemento <code>i</code> e do seu vizinho à direita <code>i+1</code>.</li>
 </ol>
@@ -14647,8 +14633,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="2">
+<hr>
+<ol>
 <li>Criar um vetor com <code>n</code> posições com valores inteiros positivos e, como saída, criar um outro vetor também com <code>n</code> posições, onde em cada posição <code>i</code> seja atribuído a cálculo dos mínimos dos seus vizinhos de <code>v1</code> à esquerda <code>i-2</code> e <code>i-1</code>, do próprio elemento <code>i</code> e dos seus vizinhos à direita <code>i+1</code> e <code>i+2</code>. Generalize este código para os <code>m</code> vizinhos à esquerda e à direita.</li>
 </ol>
 
@@ -14662,8 +14648,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="3">
+<hr>
+<ol>
 <li>O MMC (Mínimo Múltiplo Comum) de dois ou mais números inteiros é o menor múltiplo inteiro positivo comum a todos eles. Fazer uma função chamada MMC que recebe um vetor de números inteiros e retorna o MMC de todos. Veja um exemplo abaixo para calcular o MMC de 12 e 15:</li>
 </ol>
 
@@ -14677,13 +14663,41 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>| a 	| b 	| / 	|
-|-	|-	|-	|
-| 12 	| 15 	| 2 	|
-| 6 	| 15 	| 2 	|
-| 3 	| 15 	| 3 	|
-| 1 	| 5 	| 5 	|
-| 1 	| 1 	| 60 	|</p>
+<table>
+<thead><tr>
+<th>a</th>
+<th>b</th>
+<th>/</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12</td>
+<td>15</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>15</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>15</td>
+<td>3</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>60</td>
+</tr>
+</tbody>
+</table>
 $$MMC = 60 = 2*2*3*5$$
 </div>
 </div>
@@ -14695,8 +14709,8 @@ $$MMC = 60 = 2*2*3*5$$
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="4">
+<hr>
+<ol>
 <li>Criar um vetor de inteiros com n elementos. Inverter este vetor sem usar vetor auxiliar.</li>
 </ol>
 
@@ -14710,8 +14724,8 @@ $$MMC = 60 = 2*2*3*5$$
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr />
-<ol start="5">
+<hr>
+<ol>
 <li>Criar dois vetores de inteiros com n elementos cada. Calcular o produto escalar entre eles.</li>
 </ol>
 

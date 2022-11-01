@@ -84,7 +84,7 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
     \fi
 
     \usepackage{fancyvrb} % verbatim replacement that allows latex
-    \usepackage{grffile} % extends the file name processing of package graphics
+    \usepackage{grffile} % extends the file name processing of package graphics 
                          % to support a larger range
     \makeatletter % fix for old versions of grffile with XeLaTeX
     \@ifpackagelater{grffile}{2019/11/01}
@@ -169,7 +169,7 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
     \newcommand{\RegionMarkerTok}[1]{{#1}}
     \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
     \newcommand{\NormalTok}[1]{{#1}}
-
+    
     % Additional commands for more recent versions of Pandoc
     \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
     \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
@@ -188,8 +188,8 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
     \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
     \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
     \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-
-
+    
+    
     % Define a nice break command that doesn't care if a line doesn't already
     % exist.
     \def\br{\hspace*{\fill} \\* }
@@ -310,53 +310,53 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
 \makeatother
 
 
-    % For linebreaks inside Verbatim environment from package fancyvrb.
+    % For linebreaks inside Verbatim environment from package fancyvrb. 
     \makeatletter
-        \newbox\Wrappedcontinuationbox
-        \newbox\Wrappedvisiblespacebox
-        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}}
-        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}}
-        \newcommand*\Wrappedcontinuationindent {3ex }
-        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox}
-        % Take advantage of the already applied Pygments mark-up to insert
-        % potential linebreaks for TeX processing.
-        %        {, <, #, %, $, ' and ": go to next line.
-        %        _, }, ^, &, >, - and ~: stay at end of broken line.
-        % Use of \textquotesingle for straight quote.
-        \newcommand*\Wrappedbreaksatspecials {%
-            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}%
-            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}%
-            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}%
-            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}%
-            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}%
-            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}%
-            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}%
-            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}%
-            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}%
-            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}%
-            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}%
-            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}%
-            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}%
-            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}%
-        }
-        % Some characters . , ; ? ! / are not pygmentized.
-        % This macro makes them "active" and they will insert potential linebreaks
-        \newcommand*\Wrappedbreaksatpunct {%
-            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}%
-            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}%
-            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}%
-            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}%
-            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}%
-            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}%
-            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}%
+        \newbox\Wrappedcontinuationbox 
+        \newbox\Wrappedvisiblespacebox 
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}} 
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}} 
+        \newcommand*\Wrappedcontinuationindent {3ex } 
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox} 
+        % Take advantage of the already applied Pygments mark-up to insert 
+        % potential linebreaks for TeX processing. 
+        %        {, <, #, %, $, ' and ": go to next line. 
+        %        _, }, ^, &, >, - and ~: stay at end of broken line. 
+        % Use of \textquotesingle for straight quote. 
+        \newcommand*\Wrappedbreaksatspecials {% 
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}% 
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}% 
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}% 
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}% 
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}% 
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}% 
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}% 
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}% 
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}% 
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}% 
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}% 
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}% 
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}% 
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}% 
+        } 
+        % Some characters . , ; ? ! / are not pygmentized. 
+        % This macro makes them "active" and they will insert potential linebreaks 
+        \newcommand*\Wrappedbreaksatpunct {% 
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}% 
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}% 
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}% 
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}% 
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}% 
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}% 
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}% 
             \catcode`\.\active
-            \catcode`\,\active
+            \catcode`\,\active 
             \catcode`\;\active
             \catcode`\:\active
             \catcode`\?\active
             \catcode`\!\active
-            \catcode`\/\active
-            \lccode`\~`\~
+            \catcode`\/\active 
+            \lccode`\~`\~ 	
         }
     \makeatother
 
@@ -379,10 +379,10 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
             \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
             {\kern\fontdimen2\font}%
         }%
-
+        
         % Allow breaks at special characters using \PYG... macros.
         \Wrappedbreaksatspecials
-        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active 	
         \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
     }
     \makeatother
@@ -392,7 +392,7 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
     \definecolor{outcolor}{HTML}{D84315}
     \definecolor{cellborder}{HTML}{CFCFCF}
     \definecolor{cellbackground}{HTML}{F7F7F7}
-
+    
     % prompt
     \makeatletter
     \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
@@ -404,7 +404,7 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
 
     
     % Prevent overflowing lines due to hard-to-break entities
-    \sloppy
+    \sloppy 
     % Setup hyperref package
     \hypersetup{
       breaklinks=true,  % so long urls are correctly broken across lines
@@ -436,7 +436,8 @@ Ponteiros}\label{processando-a-informauxe7uxe3o-cap.-8-ponteiros}}
 
     \includegraphics{"figs/Capa_Processando_Informacao.jpg"}
 
-Este caderno (Notebook) é parte complementar \emph{online} do livro
+Este caderno (Notebook em CONSTRUÇÃO) é parte complementar \emph{online}
+do livro
 \textbf{\href{https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao}{Processando
 a Informação}: um livro prático de programação independente de
 linguagem}, que deve ser consultado no caso de dúvidas sobre os temas
@@ -448,10 +449,14 @@ nesse livro.
 \end{quote}
 
 \begin{quote}
-O conteúdo deste capítulo foi inspirado em: *
-\href{https://www.ime.usp.br/~pf/algoritmos/aulas/pont.html}{Notas do
-prof. Paulo Feofiloff} * Notas de aula de professores da UFABC, em
-especial, dos professores Luiz Rozante e Wagner Botelho.
+O conteúdo deste capítulo foi inspirado em: * Notas do prof. Paulo
+Feofiloff:
+{[}\href{https://www.ime.usp.br/~pf/algoritmos/aulas/pont.html}{1}{]};
+{[}\href{https://www.ime.usp.br/~pf/algoritmos/aulas/aloca.html}{2}{]}.
+* Notas de aula de professores da UFABC, em especial, dos professores
+Luiz Rozante e Wagner Botelho. * Para mais detalhes de tipos de alocação
+de memória, ver
+{[}\href{https://www.inf.ufpr.br/roberto/ci067/10_aloc.html}{ref}{]}.
 \end{quote}
 
     \hypertarget{sumuxe1rio}{%
@@ -464,6 +469,11 @@ especial, dos professores Luiz Rozante e Wagner Botelho.
 \item
   Introdução
 \item
+  Alocação estática
+\item
+  Alocação dinâmica
+\item
+  Alocação dinâmica para \emph{array} multidimensional
 \item
   Revisão deste capítulo
 \item
@@ -566,22 +576,22 @@ especial, dos professores Luiz Rozante e Wagner Botelho.
 \item
   Para a variável ponteiro do tipo \emph{char}, \texttt{char\ *p} ocupa
   um \emph{byte}. Para \emph{int} são 4 \emph{bytes} e para
-  \emph{double} são 8 \emph{bytes}, a dependendo da arquitetura do
+  \emph{double} são 8 \emph{bytes}, a depender da arquitetura do
   computador.
 \item
-  Para saber a quantidade de bytes que uma variável ocupa, usar a função
-  \texttt{sizeof}.
+  Para saber a quantidade de \emph{bytes} de uma variável/tipo, usar a
+  função \texttt{sizeof}.
 \item
-  Por exemplo, para uma variável do tipo \texttt{double} ocupa, basta
-  fazer \texttt{sizeof\ (double)}, ou \texttt{sizeof(p1)}, onde
-  \texttt{p1} foi definido no anterior.
+  Por exemplo, para uma variável do tipo \texttt{double}, basta fazer
+  \texttt{sizeof\ (double)}, ou \texttt{sizeof(p1)}, onde \texttt{p1}
+  foi definido no exemplo anterior.
 \item
-  Também é possível calcular o tamanho de um vetor em tempo de execução.
-  Para o exemplo anterior, basta fazer:
+  Também é possível calcular o tamanho de um vetor alocado
+  estaticamente. Para o exemplo anterior, basta fazer:
   \texttt{sizeof(v)\ /\ sizeof(int)}.
 \item
-  Esse cálculo é útil para saber o tamanho de um \emph{array} definido
-  em tempo de execução (\emph{alocação dinâmica} - ver próxima seção).
+  Esse cálculo é útil para saber o tamanho de um \emph{array} porém tem
+  algumas restriçoes, ver próxima seção.
 \end{itemize}
 
 \includegraphics{"figs/cap8_1.png"}
@@ -695,7 +705,7 @@ gcc \PYZhy{}Wall \PYZhy{}std=c99 cap8ex01.c \PYZhy{}o output
     \begin{itemize}
     \tightlist
     \item
-      sintaxe:
+      sintaxe para \emph{array} de inteiros:
       \texttt{int\ *\ p\ =\ (int\ *)\ malloc(\ TAMANHO\ *\ sizeof(int)\ )}
     \item
       comando utilizado para alocar um \emph{array} de \texttt{TAMANHO}
@@ -704,8 +714,8 @@ gcc \PYZhy{}Wall \PYZhy{}std=c99 cap8ex01.c \PYZhy{}o output
       O ponteiro \texttt{p} aponta para o primeiro elemento do
       \emph{array}.
     \item
-      É possível definir um \emph{array} para qualquer tipo de dado,
-      inclusive para \texttt{struct}.
+      É possível definir um \emph{array} para qualquer tipo de dado, não
+      apenas para \texttt{int}, inclusive para \texttt{struct}.
     \item
       Se \texttt{p\ =\ NULL} então não existe memória suficiente para a
       alocação.
@@ -716,11 +726,20 @@ gcc \PYZhy{}Wall \PYZhy{}std=c99 cap8ex01.c \PYZhy{}o output
     \begin{itemize}
     \tightlist
     \item
-      sintaxe:
+      sintaxe para \emph{array} de inteiros:
       \texttt{int\ *\ p\ =\ (int\ *)\ calloc(\ TAMANHO,\ \ sizeof(int)\ )}
     \item
-      análogo ao \texttt{malloc}, porém com \texttt{calloca} possui dois
-      argumentos e inicializa todos os elementos com 0s.
+      análogo ao \texttt{malloc}, porém:
+
+      \begin{itemize}
+      \tightlist
+      \item
+        o \texttt{calloc} possui dois argumentos;
+      \item
+        inicializa todos os elementos com zeros;
+      \item
+        logo, um pouco mais lento.
+      \end{itemize}
     \end{itemize}
   \item
     \texttt{realloc}
@@ -728,8 +747,8 @@ gcc \PYZhy{}Wall \PYZhy{}std=c99 cap8ex01.c \PYZhy{}o output
     \begin{itemize}
     \tightlist
     \item
-      sintaxe:
-      \texttt{int\ *\ p\ =\ (int\ *)\ realloc(\ TAMANHO,\ \ sizeof(int)\ )}
+      sintaxe para \emph{array} de inteiros:
+      \texttt{p\ =\ (int\ *)\ realloc(\ p,\ TAMANHO\ *\ \ sizeof(int)\ )}
     \item
       realoca um \emph{array}
     \end{itemize}
@@ -743,8 +762,8 @@ gcc \PYZhy{}Wall \PYZhy{}std=c99 cap8ex01.c \PYZhy{}o output
       memória no final, com o camando \texttt{free(p)}.
     \item
       se isso não for feito, a memória será liberada somente quando o
-      computador for desligado (se o sistema operacional não tiver algum
-      recurso de ``coleta de lixo'').
+      computador for desligado ou a aplicação encerrada (se o sistema
+      operacional não tiver algum recurso de ``coleta de lixo'').
     \end{itemize}
   \end{itemize}
 \end{itemize}
@@ -757,9 +776,55 @@ estática}\label{exemplo-de-alocauxe7uxe3o-estuxe1tica}}
 void main(){
     int TAMANHO = 0;
     scanf("%i", &TAMANHO);
-    int v[TAMANHO]; // NÃO PODE ALTER O TAMANHO APÓS CRIADO!!!
+    int v[TAMANHO]; // NÃO PODE ALTER O TAMANHO DE v APÓS CRIADO!!!
     // free(v); // LOGO, NÃO PODE USAR free!!!
 }
+\end{verbatim}
+
+\hypertarget{tamanho-de-um-array}{%
+\paragraph{\texorpdfstring{Tamanho de um
+\emph{array}}{Tamanho de um array}}\label{tamanho-de-um-array}}
+
+\begin{verbatim}
+int main() {
+  int v[5] = { 3,4,5,6,7 };
+
+  printf("sizeof(v)=%ld\n", sizeof(v));
+  printf("sizeof(int)=%ld\n", sizeof(int));
+  printf("tamanho=%li\n", (int) sizeof(p) / sizeof(int));
+  return 0;
+}
+\end{verbatim}
+
+Retorna tamanho CORRETO:
+
+\begin{verbatim}
+sizeof(v)=20
+sizeof(int)=4
+tamanho=5
+\end{verbatim}
+
+Porém, aqui não retorna o esperado
+
+\begin{verbatim}
+void funcao(int* v) {
+  printf("sizeof(v)=%ld\n", sizeof(v));
+  printf("sizeof(int)=%ld\n", sizeof(int));
+  printf("tamanho=%li\n", (int)sizeof(v) / sizeof(int));
+}
+int main() {
+  int v[5] = { 3,4,5,6,7 };
+  funcao(v);
+  return 0;
+}
+\end{verbatim}
+
+Retorna tamanho INCORRETO:
+
+\begin{verbatim}
+sizeof(v)=8
+sizeof(int)=4
+tamanho=2
 \end{verbatim}
 
     \hypertarget{exemplo-de-alocauxe7uxe3o-dinuxe2mica}{%
@@ -775,9 +840,51 @@ void main(){
 }
 \end{verbatim}
 
+\hypertarget{nuxe3o-uxe9-possuxedvel-retornar-o-tamanho-de-um-array-alocado-dinamicamente}{%
+\paragraph{\texorpdfstring{Não é possível retornar o tamanho de um
+\emph{array} alocado
+dinamicamente}{Não é possível retornar o tamanho de um array alocado dinamicamente}}\label{nuxe3o-uxe9-possuxedvel-retornar-o-tamanho-de-um-array-alocado-dinamicamente}}
+
+\begin{verbatim}
+int main() {
+  int* p = (int*)malloc(5 * sizeof(int));
+
+  printf("sizeof(p)=%li\n", sizeof(p));
+  printf("sizeof(int)=%li\n", sizeof(int));
+  printf("tamanho=%li\n", (int) sizeof(p) / sizeof(int));
+  return 0;
+}
+\end{verbatim}
+
+Retorna tamanho INCORRETO:
+
+\begin{verbatim}
+sizeof(p)=8
+sizeof(int)=4
+tamanho=2
+\end{verbatim}
+
     \hypertarget{alocauxe7uxe3o-dinuxe2mica-para-array-multidimensional}{%
 \subsection{\texorpdfstring{Alocação dinâmica para \emph{array}
 multidimensional}{Alocação dinâmica para array multidimensional}}\label{alocauxe7uxe3o-dinuxe2mica-para-array-multidimensional}}
+
+    \begin{itemize}
+\item
+  É possível usar um \emph{array} unidimensional para tratar matriz
+  multidimensional. Por exemplo, para uma matriz de L linha e C colunas
+  de inteiros, temos:
+
+\begin{verbatim}
+int * m = (int *) malloc( L*C*sizeof(int) );
+for (int i=0; i < L; i++) 
+  for (int j=0; j < C; j++) 
+    scanf("%d", m + i*C +j); // m+i*C+j = &m[i*C+j]
+
+// ou simplesmente
+for (int i=0; i < L*C; i++) 
+    scanf("%d", m + i); // linha=i/C e coluna=i%C
+\end{verbatim}
+\end{itemize}
 
     \begin{itemize}
 \tightlist
@@ -806,7 +913,7 @@ multidimensional}{Alocação dinâmica para array multidimensional}}\label{aloca
 
 \begin{verbatim}
   for (int i=0; i < L; i++) 
-    for (int j=0; j < C; J++) 
+    for (int j=0; j < C; j++) 
       scanf("%d", &m[i][j]); // &m[i][j] = m + i*C + j
 \end{verbatim}
   \item
@@ -840,6 +947,12 @@ multidimensional}{Alocação dinâmica para array multidimensional}}\label{aloca
 free(m);
 \end{verbatim}
   \end{itemize}
+\end{itemize}
+
+    \begin{itemize}
+\tightlist
+\item
+  Quais as vantagens de usar matriz como \textbf{ponteiro de ponteiro}?
 \end{itemize}
 
     \hypertarget{exemplo-01---lerescrever-matriz-com-muxe9todos-cap.6---matriz}{%
@@ -1064,13 +1177,11 @@ pasta do Google Drive
 \item
   Introdução
 \item
-  Paradigma Estruturado
+  Alocação estática
 \item
-  Paradigma Orientado a Objetos
+  Alocação dinâmica
 \item
-  Tipos de dados
-\item
-  Arquivos
+  Alocação dinâmica para \emph{array} multidimensional
 \item
   Exercícios
 \item
