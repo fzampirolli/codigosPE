@@ -96,15 +96,15 @@ int lista0_remove_conteudo(Lista0* lista, int conteudo) {
 }
 
 /////////////////// TAD Lista Dinamica ///////////////////
-Lista* lista_cria(void) {
-  Lista* lista = (Lista*)malloc(sizeof(Lista));
+Lista1* lista1_cria(void) {
+  Lista1* lista = (Lista1*)malloc(sizeof(Lista1));
   if (lista == NULL) {
     printf("ERRO: sem memoria\n");
     exit(1);
   }
   return lista;
 }
-void lista_free(Lista* lista) {
+void lista1_free(Lista1* lista) {
   if (lista == NULL) exit(1);
   while ((*lista) != NULL) {
     Celula* no = *lista;
@@ -113,7 +113,7 @@ void lista_free(Lista* lista) {
   }
   free(lista);
 }
-int lista_insere(Lista* lista, int conteudo) {
+int lista1_insere(Lista1* lista, int conteudo) {
   if (lista == NULL) return -1;
   Celula* no = (Celula*)malloc(sizeof(Celula));
   no->conteudo = conteudo;
@@ -121,7 +121,7 @@ int lista_insere(Lista* lista, int conteudo) {
   *lista = no;
   return 1;
 }
-int lista_insere_final(Lista* lista, int conteudo) {
+int lista1_insere_final(Lista1* lista, int conteudo) {
   if (lista == NULL) return -1;
   Celula* no = (Celula*)malloc(sizeof(Celula));
   no->conteudo = conteudo;
@@ -136,7 +136,7 @@ int lista_insere_final(Lista* lista, int conteudo) {
   }
   return 1;
 }
-void lista_imprime(Lista* lista) {
+void lista1_imprime(Lista1* lista) {
   Celula* no = *lista;
   while (no != NULL) {
     printf("%d ", no->conteudo);
@@ -144,7 +144,7 @@ void lista_imprime(Lista* lista) {
   }
   printf("\n");
 }
-int lista_tamanho(Lista* lista) {
+int lista1_tamanho(Lista1* lista) {
   if (lista == NULL) return -1;
   Celula* no = *lista;
   int cont = 0;
@@ -154,14 +154,14 @@ int lista_tamanho(Lista* lista) {
   }
   return cont;
 }
-int lista_remove(Lista* lista) {
+int lista1_remove(Lista1* lista) {
   if (lista == NULL || *lista == NULL) return -1;
   Celula* no = *lista;
   *lista = no->prox;
   free(no);
   return 1;
 }
-int lista_remove_final(Lista* lista) {
+int lista1_remove_final(Lista1* lista) {
   if (lista == NULL || *lista == NULL) return -1;
   Celula* no = *lista, * ant;
   while (no->prox != NULL) {
@@ -175,7 +175,7 @@ int lista_remove_final(Lista* lista) {
   free(no);
   return 1;
 }
-int lista_remove_conteudo(Lista* lista, int conteudo) {
+int lista1_remove_conteudo(Lista1* lista, int conteudo) {
   if (lista == NULL || *lista == NULL) return -1;
   Celula* no = *lista, * ant;
   while (no != NULL && no->conteudo != conteudo) {
@@ -190,4 +190,69 @@ int lista_remove_conteudo(Lista* lista, int conteudo) {
     ant->prox = no->prox;
   free(no);
   return 1;
+}
+
+//////////////////// Versão 2 - ***SEM*** PONTEIRO DE PONTEIRO
+// ref. https://www.ime.usp.br/~pf/algoritmos/aulas/lista.html
+Celula* lista_cria(void) {
+  Celula* inicio = (Celula*)malloc(sizeof(Celula));
+  if (inicio == NULL) {
+    printf("ERRO: sem memoria\n");
+    exit(1);
+  }
+  return inicio;
+}
+void lista_insere(Celula* p, int conteudo) {
+  // insere numa posicao p qualquer da lista
+  if (p == NULL) exit(1);
+  Celula* novo = (Celula*)malloc(sizeof(Celula));
+  novo->conteudo = conteudo;
+  novo->prox = p->prox;
+  p->prox = novo;
+}
+void lista_free(Celula* lista) {
+  if (lista == NULL) exit(1);
+  Celula* aux = lista->prox;
+  while (aux != NULL) {
+    Celula* no = aux;
+    aux = aux->prox;
+    free(no);
+  }
+  free(lista);
+}
+void lista_imprime(Celula* lista) {
+  Celula* p;
+  for (p = lista->prox; p != NULL; p = p->prox)
+    printf("%d ", p->conteudo);
+  printf("\n");
+}
+void lista_remove(Celula* p) {
+  if (p == NULL) exit(1);
+  Celula* no;
+  no = p->prox;
+  p->prox = no->prox;
+  free(no);
+}
+void lista_busca_remove(Celula* cabeca, int conteudo) {
+  if (cabeca == NULL) exit(1);
+  Celula* no, * antes;
+  antes = cabeca;
+  no = antes->prox;
+  while (no != NULL && no->conteudo != conteudo) {
+    antes = no;
+    no = no->prox;
+  }
+  lista_remove(antes);
+}
+void lista_busca_insere(Celula* cabeca, int busca, int novo) {
+  // insere antes da primeiro ocorrencia de conteudo ou no final
+  if (cabeca == NULL) exit(1);
+  Celula* no, * antes;
+  antes = cabeca;
+  no = antes->prox;
+  while (no != NULL && no->conteudo != busca) {
+    antes = no;
+    no = no->prox;
+  }
+  lista_insere(antes, novo);
 }

@@ -22,25 +22,40 @@ int lista0_remove_inicio(Lista0* lista);
 int lista0_troca(Lista0* lista, int i, int j);
 int lista0_remove_conteudo(Lista0* lista, int conteudo); // remove 1o conteudo
 
-/////////////////// TAD Lista Dinamica ///////////////////
+/////////////////// TAD Lista Dinamica V.1 ///////////////////
+typedef struct TCelula Celula;
 struct TCelula {
   int conteudo;
-  struct TCelula* prox;
+  Celula* prox;
 };
-typedef struct TCelula Celula;
-typedef struct TCelula* Lista;
 
-Lista* lista_cria(void);
-void lista_free(Lista* lista);
-int lista_insere(Lista* lista, int conteudo);
-int lista_insere_final(Lista* lista, int conteudo);
-void lista_imprime(Lista* lista);
-int lista_tamanho(Lista* lista);
-int lista_remove(Lista* lista);
-int lista_remove_final(Lista* lista);
-int lista_remove_conteudo(Lista* lista, int conteudo); // remove 1o conteudo
+//////////////////// Versão 1 - PONTEIRO DE PONTEIRO
+typedef struct TCelula* Lista1; // AQUI LISTA1 É PONTEIRO DE PONTEIRO
+
+Lista1* lista1_cria(void);
+void lista1_free(Lista1* lista);
+int lista1_insere(Lista1* lista, int conteudo);
+int lista1_insere_final(Lista1* lista, int conteudo);
+void lista1_imprime(Lista1* lista);
+int lista1_tamanho(Lista1* lista);
+int lista1_remove(Lista1* lista);
+int lista1_remove_final(Lista1* lista);
+int lista1_remove_conteudo(Lista1* lista, int conteudo); // remove 1o conteudo
 /*
 int lista_busca(Lista* lista, int conteudo); // indice 1a ocorrencia
 int lista_remove(Lista* lista); // remove no final
 int lista_troca(Lista* lista, int i, int j);
 */
+
+
+//////////////////// Versão 2 - ***SEM*** PONTEIRO DE PONTEIRO
+// ref.: https://www.ime.usp.br/~pf/algoritmos/aulas/lista.html
+// "o endereço de uma lista é o endereço da primeira célula"
+//
+Celula* lista_cria(void);
+void lista_insere(Celula* p, int conteudo);
+void lista_imprime(Celula* lista);
+void lista_free(Celula* lista);
+void lista_remove(Celula* p);
+void lista_busca_remove(Celula* lista, int conteudo);
+void lista_busca_insere(Celula* cabeca, int busca, int novo);
