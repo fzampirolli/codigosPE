@@ -54,8 +54,8 @@ int lista_troca(Lista* lista, int i, int j);
 //
 Celula* lista_cria(void);
 void lista_insere(Celula* p, int conteudo);
-void lista_imprime(Celula* lista);
-void lista_free(Celula* lista);
+void lista_imprime(Celula* cabeca);
+void lista_free(Celula* cabeca);
 void lista_remove(Celula* p);
-void lista_busca_remove(Celula* lista, int conteudo);
+void lista_busca_remove(Celula* cabeca, int conteudo);
 void lista_busca_insere(Celula* cabeca, int busca, int novo);

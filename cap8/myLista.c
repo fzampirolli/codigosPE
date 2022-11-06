@@ -195,12 +195,12 @@ int lista1_remove_conteudo(Lista1* lista, int conteudo) {
 //////////////////// Versão 2 - ***SEM*** PONTEIRO DE PONTEIRO
 // ref. https://www.ime.usp.br/~pf/algoritmos/aulas/lista.html
 Celula* lista_cria(void) {
-  Celula* inicio = (Celula*)malloc(sizeof(Celula));
-  if (inicio == NULL) {
+  Celula* cabeca = (Celula*)malloc(sizeof(Celula));
+  if (cabeca == NULL) {
     printf("ERRO: sem memoria\n");
     exit(1);
   }
-  return inicio;
+  return cabeca;
 }
 void lista_insere(Celula* p, int conteudo) {
   // insere numa posicao p qualquer da lista
@@ -210,19 +210,19 @@ void lista_insere(Celula* p, int conteudo) {
   novo->prox = p->prox;
   p->prox = novo;
 }
-void lista_free(Celula* lista) {
-  if (lista == NULL) exit(1);
-  Celula* aux = lista->prox;
+void lista_free(Celula* cabeca) {
+  if (cabeca == NULL) exit(1);
+  Celula* aux = cabeca->prox;
   while (aux != NULL) {
     Celula* no = aux;
     aux = aux->prox;
     free(no);
   }
-  free(lista);
+  free(cabeca);
 }
-void lista_imprime(Celula* lista) {
+void lista_imprime(Celula* cabeca) {
   Celula* p;
-  for (p = lista->prox; p != NULL; p = p->prox)
+  for (p = cabeca->prox; p != NULL; p = p->prox)
     printf("%d ", p->conteudo);
   printf("\n");
 }
