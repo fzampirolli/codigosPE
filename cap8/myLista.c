@@ -226,7 +226,7 @@ void lista_imprime(Celula* cabeca) {
     printf("%d ", p->conteudo);
   printf("\n");
 }
-void lista_remove(Celula* p) {
+void lista_remove(Celula* p) { // remove p->prox
   if (p == NULL) exit(1);
   Celula* no;
   no = p->prox;
