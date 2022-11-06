@@ -245,7 +245,7 @@ void lista_busca_remove(Celula* cabeca, int conteudo) {
   lista_remove(antes);
 }
 void lista_busca_insere(Celula* cabeca, int busca, int novo) {
-  // insere antes da primeiro ocorrencia de conteudo ou no final
+  // insere antes da primeira ocorrencia de busca ou no final
   if (cabeca == NULL) exit(1);
   Celula* no, * antes;
   antes = cabeca;
