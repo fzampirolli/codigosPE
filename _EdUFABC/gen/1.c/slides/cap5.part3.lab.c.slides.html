@@ -14599,17 +14599,14 @@ div.jp-OutputPrompt {
 
 /* Scrollbars */
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-::-webkit-scrollbar *
-{
-  background:transparent;
+::-webkit-scrollbar * {
+  background: transparent;
 }
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background: #727272 !important;
 }
 </style>
@@ -14636,12 +14633,12 @@ div.jp-OutputPrompt {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14655,7 +14652,7 @@ div.jp-OutputPrompt {
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
 <div class="reveal">
-<div class="slides"><section><section>
+<div class="slides"><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14673,10 +14670,11 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right"></p>
-<p><img src="&quot;figs/Capa_Processando_Informacao.jpg&quot;" alt=""></p>
+<img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right">
+<p><img src="%22figs/Capa_Processando_Informacao.jpg%22" alt="" /></p>
 <p>Este caderno (Notebook) é parte complementar <em>online</em> do livro <strong><a href="https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao">Processando a Informação</a>: um livro prático de programação independente de linguagem</strong>, que deve ser consultado no caso de dúvidas sobre os temas apresentados.</p>
-<blockquote><p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
+<blockquote>
+<p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
 </blockquote>
 
 </div>
@@ -14700,7 +14698,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
+<hr />
 <ol>
 <li>Criar um vetor de entrada com <code>n</code> posições com valores inteiros positivos e como saída criar um outro vetor também com <code>n</code> posições, onde a cada posição <code>i</code> seja atribuído a cálculo do mínimo do seu vizinho de <code>v1</code> à esquerda <code>i-1</code>, do próprio elemento <code>i</code> e do seu vizinho à direita <code>i+1</code>.</li>
 </ol>
@@ -14715,8 +14713,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="2">
 <li>Criar um vetor com <code>n</code> posições com valores inteiros positivos e, como saída, criar um outro vetor também com <code>n</code> posições, onde em cada posição <code>i</code> seja atribuído a cálculo dos mínimos dos seus vizinhos de <code>v1</code> à esquerda <code>i-2</code> e <code>i-1</code>, do próprio elemento <code>i</code> e dos seus vizinhos à direita <code>i+1</code> e <code>i+2</code>. Generalize este código para os <code>m</code> vizinhos à esquerda e à direita.</li>
 </ol>
 
@@ -14730,8 +14728,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="3">
 <li>O MMC (Mínimo Múltiplo Comum) de dois ou mais números inteiros é o menor múltiplo inteiro positivo comum a todos eles. Fazer uma função chamada MMC que recebe um vetor de números inteiros e retorna o MMC de todos. Veja um exemplo abaixo para calcular o MMC de 12 e 15:</li>
 </ol>
 
@@ -14745,41 +14743,13 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<table>
-<thead><tr>
-<th>a</th>
-<th>b</th>
-<th>/</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>12</td>
-<td>15</td>
-<td>2</td>
-</tr>
-<tr>
-<td>6</td>
-<td>15</td>
-<td>2</td>
-</tr>
-<tr>
-<td>3</td>
-<td>15</td>
-<td>3</td>
-</tr>
-<tr>
-<td>1</td>
-<td>5</td>
-<td>5</td>
-</tr>
-<tr>
-<td>1</td>
-<td>1</td>
-<td>60</td>
-</tr>
-</tbody>
-</table>
+<p>| a 	| b 	| / 	|
+|-	|-	|-	|
+| 12 	| 15 	| 2 	|
+| 6 	| 15 	| 2 	|
+| 3 	| 15 	| 3 	|
+| 1 	| 5 	| 5 	|
+| 1 	| 1 	| 60 	|</p>
 $$MMC = 60 = 2*2*3*5$$
 </div>
 </div>
@@ -14791,8 +14761,8 @@ $$MMC = 60 = 2*2*3*5$$
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="4">
 <li>Criar um vetor de inteiros com n elementos. Inverter este vetor sem usar vetor auxiliar.</li>
 </ol>
 
@@ -14806,8 +14776,8 @@ $$MMC = 60 = 2*2*3*5$$
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="5">
 <li>Criar dois vetores de inteiros com n elementos cada. Calcular o produto escalar entre eles.</li>
 </ol>
 

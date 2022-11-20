@@ -14465,10 +14465,6 @@ a.anchor-link {
   display: none;
 }
 
-.highlight  {
-  margin: 0.4em;
-}
-
 /* Input area styling */
 .jp-InputArea {
   overflow: hidden;
@@ -14478,9 +14474,26 @@ a.anchor-link {
   overflow: hidden;
 }
 
-.CodeMirror pre {
+.CodeMirror.cm-s-jupyter .highlight pre {
+/* weird, but --jp-code-padding defined to be 5px but 4px horizontal padding is hardcoded for pre.CodeMirror-line */
+  padding: var(--jp-code-padding) 4px;
   margin: 0;
-  padding: 0;
+
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+
+}
+
+.jp-OutputArea-output pre {
+  line-height: inherit;
+  font-family: inherit;
+}
+
+.jp-RenderedText pre {
+  color: var(--jp-content-font-color1);
+  font-size: var(--jp-code-font-size);
 }
 
 /* Using table instead of flexbox so that we can use break-inside property */
@@ -14560,12 +14573,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14591,10 +14604,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right"></p>
-<p><img src="&quot;figs/Capa_Processando_Informacao.jpg&quot;" alt=""></p>
+<img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right">
+<p><img src="%22figs/Capa_Processando_Informacao.jpg%22" alt="" /></p>
 <p>Este caderno (Notebook) é parte complementar <em>online</em> do livro <strong><a href="https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao">Processando a Informação</a>: um livro prático de programação independente de linguagem</strong>, que deve ser consultado no caso de dúvidas sobre os temas apresentados.</p>
-<blockquote><p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
+<blockquote>
+<p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
 </blockquote>
 
 </div>
@@ -14634,7 +14648,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </li>
 <li><p>Alterar <code>settings.json</code> em <code>code-runner.executorMap</code>:</p>
 <ul>
-<li><code>"c": "cd $dir &amp;&amp; gcc -Wall -std=c99 $fileName -o ...</code><ul>
+<li><code>&quot;c&quot;: &quot;cd $dir &amp;&amp; gcc -Wall -std=c99 $fileName -o ...</code><ul>
 <li><code>-Wall</code> para mostrar <code>warning</code> (programas ruins)</li>
 <li><code>-std=c99</code> - padrão ANSI ou <a href="https://en.m.wikipedia.org/wiki/C99">C99</a>, os programas seguindo esse padrão são mais portáveis, ou seja, possuem menos problemas de compatibilidade entre diferentes arquiteturas.</li>
 </ul>

@@ -14599,17 +14599,14 @@ div.jp-OutputPrompt {
 
 /* Scrollbars */
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-::-webkit-scrollbar *
-{
-  background:transparent;
+::-webkit-scrollbar * {
+  background: transparent;
 }
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background: #727272 !important;
 }
 </style>
@@ -14636,12 +14633,12 @@ div.jp-OutputPrompt {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14655,7 +14652,7 @@ div.jp-OutputPrompt {
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
 <div class="reveal">
-<div class="slides"><section><section>
+<div class="slides"><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14673,10 +14670,11 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right"></p>
-<p><img src="&quot;figs/Capa_Processando_Informacao.jpg&quot;" alt=""></p>
+<img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right">
+<p><img src="%22figs/Capa_Processando_Informacao.jpg%22" alt="" /></p>
 <p>Este caderno (Notebook) é parte complementar <em>online</em> do livro <strong><a href="https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao">Processando a Informação</a>: um livro prático de programação independente de linguagem</strong>, que deve ser consultado no caso de dúvidas sobre os temas apresentados.</p>
-<blockquote><p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
+<blockquote>
+<p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
 </blockquote>
 
 </div>
@@ -14701,7 +14699,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
+<hr />
 <ol>
 <li>Fazer um programa que leia a capacidade de um elevador e o peso de 5 pessoas. Informar se o elevador está liberado para subir ou se excedeu a carga máxima.</li>
 </ol>
@@ -14716,8 +14714,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="2">
 <li>Faça um programa que leia 4 variáveis A, B, C e D. A seguir, se B for maior do que C e se D for maior do que A e a soma de C com D for maior que a soma de A e B e se C e D, ambos, forem positivos e se a variável A for par, escrever a mensagem “valores aceitos”, senão escrever “valores não aceitos”</li>
 </ol>
 
@@ -14731,8 +14729,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="3">
 <li>Escreva um programa que informe se um dado ano é ou não é bissexto. Um ano é bissexto se ele for divisível por 400 ou se ele for divisível por 4 e não por 100.</li>
 </ol>
 
@@ -14746,8 +14744,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="4">
 <li>Construa um programa que leia um número inteiro e imprima a quantidade de centenas, dezenas e unidades desse número. Considere o seguinte exemplo: o número 345 possui 3 centenas, 4 dezenas e 5 unidades.</li>
 </ol>
 
@@ -14761,21 +14759,28 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="5">
 <li>Faça um programa que pergunte o nome do aluno, a quantidade de dias na semana e o tipo de curso (B para básico, I para intermediário e A para avançado). Mostre o nome do aluno e o valor a ser pago. O valor total é calculado com base nas informações abaixo:</li>
 </ol>
 <ul>
-<li>Caso a opção escolhida for Básico, deverá fazer a seguinte conta:<blockquote><p>Valor Total = (Quantidade de dias na semana <em> 7 ) </em> 15</p>
-</blockquote>
-</li>
-<li>Caso a opção escolhida for Intermediário, deverá fazer a seguinte conta:<blockquote><p>Valor Total = (Quantidade de dias na semana <em> 8,5 ) </em> 20</p>
-</blockquote>
-</li>
-<li>Caso a opção escolhida for Avançado, deverá fazer a seguinte conta:<blockquote><p>Valor Total = (Quantidade de dias na semana <em> 10 ) </em> 25</p>
-</blockquote>
-</li>
+<li>Caso a opção escolhida for Básico, deverá fazer a seguinte conta:</li>
 </ul>
+<blockquote>
+<p>Valor Total = (Quantidade de dias na semana * 7 ) * 15</p>
+</blockquote>
+<ul>
+<li>Caso a opção escolhida for Intermediário, deverá fazer a seguinte conta:</li>
+</ul>
+<blockquote>
+<p>Valor Total = (Quantidade de dias na semana * 8,5 ) * 20</p>
+</blockquote>
+<ul>
+<li>Caso a opção escolhida for Avançado, deverá fazer a seguinte conta:</li>
+</ul>
+<blockquote>
+<p>Valor Total = (Quantidade de dias na semana * 10 ) * 25</p>
+</blockquote>
 
 </div>
 </div>

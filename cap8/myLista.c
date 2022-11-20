@@ -94,6 +94,39 @@ int lista0_remove_conteudo(Lista0* lista, int conteudo) {
   }
   return 0;
 }
+void lista0_Selection(Lista0* lista) {
+  int sim, N = lista->tamanho;
+  do {
+    sim = 0;
+    for (int i = 0; i < N - 1; i++)
+      if (lista->conteudos[i] > lista->conteudos[i + 1]) {
+        lista0_troca(lista, i, i + 1);
+        sim = 1;
+      }
+    N--;
+  } while (sim != 0);
+}
+void lista0_Bubble(Lista0* lista) {
+  for (int i = 0;i < lista->tamanho - 1;i++) {
+    int menor = i;
+    for (int j = i + 1;j < lista->tamanho;j++)
+      if (lista->conteudos[j] < lista->conteudos[menor])
+        menor = j;
+    if (i != menor)
+      lista0_troca(lista, menor, i);
+  }
+}
+void lista0_Insertion(Lista0* lista) {
+  for (int i = 0;i < lista->tamanho;i++) {
+    int atual = lista->conteudos[i];
+    int j = i;
+    while (j > 0 && atual < lista->conteudos[j - 1]) {
+      lista->conteudos[j] = lista->conteudos[j - 1];
+      j--;
+    }
+    lista->conteudos[j] = atual;
+  }
+}
 
 /////////////////// TAD Lista Dinamica ///////////////////
 Lista1* lista1_cria(void) {
@@ -200,10 +233,10 @@ Celula* lista_cria(void) {
     printf("ERRO: sem memoria\n");
     exit(1);
   }
+  cabeca->prox = NULL;
   return cabeca;
 }
 void lista_insere(Celula* p, int conteudo) {
-  // insere numa posicao p qualquer da lista
   if (p == NULL) exit(1);
   Celula* novo = (Celula*)malloc(sizeof(Celula));
   novo->conteudo = conteudo;
@@ -221,8 +254,7 @@ void lista_free(Celula* cabeca) {
   free(cabeca);
 }
 void lista_imprime(Celula* cabeca) {
-  Celula* p;
-  for (p = cabeca->prox; p != NULL; p = p->prox)
+  for (Celula* p = cabeca->prox; p != NULL; p = p->prox)
     printf("%d ", p->conteudo);
   printf("\n");
 }

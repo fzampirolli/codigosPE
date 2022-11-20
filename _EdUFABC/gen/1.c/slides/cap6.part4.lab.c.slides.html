@@ -14599,17 +14599,14 @@ div.jp-OutputPrompt {
 
 /* Scrollbars */
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-::-webkit-scrollbar *
-{
-  background:transparent;
+::-webkit-scrollbar * {
+  background: transparent;
 }
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background: #727272 !important;
 }
 </style>
@@ -14636,12 +14633,12 @@ div.jp-OutputPrompt {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14655,7 +14652,7 @@ div.jp-OutputPrompt {
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
 <div class="reveal">
-<div class="slides"><section><section>
+<div class="slides"><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14673,10 +14670,11 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right"></p>
-<p><img src="&quot;figs/Capa_Processando_Informacao.jpg&quot;" alt=""></p>
+<img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right">
+<p><img src="%22figs/Capa_Processando_Informacao.jpg%22" alt="" /></p>
 <p>Este caderno (Notebook) é parte complementar <em>online</em> do livro <strong><a href="https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao">Processando a Informação</a>: um livro prático de programação independente de linguagem</strong>, que deve ser consultado no caso de dúvidas sobre os temas apresentados.</p>
-<blockquote><p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
+<blockquote>
+<p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
 </blockquote>
 
 </div>
@@ -14701,7 +14699,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
+<hr />
 <ol>
 <li>Uma  matriz  quadrada NxN  lógica  representa  as  posições  minadas  de  um  jogo.  Quando  uma  posição possui  o  valor  VERDADEIRO  significa  que  há  uma  mina  ali.  Escreva  um  programa  que informa  se  é  possível  percorrer  o  tabuleiro  de  um  lado  ao  outro  em  linha  reta  (atravessando uma  linha inteira  ou coluna  inteira)  ou diagonal sem  passar  por  uma  mina  sequer.</li>
 </ol>
@@ -14716,8 +14714,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="2">
 <li>Uma imagem em níveis de cinza pode ser representada por uma matriz. Leia uma imagem A de números inteiros. Leia também um limiar inteiro. Fazer um método para calcular e retornar uma imagem binária de saída B com as mesmas dimensões de A, considerando para cada pixel A(i,j)&gt;limear, B(i,j) deve receber o valor 1, caso contrário recebe o valor 0. Imprimir as imagens de entrada e saída.</li>
 </ol>
 
@@ -14731,8 +14729,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="3">
 <li>Leia uma matriz A de inteiros. Criar uma matriz B considerando que cada elemento de B é o resultado do elemento de A multiplicado pela média dos elementos da linha deste elemento. Arredondar cada elemento com o comando <code>round</code>.</li>
 </ol>
 
@@ -14746,8 +14744,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="4">
 <li>Faça um programa para gerar automaticamente números entre 0 e 99 de uma cartela de bingo. Sabendo que cada cartela deverá conter 5 linhas de 5 números, gere estes dados de modo a não ter números repetidos dentro das cartelas. O programa deve exibir na tela a cartela gerada.</li>
 </ol>
 
@@ -14761,8 +14759,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="5">
 <li>Leia uma matriz 5 x 10 que se refere respostas de 10 questõs de múltipla escolha, referentes a 50 candidatos de um processo seletivo. Leia também um vetor de 10 posições contendo o gabarito de respostas que podem ser a, b, c, d ou e. Seu programa deverá comparar as respostas de cada candidato com o gabarito e emitir um vetor denominado resultado, contendo a pontuação correspondente a cada candidato. Imprimir também a lista de aprovados e em seguinda a lista de reprovados, considernado média 5.</li>
 </ol>
 
@@ -14776,35 +14774,15 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
-<li>Leia uma matriz A de inteiros. Qual é o maior produto de quatro números adjacentes em qualquer direção (cima, baixo, esquerda, direita, ou nas diagonais) na matriz de 20x20 e em qual(is) coordenada(s) ocorreu(ram)? Ou seja, em cada posição <code>[i,j]</code> de A cálcular o máximo valor entre as multiplicações dos elementos abaixo: </li>
+<hr />
+<ol start="6">
+<li>Leia uma matriz A de inteiros. Qual é o maior produto de quatro números adjacentes em qualquer direção (cima, baixo, esquerda, direita, ou nas diagonais) na matriz de 20x20 e em qual(is) coordenada(s) ocorreu(ram)? Ou seja, em cada posição <code>[i,j]</code> de A cálcular o máximo valor entre as multiplicações dos elementos abaixo:</li>
 </ol>
-<table>
-<thead><tr>
-<th style="text-align:center"></th>
-<th style="text-align:center">vizinhança</th>
-<th style="text-align:center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><code>[i-1,j-1]</code></td>
-<td style="text-align:center"><code>[i-1,j]</code></td>
-<td style="text-align:center"><code>[i-1,j+1]</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>[i  ,j-1]</code></td>
-<td style="text-align:center"><strong><code>[i ,j]</code></strong></td>
-<td style="text-align:center"><code>[i  ,j+1]</code></td>
-</tr>
-<tr>
-<td style="text-align:center"><code>[i+1,j-1]</code></td>
-<td style="text-align:center"><code>[i+1,j]</code></td>
-<td style="text-align:center"><code>[i+1,j+1]</code></td>
-</tr>
-</tbody>
-</table>
+<p>| | vizinhança | |
+|:-------:	|:-----:	|:-------:	|
+| <code>[i-1,j-1]</code> 	| <code>[i-1,j]</code> 	| <code>[i-1,j+1]</code> 	|
+| <code>[i ,j-1]</code>  	|<strong><code>[i ,j]</code></strong> | <code>[i ,j+1]</code>  	|
+| <code>[i+1,j-1]</code> 	| <code>[i+1,j]</code> 	| <code>[i+1,j+1]</code> 	|</p>
 
 </div>
 </div>
@@ -14816,8 +14794,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="7">
 <li>Uma matriz  de  caracteres  3x3  foi  utilizada  para  armazenar  uma  partida  de  jogo  da  velha.  Os caracteres  ‘O’  e  ‘X’  foram  utilizados  para  armazenar  a  jogada  de  cada  participante. Informe  na  tela  se  o  vencedor  foi  o  jogador  ‘O’,  o  jogador  ‘X’  ou  se  o  resultado  foi  empate. IMPORTANTE:   não  serão  informadas  partidas  com  dois  vencedores,  apenas  partidas válidas e  todas as 9 casas estarão preenchidas  com  ‘O’ ou ‘X’.</li>
 </ol>
 
@@ -14831,8 +14809,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="8">
 <li>Faça um programa para determinar a próxima jogada em um Jogo da Velha. Assumir que o tabuleiro é representado por uma matriz de 3 x 3, onde cada posição representa uma das casas do tabuleiro. A matriz pode conter os seguintes valores -1, 0, 1 representando respectivamente uma casa contendo uma peça minha (-1), uma casa vazia do tabuleiro (0), e uma casa contendo uma peça do meu oponente (1).</li>
 </ol>
 

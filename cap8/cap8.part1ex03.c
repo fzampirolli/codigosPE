@@ -13,6 +13,10 @@ int main() {
   lista0_imprime(lista);
   lista0_remove_conteudo(lista, 3);
   lista0_imprime(lista);
+  lista0_Bubble(lista);
+  lista0_Selection(lista);
+  lista0_Insertion(lista);
+  lista0_imprime(lista);
   lista0_free(lista);
   return 1;
 }

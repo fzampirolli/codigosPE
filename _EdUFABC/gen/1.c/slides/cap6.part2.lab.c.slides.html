@@ -14599,17 +14599,14 @@ div.jp-OutputPrompt {
 
 /* Scrollbars */
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-::-webkit-scrollbar *
-{
-  background:transparent;
+::-webkit-scrollbar * {
+  background: transparent;
 }
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background: #727272 !important;
 }
 </style>
@@ -14636,12 +14633,12 @@ div.jp-OutputPrompt {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14655,7 +14652,7 @@ div.jp-OutputPrompt {
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
 <div class="reveal">
-<div class="slides"><section><section>
+<div class="slides"><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14673,10 +14670,11 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right"></p>
-<p><img src="&quot;figs/Capa_Processando_Informacao.jpg&quot;" alt=""></p>
+<img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right">
+<p><img src="%22figs/Capa_Processando_Informacao.jpg%22" alt="" /></p>
 <p>Este caderno (Notebook) é parte complementar <em>online</em> do livro <strong><a href="https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao">Processando a Informação</a>: um livro prático de programação independente de linguagem</strong>, que deve ser consultado no caso de dúvidas sobre os temas apresentados.</p>
-<blockquote><p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
+<blockquote>
+<p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
 </blockquote>
 
 </div>
@@ -14700,7 +14698,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
+<hr />
 <ol>
 <li>Criar uma matriz para armazenar as <code>C</code> notas de uma turma e calcular a média de cada aluno, considerando uma turma com <code>L</code> alunos.</li>
 </ol>
@@ -14715,9 +14713,9 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
-<li>Em complemento ao exercício anterior, criar também um vetor de String, onde para cada posição <code>0&lt;=i&lt;L</code> seja armazenada a palavra <code>"reprovado"</code> se a nota for abaixo de 5, ou <code>"aprovado"</code>, caso contrário.</li>
+<hr />
+<ol start="2">
+<li>Em complemento ao exercício anterior, criar também um vetor de String, onde para cada posição <code>0&lt;=i&lt;L</code> seja armazenada a palavra <code>&quot;reprovado&quot;</code> se a nota for abaixo de 5, ou <code>&quot;aprovado&quot;</code>, caso contrário.</li>
 </ol>
 
 </div>
@@ -14730,8 +14728,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="3">
 <li>Criar uma matriz para armazenar <code>L</code> linhas e <code>C</code> colunas. Calcular e exibir a soma dos elementos da diagonal principal e secundária da matriz.</li>
 </ol>
 
@@ -14745,8 +14743,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="4">
 <li>Criar uma matriz para armazenar <code>L</code> linhas e <code>C</code> colunas. Calcular a soma dos elementos acima da diagonal da matriz.</li>
 </ol>
 
@@ -14760,9 +14758,9 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
-<li>Criar uma matriz <code>m1</code> para armazenar <code>L</code> linhas e <code>C</code> colunas. Criar uma outra matriz <code>m2</code> para armazenar <code>m1</code> transposta, com <code>C</code> linhas e <code>L</code> colunas, sendo que a primeira linha de <code>m2</code> contenha os elementos da primeira coluna de <code>m1</code>. Isso se repete para as demais linhas de <code>m2</code> e colunas de <code>m1</code>. </li>
+<hr />
+<ol start="5">
+<li>Criar uma matriz <code>m1</code> para armazenar <code>L</code> linhas e <code>C</code> colunas. Criar uma outra matriz <code>m2</code> para armazenar <code>m1</code> transposta, com <code>C</code> linhas e <code>L</code> colunas, sendo que a primeira linha de <code>m2</code> contenha os elementos da primeira coluna de <code>m1</code>. Isso se repete para as demais linhas de <code>m2</code> e colunas de <code>m1</code>.</li>
 </ol>
 
 </div>

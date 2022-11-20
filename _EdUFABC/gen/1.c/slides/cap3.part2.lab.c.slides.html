@@ -14599,17 +14599,14 @@ div.jp-OutputPrompt {
 
 /* Scrollbars */
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-::-webkit-scrollbar *
-{
-  background:transparent;
+::-webkit-scrollbar * {
+  background: transparent;
 }
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background: #727272 !important;
 }
 </style>
@@ -14636,12 +14633,12 @@ div.jp-OutputPrompt {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14655,7 +14652,7 @@ div.jp-OutputPrompt {
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
 <div class="reveal">
-<div class="slides"><section><section>
+<div class="slides"><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14673,10 +14670,11 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right"></p>
-<p><img src="&quot;figs/Capa_Processando_Informacao.jpg&quot;" alt=""></p>
+<img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right">
+<p><img src="%22figs/Capa_Processando_Informacao.jpg%22" alt="" /></p>
 <p>Este caderno (Notebook) é parte complementar <em>online</em> do livro <strong><a href="https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao">Processando a Informação</a>: um livro prático de programação independente de linguagem</strong>, que deve ser consultado no caso de dúvidas sobre os temas apresentados.</p>
-<blockquote><p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
+<blockquote>
+<p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
 </blockquote>
 
 </div>
@@ -14700,16 +14698,15 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
+<hr />
 <ol>
-<li><p>Crie um método com apenas condicionais e o operador resto (%) para:</p>
+<li>Crie um método com apenas condicionais e o operador resto (%) para:</li>
+</ol>
 <ul>
-<li>Determinar se um número entrado pelo teclado é par ou ímpar, exibindo a mensagem apropriada na tela;  </li>
-<li>Modifique o método anterior para verificar se o número entrado é múltiplo de 3. </li>
+<li>Determinar se um número entrado pelo teclado é par ou ímpar, exibindo a mensagem apropriada na tela;</li>
+<li>Modifique o método anterior para verificar se o número entrado é múltiplo de 3.</li>
 </ul>
 <p>Teste em um programa principal várias chamadas destes métodos.</p>
-</li>
-</ol>
 
 </div>
 </div>
@@ -14721,8 +14718,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="2">
 <li>Faça um programa que leia (peça para o usuário digitar) três números inteiros quaisquer, armazenando nas variáveis A, B e C e imprima os números em ordem do menor para o maior.</li>
 </ol>
 
@@ -14736,8 +14733,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="3">
 <li>Faça um programa que receba três valores inteiros nas variáveis A, B e C e ordene os valores nas próprias variáveis, de forma que, no final da execução, a variável A contenha o menor valor e C o maior valor. O programa deve usar apenas 4 variáveis: A, B, C  e  T.</li>
 </ol>
 
@@ -14751,8 +14748,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="4">
 <li>Faça um programa em qualquer linguagem para determinar a classificação do peso de um indivíduo, de acordo com a tabela:</li>
 </ol>
 
@@ -14766,35 +14763,13 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<table>
-<thead><tr>
-<th style="text-align:center">Tabela:   IMC = peso / altura2</th>
-<th style="text-align:center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Magro</td>
-<td style="text-align:center">IMC até 18,5</td>
-</tr>
-<tr>
-<td style="text-align:center">Saudável</td>
-<td style="text-align:center">IMC até 25,0</td>
-</tr>
-<tr>
-<td style="text-align:center">Acima do peso</td>
-<td style="text-align:center">IMC até 30,0</td>
-</tr>
-<tr>
-<td style="text-align:center">Obeso</td>
-<td style="text-align:center">IMC até 35,0</td>
-</tr>
-<tr>
-<td style="text-align:center">Morbidez</td>
-<td style="text-align:center">IMC 35 mais</td>
-</tr>
-</tbody>
-</table>
+<p>| Tabela:	IMC = peso / altura2||
+|:-:	|:-:	|
+|Magro|IMC até 18,5 |
+|Saudável|IMC até 25,0|
+|Acima do peso|IMC até 30,0|
+|Obeso|IMC até 35,0|
+|Morbidez|IMC 35 mais|</p>
 
 </div>
 </div>
@@ -14806,8 +14781,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<ol>
+<hr />
+<ol start="5">
 <li>Faça um programa para ler três notas (nota1, nota2 e nota3, com pesos 3, 3 e 4, respectivamente), calcular a média ponderada, fazer a conversão para conceito, conforme critérios definidos no Cap. 3.</li>
 </ol>
 

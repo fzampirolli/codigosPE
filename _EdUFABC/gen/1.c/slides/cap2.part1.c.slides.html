@@ -14599,17 +14599,14 @@ div.jp-OutputPrompt {
 
 /* Scrollbars */
 
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
-::-webkit-scrollbar *
-{
-  background:transparent;
+::-webkit-scrollbar * {
+  background: transparent;
 }
-::-webkit-scrollbar-thumb
-{
+::-webkit-scrollbar-thumb {
   background: #727272 !important;
 }
 </style>
@@ -14636,12 +14633,12 @@ div.jp-OutputPrompt {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14655,7 +14652,7 @@ div.jp-OutputPrompt {
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 
 <div class="reveal">
-<div class="slides"><section><section>
+<div class="slides"><section ><section >
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14673,10 +14670,11 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right"></p>
-<p><img src="&quot;figs/Capa_Processando_Informacao.jpg&quot;" alt=""></p>
+<img src="https://editora.ufabc.edu.br/images/Capa_Processando_Informacao.jpg" alt="Capa" width="150" align="right">
+<p><img src="%22figs/Capa_Processando_Informacao.jpg%22" alt="" /></p>
 <p>Este caderno (Notebook) é parte complementar <em>online</em> do livro <strong><a href="https://editora.ufabc.edu.br/matematica-e-ciencias-da-computacao/58-processando-a-informacao">Processando a Informação</a>: um livro prático de programação independente de linguagem</strong>, que deve ser consultado no caso de dúvidas sobre os temas apresentados.</p>
-<blockquote><p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
+<blockquote>
+<p>Este conteúdo pode ser copiado e alterado livremente e foi inspirado nesse livro.</p>
 </blockquote>
 
 </div>
@@ -14693,7 +14691,7 @@ div.jp-OutputPrompt {
 <li>Revisão do capítulo anterior</li>
 <li>Programas sequenciais</li>
 <li>Comentários</li>
-<li>Desvios de fluxo </li>
+<li>Desvios de fluxo</li>
 <li>Programas e Subprogramas</li>
 <li>Funções, métodos e modularização</li>
 <li>Reaproveitamento e manutenção de código</li>
@@ -14776,19 +14774,19 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
 <pre><code>#1 ENTRADA de dados:
 #1.1 Definição das variáveis do programa:
 Real: conta, gorjeta;
 
 #1.2 Entrada de dados
-conta = leia("Entre o valor da conta: ");
+conta = leia(&quot;Entre o valor da conta: &quot;);
 
 #2 PROCESSAMENTO:
 gorjeta = conta * 0.2;
 
 #3 SAÍDA de dados (na tela):
-escreva("Valor da gorjeta = " + gorjeta);</code></pre>
+escreva(&quot;Valor da gorjeta = &quot; + gorjeta);
+</code></pre>
 
 </div>
 </div>
@@ -14830,9 +14828,9 @@ escreva("Valor da gorjeta = " + gorjeta);</code></pre>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
 <li>Comentários são partes do código usados pelo desenvolvedor para deixar notas, explicações, exemplos, etc.</li>
-<li>Quando definido um comentário, é dada uma instrução direta ao <strong>compilador/interpretador para ignorar a parte comentada</strong>. </li>
+<li>Quando definido um comentário, é dada uma instrução direta ao <strong>compilador/interpretador para ignorar a parte comentada</strong>.</li>
 <li>Isto quer dizer que os comentários não serão considerados quando o código for executado.</li>
-<li>Logo, os comentários não são parte da execução. </li>
+<li>Logo, os comentários não são parte da execução.</li>
 <li>Cada linguagem tem sua própria maneira de introduzir comentários no código.</li>
 </ul>
 
@@ -14847,47 +14845,48 @@ escreva("Valor da gorjeta = " + gorjeta);</code></pre>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <table>
-<thead><tr>
-<th>Tabela. Identificadores  de comentário.</th>
-<th></th>
-<th></th>
+<thead>
+<tr>
+  <th>Tabela. Identificadores  de comentário. 	</th>
+  <th></th>
+  <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Linguagem</td>
-<td>Uma linha</td>
-<td>Várias linhas</td>
+  <td>Linguagem</td>
+  <td>Uma linha</td>
+  <td>Várias linhas</td>
 </tr>
 <tr>
-<td>Java/JS/C/C++</td>
-<td>//...</td>
-<td>/*...*/</td>
+  <td>Java/JS/C/C++</td>
+  <td>//...</td>
+  <td>/*...*/</td>
 </tr>
 <tr>
-<td>Python</td>
-<td>#...</td>
-<td>"""...""" ou '''...'''</td>
+  <td>Python</td>
+  <td>#...</td>
+  <td>&quot;&quot;&quot;...&quot;&quot;&quot; ou '''...'''</td>
 </tr>
 <tr>
-<td>Matlab</td>
-<td>%...</td>
-<td>%{...}%</td>
+  <td>Matlab</td>
+  <td>%...</td>
+  <td>%{...}%</td>
 </tr>
 <tr>
-<td>Pascal</td>
-<td>{...}</td>
-<td>{<em>...</em>}</td>
+  <td>Pascal</td>
+  <td>{...}</td>
+  <td>{<em>...</em>}</td>
 </tr>
 <tr>
-<td>SQL</td>
-<td>--...</td>
-<td>/<em>...</em>/</td>
+  <td>SQL</td>
+  <td>--...</td>
+  <td>/<em>...</em>/</td>
 </tr>
 <tr>
-<td>R</td>
-<td>#..</td>
-<td></td>
+  <td>R</td>
+  <td>#..</td>
+  <td></td>
 </tr>
 </tbody>
 </table>
@@ -14948,7 +14947,7 @@ escreva("Valor da gorjeta = " + gorjeta);</code></pre>
 </li>
 <li><p>Dentro de um mesmo programa podem existir <strong>subprogramas</strong> (ou partes) com funções específicas ou subconjuntos de comandos que só serão executados em condições especiais.</p>
 </li>
-<li><p>Todas as linguagens vêm acompanhadas de <strong>bibliotecas</strong>, estas <font color='blue'>contendo funções ou programas de uso comum&lt;/blue&gt;.</p>
+<li><p>Todas as linguagens vêm acompanhadas de <strong>bibliotecas</strong>, estas <font color='blue'>contendo funções ou programas de uso comum</blue>.</p>
 </li>
 <li><p>São exemplos as funções para cálculos matemáticos, para operações de entrada e saída, para comunicação e conversão de dados.</p>
 </li>
@@ -15001,7 +15000,7 @@ escreva("Valor da gorjeta = " + gorjeta);</code></pre>
 <ul>
 <li><p>O uso de funções facilita a <strong>reutilização de código</strong>, dado que uma função é um programa autocontido, com <strong>entrada</strong>, <strong>processamento</strong> e <strong>saída</strong>.</p>
 </li>
-<li><p>Uma função pode ser copiada de um programa para outro ou incorporado em uma biblioteca escrita pelo usuário, utilizando o comando em Python <code>import myBiblioteca</code>. Ou também, para C/C++/Java, <code>#include "myBiblioteca.h"</code>.</p>
+<li><p>Uma função pode ser copiada de um programa para outro ou incorporado em uma biblioteca escrita pelo usuário, utilizando o comando em Python <code>import myBiblioteca</code>. Ou também, para C/C++/Java, <code>#include &quot;myBiblioteca.h&quot;</code>.</p>
 </li>
 <li><p>Uma função é definida por um nome, retorno (opcional), argumento(s) (opcional) e um conjunto de instruções.</p>
 </li>
@@ -15019,7 +15018,6 @@ escreva("Valor da gorjeta = " + gorjeta);</code></pre>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
 <pre><code># MINHA(S) FUNÇÃO(ÕES)
 função delta(recebe: real a, real b, real c) retorna real d {
      d = b2 – 4ac
@@ -15037,7 +15035,8 @@ principal {
 
   # SAÍDA
   escreva(“O delta de ax2 +bx + c é ” + valor)
-}</code></pre>
+}
+</code></pre>
 
 </div>
 </div>
@@ -15049,7 +15048,6 @@ principal {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-
 <pre><code>TERMINOLOGIA: Os métodos podem ser chamados também de 
 módulos, funções, subprogramas ou procedimentos. 
 
@@ -15059,7 +15057,8 @@ Existe uma convenção: quando um método tem argumento(s)
 
 Porém, poucas linguagens fazem distinção na sintaxe entre 
 função e procedimento, como a Pascal, tornando confusa 
-esta convenção.</code></pre>
+esta convenção. 
+</code></pre>
 
 </div>
 </div>
@@ -15083,10 +15082,10 @@ esta convenção.</code></pre>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h6 id="Casos-para-Teste-Moodle+VPL">Casos para Teste Moodle+VPL<a class="anchor-link" href="#Casos-para-Teste-Moodle+VPL">&#182;</a></h6><p>Para o professor criar uma atividade VPL no Moodle para este Exemplo 01, basta incluir em <code>Casos para teste</code>, o seguinte texto (pode incluir mais casos):</p>
-
 <pre><code>case=caso1
 output= 
-O delta de ax^2 + bx + c é -76.0</code></pre>
+O delta de ax^2 + bx + c é -76.0
+</code></pre>
 
 </div>
 </div>
@@ -15101,25 +15100,23 @@ O delta de ax^2 + bx + c é -76.0</code></pre>
 <ul>
 <li><p>Quando uma função não tem <code>return</code> ela deve retornar o tipo <code>void</code> (nada), por exemplo, <code>void escrevaDelta(float d){...}</code>.</p>
 </li>
-<li><p><font color='blue'>Os argumentos de uma função podem ser passados por **valor** ou por **referência**</font>.</p>
+<li><p><font color='blue'>Os argumentos de uma função podem ser passados por <strong>valor</strong> ou por <strong>referência</strong></font>.</p>
 <ul>
-<li>Por <strong>valor</strong>: qualquer alteração do argumento dentro da função não será passada para quem chamou a função. </li>
-<li><font color='red'>Por <strong>referência</strong>: oposto ao anterior, qualquer alteração dentro da função será repassada para quem chamou e isso ocorre passando o endereço de memória da variável (com <code>&amp;</code>) ao ser chamado. Por exemplo: <ul>
-<li>
-<pre><code>incrementaUm(&amp;x)</code></pre>
-&lt;/font&gt;</li>
-</ul>
-</li>
-<li>Esse endereço de memória é definido como o tipo de dados <strong>ponteiro</strong> e será estudado em detalhes na parte de  alocação estática vs dinâmicas.</li>
-<li><font color='red'>Para acessar o conteúdo de uma variável ponteiro, usar o prefixo <code>*</code>. Por exemplo: <ul>
-<li>
-<pre><code>void incrementaUm(int *x) {
-   *x=*x+1;
-}</code></pre>
-&lt;/font&gt;</li>
-</ul>
+<li>Por <strong>valor</strong>: qualquer alteração do argumento dentro da função não será passada para quem chamou a função.</li>
+<li><font color='red'>Por <strong>referência</strong>: oposto ao anterior, qualquer alteração dentro da função será repassada para quem chamou e isso ocorre passando o endereço de memória da variável (com <code>&amp;</code>) ao ser chamado. Por exemplo:</li>
+<li><pre><code>incrementaUm(&amp;x)
+</code></pre>
 </li>
 </ul>
+ </font>
+* Esse endereço de memória é definido como o tipo de dados **ponteiro** e será estudado em detalhes na parte de  alocação estática vs dinâmicas.
+* <font color='red'>Para acessar o conteúdo de uma variável ponteiro, usar o prefixo `*`. Por exemplo: 
+ * ```
+   void incrementaUm(int *x) {
+       *x=*x+1;
+   }
+   ```
+   </font>
 </li>
 <li><p>Observe que o <strong>ESCOPO</strong> da função é definido por <code>{</code> ... <code>}</code>.</p>
 </li>
@@ -15234,7 +15231,7 @@ gcc -Wall -std=c99 cap2ex01.c -o output2
 </li>
 <li><p>Logo possuem variáveis próprias para armazenar seus dados.</p>
 </li>
-<li><p>Estas <font color='blue'>**variáveis locais** só existem no âmbito do subprograma e só durante cada execução (chamada) do mesmo</font>, desaparecendo (ou sendo apagadas) ao término do subprograma ou ao retornar em qualquer ponto com o comando <code>return</code>.</p>
+<li><p>Estas <font color='blue'><strong>variáveis locais</strong> só existem no âmbito do subprograma e só durante cada execução (chamada) do mesmo</font>, desaparecendo (ou sendo apagadas) ao término do subprograma ou ao retornar em qualquer ponto com o comando <code>return</code>.</p>
 </li>
 <li><p><strong>Variáveis globais</strong>, por outro lado, podem ser criadas em um escopo hierarquicamente superior a todos os métodos/funções, desta forma permeando todos os subprogramas.</p>
 </li>
@@ -15266,7 +15263,7 @@ gcc -Wall -std=c99 cap2ex01.c -o output2
 <ul>
 <li><p>Outra vantagem do uso de funções/métodos, além da capacidade de se reaproveitar o código já escrito em novos programas copiando os subprogramas desejados, é</p>
 <ul>
-<li>a possibilidade de se atualizar os métodos sem a necessidade de alterar o código do programa principal. </li>
+<li>a possibilidade de se atualizar os métodos sem a necessidade de alterar o código do programa principal.</li>
 </ul>
 </li>
 <li><p>Para tanto, basta que a comunicação do método (entradas e saídas) permaneça inalterada.</p>
@@ -15277,7 +15274,7 @@ gcc -Wall -std=c99 cap2ex01.c -o output2
 </li>
 <li><p><font color='red'>Esse recurso de métodos de entrada e saída serão muito úteis nos tópicos de Vetores e Matrízes, abordados nos Capítulos 5 e 6, respectivamente</font>,</p>
 <ul>
-<li>quando métodos para ler e escrever um vetor/matriz poderão ser reaproveitados em várias questões. </li>
+<li>quando métodos para ler e escrever um vetor/matriz poderão ser reaproveitados em várias questões.</li>
 </ul>
 </li>
 <li><p>Para não ter muitas cópias desses métodos, é possível criar as nossas bibliotecas.</p>
@@ -15296,22 +15293,24 @@ gcc -Wall -std=c99 cap2ex01.c -o output2
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Para criar uma biblioteca em C devemos:</p>
 <ol>
-<li><p>Criar um arquivo <em>header</em>, por exemplo <code>meusMetodos.h</code>, contendo as assinaturas dos métodos. Para o Exemplo 2 a seguir, esse arquivo deve conter:</p>
-
+<li>Criar um arquivo <em>header</em>, por exemplo <code>meusMetodos.h</code>, contendo as assinaturas dos métodos. Para o Exemplo 2 a seguir, esse arquivo deve conter:</li>
+</ol>
 <pre><code>float delta(float a, float b, float c);
-float leia();</code></pre>
-</li>
-<li><p>Criar um arquivo com as implementações dos métodos, incluindo no início <code>#include "meusMetodos.h"</code>.</p>
+float leia();
+</code></pre>
+<ol start="2">
+<li>Criar um arquivo com as implementações dos métodos, incluindo no início <code>#include &quot;meusMetodos.h&quot;</code>.</li>
+</ol>
 <ul>
 <li>Observar que não devemos utilizar <code>&lt;&gt;</code>, como ocorrem nas bibliotecas padrão do C, como exemplo: <code>#include &lt;stdio.h&gt;</code>.</li>
 </ul>
-</li>
-<li>Nos programas que irão utilizar esses métodos, incluir também no início a biblioteca criada, por exemplo: <code>#include "meusMetodos.h"</code>.</li>
+<ol start="3">
+<li>Nos programas que irão utilizar esses métodos, incluir também no início a biblioteca criada, por exemplo: <code>#include &quot;meusMetodos.h&quot;</code>.</li>
 <li>Para compilar e rodar, basta fazer:</li>
 </ol>
-
 <pre><code>gcc -Wall -std=c99 meusMetodos.c meusProgramas.c -o meusProgramas.o
-./meusProgramas.o</code></pre>
+./meusProgramas.o
+</code></pre>
 
 </div>
 </div>
@@ -15335,7 +15334,6 @@ float leia();</code></pre>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h6 id="Casos-para-Teste-no-Moodle+VPL">Casos para Teste no Moodle+VPL<a class="anchor-link" href="#Casos-para-Teste-no-Moodle+VPL">&#182;</a></h6><p>Para o professor criar uma atividade VPL no Moodle para este Exemplo 02, basta incluir em <code>Casos para teste</code>, o seguinte texto (pode incluir mais casos):</p>
-
 <pre><code>case=caso1
 input=3
 4
@@ -15353,7 +15351,8 @@ input=3
 5
 2
 output= 
-1.0</code></pre>
+1.0
+</code></pre>
 
 </div>
 </div>
@@ -15453,7 +15452,7 @@ gcc -Wall -std=c99 cap2ex02.c -o output2
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Ver notebook Colab no arquivo <code>cap2.part2.lab.*.ipynb</code> (<code>*</code> é a extensão da linguagem), utilizando alguma linguagem de programação de sua preferência, organizadas em subpastas contidas de <code>"gen"</code>, na pasta do Google Drive <a href="https://drive.google.com/drive/folders/1YlFwv8XYN7PYYf-HwDMlkxzbmXzJw9cM?usp=sharing">colabs</a>.</p>
+<p>Ver notebook Colab no arquivo <code>cap2.part2.lab.*.ipynb</code> (<code>*</code> é a extensão da linguagem), utilizando alguma linguagem de programação de sua preferência, organizadas em subpastas contidas de <code>&quot;gen&quot;</code>, na pasta do Google Drive <a href="https://drive.google.com/drive/folders/1YlFwv8XYN7PYYf-HwDMlkxzbmXzJw9cM?usp=sharing">colabs</a>.</p>
 
 </div>
 </div>
@@ -15467,16 +15466,16 @@ gcc -Wall -std=c99 cap2ex02.c -o output2
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Revis%C3%A3o-deste-cap%C3%ADtulo-de-Organiza%C3%A7%C3%A3o-de-C%C3%B3digo">Revis&#227;o deste cap&#237;tulo de Organiza&#231;&#227;o de C&#243;digo<a class="anchor-link" href="#Revis%C3%A3o-deste-cap%C3%ADtulo-de-Organiza%C3%A7%C3%A3o-de-C%C3%B3digo">&#182;</a></h2><ul>
 <li>Programas sequenciais<ul>
-<li>organize o seu código em três parte: <blockquote><p>Entrada $\Rightarrow$ Processamento $\Rightarrow$ Saída</p>
-</blockquote>
-</li>
+<li>organize o seu código em três parte:</li>
 </ul>
+<blockquote>
+Entrada $\Rightarrow$ Processamento $\Rightarrow$ Saída</blockquote>
 </li>
 <li>Comentários<ul>
 <li>São úteis para outros podem ententer o seu código</li>
 </ul>
 </li>
-<li>Desvios de fluxo </li>
+<li>Desvios de fluxo</li>
 <li>Programas e subprogramas</li>
 <li>Funções, métodos e modularização</li>
 <li>Reaproveitamento e manutenção de código<ul>

@@ -84,7 +84,7 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
     \fi
 
     \usepackage{fancyvrb} % verbatim replacement that allows latex
-    \usepackage{grffile} % extends the file name processing of package graphics 
+    \usepackage{grffile} % extends the file name processing of package graphics
                          % to support a larger range
     \makeatletter % fix for old versions of grffile with XeLaTeX
     \@ifpackagelater{grffile}{2019/11/01}
@@ -169,7 +169,7 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
     \newcommand{\RegionMarkerTok}[1]{{#1}}
     \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
     \newcommand{\NormalTok}[1]{{#1}}
-    
+
     % Additional commands for more recent versions of Pandoc
     \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
     \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
@@ -188,8 +188,8 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
     \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
     \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
     \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
-    
-    
+
+
     % Define a nice break command that doesn't care if a line doesn't already
     % exist.
     \def\br{\hspace*{\fill} \\* }
@@ -310,53 +310,53 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
 \makeatother
 
 
-    % For linebreaks inside Verbatim environment from package fancyvrb. 
+    % For linebreaks inside Verbatim environment from package fancyvrb.
     \makeatletter
-        \newbox\Wrappedcontinuationbox 
-        \newbox\Wrappedvisiblespacebox 
-        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}} 
-        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}} 
-        \newcommand*\Wrappedcontinuationindent {3ex } 
-        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox} 
-        % Take advantage of the already applied Pygments mark-up to insert 
-        % potential linebreaks for TeX processing. 
-        %        {, <, #, %, $, ' and ": go to next line. 
-        %        _, }, ^, &, >, - and ~: stay at end of broken line. 
-        % Use of \textquotesingle for straight quote. 
-        \newcommand*\Wrappedbreaksatspecials {% 
-            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}% 
-            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}% 
-            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}% 
-            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}% 
-            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}% 
-            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}% 
-            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}% 
-            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}% 
-            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}% 
-            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}% 
-            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}% 
-            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}% 
-            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}% 
-            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}% 
-        } 
-        % Some characters . , ; ? ! / are not pygmentized. 
-        % This macro makes them "active" and they will insert potential linebreaks 
-        \newcommand*\Wrappedbreaksatpunct {% 
-            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}% 
-            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}% 
-            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}% 
-            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}% 
-            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}% 
-            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}% 
-            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}% 
+        \newbox\Wrappedcontinuationbox
+        \newbox\Wrappedvisiblespacebox
+        \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}}
+        \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}}
+        \newcommand*\Wrappedcontinuationindent {3ex }
+        \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox}
+        % Take advantage of the already applied Pygments mark-up to insert
+        % potential linebreaks for TeX processing.
+        %        {, <, #, %, $, ' and ": go to next line.
+        %        _, }, ^, &, >, - and ~: stay at end of broken line.
+        % Use of \textquotesingle for straight quote.
+        \newcommand*\Wrappedbreaksatspecials {%
+            \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}%
+            \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}%
+            \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}%
+            \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}%
+            \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}%
+            \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}%
+            \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}%
+            \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}%
+            \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}%
+            \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}%
+            \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}%
+            \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}%
+            \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}%
+            \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}%
+        }
+        % Some characters . , ; ? ! / are not pygmentized.
+        % This macro makes them "active" and they will insert potential linebreaks
+        \newcommand*\Wrappedbreaksatpunct {%
+            \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}%
+            \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}%
+            \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}%
+            \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}%
+            \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}%
+            \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}%
+            \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}%
             \catcode`\.\active
-            \catcode`\,\active 
+            \catcode`\,\active
             \catcode`\;\active
             \catcode`\:\active
             \catcode`\?\active
             \catcode`\!\active
-            \catcode`\/\active 
-            \lccode`\~`\~ 	
+            \catcode`\/\active
+            \lccode`\~`\~
         }
     \makeatother
 
@@ -379,10 +379,10 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
             \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
             {\kern\fontdimen2\font}%
         }%
-        
+
         % Allow breaks at special characters using \PYG... macros.
         \Wrappedbreaksatspecials
-        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active 	
+        % Breaks at punctuation characters . , ; ? ! and / need catcode=\active
         \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
     }
     \makeatother
@@ -392,7 +392,7 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
     \definecolor{outcolor}{HTML}{D84315}
     \definecolor{cellborder}{HTML}{CFCFCF}
     \definecolor{cellbackground}{HTML}{F7F7F7}
-    
+
     % prompt
     \makeatletter
     \newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
@@ -404,7 +404,7 @@ Exemplos adaptados para Correção Automática no Moodle+VPL
 
     
     % Prevent overflowing lines due to hard-to-break entities
-    \sloppy 
+    \sloppy
     % Setup hyperref package
     \hypersetup{
       breaklinks=true,  % so long urls are correctly broken across lines
@@ -6290,6 +6290,8 @@ nesse livro.
 \item
   Modularização e vetores
 \item
+  Eficiência de Algortimos
+\item
   Revisão deste capítulo
 \item
   Exercícios
@@ -7429,6 +7431,195 @@ output=v2:
 \end{Verbatim}
 \end{tcolorbox}
 
+    \hypertarget{eficiuxeancia-de-algoritmo}{%
+\subsection{Eficiência de Algoritmo}\label{eficiuxeancia-de-algoritmo}}
+
+    A eficiência de um código (ou melhor, de um algoritmo) se mede
+analisando (ou contando) o número de instruções executadas.
+
+Este tipo de análise de complexidade é útil quando temos uma grande
+quantidade de dados a serem processados.
+
+Assim, um algoritmo mais eficiente (com menos passos) resolve um mesmo
+problema mais rápido. Imagine, por exemplo, que uma simulação física em
+tempo real é bem melhor que uma que leva várias horas para gerar
+resultados. Apesar de ser desejável medir a eficiência de um algoritmo
+considerando a medida de tempo, esta medida depende do sistema utilizado
+(hardware).
+
+Para resolver isto, a análise da complexidade de algoritmo se mede
+através da contagem do número de instruções executadas.
+
+Para simplificar a contagem, podemos considerar apenas algumas
+instruções, como a quantidade de algumas condições lógicas.
+
+    \hypertarget{busca}{%
+\subsubsection{Busca}\label{busca}}
+
+Por exemplo, considerando um algoritmo para buscar um elemento \(x\) em
+um vetor de inteiros com \(n\) elementos, temos, no melhor caso, apenas
+uma instrução, considerando que o elemento \(x\) está na primeira
+posição do vetor.
+
+Neste caso dizemos que o algoritmo de busca possui uma complexidade
+assintótica1 de melhor caso \(\Omega(1)\), ou complexidade constante
+(notação Bachmann--Landau, assintótica ou, como é mais conhecida, Big-O
+notation).
+
+Verifique o teste de mesa a seguir considerando um vetor \(v\) com 5
+elementos, contendo valores de 1 a 5, e considerando também que \(x=1\).
+
+    \begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0182}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.6364}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0182}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1091}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2182}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Função Busca(int vet, int n, int x)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+i
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+v{[}i{]}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Busca(v,5,1)
+\end{minipage} \\
+\midrule()
+\endhead
+1 & para i=0; i \textless{} n; i++ & 0 & & \\
+2 & \_ se v{[}i{]}==x & & 1 & \\
+3 & \_ \_ retorne i & & & 0 \\
+4 & retorne -1 & & & \\
+& \textbf{Valores finais} & & & 0 \\
+\bottomrule()
+\end{longtable}
+
+    Por outro lado, este algoritmo de busca tem no pior caso n instruções de
+comparação, ou seja, se \(x=5\), a instrução na linha 2 será executada 5
+vezes. Neste caso, dizemos que o algoritmo de busca tem complexidade
+assintótica de pior caso \(O(n)\), ou complexidade linear.
+
+Quando \(\Omega(n)=O(n)\), então dizemos que é um algoritmo ótimo, ou
+\(\Theta(n)\) (da ordem de \(n\)).
+
+Por exemplo, considere o algoritmo buscaMaior que encontra o maior
+elemento de um vetor de tamanho n.~Neste caso, o algoritmo buscaMaior
+tem complexidade assintótica \(\Theta(n)\).
+
+    \begin{longtable}[]{@{}lll@{}}
+\toprule()
+& Função buscaMaior(int vet, int n) & Número de instruções \\
+\midrule()
+\endhead
+1 & int maior = v{[}0{]} & 1 \\
+2 & para i=1; i\textless{} n; i++ & n-1 \\
+3 & \_ se maior \textless{} v{[}i{]} & n-1 \\
+4 & \_ \_ maior = v{[}i{]} & \textless{} n-1 \\
+5 & retorne maior & 1 \\
+& \textbf{Complexidade} & \(f(n) <= 3n-1 = \Theta(n)\) \\
+\bottomrule()
+\end{longtable}
+
+    A contagem do número de instruções pode ser realizada de forma
+simplificada somando todas as instruções que aparecem na última coluna
+da tabela anterior, assim
+\(f(n) <= 1 + n-1 + n-1 + n-1 + 1 = 2 + 3(n-1) = 3n -1 <= kn\), para
+algum \(k>=3\). Ou simplesmente, \(f(n) = O(n)\). Como para este
+algoritmo de busca do maior elemento, o melhor caso também é linear, ou
+seja, \(\Omega(n)\). Podemos afirmar então que este algoritmo de busca é
+ótimo, ou seja, \(\Theta(n)\).
+
+    \hypertarget{ordenauxe7uxe3o}{%
+\subsubsection{Ordenação}\label{ordenauxe7uxe3o}}
+
+    Algoritmos muito estudados em análise assintótica são os de ordenação,
+para deixar os valores de um vetor com n elementos em ordem crescente ou
+decrescente. Considere o seguinte algoritmo de ordenação, chamado
+\textbf{Bubble Sort}.
+
+Veja uma simulação do algoritmo \textbf{Bubble Sort} com lego em:
+\url{https://youtu.be/MtcrEhrt_K0}.
+
+Veja a comparação de vários algoritmos de ordenação em:
+\url{https://youtu.be/ZZuD6iUe3Pc}.
+
+Ver também:
+
+\begin{itemize}
+\item
+  https://pt.wikipedia.org/wiki/Bubble\_sort
+\item
+  https://pt.wikipedia.org/wiki/Selection\_sort
+\item
+  https://pt.wikipedia.org/wiki/Insertion\_sort
+\end{itemize}
+
+    \begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0167}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4833}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Função ordena(int vet, int n)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Número de instruções
+\end{minipage} \\
+\midrule()
+\endhead
+1 & para i=0; i\textless n; i++ & n \\
+2 & \_ para j=0; j\textless n; j++ & n*n \\
+3 & \_ \_ se v{[}i{]} \textgreater{} v{[}j{]} & n*n \\
+4 & \_ \_ \_ int aux = v{[}i{]} & \textless{} n*n \\
+5 & \_ \_ \_ v{[}i{]} = v{[}j{]} & \textless{} n*n \\
+6 & \_ \_ \_ v{[}j{]} = aux & \textless{} n*n \\
+7 & retorne v & 1 \\
+& \textbf{Complexidade} & \(f(n) = n*n = O(n^2)\) \\
+\bottomrule()
+\end{longtable}
+
+    A complexidade assintótica de algoritmo considera o seu comportamento
+com um valor grande de dados a serem processados (\(n\) grande) e é
+abordado com detalhes em literaturas mais avançadas de programação.
+
+    Uma versão um pouco melhor deste algoritmo bobble sort é apresentada a
+seguir. As linhas 2 até 6 são executadas seguindo a soma de uma
+progressão aritmética:
+\(f(n) = n+n-1+n-2+...+1 = n*(a_1+a_n)/2 = n*(1+n)/2 = n/2 + n*n/2 <= n^2/2 <= n^2\).
+
+Portanto, apesar de esta versão ser um pouco melhor que a versão
+anterior, ainda tem complexidade assintótica quadrática, ou \(O(n^2)\).
+
+Existem vários algoritmos de ordenação com diferentes ordens de
+complexidade, porém é possível se provar matematicamente que o mais
+eficiente entre eles não poderá ser melhor que \(\Omega(n*log \ n)\).
+
+    \begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0159}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4762}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5079}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Função ordena2(int vet, int n)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Número de instruções
+\end{minipage} \\
+\midrule()
+\endhead
+1 & para i=0; i \textless{} n-1; i++ & n-1 \\
+2 & \_ para j=i+1; j \textless{} n; j++ & n+n-1+n-2+\ldots+1 \\
+3 & \_ \_ se v{[}i{]} \textgreater{} v{[}j{]} & n+n-1+n-2+\ldots+1 \\
+4 & \_ \_ \_ int aux = v{[}i{]} & \textless{} n+n-1+n-2+\ldots+1 \\
+5 & \_ \_ \_ v{[}i{]} = v{[}j{]} & \textless{} n+n-1+n-2+\ldots+1 \\
+6 & \_ \_ \_ v{[}j{]} = aux & \textless{} n+n-1+n-2+\ldots+1 \\
+7 & retorne v & 1 \\
+& ** Complexidade ** & \(f(n) = n*n/2 = O(n^2)\) \\
+\bottomrule()
+\end{longtable}
+
     \hypertarget{exercuxedcios}{%
 \subsection{Exercícios}\label{exercuxedcios}}
 
@@ -7498,7 +7689,7 @@ vetor.
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{5}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{str2int}\PY{o}{.}\PY{n}{c}
 \PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
@@ -7531,7 +7722,7 @@ vetor.
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{6}{\boxspacing}
+\prompt{In}{incolor}{ }{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
 \PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{str2int}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output2}
@@ -7555,7 +7746,6 @@ Como contar as vogais de um texto?
 Vetores}\label{revisuxe3o-deste-capuxedtulo-de-vetores}}
 
 \begin{itemize}
-\tightlist
 \item
   Introdução \textgreater{} Vetores são estruturas para armazenar vários
   elementos de um mesmo tipo de dados em uma única variável.
@@ -7574,6 +7764,12 @@ Vetores}\label{revisuxe3o-deste-capuxedtulo-de-vetores}}
   Modularização e vetores \textgreater{} Muito útil usar principalmente
   os módulos de \texttt{leiaVetor} e \texttt{escrevaVetor}, podendo ser
   reaproveitados em vários códigos.
+\item
+  Eficiência de Algortimos \textgreater{} Busca
+
+  \begin{quote}
+  Ordenação
+  \end{quote}
 \item
   Exercícios
 \item
@@ -9453,7 +9649,7 @@ Objetos}\label{paradigma-orientado-a-objetos}}
   instanciar uma variável \emph{Julia} da classe \textbf{Aluno}.
 \end{itemize}
 
-\includegraphics{"figs/image45.png"}
+\includegraphics{"figs/image46.png"}
 
     \begin{figure}
 \centering
@@ -10196,10 +10392,12 @@ nesse livro.
 O conteúdo deste capítulo foi inspirado em: * Notas do prof. Paulo
 Feofiloff:
 {[}\href{https://www.ime.usp.br/~pf/algoritmos/aulas/pont.html}{1}{]};
-{[}\href{https://www.ime.usp.br/~pf/algoritmos/aulas/aloca.html}{2}{]}.
-* Notas de aula de professores da UFABC, em especial, dos professores
-Luiz Rozante e Wagner Botelho. * Para mais detalhes de tipos de alocação
-de memória, ver
+{[}\href{https://www.ime.usp.br/~pf/algoritmos/aulas/aloca.html}{2}{]};
+{[}\href{https://www.ime.usp.br/~pf/algoritmos/aulas/lista.html}{3}{]};
+{[}\href{https://www.ime.usp.br/~pf/algoritmos/aulas/fila.html}{4}{]}. *
+Notas de aula de professores da UFABC, em especial, dos professores Luiz
+Rozante e Wagner Botelho. * Para mais detalhes de tipos de alocação de
+memória, ver
 {[}\href{https://www.inf.ufpr.br/roberto/ci067/10_aloc.html}{ref}{]}.
 \end{quote}
 
@@ -10218,6 +10416,12 @@ de memória, ver
   Alocação dinâmica
 \item
   Alocação dinâmica para \emph{array} multidimensional
+\item
+  Tipo Abstrato de Dados (TAD) Lista
+\item
+  Tipo Abstrato de Dados (TAD) Fila
+\item
+  Tipo Abstrato de Dados (TAD) Pilha
 \item
   Revisão deste capítulo
 \item
@@ -10613,10 +10817,12 @@ tamanho=2
 multidimensional}{Alocação dinâmica para array multidimensional}}\label{alocauxe7uxe3o-dinuxe2mica-para-array-multidimensional}}
 
     \begin{itemize}
+\tightlist
 \item
   É possível usar um \emph{array} unidimensional para tratar matriz
   multidimensional. Por exemplo, para uma matriz de L linha e C colunas
   de inteiros, temos:
+\end{itemize}
 
 \begin{verbatim}
 int * m = (int *) malloc( L*C*sizeof(int) );
@@ -10628,7 +10834,6 @@ for (int i=0; i < L; i++)
 for (int i=0; i < L*C; i++) 
     scanf("%d", m + i); // linha=i/C e coluna=i%C
 \end{verbatim}
-\end{itemize}
 
     \begin{itemize}
 \tightlist
@@ -10637,6 +10842,7 @@ for (int i=0; i < L*C; i++)
   trabalharmos com \emph{ponteiro para ponteiro}:
 
   \begin{itemize}
+  \tightlist
   \item
     primeiro alocamos memória para as linhas (L) da matriz:
 
@@ -10647,26 +10853,38 @@ for (int i=0; i < L*C; i++)
     \end{itemize}
   \item
     em seguida alocamos memória para cada linha da matriz (colunas C):
+  \end{itemize}
 
 \begin{verbatim}
-  for (int i=0; i < L; i++) 
-    m[i] = (int*) malloc( C * sizeof(int *) ); // m[i] = *(m+i)
+ for (int i=0; i < L; i++) 
+  m[i] = (int*) malloc( C * sizeof(int *) ); // m[i] = *(m+i)
 \end{verbatim}
+
+  \begin{itemize}
+  \tightlist
   \item
     para popular a matriz - opção 1:
+  \end{itemize}
 
 \begin{verbatim}
-  for (int i=0; i < L; i++) 
-    for (int j=0; j < C; j++) 
-      scanf("%d", &m[i][j]); // &m[i][j] = m + i*C + j
+for (int i=0; i < L; i++) 
+  for (int j=0; j < C; j++) 
+    scanf("%d", &m[i][j]); // &m[i][j] = m + i*C + j
 \end{verbatim}
+
+  \begin{itemize}
+  \tightlist
   \item
     para popular a matriz - opção 2:
+  \end{itemize}
 
 \begin{verbatim}
-  for (int i=0; i < L*C; i++) 
-      scanf("%d", m+i); // m+i = &m[i/C][i%C]
+for (int i=0; i < L*C; i++) 
+    scanf("%d", m+i); // m+i = &m[i/C][i%C]
 \end{verbatim}
+
+  \begin{itemize}
+  \tightlist
   \item
     não esquecer de LIBERAR A MEMÓRIA:
 
@@ -10677,8 +10895,8 @@ for (int i=0; i < L*C; i++)
     \end{itemize}
 
 \begin{verbatim}
-  for (int i=0; i < L; i++) 
-    free(m[i]); // m[i] = *(m+i)
+for (int i=0; i < L; i++) 
+free(m[i]); // m[i] = *(m+i)
 \end{verbatim}
 
     \begin{itemize}
@@ -10903,6 +11121,762 @@ Ou utilizando apenas um laço para varrar uma matriz:
    }
 \end{verbatim}
 
+    \hypertarget{tipo-abstrato-de-dado-tad-lista}{%
+\subsection{Tipo Abstrato de Dado (TAD)
+Lista}\label{tipo-abstrato-de-dado-tad-lista}}
+
+    Quando criamos uma estrutura de dados e um conjunto de métodos para
+manipular essa estrutura, podemos dizer que estamos criando um
+\textbf{Tipo Abstrato de Dados (TAD)} (ou também chamado \textbf{Tipo de
+Dado Abstrato}). Esse conceito é também utilizado em Programação
+Orientada a Objetos, encapsutando também os métodos na estrutura. A
+seguir apresentamos dois TADs: \textbf{TAD Lista Estática} e \textbf{TAD
+Lista Encadeada}.
+
+    \hypertarget{tad-lista-estuxe1tica}{%
+\subsubsection{TAD Lista Estática}\label{tad-lista-estuxe1tica}}
+
+    Ao manipular listas estáticas, em algumas situações (por exemplo, não
+altera muito o tamanho máximo \texttt{MAX\_LISTA}), é interessante se
+definir uma estrutura de dados como segue:
+
+\begin{verbatim}
+#define MAX_LISTA 6
+typedef struct {
+  int tamanho;
+  int conteudos[MAX_LISTA];
+} Lista0; // AQUI Lista estática é Lista0 e lista0
+\end{verbatim}
+
+Além dessa estrutura, muitos métodos podem ser úteis para a sua
+manipulação. Por exemplo:
+
+\begin{verbatim}
+Lista0* lista0_cria(void);
+void lista0_free(Lista0* lista);
+int lista0_tamanho(Lista0* lista);
+int lista0_cheia(Lista0* lista);
+int lista0_insere(Lista0* lista, int conteudo); // insere no final
+void lista0_imprime(Lista0* lista);
+int lista0_insere_inicio(Lista0* lista, int conteudo);
+int lista0_busca(Lista0* lista, int conteudo); // indice 1a ocorrencia
+int lista0_remove(Lista0* lista); // remove no final
+int lista0_remove_inicio(Lista0* lista);
+int lista0_troca(Lista0* lista, int i, int j);
+int lista0_remove_conteudo(Lista0* lista, int conteudo); // remove 1o conteudo
+\end{verbatim}
+
+Esses métodos estão implementados e disponíveis no arquivo
+\texttt{myLista.c}, no GitHub, juntamente com o seu uso no programa
+\texttt{cap8.part1ex03.c}:
+https://github.com/fzampirolli/codigosPE/tree/master/cap8
+
+Como esses métodos são aplicações dos conceitos já abordados
+anteriormente (capítulos 5-vetor, 6-matriz e 7-struct), vamos focar o
+restante deste capítulo em \textbf{Listas Encadeadas}.
+
+    \hypertarget{tad-lista-encadeada-ou-dinuxe2mica}{%
+\subsubsection{TAD Lista Encadeada (ou
+dinâmica)}\label{tad-lista-encadeada-ou-dinuxe2mica}}
+
+    Uma vantagem de trabalhar com \textbf{Lista Encadada}, em comparação com
+as listas estáticas, é que os elementos da lista são inseridos/removidos
+em tempo de execução.
+
+Com isso, a princípio não precisamos definir um tamanho da lista (número
+de elementos), muito menos o tamanho máximo, necessários em listas
+estáticas.
+
+Cada elemento de uma lista pode ser definido contendo um conteúdo (por
+exemplo, do tipo inteiro) e um ponteiro para o próximo elemento da
+lista, como segue:
+
+\begin{verbatim}
+typedef struct TCelula Celula;
+struct TCelula {
+  int conteudo;
+  Celula* prox;
+};
+\end{verbatim}
+
+Uma célula \texttt{c} pode ser declarada e manipulada assim:
+
+\begin{verbatim}
+Celula c;
+c.conteudo = 10;
+c.prox = NULL;
+\end{verbatim}
+
+Um ponteiro \texttt{p} para uma célula pode ser definido e manipulado
+assim:
+
+\begin{verbatim}
+Celula *p  = (Celula*)malloc(sizeof(Celula));
+*p->conteudo = 10;
+*p->pro = NULL;
+\end{verbatim}
+
+Uma lista encadeada é um conjunto de células interlicadas e pode ser
+acessada pelo endereço da primeira célula da lista.
+
+Existem várias formas de criar uma lista e de implementar métodos para
+manipular listas encadeadas.
+
+Por exemplo, utilizando ponteiro para ponteiro, lista com ``cabeça'' e
+simplemente, criando um ponteiro para o início da lista, ver figura a
+seguir.
+
+    \hypertarget{ponteiro-para-ponteiro}{%
+\paragraph{Ponteiro para ponteiro}\label{ponteiro-para-ponteiro}}
+
+\begin{verbatim}
+typedef Celula *Lista; // lista é ponteiro para ponteiro
+Lista **lista = (Lista *) malloc(sizeof(Lista));
+*lista = NULL; // lista vazia
+\end{verbatim}
+
+Incluir um primeiro elemento da lista:
+
+\begin{verbatim}
+Celula* no = (Celula*)malloc(sizeof(Celula));
+no->conteudo = conteudo;
+no->prox = *lista;
+*lista = no; 
+\end{verbatim}
+
+    \hypertarget{cabeuxe7a}{%
+\paragraph{Cabeça}\label{cabeuxe7a}}
+
+\begin{verbatim}
+Celula* cabeca = (Celula*)malloc(sizeof(Celula));
+cabeca->prox = NULL; // lista vazia
+\end{verbatim}
+
+Incluir um primeiro elemento da lista:
+
+\begin{verbatim}
+Celula* no = (Celula*)malloc(sizeof(Celula));
+no->conteudo = conteudo;
+no->prox = NULL;
+cabeca->prox = no; 
+\end{verbatim}
+
+    \hypertarget{ponteiro}{%
+\paragraph{Ponteiro}\label{ponteiro}}
+
+\begin{verbatim}
+Celula* p = NULL ; // lista vazia
+\end{verbatim}
+
+Incluir um primeiro elemento da lista:
+
+\begin{verbatim}
+Celula* no = (Celula*)malloc(sizeof(Celula));
+no->conteudo = conteudo;
+no->prox = NULL;
+p = no; 
+\end{verbatim}
+
+Para simplificar alguns métodos, vamos apresentar a seguir algumas
+implementações para manipular lista com cabeça (o primeiro elemento, a
+cabeça, tem o campo \texttt{prox} apontando para o primeiro elemento da
+lista):
+
+\includegraphics{"figs/cap8_3.png"}
+
+    \begin{figure}
+\centering
+\caption{cap8\_3.png}
+\end{figure}
+
+    \hypertarget{exemplo-03---criar-e-manipular-lista-encadeada}{%
+\subsubsection{Exemplo 03 - Criar e manipular lista
+encadeada}\label{exemplo-03---criar-e-manipular-lista-encadeada}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{myLista}\PY{o}{.}\PY{n}{h}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdlib.h\PYZgt{}}
+
+\PY{n}{typedef} \PY{n}{struct} \PY{n}{TCelula} \PY{n}{Celula}\PY{p}{;}
+\PY{n}{struct} \PY{n}{TCelula} \PY{p}{\PYZob{}}
+  \PY{n+nb}{int} \PY{n}{conteudo}\PY{p}{;}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{prox}\PY{p}{;}
+\PY{p}{\PYZcb{}}\PY{p}{;}
+\PY{n}{Celula}\PY{o}{*} \PY{n}{lista\PYZus{}cria}\PY{p}{(}\PY{n}{void}\PY{p}{)}\PY{p}{;}
+\PY{n}{void} \PY{n}{lista\PYZus{}insere}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{p}\PY{p}{,} \PY{n+nb}{int} \PY{n}{conteudo}\PY{p}{)}\PY{p}{;}
+\PY{n}{void} \PY{n}{lista\PYZus{}imprime}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{cabeca}\PY{p}{)}\PY{p}{;}
+\PY{n}{void} \PY{n}{lista\PYZus{}free}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{cabeca}\PY{p}{)}\PY{p}{;}
+\PY{n}{void} \PY{n}{lista\PYZus{}remove}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{p}\PY{p}{)}\PY{p}{;}
+\PY{n}{void} \PY{n}{lista\PYZus{}busca\PYZus{}remove}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{cabeca}\PY{p}{,} \PY{n+nb}{int} \PY{n}{conteudo}\PY{p}{)}\PY{p}{;}
+\PY{n}{void} \PY{n}{lista\PYZus{}busca\PYZus{}insere}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{cabeca}\PY{p}{,} \PY{n+nb}{int} \PY{n}{busca}\PY{p}{,} \PY{n+nb}{int} \PY{n}{novo}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{myLista}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZdq{}myLista.h\PYZdq{}}
+\PY{n}{Celula}\PY{o}{*} \PY{n}{lista\PYZus{}cria}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{cabeca} \PY{o}{=} \PY{p}{(}\PY{n}{Celula}\PY{o}{*}\PY{p}{)}\PY{n}{malloc}\PY{p}{(}\PY{n}{sizeof}\PY{p}{(}\PY{n}{Celula}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{k}{if} \PY{p}{(}\PY{n}{cabeca} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ERRO: sem memoria}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+    \PY{n}{exit}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+  \PY{n}{cabeca}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox} \PY{o}{=} \PY{n}{NULL}\PY{p}{;}
+  \PY{k}{return} \PY{n}{cabeca}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\PY{n}{void} \PY{n}{lista\PYZus{}insere}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{p}\PY{p}{,} \PY{n+nb}{int} \PY{n}{conteudo}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{o}{/}\PY{o}{/} \PY{n}{insere} \PY{n}{numa} \PY{n}{posicao} \PY{n}{p} \PY{n}{qualquer} \PY{n}{da} \PY{n}{lista}
+  \PY{k}{if} \PY{p}{(}\PY{n}{p} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{n}{exit}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{novo} \PY{o}{=} \PY{p}{(}\PY{n}{Celula}\PY{o}{*}\PY{p}{)}\PY{n}{malloc}\PY{p}{(}\PY{n}{sizeof}\PY{p}{(}\PY{n}{Celula}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{novo}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{conteudo} \PY{o}{=} \PY{n}{conteudo}\PY{p}{;}
+  \PY{n}{novo}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox} \PY{o}{=} \PY{n}{p}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;}
+  \PY{n}{p}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox} \PY{o}{=} \PY{n}{novo}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\PY{n}{void} \PY{n}{lista\PYZus{}free}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{cabeca}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{k}{if} \PY{p}{(}\PY{n}{cabeca} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{n}{exit}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{aux} \PY{o}{=} \PY{n}{cabeca}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;}
+  \PY{k}{while} \PY{p}{(}\PY{n}{aux} \PY{o}{!=} \PY{n}{NULL}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{Celula}\PY{o}{*} \PY{n}{no} \PY{o}{=} \PY{n}{aux}\PY{p}{;}
+    \PY{n}{aux} \PY{o}{=} \PY{n}{aux}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;}
+    \PY{n}{free}\PY{p}{(}\PY{n}{no}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+  \PY{n}{free}\PY{p}{(}\PY{n}{cabeca}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\PY{n}{void} \PY{n}{lista\PYZus{}imprime}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{cabeca}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{p}\PY{p}{;}
+  \PY{k}{for} \PY{p}{(}\PY{n}{p} \PY{o}{=} \PY{n}{cabeca}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;} \PY{n}{p} \PY{o}{!=} \PY{n}{NULL}\PY{p}{;} \PY{n}{p} \PY{o}{=} \PY{n}{p}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{)}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{p}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{conteudo}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\PY{n}{void} \PY{n}{lista\PYZus{}remove}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{p}\PY{p}{)} \PY{p}{\PYZob{}} \PY{o}{/}\PY{o}{/} \PY{n}{remove} \PY{n}{p}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}
+  \PY{k}{if} \PY{p}{(}\PY{n}{p} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{n}{exit}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{no}\PY{p}{;}
+  \PY{n}{no} \PY{o}{=} \PY{n}{p}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;}
+  \PY{n}{p}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox} \PY{o}{=} \PY{n}{no}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;}
+  \PY{n}{free}\PY{p}{(}\PY{n}{no}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\PY{n}{void} \PY{n}{lista\PYZus{}busca\PYZus{}remove}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{cabeca}\PY{p}{,} \PY{n+nb}{int} \PY{n}{conteudo}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{k}{if} \PY{p}{(}\PY{n}{cabeca} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{n}{exit}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{no}\PY{p}{,} \PY{o}{*} \PY{n}{antes}\PY{p}{;}
+  \PY{n}{antes} \PY{o}{=} \PY{n}{cabeca}\PY{p}{;}
+  \PY{n}{no} \PY{o}{=} \PY{n}{antes}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;}
+  \PY{k}{while} \PY{p}{(}\PY{n}{no} \PY{o}{!=} \PY{n}{NULL} \PY{o}{\PYZam{}}\PY{o}{\PYZam{}} \PY{n}{no}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{conteudo} \PY{o}{!=} \PY{n}{conteudo}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{antes} \PY{o}{=} \PY{n}{no}\PY{p}{;}
+    \PY{n}{no} \PY{o}{=} \PY{n}{no}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+  \PY{n}{lista\PYZus{}remove}\PY{p}{(}\PY{n}{antes}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\PY{n}{void} \PY{n}{lista\PYZus{}busca\PYZus{}insere}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{cabeca}\PY{p}{,} \PY{n+nb}{int} \PY{n}{busca}\PY{p}{,} \PY{n+nb}{int} \PY{n}{novo}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{o}{/}\PY{o}{/} \PY{n}{insere} \PY{n}{antes} \PY{n}{da} \PY{n}{primeira} \PY{n}{ocorrencia} \PY{n}{de} \PY{n}{busca} \PY{n}{ou} \PY{n}{no} \PY{n}{final}
+  \PY{k}{if} \PY{p}{(}\PY{n}{cabeca} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{n}{exit}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{no}\PY{p}{,} \PY{o}{*} \PY{n}{antes}\PY{p}{;}
+  \PY{n}{antes} \PY{o}{=} \PY{n}{cabeca}\PY{p}{;}
+  \PY{n}{no} \PY{o}{=} \PY{n}{antes}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;}
+  \PY{k}{while} \PY{p}{(}\PY{n}{no} \PY{o}{!=} \PY{n}{NULL} \PY{o}{\PYZam{}}\PY{o}{\PYZam{}} \PY{n}{no}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{conteudo} \PY{o}{!=} \PY{n}{busca}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{antes} \PY{o}{=} \PY{n}{no}\PY{p}{;}
+    \PY{n}{no} \PY{o}{=} \PY{n}{no}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+  \PY{n}{lista\PYZus{}insere}\PY{p}{(}\PY{n}{antes}\PY{p}{,} \PY{n}{novo}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap8ex03}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZdq{}myLista.h\PYZdq{}}
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{cabeca} \PY{o}{=} \PY{n}{lista\PYZus{}cria}\PY{p}{(}\PY{p}{)}\PY{p}{;}
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{l+m+mi}{6}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)}
+    \PY{n}{lista\PYZus{}insere}\PY{p}{(}\PY{n}{cabeca}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{n}{lista\PYZus{}imprime}\PY{p}{(}\PY{n}{cabeca}\PY{p}{)}\PY{p}{;}
+  \PY{n}{lista\PYZus{}remove}\PY{p}{(}\PY{n}{cabeca}\PY{p}{)}\PY{p}{;}
+  \PY{n}{lista\PYZus{}imprime}\PY{p}{(}\PY{n}{cabeca}\PY{p}{)}\PY{p}{;}
+  \PY{n}{lista\PYZus{}busca\PYZus{}remove}\PY{p}{(}\PY{n}{cabeca}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}\PY{p}{;}
+  \PY{n}{lista\PYZus{}imprime}\PY{p}{(}\PY{n}{cabeca}\PY{p}{)}\PY{p}{;}
+  \PY{n}{lista\PYZus{}busca\PYZus{}insere}\PY{p}{(}\PY{n}{cabeca}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{)}\PY{p}{;}
+  \PY{n}{lista\PYZus{}imprime}\PY{p}{(}\PY{n}{cabeca}\PY{p}{)}\PY{p}{;}
+  \PY{n}{lista\PYZus{}free}\PY{p}{(}\PY{n}{cabeca}\PY{p}{)}\PY{p}{;}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{ }{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
+\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{myLista}\PY{o}{.}\PY{n}{c} \PY{n}{cap8ex03}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output}
+\PY{o}{.}\PY{o}{/}\PY{n}{output}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \textbf{DESAFIO:} Desenhar o passo-a-passo de cada método no programa
+anterior, como feito da figura acima.
+
+    \hypertarget{tipo-abstrato-de-dado-tad-fila}{%
+\subsection{Tipo Abstrato de Dado (TAD)
+Fila}\label{tipo-abstrato-de-dado-tad-fila}}
+
+    {[}Ref.
+\href{https://www.ime.usp.br/~pf/algoritmos/aulas/fila.html}{Notas do
+prof. Paulo Feofiloff}{]}
+
+Semelhante ao TAD Lista, é possível criar \textbf{TAD Fila}, tendo que
+gerenciar o primeiro (P) e o último (U) elementos dessa estrutura. Ou
+seja, filas são casos particulares de listas. No caso de \textbf{Fila
+Estática}, também é necessário gerenciar o tamanho (N) da fila.
+
+Observe então que TAD Fila não permite inserir/remover elementos do meio
+da estrutura, como ocorrem em TAD Lista.
+
+Semelhante a uma fila (honesta ou sem prioridades) de caixa de
+banco/supermercado, o primeiro a entrar deverá ser também o primeiro a
+sair (\emph{FIFO = First-In-First-Out}).
+
+Para facilitar, é possível criar variáveis globais para gerencia esses
+elementos (P, U e N), ou também, criar uma outra estrutura de dados
+contendo essas informações, a gosto do desenvolvedor.
+
+    \hypertarget{tad-fila-estuxe1tica}{%
+\subsubsection{TAD Fila Estática}\label{tad-fila-estuxe1tica}}
+
+    Ao manipular dados, em algumas situações (por exemplo, quando não altera
+muito o tamanho máximo \texttt{MAX}), é interessante se definir uma
+estrutura de dados estática, como segue:
+
+\begin{verbatim}
+#define MAX 6
+typedef struct {
+  int tamanho;
+  int inicio;
+  int final;
+  int conteudos[MAX];
+} Fila0; // AQUI Fila Estática é Fila0 e fila0
+\end{verbatim}
+
+Além dessa estrutura, muitos métodos podem ser úteis para a sua
+manipulação. Por exemplo:
+
+\begin{verbatim}
+Fila0* fila0_cria(void);
+void fila0_free(Fila0* fila);
+int fila0_tamanho(Fila0* fila);
+int fila0_cheia(Fila0* fila);
+void fila0_imprime(Fila0* fila);
+int fila0_insere(Fila0* fila, int conteudo); // insere no final
+int fila0_remove(Fila0* fila); // remove no inicio
+\end{verbatim}
+
+Esses métodos estão implementados e disponíveis no arquivo
+\texttt{myFila.c}, no GitHub, juntamente com o seu uso no programa
+\texttt{cap8.part1ex06.c}:
+https://github.com/fzampirolli/codigosPE/tree/master/cap8
+
+\includegraphics{"figs/cap8_4.png"}
+
+    \begin{figure}
+\centering
+\caption{cap8\_4.png}
+\end{figure}
+
+    Observe que o \texttt{tamanho} da fila é facilmente calculado, não sendo
+essencial para a \texttt{struct}. Observe também que na Fila Estática,
+onde só é possível inserir no final (e remover no início), fica
+rapidamente cheia (vazia), mas com várias posições do vetor sem conter
+elementos da fila. Uma solução é manipular uma fila circular, como
+ilustrado na figura a seguir. Outra solução é ir dobrando o tamanho da
+fila com o comando \texttt{realloc} para \texttt{2*MAX}, \texttt{4*MAX},
+\(\cdots\).
+
+\includegraphics{"figs/cap8_5.png"}
+
+    \begin{figure}
+\centering
+\caption{cap8\_5.png}
+\end{figure}
+
+    \hypertarget{tad-fila-encadeada}{%
+\subsubsection{TAD Fila Encadeada}\label{tad-fila-encadeada}}
+
+    Uma vantagem de trabalhar com \textbf{Fila Encadada}, em comparação com
+as filas estáticas, é que os elementos da fila são inseridos/removidos
+em tempo de execução.
+
+Com isso, a princípio não precisamos definir um tamanho da fila (número
+de elementos), muito menos o tamanho máximo, necessários em filas
+estáticas.
+
+Cada elemento de uma fila pode ser definido contendo um conteúdo (por
+exemplo, do tipo inteiro) e um ponteiro para o próximo elemento da fila,
+idêntico ao utilizado em listas, como segue:
+
+\begin{verbatim}
+typedef struct TCelula Celula;
+struct TCelula {
+  int conteudo;
+  Celula* prox;
+};
+\end{verbatim}
+
+Um ponteiro \texttt{p} para uma célula pode ser definido e manipulado
+assim:
+
+\begin{verbatim}
+Celula *p  = (Celula*)malloc(sizeof(Celula));
+*p->conteudo = 10;
+*p->pro = NULL;
+\end{verbatim}
+
+Uma fila encadeada é um conjunto de células interlicadas e pode ser
+acessada pelo endereço da primeira célula da fila \texttt{final}.
+Lembrando que se insere no final e se remone no início da fila. Assim, é
+necessário um outro endereço para o \texttt{inicio} da fila. Podemos
+encapsular esses ponteiros em uma nova \texttt{scruct}, ver figura a
+seguir.
+
+    \begin{verbatim}
+typedef struct TFila Fila;
+struct TFila {
+  Celula* inicio;
+  Celula* final;
+};
+\end{verbatim}
+
+\includegraphics{"figs/cap8_6.png"}
+
+    \begin{figure}
+\centering
+\caption{cap8\_6.png}
+\end{figure}
+
+    \hypertarget{exemplo-04---criar-e-manipular-fila-encadeada}{%
+\subsubsection{Exemplo 04 - Criar e manipular fila
+encadeada}\label{exemplo-04---criar-e-manipular-fila-encadeada}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{1}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{myFila}\PY{o}{.}\PY{n}{h}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdlib.h\PYZgt{}}
+
+\PY{c+c1}{\PYZsh{}define MAX 6}
+\PY{n}{typedef} \PY{n}{struct} \PY{n}{TCelula} \PY{n}{Celula}\PY{p}{;}
+\PY{n}{struct} \PY{n}{TCelula} \PY{p}{\PYZob{}}
+  \PY{n+nb}{int} \PY{n}{conteudo}\PY{p}{;}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{prox}\PY{p}{;}
+\PY{p}{\PYZcb{}}\PY{p}{;}
+\PY{n}{typedef} \PY{n}{struct} \PY{n}{TFila} \PY{n}{Fila}\PY{p}{;}
+\PY{n}{struct} \PY{n}{TFila} \PY{p}{\PYZob{}}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{inicio}\PY{p}{;}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{final}\PY{p}{;}
+\PY{p}{\PYZcb{}}\PY{p}{;}
+\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/} \PY{n}{Versão} \PY{o}{*}\PY{o}{*}\PY{o}{*}\PY{n}{SEM}\PY{o}{*}\PY{o}{*}\PY{o}{*} \PY{n}{PONTEIRO} \PY{n}{DE} \PY{n}{PONTEIRO}
+\PY{n}{Fila}\PY{o}{*} \PY{n}{fila\PYZus{}cria}\PY{p}{(}\PY{n}{void}\PY{p}{)}\PY{p}{;}
+\PY{n}{void} \PY{n}{fila\PYZus{}free}\PY{p}{(}\PY{n}{Fila}\PY{o}{*} \PY{n}{fila}\PY{p}{)}\PY{p}{;}
+\PY{n}{void} \PY{n}{fila\PYZus{}imprime}\PY{p}{(}\PY{n}{Fila}\PY{o}{*} \PY{n}{fila}\PY{p}{)}\PY{p}{;}
+\PY{n}{void} \PY{n}{fila\PYZus{}insere}\PY{p}{(}\PY{n}{Fila}\PY{o}{*} \PY{n}{fila}\PY{p}{,} \PY{n+nb}{int} \PY{n}{conteudo}\PY{p}{)}\PY{p}{;}
+\PY{n}{void} \PY{n}{fila\PYZus{}remove}\PY{p}{(}\PY{n}{Fila}\PY{o}{*} \PY{n}{fila}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{2}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{myFila}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZdq{}myFila.h\PYZdq{}}
+\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/} \PY{n}{Versão} \PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{o}{*}\PY{o}{*}\PY{o}{*}\PY{n}{SEM}\PY{o}{*}\PY{o}{*}\PY{o}{*} \PY{n}{PONTEIRO} \PY{n}{DE} \PY{n}{PONTEIRO}
+\PY{n}{Fila}\PY{o}{*} \PY{n}{fila\PYZus{}cria}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{Fila}\PY{o}{*} \PY{n}{f} \PY{o}{=} \PY{p}{(}\PY{n}{Fila}\PY{o}{*}\PY{p}{)}\PY{n}{malloc}\PY{p}{(}\PY{n}{sizeof}\PY{p}{(}\PY{n}{Fila}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{f}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{inicio} \PY{o}{=} \PY{n}{f}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{final} \PY{o}{=} \PY{n}{NULL}\PY{p}{;}
+  \PY{k}{return} \PY{n}{f}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\PY{n}{void} \PY{n}{fila\PYZus{}insere}\PY{p}{(}\PY{n}{Fila}\PY{o}{*} \PY{n}{fila}\PY{p}{,} \PY{n+nb}{int} \PY{n}{conteudo}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{novo} \PY{o}{=} \PY{p}{(}\PY{n}{Celula}\PY{o}{*}\PY{p}{)}\PY{n}{malloc}\PY{p}{(}\PY{n}{sizeof}\PY{p}{(}\PY{n}{Celula}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{novo}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{conteudo} \PY{o}{=} \PY{n}{conteudo}\PY{p}{;}
+  \PY{n}{novo}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox} \PY{o}{=} \PY{n}{fila}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{final}\PY{p}{;}
+  \PY{k}{if} \PY{p}{(}\PY{n}{fila}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{inicio} \PY{o}{==} \PY{n}{NULL}\PY{p}{)}
+    \PY{n}{fila}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{inicio} \PY{o}{=} \PY{n}{novo}\PY{p}{;}
+  \PY{n}{fila}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{final} \PY{o}{=} \PY{n}{novo}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\PY{n}{void} \PY{n}{fila\PYZus{}imprime}\PY{p}{(}\PY{n}{Fila}\PY{o}{*} \PY{n}{fila}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{k}{for} \PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{p} \PY{o}{=} \PY{n}{fila}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{final}\PY{p}{;} \PY{n}{p} \PY{o}{!=} \PY{n}{NULL}\PY{p}{;} \PY{n}{p} \PY{o}{=} \PY{n}{p}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{)}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{p}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{conteudo}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\PY{n}{void} \PY{n}{fila\PYZus{}free}\PY{p}{(}\PY{n}{Fila}\PY{o}{*} \PY{n}{fila}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{k}{if} \PY{p}{(}\PY{n}{fila} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{n}{exit}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{aux} \PY{o}{=} \PY{n}{fila}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{final}\PY{p}{;}
+  \PY{k}{while} \PY{p}{(}\PY{n}{aux} \PY{o}{!=} \PY{n}{fila}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{inicio}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{Celula}\PY{o}{*} \PY{n}{no} \PY{o}{=} \PY{n}{aux}\PY{p}{;}
+    \PY{n}{aux} \PY{o}{=} \PY{n}{aux}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;}
+    \PY{n}{free}\PY{p}{(}\PY{n}{no}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+  \PY{n}{free}\PY{p}{(}\PY{n}{fila}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\PY{n}{void} \PY{n}{fila\PYZus{}remove}\PY{p}{(}\PY{n}{Fila}\PY{o}{*} \PY{n}{fila}\PY{p}{)} \PY{p}{\PYZob{}} \PY{o}{/}\PY{o}{/} \PY{n}{remove} \PY{n}{p}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{ant} \PY{o}{=} \PY{n}{fila}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{final}\PY{p}{;}
+  \PY{k}{while} \PY{p}{(}\PY{n}{ant}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox} \PY{o}{!=} \PY{n}{fila}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{inicio}\PY{p}{)}
+    \PY{n}{ant} \PY{o}{=} \PY{n}{ant}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;}
+  \PY{n}{ant}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox} \PY{o}{=} \PY{n}{NULL}\PY{p}{;}
+  \PY{n}{free}\PY{p}{(}\PY{n}{fila}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{inicio}\PY{p}{)}\PY{p}{;}
+  \PY{n}{fila}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{inicio} \PY{o}{=} \PY{n}{ant}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{3}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap8ex04}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZdq{}myFila.h\PYZdq{}}
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{Fila}\PY{o}{*} \PY{n}{fila} \PY{o}{=} \PY{n}{fila\PYZus{}cria}\PY{p}{(}\PY{p}{)}\PY{p}{;}
+
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{MAX}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)}
+    \PY{n}{fila\PYZus{}insere}\PY{p}{(}\PY{n}{fila}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{n}{fila\PYZus{}imprime}\PY{p}{(}\PY{n}{fila}\PY{p}{)}\PY{p}{;}
+  \PY{n}{fila\PYZus{}remove}\PY{p}{(}\PY{n}{fila}\PY{p}{)}\PY{p}{;}
+  \PY{n}{fila\PYZus{}imprime}\PY{p}{(}\PY{n}{fila}\PY{p}{)}\PY{p}{;}
+  \PY{n}{fila\PYZus{}remove}\PY{p}{(}\PY{n}{fila}\PY{p}{)}\PY{p}{;}
+  \PY{n}{fila\PYZus{}imprime}\PY{p}{(}\PY{n}{fila}\PY{p}{)}\PY{p}{;}
+  \PY{n}{fila\PYZus{}free}\PY{p}{(}\PY{n}{fila}\PY{p}{)}\PY{p}{;}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
+\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{myFila}\PY{o}{.}\PY{n}{c} \PY{n}{cap8ex04}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output}
+\PY{o}{.}\PY{o}{/}\PY{n}{output}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \textbf{DESAFIO:} Desenhar o passo-a-passo de cada método no programa
+anterior, como feito da figura acima.
+
+    \hypertarget{tipo-abstrato-de-dado-tad-pilha}{%
+\subsection{Tipo Abstrato de Dado (TAD)
+Pilha}\label{tipo-abstrato-de-dado-tad-pilha}}
+
+    {[}Ref.
+\href{https://www.ime.usp.br/~pf/algoritmos/aulas/pilha.html}{Notas do
+prof. Paulo Feofiloff}{]}
+
+Semelhante ao TAD Lista, é possível criar \textbf{TAD Pilha}, tendo que
+gerenciar somente o último elemento dessa estrutura (\texttt{T=Topo} da
+pilha), inserindo ou removendo. Ou seja, pilhas são casos particulares
+de listas. No caso de \textbf{Pilha Estática}, também é necessário
+gerenciar o tamanho (N) da pilha.
+
+Observe então que TAD Pilha não permite inserir/remover elementos do
+meio da estrutura, como ocorrem em TAD Lista.
+
+Semelhante a uma pilha de pratos, o primeiro a entrar deverá ser o
+último a sair (\emph{LIFO = Last-In-First-Out}).
+
+Para facilitar, é possível criar variáveis globais para gerencia esses
+elementos (T e N), ou também, criar uma outra estrutura de dados
+contendo essas informações, a gosto do desenvolvedor.
+
+    \hypertarget{tad-pilha-estuxe1tica}{%
+\subsubsection{TAD Pilha Estática}\label{tad-pilha-estuxe1tica}}
+
+    Ao manipular dados, em algumas situações (por exemplo, quando não altera
+muito o tamanho máximo \texttt{MAX}), é interessante se definir uma
+estrutura de dados estática, como segue:
+
+\begin{verbatim}
+#define MAX 6
+typedef struct {
+  int tamanho; // topo da pilha
+  int conteudos[MAX];
+} Pilha0; // AQUI pilha Estática é Pilha0 e pilha0
+\end{verbatim}
+
+Além dessa estrutura, muitos métodos podem ser úteis para a sua
+manipulação. Por exemplo:
+
+\begin{verbatim}
+Pilha0* pilha0_cria(void);
+void pilha0_free(Pilha0* pilha);
+int pilha0_tamanho(Pilha0* pilha);
+int pilha0_cheia(Pilha0* pilha);
+void pilha0_imprime(Pilha0* pilha);
+int pilha0_insere(Pilha0* pilha, int conteudo); // insere no topo
+int pilha0_remove(Pilha0* pilha); // remove no topo
+\end{verbatim}
+
+Esses métodos estão implementados e disponíveis no arquivo
+\texttt{myPilha.c}, no GitHub, juntamente com o seu uso no programa
+\texttt{cap8.part1ex06.c}:
+https://github.com/fzampirolli/codigosPE/tree/master/cap8
+
+    \begin{figure}
+\centering
+\caption{cap8\_7.png}
+\end{figure}
+
+    Observe que na Pilha Estática, onde só é possível inserir e remover no
+final, fica rapidamente cheia, mas com várias posições do vetor sem
+conter elementos da pilha. Uma solução é ir dobrando o tamanho da pilha
+com o comando \texttt{realloc} para \texttt{2*MAX}, \texttt{4*MAX},
+\(\cdots\).
+
+    \hypertarget{tad-pilha-encadeada}{%
+\subsubsection{TAD Pilha Encadeada}\label{tad-pilha-encadeada}}
+
+    Uma vantagem de trabalhar com \textbf{Pilha Encadada}, em comparação com
+as pilhas estáticas, é que os elementos da pilha são inseridos/removidos
+em tempo de execução.
+
+Com isso, a princípio não precisamos definir um tamanho da pilha (número
+de elementos), muito menos o tamanho máximo, necessários em pilhas
+estáticas.
+
+Cada elemento de uma pilha pode ser definido contendo um conteúdo (por
+exemplo, do tipo inteiro) e um ponteiro para o próximo elemento da
+pilha, idêntico ao utilizado em listas, como segue:
+
+\begin{verbatim}
+typedef struct TCelula Celula;
+struct TCelula {
+  int conteudo;
+  Celula* prox;
+};
+\end{verbatim}
+
+Uma pilha encadeada é um conjunto de células interlicadas e pode ser
+acessada pelo endereço da primeira célula da \texttt{pilha} (aqui será
+utilizada uma célula ``cabeça'' apontando para to topo da pilha).
+Lembrando que se insere no final e se remove também no final da pilha.
+
+\includegraphics{"figs/cap8_8.png"}
+
+    \begin{figure}
+\centering
+\caption{cap8\_8.png}
+\end{figure}
+
+    \hypertarget{exemplo-04---criar-e-manipular-pilha-encadeada}{%
+\subsubsection{Exemplo 04 - Criar e manipular pilha
+encadeada}\label{exemplo-04---criar-e-manipular-pilha-encadeada}}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{1}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{myPilha}\PY{o}{.}\PY{n}{h}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdio.h\PYZgt{}}
+\PY{c+c1}{\PYZsh{}include \PYZlt{}stdlib.h\PYZgt{}}
+
+\PY{c+c1}{\PYZsh{}define MAX 6}
+\PY{n}{typedef} \PY{n}{struct} \PY{n}{TCelula} \PY{n}{Celula}\PY{p}{;}
+\PY{n}{struct} \PY{n}{TCelula} \PY{p}{\PYZob{}}
+  \PY{n+nb}{int} \PY{n}{conteudo}\PY{p}{;}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{prox}\PY{p}{;}
+\PY{p}{\PYZcb{}}\PY{p}{;}
+\PY{n}{Celula}\PY{o}{*} \PY{n}{Pilha}\PY{p}{;}
+
+\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/} \PY{n}{Versão} \PY{o}{*}\PY{o}{*}\PY{o}{*}\PY{n}{SEM}\PY{o}{*}\PY{o}{*}\PY{o}{*} \PY{n}{PONTEIRO} \PY{n}{DE} \PY{n}{PONTEIRO}
+\PY{n}{Celula}\PY{o}{*} \PY{n}{pilha\PYZus{}cria}\PY{p}{(}\PY{n}{void}\PY{p}{)}\PY{p}{;}
+\PY{n}{void} \PY{n}{pilha\PYZus{}free}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{pilha}\PY{p}{)}\PY{p}{;}
+\PY{n}{void} \PY{n}{pilha\PYZus{}imprime}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{pilha}\PY{p}{)}\PY{p}{;}
+\PY{n}{void} \PY{n}{pilha\PYZus{}insere}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{pilha}\PY{p}{,} \PY{n+nb}{int} \PY{n}{conteudo}\PY{p}{)}\PY{p}{;}
+\PY{n}{void} \PY{n}{pilha\PYZus{}remove}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{pilha}\PY{p}{)}\PY{p}{;}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{2}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{myPilha}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZdq{}myPilha.h\PYZdq{}}
+\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/}\PY{o}{/} \PY{n}{Versão} \PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{o}{*}\PY{o}{*}\PY{o}{*}\PY{n}{SEM}\PY{o}{*}\PY{o}{*}\PY{o}{*} \PY{n}{PONTEIRO} \PY{n}{DE} \PY{n}{PONTEIRO}
+\PY{o}{/}\PY{o}{/} \PY{n}{ref}\PY{o}{.} \PY{n}{https}\PY{p}{:}\PY{o}{/}\PY{o}{/}\PY{n}{www}\PY{o}{.}\PY{n}{ime}\PY{o}{.}\PY{n}{usp}\PY{o}{.}\PY{n}{br}\PY{o}{/}\PY{o}{\PYZti{}}\PY{n}{pf}\PY{o}{/}\PY{n}{algoritmos}\PY{o}{/}\PY{n}{aulas}\PY{o}{/}\PY{n}{lista}\PY{o}{.}\PY{n}{html}
+\PY{n}{Celula}\PY{o}{*} \PY{n}{pilha\PYZus{}cria}\PY{p}{(}\PY{n}{void}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{cabeca} \PY{o}{=} \PY{p}{(}\PY{n}{Celula}\PY{o}{*}\PY{p}{)}\PY{n}{malloc}\PY{p}{(}\PY{n}{sizeof}\PY{p}{(}\PY{n}{Celula}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{k}{if} \PY{p}{(}\PY{n}{cabeca} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{ERRO: sem memoria}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+    \PY{n}{exit}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+  \PY{n}{cabeca}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox} \PY{o}{=} \PY{n}{NULL}\PY{p}{;}
+  \PY{k}{return} \PY{n}{cabeca}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\PY{n}{void} \PY{n}{pilha\PYZus{}insere}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{pilha}\PY{p}{,} \PY{n+nb}{int} \PY{n}{conteudo}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{k}{if} \PY{p}{(}\PY{n}{pilha} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{n}{exit}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{novo} \PY{o}{=} \PY{p}{(}\PY{n}{Celula}\PY{o}{*}\PY{p}{)}\PY{n}{malloc}\PY{p}{(}\PY{n}{sizeof}\PY{p}{(}\PY{n}{Celula}\PY{p}{)}\PY{p}{)}\PY{p}{;}
+  \PY{n}{novo}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{conteudo} \PY{o}{=} \PY{n}{conteudo}\PY{p}{;}
+  \PY{n}{novo}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox} \PY{o}{=} \PY{n}{pilha}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;}
+  \PY{n}{pilha}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox} \PY{o}{=} \PY{n}{novo}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\PY{n}{void} \PY{n}{pilha\PYZus{}imprime}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{pilha}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{k}{for} \PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{p} \PY{o}{=} \PY{n}{pilha}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;} \PY{n}{p} \PY{o}{!=} \PY{n}{NULL}\PY{p}{;} \PY{n}{p} \PY{o}{=} \PY{n}{p}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{)}
+    \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+si}{\PYZpc{}d}\PY{l+s+s2}{ }\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{p}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{conteudo}\PY{p}{)}\PY{p}{;}
+  \PY{n}{printf}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\PY{n}{void} \PY{n}{pilha\PYZus{}free}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{pilha}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{k}{if} \PY{p}{(}\PY{n}{pilha} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{n}{exit}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{aux} \PY{o}{=} \PY{n}{pilha}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;}
+  \PY{k}{while} \PY{p}{(}\PY{n}{aux} \PY{o}{!=} \PY{n}{NULL}\PY{p}{)} \PY{p}{\PYZob{}}
+    \PY{n}{Celula}\PY{o}{*} \PY{n}{no} \PY{o}{=} \PY{n}{aux}\PY{p}{;}
+    \PY{n}{aux} \PY{o}{=} \PY{n}{aux}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;}
+    \PY{n}{free}\PY{p}{(}\PY{n}{no}\PY{p}{)}\PY{p}{;}
+  \PY{p}{\PYZcb{}}
+  \PY{n}{free}\PY{p}{(}\PY{n}{pilha}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\PY{n}{void} \PY{n}{pilha\PYZus{}remove}\PY{p}{(}\PY{n}{Celula}\PY{o}{*} \PY{n}{pilha}\PY{p}{)} \PY{p}{\PYZob{}} \PY{o}{/}\PY{o}{/} \PY{n}{remove} \PY{n}{p}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}
+  \PY{k}{if} \PY{p}{(}\PY{n}{pilha} \PY{o}{==} \PY{n}{NULL}\PY{p}{)} \PY{n}{exit}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{no}\PY{p}{;}
+  \PY{n}{no} \PY{o}{=} \PY{n}{pilha}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;}
+  \PY{n}{pilha}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox} \PY{o}{=} \PY{n}{no}\PY{o}{\PYZhy{}}\PY{o}{\PYZgt{}}\PY{n}{prox}\PY{p}{;}
+  \PY{n}{free}\PY{p}{(}\PY{n}{no}\PY{p}{)}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{3}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{writefile} \PY{n}{cap8ex05}\PY{o}{.}\PY{n}{c}
+\PY{c+c1}{\PYZsh{}include \PYZdq{}myPilha.h\PYZdq{}}
+\PY{n+nb}{int} \PY{n}{main}\PY{p}{(}\PY{p}{)} \PY{p}{\PYZob{}}
+  \PY{n}{Celula}\PY{o}{*} \PY{n}{pilha} \PY{o}{=} \PY{n}{pilha\PYZus{}cria}\PY{p}{(}\PY{p}{)}\PY{p}{;}
+
+  \PY{k}{for} \PY{p}{(}\PY{n+nb}{int} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}\PY{p}{;} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n}{MAX}\PY{p}{;} \PY{n}{i}\PY{o}{+}\PY{o}{+}\PY{p}{)}
+    \PY{n}{pilha\PYZus{}insere}\PY{p}{(}\PY{n}{pilha}\PY{p}{,} \PY{n}{i} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{;}
+  \PY{n}{pilha\PYZus{}imprime}\PY{p}{(}\PY{n}{pilha}\PY{p}{)}\PY{p}{;}
+  \PY{n}{pilha\PYZus{}remove}\PY{p}{(}\PY{n}{pilha}\PY{p}{)}\PY{p}{;}
+  \PY{n}{pilha\PYZus{}imprime}\PY{p}{(}\PY{n}{pilha}\PY{p}{)}\PY{p}{;}
+  \PY{n}{pilha\PYZus{}remove}\PY{p}{(}\PY{n}{pilha}\PY{p}{)}\PY{p}{;}
+  \PY{n}{pilha\PYZus{}imprime}\PY{p}{(}\PY{n}{pilha}\PY{p}{)}\PY{p}{;}
+  \PY{n}{pilha\PYZus{}free}\PY{p}{(}\PY{n}{pilha}\PY{p}{)}\PY{p}{;}
+  \PY{k}{return} \PY{l+m+mi}{0}\PY{p}{;}
+\PY{p}{\PYZcb{}}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{o}{\PYZpc{}}\PY{o}{\PYZpc{}}\PY{n}{shell}
+\PY{n}{gcc} \PY{o}{\PYZhy{}}\PY{n}{Wall} \PY{o}{\PYZhy{}}\PY{n}{std}\PY{o}{=}\PY{n}{c99} \PY{n}{myPilha}\PY{o}{.}\PY{n}{c} \PY{n}{cap8ex05}\PY{o}{.}\PY{n}{c} \PY{o}{\PYZhy{}}\PY{n}{o} \PY{n}{output}
+\PY{o}{.}\PY{o}{/}\PY{n}{output}
+\end{Verbatim}
+\end{tcolorbox}
+
+    \textbf{DESAFIO:} Desenhar o passo-a-passo de cada método no programa
+anterior, como feito da figura acima.
+
     \hypertarget{exercuxedcios}{%
 \subsection{Exercícios}\label{exercuxedcios}}
 
@@ -10926,6 +11900,12 @@ pasta do Google Drive
   Alocação dinâmica
 \item
   Alocação dinâmica para \emph{array} multidimensional
+\item
+  Tipo Abstrato de Dados (TAD) Lista
+\item
+  Tipo Abstrato de Dados (TAD) Fila
+\item
+  Tipo Abstrato de Dados (TAD) Pilha
 \item
   Exercícios
 \item
