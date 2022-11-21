@@ -94,7 +94,7 @@ int lista0_remove_conteudo(Lista0* lista, int conteudo) {
   }
   return 0;
 }
-void lista0_Selection(Lista0* lista) {
+void lista0_Bubble(Lista0* lista) {
   int sim, N = lista->tamanho;
   do {
     sim = 0;
@@ -106,7 +106,16 @@ void lista0_Selection(Lista0* lista) {
     N--;
   } while (sim != 0);
 }
-void lista0_Bubble(Lista0* lista) {
+void lista0_Bubble2(Lista0* lista) {
+  int j, sim = 1, N = lista->tamanho;
+  for (int i = 0; i < N - 1 && sim; i++)
+    for (sim = j = 0; j < --N; j++)
+      if (lista->conteudos[j] > lista->conteudos[j + 1]) {
+        lista0_troca(lista, j, j + 1);
+        sim = 1;
+      }
+}
+void lista0_Selection(Lista0* lista) {
   for (int i = 0;i < lista->tamanho - 1;i++) {
     int menor = i;
     for (int j = i + 1;j < lista->tamanho;j++)

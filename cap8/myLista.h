@@ -60,5 +60,6 @@ void lista_remove(Celula* p);
 void lista_busca_remove(Celula* cabeca, int conteudo);
 void lista_busca_insere(Celula* cabeca, int busca, int novo);
 void lista0_Bubble(Lista0* lista);
+void lista0_Bubble2(Lista0* lista); // versão simplificada
 void lista0_Selection(Lista0* lista);
 void lista0_Insertion(Lista0* lista);
