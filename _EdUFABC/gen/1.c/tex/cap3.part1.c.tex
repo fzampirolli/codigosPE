@@ -665,14 +665,15 @@ se (nota<5)
   \item
     \textbf{relacionais}: ◦ == (é igual a) ◦ != (é diferente de) ◦
     \textgreater{} (é maior que) ◦ \textless{} (é menor que) ◦
-    \textgreater= (é maior ou igual a) ◦ \textless= (é menor ou igual a)
+    \textgreater{}= (é maior ou igual a) ◦ \textless{}= (é menor ou
+    igual a)
   \item
     Além de \textbf{lógicos}: ◦ \&\& (e), \& (e bit-a-bit) ◦
-    \textbar\textbar{} (ou), \textbar{} (ou bit a bit) ◦ ! (não lógico
+    \textbar{}\textbar{} (ou), \textbar{} (ou bit a bit) ◦ ! (não lógico
     ou complemento) ◦ \textasciitilde{} (complemento bit-a-bit) ◦ \^{}
-    (ou exclusivo `XOR' bit-a-bit) ◦ \textless\textless{} N (shift-left,
-    adiciona N zeros à direita do número em binário) ◦
-    \textgreater\textgreater{} N (shift-right, elimina N dígitos a
+    (ou exclusivo `XOR' bit-a-bit) ◦ \textless{}\textless{} N
+    (shift-left, adiciona N zeros à direita do número em binário) ◦
+    \textgreater{}\textgreater{} N (shift-right, elimina N dígitos a
     direita do número em binário)
   \end{itemize}
 \end{itemize}
@@ -690,33 +691,33 @@ se (nota<5)
 \end{itemize}
 
     \begin{longtable}[]{@{}ccc@{}}
-\toprule()
-\&\& & V & F \\
-\midrule()
+\toprule
+\&\& & V & F\tabularnewline
+\midrule
 \endhead
-V & \textbf{V} & F \\
-F & F & F \\
-\bottomrule()
+V & \textbf{V} & F\tabularnewline
+F & F & F\tabularnewline
+\bottomrule
 \end{longtable}
 
     \begin{longtable}[]{@{}ccc@{}}
-\toprule()
-\textbar\textbar{} & V & F \\
-\midrule()
+\toprule
+\textbar{}\textbar{} & V & F\tabularnewline
+\midrule
 \endhead
-V & V & V \\
-F & V & \textbf{F} \\
-\bottomrule()
+V & V & V\tabularnewline
+F & V & \textbf{F}\tabularnewline
+\bottomrule
 \end{longtable}
 
     \begin{longtable}[]{@{}ccc@{}}
-\toprule()
-\^{} & V & F \\
-\midrule()
+\toprule
+\^{} & V & F\tabularnewline
+\midrule
 \endhead
-V & F & V \\
-F & V & F \\
-\bottomrule()
+V & F & V\tabularnewline
+F & V & F\tabularnewline
+\bottomrule
 \end{longtable}
 
     \begin{itemize}
@@ -752,14 +753,14 @@ F & V & F \\
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  (X\textgreater0 \&\& Y\textless2)
+  (X\textgreater{}0 \&\& Y\textless{}2)
 \item
-  (Z\textgreater0 \textbar\textbar{} Z\textless5 \&\& Y==4)
+  (Z\textgreater{}0 \textbar{}\textbar{} Z\textless{}5 \&\& Y==4)
 \item
-  (X\textgreater\textgreater1 ==0 \textbar\textbar{}
-  Y\textless\textless2\textgreater100)
+  (X\textgreater{}\textgreater{}1 ==0 \textbar{}\textbar{}
+  Y\textless{}\textless{}2\textgreater{}100)
 \item
-  (X!=0 \&\& Y!=0 \&\& Z\textless0)
+  (X!=0 \&\& Y!=0 \&\& Z\textless{}0)
 \item
   (X=1)
 \end{enumerate}
@@ -1137,7 +1138,7 @@ gcc \PYZhy{}Wall \PYZhy{}std=c99 cap3ex02.c \PYZhy{}o output2
 
     O \texttt{switch} verifica se uma variável (do tipo \texttt{int} ou
 \texttt{char}) é ou não igual a certo valor constante (valor1, valor2,
-\ldots, valorN na sintaxe a seguir):
+\ldots{}, valorN na sintaxe a seguir):
 
 \begin{verbatim}
 switch (variável) {

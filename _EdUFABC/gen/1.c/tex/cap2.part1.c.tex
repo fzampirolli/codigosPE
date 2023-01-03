@@ -561,18 +561,18 @@ A \textbf{saída} desejada do programa
 \end{itemize}
 
     \begin{longtable}[]{@{}lll@{}}
-\toprule()
-Tabela. Identificadores de comentário. & & \\
-\midrule()
+\toprule
+Tabela. Identificadores de comentário. & &\tabularnewline
+\midrule
 \endhead
-Linguagem & Uma linha & Várias linhas \\
-Java/JS/C/C++ & //\ldots{} & /*\ldots*/ \\
-Python & \#\ldots{} & ``\,````\ldots{}''``\,'' ou '\,'`\ldots{}''\,' \\
-Matlab & \%\ldots{} & \%\{\ldots\}\% \\
-Pascal & \{\ldots\} & \{\emph{\ldots{}}\} \\
-SQL & --\ldots{} & /\emph{\ldots{}}/ \\
-R & \#.. & \\
-\bottomrule()
+Linguagem & Uma linha & Várias linhas\tabularnewline
+Java/JS/C/C++ & //\ldots{} & /*\ldots{}*/\tabularnewline
+Python & \#\ldots{} & ""``\ldots{}''"" ou ''`\ldots{}'''\tabularnewline
+Matlab & \%\ldots{} & \%\{\ldots{}\}\%\tabularnewline
+Pascal & \{\ldots{}\} & \{\emph{\ldots{}}\}\tabularnewline
+SQL & --\ldots{} & /\emph{\ldots{}}/\tabularnewline
+R & \#.. &\tabularnewline
+\bottomrule
 \end{longtable}
 
     \hypertarget{desvio-de-fluxo}{%
@@ -703,7 +703,7 @@ O delta de ax^2 + bx + c é -76.0
   Por \textbf{referência}: oposto ao anterior, qualquer alteração dentro
   da função será repassada para quem chamou e isso ocorre passando o
   endereço de memória da variável (com \texttt{\&}) ao ser chamado. Por
-  exemplo: * \texttt{incrementaUm(\&x)}
+  exemplo: * \texttt{incrementaUm(\&x)} 
 \item
   Esse endereço de memória é definido como o tipo de dados
   \textbf{ponteiro} e será estudado em detalhes na parte de alocação
@@ -715,9 +715,9 @@ O delta de ax^2 + bx + c é -76.0
   \begin{itemize}
   \item
 \begin{verbatim}
-  void incrementaUm(int *x) {
-      *x=*x+1;
-  }
+void incrementaUm(int *x) {
+    *x=*x+1;
+}
 \end{verbatim}
   \end{itemize}
 \item

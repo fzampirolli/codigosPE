@@ -15,17 +15,16 @@ Conteúdo disponível no [GitHub](https://github.com/fzampirolli/codigosPE), em 
 * Capítulo 1: Fundamentos
 * Capítulo 2: Organização de código
 * Capítulo 3: Desvios condicionais
-* Capítulo 4: Estruturas de repetição (laços) (+Recursão)
-* Capítulo 5: Vetores (+Introdução a alocação)
-* Capítulo 6: Matrizes e vetores multi-dimensionais (+Arquivo)
+* Capítulo 4: Estruturas de repetição (laços) (+recursão)
+* Capítulo 5: Vetores (+introdução a alocação e a ordenação)
+* Capítulo 6: Matrizes e vetores multi-dimensionais 
 
-## Capítulos do livro sem Colabs:
+## Capítulos do livro impresso sem Colabs:
 
 * Capítulo 7: Conceitos de programação orientada a objetos
 * Capítulo 8: Introdução a engenharia de software
 
 ## Colabs com tópicos avançados não abordados no livro (EM CONSTRUÇÃO):
 
-* Capítulo 7: Tipos Definidos Pelo Programador e Arquivos
-* Capítulo 8: Ponteiros e alocações dinâmicas
-* Capítulo 9: Ordenação, listas, filas e pilhas
+* Capítulo 7: Tipos definidos pelo programador e arquivos
+* Capítulo 8: Ponteiros, listas, filas e pilhas

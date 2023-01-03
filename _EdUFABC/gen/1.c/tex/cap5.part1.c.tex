@@ -791,18 +791,20 @@ gcc \PYZhy{}Wall \PYZhy{}std=c99 cap5ex01teste.c \PYZhy{}o cap5ex01teste
     Algumas funções da biblioteca padrão \textbf{string.h}:
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule()
-função & descrição \\
-\midrule()
+\toprule
+função & descrição\tabularnewline
+\midrule
 \endhead
-strcopy(s1,s2) & copia s1 em s2 \\
-strcat(s1,s2) & copia s2 no final de s1 \\
-strlen(s) & tamanho de s \\
-strcmp(s1,s2) & 0 se s1=s2; negativo se s1\textless s2; positivo se
-s1\textgreater s2 \\
-strchr(s,ch) & ponteiro para a primeira ocorrência de ch em s \\
-strstr(s1,s2) & ponteiro para a primeira ocorrência de s2 em s1 \\
-\bottomrule()
+strcopy(s1,s2) & copia s1 em s2\tabularnewline
+strcat(s1,s2) & copia s2 no final de s1\tabularnewline
+strlen(s) & tamanho de s\tabularnewline
+strcmp(s1,s2) & 0 se s1=s2; negativo se s1\textless{}s2; positivo se
+s1\textgreater{}s2\tabularnewline
+strchr(s,ch) & ponteiro para a primeira ocorrência de ch em
+s\tabularnewline
+strstr(s1,s2) & ponteiro para a primeira ocorrência de s2 em
+s1\tabularnewline
+\bottomrule
 \end{longtable}
 
     \hypertarget{formas-de-percorrer-um-vetor}{%
@@ -1644,31 +1646,18 @@ notation).
 Verifique o teste de mesa a seguir considerando um vetor \(v\) com 5
 elementos, contendo valores de 1 a 5, e considerando também que \(x=1\).
 
-    \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0182}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.6364}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.0182}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1091}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2182}}@{}}
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Função Busca(int vet, int n, int x)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-i
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-v{[}i{]}
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Busca(v,5,1)
-\end{minipage} \\
-\midrule()
+    \begin{longtable}[]{@{}lllll@{}}
+\toprule
+& Função Busca(int vet, int n, int x) & i & v{[}i{]} &
+Busca(v,5,1)\tabularnewline
+\midrule
 \endhead
-1 & para i=0; i \textless{} n; i++ & 0 & & \\
-2 & \_ se v{[}i{]}==x & & 1 & \\
-3 & \_ \_ retorne i & & & 0 \\
-4 & retorne -1 & & & \\
-& \textbf{Valores finais} & & & 0 \\
-\bottomrule()
+1 & para i=0; i \textless{} n; i++ & 0 & &\tabularnewline
+2 & \_ se v{[}i{]}==x & & 1 &\tabularnewline
+3 & \_ \_ retorne i & & & 0\tabularnewline
+4 & retorne -1 & & &\tabularnewline
+& \textbf{Valores finais} & & & 0\tabularnewline
+\bottomrule
 \end{longtable}
 
     Por outro lado, este algoritmo de busca tem no pior caso n instruções de
@@ -1680,21 +1669,22 @@ Quando \(\Omega(n)=O(n)\), então dizemos que é um algoritmo ótimo, ou
 \(\Theta(n)\) (da ordem de \(n\)).
 
 Por exemplo, considere o algoritmo buscaMaior que encontra o maior
-elemento de um vetor de tamanho n.~Neste caso, o algoritmo buscaMaior
+elemento de um vetor de tamanho n. Neste caso, o algoritmo buscaMaior
 tem complexidade assintótica \(\Theta(n)\).
 
     \begin{longtable}[]{@{}lll@{}}
-\toprule()
-& Função buscaMaior(int vet, int n) & Número de instruções \\
-\midrule()
+\toprule
+& Função buscaMaior(int vet, int n) & Número de
+instruções\tabularnewline
+\midrule
 \endhead
-1 & int maior = v{[}0{]} & 1 \\
-2 & para i=1; i\textless{} n; i++ & n-1 \\
-3 & \_ se maior \textless{} v{[}i{]} & n-1 \\
-4 & \_ \_ maior = v{[}i{]} & \textless{} n-1 \\
-5 & retorne maior & 1 \\
-& \textbf{Complexidade} & \(f(n) <= 3n-1 = \Theta(n)\) \\
-\bottomrule()
+1 & int maior = v{[}0{]} & 1\tabularnewline
+2 & para i=1; i\textless{} n; i++ & n-1\tabularnewline
+3 & \_ se maior \textless{} v{[}i{]} & n-1\tabularnewline
+4 & \_ \_ maior = v{[}i{]} & \textless{} n-1\tabularnewline
+5 & retorne maior & 1\tabularnewline
+& \textbf{Complexidade} & \(f(n) <= 3n-1 = \Theta(n)\)\tabularnewline
+\bottomrule
 \end{longtable}
 
     A contagem do número de instruções pode ser realizada de forma
@@ -1731,28 +1721,20 @@ Ver também:
   https://pt.wikipedia.org/wiki/Insertion\_sort
 \end{itemize}
 
-    \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0167}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4833}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5000}}@{}}
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Função ordena(int vet, int n)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Número de instruções
-\end{minipage} \\
-\midrule()
+    \begin{longtable}[]{@{}lll@{}}
+\toprule
+& Função ordena(int vet, int n) & Número de instruções\tabularnewline
+\midrule
 \endhead
-1 & para i=0; i\textless n; i++ & n \\
-2 & \_ para j=0; j\textless n; j++ & n*n \\
-3 & \_ \_ se v{[}i{]} \textgreater{} v{[}j{]} & n*n \\
-4 & \_ \_ \_ int aux = v{[}i{]} & \textless{} n*n \\
-5 & \_ \_ \_ v{[}i{]} = v{[}j{]} & \textless{} n*n \\
-6 & \_ \_ \_ v{[}j{]} = aux & \textless{} n*n \\
-7 & retorne v & 1 \\
-& \textbf{Complexidade} & \(f(n) = n*n = O(n^2)\) \\
-\bottomrule()
+1 & para i=0; i\textless{}n; i++ & n\tabularnewline
+2 & \_ para j=0; j\textless{}n; j++ & n*n\tabularnewline
+3 & \_ \_ se v{[}i{]} \textgreater{} v{[}j{]} & n*n\tabularnewline
+4 & \_ \_ \_ int aux = v{[}i{]} & \textless{} n*n\tabularnewline
+5 & \_ \_ \_ v{[}i{]} = v{[}j{]} & \textless{} n*n\tabularnewline
+6 & \_ \_ \_ v{[}j{]} = aux & \textless{} n*n\tabularnewline
+7 & retorne v & 1\tabularnewline
+& \textbf{Complexidade} & \(f(n) = n*n = O(n^2)\)\tabularnewline
+\bottomrule
 \end{longtable}
 
     A complexidade assintótica de algoritmo considera o seu comportamento
@@ -1771,28 +1753,25 @@ Existem vários algoritmos de ordenação com diferentes ordens de
 complexidade, porém é possível se provar matematicamente que o mais
 eficiente entre eles não poderá ser melhor que \(\Omega(n*log \ n)\).
 
-    \begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0159}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4762}}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5079}}@{}}
-\toprule()
-\begin{minipage}[b]{\linewidth}\raggedright
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Função ordena2(int vet, int n)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
-Número de instruções
-\end{minipage} \\
-\midrule()
+    \begin{longtable}[]{@{}lll@{}}
+\toprule
+& Função ordena2(int vet, int n) & Número de instruções\tabularnewline
+\midrule
 \endhead
-1 & para i=0; i \textless{} n-1; i++ & n-1 \\
-2 & \_ para j=i+1; j \textless{} n; j++ & n+n-1+n-2+\ldots+1 \\
-3 & \_ \_ se v{[}i{]} \textgreater{} v{[}j{]} & n+n-1+n-2+\ldots+1 \\
-4 & \_ \_ \_ int aux = v{[}i{]} & \textless{} n+n-1+n-2+\ldots+1 \\
-5 & \_ \_ \_ v{[}i{]} = v{[}j{]} & \textless{} n+n-1+n-2+\ldots+1 \\
-6 & \_ \_ \_ v{[}j{]} = aux & \textless{} n+n-1+n-2+\ldots+1 \\
-7 & retorne v & 1 \\
-& ** Complexidade ** & \(f(n) = n*n/2 = O(n^2)\) \\
-\bottomrule()
+1 & para i=0; i \textless{} n-1; i++ & n-1\tabularnewline
+2 & \_ para j=i+1; j \textless{} n; j++ &
+n+n-1+n-2+\ldots{}+1\tabularnewline
+3 & \_ \_ se v{[}i{]} \textgreater{} v{[}j{]} &
+n+n-1+n-2+\ldots{}+1\tabularnewline
+4 & \_ \_ \_ int aux = v{[}i{]} & \textless{}
+n+n-1+n-2+\ldots{}+1\tabularnewline
+5 & \_ \_ \_ v{[}i{]} = v{[}j{]} & \textless{}
+n+n-1+n-2+\ldots{}+1\tabularnewline
+6 & \_ \_ \_ v{[}j{]} = aux & \textless{}
+n+n-1+n-2+\ldots{}+1\tabularnewline
+7 & retorne v & 1\tabularnewline
+& ** Complexidade ** & \(f(n) = n*n/2 = O(n^2)\)\tabularnewline
+\bottomrule
 \end{longtable}
 
     \hypertarget{exercuxedcios}{%
@@ -1815,7 +1794,7 @@ a ser lida:
 \hypertarget{entrada-de-dados-cada-linha-contem-um-texto-ou-string-incluindo-os-elementos-do-vetor-e-vuxe1rios-espauxe7os}{%
 \subsubsection{\texorpdfstring{Entrada de Dados (cada linha contem um
 texto ou \emph{string} incluindo os elementos do vetor e vários espaços
-``\texttt{}''):}{Entrada de Dados (cada linha contem um texto ou string incluindo os elementos do vetor e vários espaços ``\,''):}}\label{entrada-de-dados-cada-linha-contem-um-texto-ou-string-incluindo-os-elementos-do-vetor-e-vuxe1rios-espauxe7os}}
+``\texttt{}''):}{Entrada de Dados (cada linha contem um texto ou string incluindo os elementos do vetor e vários espaços ``''):}}\label{entrada-de-dados-cada-linha-contem-um-texto-ou-string-incluindo-os-elementos-do-vetor-e-vuxe1rios-espauxe7os}}
 
 \begin{verbatim}
 7 3 7 9 7 7 0 9 8 4 8 9 0 1 7 8 4 1 1 0 
